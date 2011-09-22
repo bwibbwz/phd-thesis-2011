@@ -1,0 +1,38 @@
+% Set up the document
+\documentclass[a4paper, 12pt, oneside]{bThesis} % My own class, based on the report class
+
+% Info
+\author{J\'on Bergmann Maronsson}
+\title{Theoretical Calculations of Electrochemical Systems}
+
+% Paths
+\graphicspath{{figures/}}
+
+% Start the document
+\begin{document}
+
+% The preamble stuff
+%\input{preamble/preamble}
+
+% Include the chapters
+%\input{chapters/chapter2}
+\chapter{Dummy - Methods}
+\label{ch:methods}
+Placeholder
+%\input{chapters/chapter3}
+\chapter{Dummy - Japan}
+\label{ch:japan}
+Placeholder
+%\input{chapters/chapter4}
+\chapter{Dummy - External Potentials on Electrodes}
+\label{ch:dacapo}
+Placeholder
+\input{chapters/second-order/second-order}
+
+% Create the bibliography
+
+\newpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{thesis1}
+
+\end{document}
