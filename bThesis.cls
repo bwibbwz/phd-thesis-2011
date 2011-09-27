@@ -38,6 +38,16 @@
 \newcommand{\mAA}{\textit{\AA}}  
 \def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em} % Tilda for use in URLs
 
+% --- Shortcuts for environments
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bf}{\begin{figure}}
+\newcommand{\ef}{\end{figure}}
+\newcommand{\bt}{\begin{tabular}}
+\newcommand{\et}{\end{tabular}}
+
 % --- Define the general look ---
 %\usepackage{vmargin}
 \setmarginsrb {  40mm}  % left margin   (1.5in)
