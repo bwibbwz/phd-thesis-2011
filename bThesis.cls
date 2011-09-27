@@ -50,14 +50,14 @@
 
 % --- Define the general look ---
 %\usepackage{vmargin}
-\setmarginsrb {  40mm}  % left margin   (1.5in)
-              {  25mm}  % top margin    (0.6in)
-              {  25mm}  % right margin  (1.0in)
-              {  25mm}  % bottom margin (0.8in)
-              {   0mm}  % head height  (20pt)
-              {   0mm}  % head sep     (0.25in)
-              {   9pt}  % foot height  (9pt)
-              {0.25in}  % foot sep  (0.3in)
+%\setmarginsrb {  40mm}  % left margin   (1.5in)
+%              {  25mm}  % top margin    (0.6in)
+%              {  25mm}  % right margin  (1.0in)
+%              {  25mm}  % bottom margin (0.8in)
+%              {   0mm}  % head height  (20pt)
+%              {   0mm}  % head sep     (0.25in)
+%              {   9pt}  % foot height  (9pt)
+%              {0.25in}  % foot sep  (0.3in)
 %\usepackage{times}      % Set the font to Times
 %\usepackage{caption}
 \captionsetup[figure]{width=0.9\linewidth} % Use if you use wrapfig
