@@ -70,7 +70,8 @@
 \setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 \setstretch{1.3}
 % Bibliography style
-\bibliographystyle{achemso} %\bibliographystyle{unsrt}
+%\bibliographystyle{achemso}
+\bibliographystyle{unsrt}
 
 % --- Create enviroments ---
 % eqnref, for reprinting earlier equations. (thanks to Craig Powell, http://www.phy.umist.ac.uk/~craig/index.html)
