@@ -1,2 +1,117 @@
 \section{Density Functional Theory}
-PLACEHOLDER
+\label{sec:dft}
+With the advances in computing power in recent years, both with more powerful computers and parallel computing, intensive calculations have become more viable. One such method is Density Functional Theory (DFT), which can be used to approximate a solution to the Scr\"odinger equation (section \ref{sec:schrodinger}) for many-electron systems using \textit{ab initio} (from the beginning) methods. 
+
+What is, perhaps, most remarkable about DFT is the fact that it is founded in \textit{ab initio} methods and as such has not been fitted to any experimental results on chemical bonding.
+
+The founding father of DFT is Walter Kohn who received the Nobel Prize in chemistry for his development of the density functional theory \cite{kohn1999} in 1998 along with John Pople who received the prize for his development of computational methods in quantum chemistry \cite{pople1999}.
+
+\subsection{The Schr\"odinger equation}
+\label{sec:schrodinger}
+A system of N electrons can be described by the Schr\"odinger equation,
+\begin{equation}
+\label{eq:schrodingerBasic}
+ \widehat{H}\Psi = E \Psi,
+\end{equation}
+where $\Psi = \Psi(\textbf{r}_{1}, \textbf{r}_{2}, ... ,\textbf{r}_{N})$ is the wave function, depending on the spatial coordinates, $\textbf{r}_{i}$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian,
+\begin{equation}
+ \widehat{H} = \widehat{K} + \widehat{U} + \widehat{v},
+ \label{eq:generalHamiltonian}
+\end{equation}
+with
+\begin{equation}
+ \widehat{K} = \displaystyle\sum_{{i}} - \frac{1}{2}\nabla^2_{i}
+ \label{eq:generalHamiltonianKinetic},
+\end{equation}
+\begin{equation}
+ \widehat{U} = \displaystyle\sum_{{i}}\sum_{{j}>{i}}\frac{1}{r_{ij}}
+ \label{eq:generalHamiltonianElectronElectron},
+\end{equation}
+and
+\begin{equation}
+ \widehat{v} = \displaystyle\sum_{i}\sum_{A}\frac{1}{r_{iA}} + V_\mathrm{ext}
+ \label{eq:generalHamiltonianEnviroment}
+\end{equation}
+where $\widehat{K}$ is the kinetic part, $\widehat{U}$ is the interaction between electron pairs and $\widehat{v}$ is the interaction between electrons and the environment, called the ionic and external part. In equation \ref{eq:generalHamiltonianElectronElectron} $r_{ij}$ is the distance from electron $j$ to electron $i$. In equation \ref{eq:generalHamiltonianEnviroment} the $\frac{1}{r_{iA}}$ term is the interaction between the electrons and the nucleus while $V_\mathrm{ext}$ is any other external influence. 
+%\\-What is in $V_\mathrm{ext}$ ? $V_{xc}$ ... I think I answer that in the K-S section.
+
+\subsection{The Hohenberg-Kohn Theorem}
+According to the Hohenberg-Kohn (H-K) theorem there is a one-to-one correspondence between the wavefunction and the electron density of the ground state. Once this has been established, it is simple to see that the total energy is a unique functional of the electron density, $\rho(\textbf{r})$, which is an observable while the wavefunction is not,
+\begin{equation}
+\label{eq:H-KenergyDensity}
+ E[\rho] = \langle \Psi[\rho] | \widehat{H} | \Psi[\rho] \rangle.
+\end{equation}
+The Raleigh-Ritz variational principle is used to minimize the energy and find the ground state and density, %[missing ref]
+\begin{equation}
+ E_{0} = \min_{\rho(\mathbf{r})} \left(E[\rho(\mathbf{r})] \right).
+\label{eq:H-Kvariational}
+\end{equation}
+This is the basis of DFT, developed by Hohenberg and Kohn \cite{hohenberg1964} in 1964.
+
+\subsection{The Kohn-Sham Equations}
+Currently there is no known way to perform the one-to-one mapping suggested by the H-K theorem. However in 1965 Kohn and Sham (K-S) published an indirect approach for calculating the energy functional $E[\rho]$ \cite{kohn1965}.
+They showed that the interacting many-electron system can be mapped, approximately, onto a non-interacting system of single electron states, $\{\phi_i\}$, where each electron is subject to the effective potential $v_{eff}(\vect{r})$ due to all other particles. These one electron wavefunctions can be produced by solving the K-S equations,
+\begin{equation}
+\label{eq:K-Sequation}
+ \left\{-\frac{1}{2} \nabla ^2 + v_\mathrm{eff}(\vect{r}) \right\} \phi_i(\vect{r}) = \epsilon_i \phi_i(\vect{r}).
+\end{equation}
+Since both the effective potential and the wavefunctions are unknown these equations must be solved self-consistently.
+The electron density can then be produced using the square of the wavefunctions,
+\begin{equation}
+\label{eq:electronDensity}
+ \rho(\vect{r}) = \sum_{i=1}^N \left| \phi_i(\vect{r}) \right|^2.
+\end{equation}
+The effective potential can be written as
+\begin{equation}
+\label{eq:effectivePotential}
+ v_\mathrm{eff}(\vect{r}) = v(\vect{r}) + v_{H}(\vect{r}) + v_{XC}(\vect{r})
+\end{equation}
+where $v(\vect{r})$ is the sum of the potential due to the kinetic and ionic parts in equation \ref{eq:generalHamiltonian}%[Is this correct and do I need to include this reference]
+, $v_{H}(\vect{r})$ is the Hartree potential,
+\begin{equation}
+\label{eq:hartreePotential}
+ v_{H}(\vect{r}) = \int d^3r \frac{\rho(\vect{r'})}{\left| \vect{r} - \vect{r} \right|},
+\end{equation}
+and
+\begin{equation}
+\label{eq:XCpotential}
+ v_{XC}(\vect{r}) = \frac{\delta E_{XC}[\rho]}{\delta \rho(\vect{r})}
+\end{equation}
+is the potential due to the exchange-correlation functional, $E_{XC}[\rho]$, which will be discussed in section \ref{sec:XCfunctional} 
+
+\subsection{The Exchange-Correlation Functional}
+\label{sec:XCfunctional}
+The Kohn-Sham equations are in principle exact, however the exchange-correlation functional, $E_{XC}[\rho]$, is generally not known and has to be approximated. The accuracy of the approximation becomes a major issue in solving the Kohn-Sham equations.
+
+The exchange-correlation functional is a local functional which describes the electron-electron interaction,
+\begin{equation}
+\label{eq:XCfunctional}
+ E_{XC}[\rho] = \int d^3r\, \epsilon_{XC}(\rho, \vect{r})\rho(\vect{r})
+\end{equation}
+where $\epsilon_{XC}(\rho, \vect{r})$ is the exchange-correlation energy density.
+
+The approximations used in our work are based on the so-called Generalized Gradient Approach (GGA). The GGA uses the the exchange-correlation energy of a homogeneous electron gas at point $\vect{r}$ like the Local Density Approximation (LDA) \cite{kohn1965} but also uses the gradient of the density to account for inhomogeneity. This, however, is not a good choice by itself so a reduced density gradient, $s(\vect{r})$, is used, as suggested by Langreth and Perdew \cite{langreth1977}. The exchange-correlation functional then becomes
+\begin{equation}
+  E_{XC}^{GGA}[\rho] = \int d^3r\, \epsilon_{XC}^{GGA}(\rho(\vect{r}), s(\vect{r}))\rho(\vect{r})
+\end{equation}
+with
+\begin{equation}
+\label{eq:GGAreducedDensityGradient}
+ s(\vect{r}) = \frac{\left|\nabla \rho(\vect{r})\right|}{2\sqrt[3]{3\pi^2\rho(\vect{r})} \rho(\vect{r})}.
+\end{equation}
+The calculations in chapter \ref{ch:japan} use GGA based on the PBE functional \cite{perdew1996} while the calculations in chapter \ref{ch:dacapo} use GGA based on the RPBE functional \cite{hammer1999}.
+
+\subsection{The Plane Wave Basis Set}
+In implementing DFT calculations, the Kohn-Sham wavefunctions are expanded in a particular basis set. In our work plane waves are used under periodic boundary conditions in accordance with Bloch's theorem,
+\begin{equation}
+\label{eq:blochsTherom}
+ \psi_\vect{k}^{m}(\vect{r}) = \sum_\vect{G}c_{\vect{k} + \vect{G}}^m\, e^{i(\vect{k}+\vect{G})\cdot\vect{r}}
+\end{equation}
+where $\vect{G}$ are the reciprocal lattice vectors. %[what are $c_{\vect{k} + \vect{G}}^m$?]. 
+For an exact solution, an infinite number of plane waves is needed. Fortunately the plane waves at the lower end of the kinetic energy range are the most important, so the number of plane waves can be reduced by defining a cutoff, $G_{cut}$, where the solution becomes good enough:
+\begin{equation}
+ \left( \frac{\hbar^2}{2m} \right) \left| \vect{k} + \vect{G}_{cut} \right|^2 \le E_\mathrm{cut}.
+\end{equation}
+This leads to one of the main advantages of plane waves. By increasing the cutoff the accuracy of the calculation can be systematically increased. 
+
+A disadvantage of plane waves is their inefficiency to deal with high curvature regions, such as the atomic core. To overcome this pseudopotentials can be used. In the core, pseudopotentials are an average of the potential due to the core electrons and the nucleus felt by the valence electrons inside a given sphere but outside the sphere the pseudopotential becomes identical to the all-electron potential. The plane-wave cutoff can be lowered even further when using pseudopotentials while generally giving results of good accuracy, especially the so-called ultrasoft pseudopotential with non-local components \cite{vanderbilt1990}.
