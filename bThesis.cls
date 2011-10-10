@@ -22,6 +22,7 @@
 %\usepackage{footmisc}    % Footnote refernce
 %\usepackage[scriptsize,loose]{subfigure}
 \usepackage[T1]{fontenc} % Render \dh{} for icelandic
+%\usepackage{bm}          % Vectors
 %\usepackage{amssymb}
 %\usepackage{epstopdf}
 %\usepackage{epsfig}
