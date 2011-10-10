@@ -38,6 +38,15 @@
 \newcommand{\mAA}{\mathring{\mathrm{A}}}                               % AAngstrom
 \def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}           % Tilda for use in URLs
 \newcommand{\mytilde}{{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}} % A nicer looking tilde for use in the text
+\newcommand{\vF}{\vect{F}}
+\newcommand{\vR}{\vect{R}}
+\newcommand{\vS}{\vect{S}}
+\newcommand{\vC}{\vect{C}}
+\newcommand{\vt}{\vect{\tau}}
+\newcommand{\uvt}{\hat{\vect{\tau}}}
+\newcommand{\vt}{\vect{\epsilon}}
+\newcommand{\uvt}{\hat{\vect{\epsilon}}}
+\newcommand{\sap}[1]{\ensuremath{\text{SP}_{#1}}}
 
 % --- New commands, macros and external packages for development purposes ---
 \usepackage{verbatim} % Comment environment.
