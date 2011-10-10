@@ -40,8 +40,8 @@
 \newcommand{\mytilde}{{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}} % A nicer looking tilde for use in the text
 
 % --- New commands, macros and external packages for development purposes ---
-\usepackage{verbatim} % Comment environment. NB: Remove before submission
-\usepackage{color} % To color indocument comments. NB: Remove before submission
+\usepackage{verbatim} % Comment environment.
+\usepackage{color} % To color indocument comments.
 \newcommand{\tred}[1]{\textcolor{red}{#1}}
 \newcommand{\tblue}[1]{\textcolor{blue}{#1}}
 \newcommand{\incomplete}{\tred{INCOMPLETE}}
