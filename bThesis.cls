@@ -46,9 +46,9 @@
 \newcommand{\vS}{\vect{S}}
 \newcommand{\vC}{\vect{C}}
 \newcommand{\vt}{\vect{\tau}}
-\newcommand{\uvt}{\hat{\vect{\tau}}}
-\newcommand{\vt}{\vect{\epsilon}}
-\newcommand{\uvt}{\hat{\vect{\epsilon}}}
+\newcommand{\uvt}{\hat{\vt}}
+\newcommand{\vn}{\vect{\epsilon}}
+\newcommand{\uvn}{\hat{\vn}}
 
 % --- New commands, macros and external packages for development purposes ---
 \usepackage{verbatim} % Comment environment.
