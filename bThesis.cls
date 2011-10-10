@@ -33,10 +33,11 @@
 %\usepackage{lstpatch}
 
 % --- New command definitions ---
-\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}              % Bold vectors
-\newcommand{\HRule}{\rule{15cm}{0.5mm}}                      % Horizontal line
-\newcommand{\mAA}{\mathring{\mathrm{A}}}                     % AAngstrom
-\def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em} % Tilda for use in URLs
+\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
+\newcommand{\HRule}{\rule{15cm}{0.5mm}}                                % Horizontal line
+\newcommand{\mAA}{\mathring{\mathrm{A}}}                               % AAngstrom
+\def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}           % Tilda for use in URLs
+\newcommand{\mytilde}{{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}} % A nicer looking tilde for use in the text
 
 % --- New commands, macros and external packages for development purposes ---
 \usepackage{verbatim} % Comment environment. NB: Remove before submission
