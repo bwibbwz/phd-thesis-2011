@@ -21,7 +21,7 @@
 %\usepackage{wrapfig}     % Figures that allow text to wrap around
 %\usepackage{footmisc}    % Footnote refernce
 %\usepackage[scriptsize,loose]{subfigure}
-\usepackage[T1]{fontenc} % Render \dh{} for icelandic
+%\usepackage[T1]{fontenc} % Render \dh{} for icelandic
 %\usepackage{bm}          % Vectors
 %\usepackage{amssymb}
 %\usepackage{epstopdf}
