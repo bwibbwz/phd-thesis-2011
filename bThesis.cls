@@ -45,6 +45,7 @@
 \newcommand{\tblue}[1]{\textcolor{blue}{#1}}
 \newcommand{\incomplete}{\tred{INCOMPLETE}}
 \newcommand{\placeholder}{\tred{PLACEHOLDER}}
+\newcommand{\unread}{\tred{OLD TEXT, NOT READ}}
 
 % --- Shortcuts for environments
 \newcommand{\bit}{\begin{itemize}}
