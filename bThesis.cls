@@ -35,7 +35,7 @@
 % --- New command definitions ---
 \newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}              % Bold vectors
 \newcommand{\HRule}{\rule{15cm}{0.5mm}}                      % Horizontal line
-\newcommand{\mAA}{\textit{\AA}}  
+\newcommand{\mAA}{\mathring{\mathrm{A}}}                     % AAngstrom
 \def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em} % Tilda for use in URLs
 
 % --- New commands, macros and external packages for development purposes ---
