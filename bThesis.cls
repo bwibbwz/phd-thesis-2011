@@ -38,6 +38,14 @@
 \newcommand{\mAA}{\textit{\AA}}  
 \def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em} % Tilda for use in URLs
 
+% --- New commands, macros and external packages for development purposes ---
+\usepackage{verbatim} % Comment environment. NB: Remove before submission
+\usepackage{color} % To color indocument comments. NB: Remove before submission
+\newcommand{\tred}[1]{\textcolor{red}{#1}}
+\newcommand{\tblue}[1]{\textcolor{blue}{#1}}
+\newcommand{\incomplete}{\tred{INCOMPLETE}}
+\newcommand{\placeholder}{\tred{PLACEHOLDER}}
+
 % --- Shortcuts for environments
 \newcommand{\bit}{\begin{itemize}}
 \newcommand{\eit}{\end{itemize}}
