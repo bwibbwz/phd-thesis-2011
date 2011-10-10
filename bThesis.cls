@@ -15,7 +15,7 @@
 % --- Load external packages ---
 \usepackage{amsmath}     % begin{multline}
 \usepackage{graphicx}
-\usepackage{vmargin}     % Margins
+%\usepackage{vmargin}     % Margins
 %\usepackage{setspace}    % Linespacing
 %\usepackage{caption}     % Control the captions
 %\usepackage{wrapfig}     % Figures that allow text to wrap around
