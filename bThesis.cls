@@ -36,7 +36,7 @@
 
 % --- New command definitions ---
 %\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
-\newcommand{\vect}[1]{{\bm{#1}}}                                       % Bold vectors (extra {} to fix issues with sub/superscript vectors)
+\newcommand{\vect}[1]{{\ensuremath{\mathrm{\mathbf{\bm{#1}}}}}}        % Bold vectors (extra {} to fix issues with sub/superscript vectors). BROKEN: greek stuff is still in italics.
 \newcommand{\HRule}{\rule{15cm}{0.5mm}}                                % Horizontal line
 \newcommand{\mAA}{\mathring{\mathrm{A}}}                               % AAngstrom
 \def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}           % Tilda for use in URLs
