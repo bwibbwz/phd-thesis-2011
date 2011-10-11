@@ -17,6 +17,7 @@
 %\usepackage{amssymb}     % 
 %\usepackage{amsfonts}     % 
 \usepackage{graphicx}
+\usepackage{upgreek}
 %\usepackage{vmargin}     % Margins
 %\usepackage{setspace}    % Linespacing
 %\usepackage{caption}     % Control the captions
@@ -48,9 +49,9 @@
 \newcommand{\vR}{\vect{R}}
 \newcommand{\vS}{\vect{S}}
 \newcommand{\vC}{\vect{C}}
-\newcommand{\vt}{\vect{\tau}}
+\newcommand{\vt}{\vect{\uptau}}
 \newcommand{\uvt}{\hat{\vt}}
-\newcommand{\vn}{\vect{\epsilon}}
+\newcommand{\vn}{\vect{\upepsilon}}
 \newcommand{\uvn}{\hat{\vn}}
 \newcommand{\uvm}{\hat{\vn}^\text{min}}
 
