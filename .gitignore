@@ -5,6 +5,6 @@
 *.log
 *.swp
 *.fff
-*.fof
+*.lof
 
 thesis.pdf
