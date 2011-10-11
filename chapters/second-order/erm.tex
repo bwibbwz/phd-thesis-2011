@@ -8,18 +8,18 @@ continuing along an SDP to, finally, arrive at the latter \sap1.
 The path represents two SDPs, from the \sap2 to each \sap1 respectively.
 
 For a function $V$ of multiple variables, $\vR$, a ridge is a collection of points where the gradient, $\vF \equiv -\nabla V(\vR)$, prependicular to the path, defined by its tangent, $\uvt$,
-\beq
+\beq{perpendicular-gradient}
 \vF^\perp \equiv \vF - (\vF \cdot \uvt)\uvt,
 \eeq
 vanishes,
-\beq
+\beq{vanishing-gradient}
 \vF^\perp_\text{@ridge} = \vect{0}.
 \eeq
 To distinguish ridges from other SDPs,
 a condition for the Hessian must be set,
 exactly one negative eigenvalue, $\lambda^\text{min}$, must be present in a reduced Hessian, for the subspace excluding the path's tangent,
 corresponding to an eigenvector, $\uvm$, that is perpendicular to the path,
-\beq
+\beq{ridge-hessian-criteria}
 \uvm \cdot \uvt = 0 \quad \text{and} \quad \lambda^\text{min} < 0.
 \eeq
 The reduced Hessian must be used in this case as near \sap2s there are 2 negative eigenvalues for the full Hessian, one of which is not perpendicular to the path.

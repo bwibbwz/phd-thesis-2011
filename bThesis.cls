@@ -68,11 +68,13 @@
 % --- Shortcuts for environments
 \newcommand{\bit}{\begin{itemize}}
 \newcommand{\eit}{\end{itemize}}
-\newcommand{\beq}{\begin{equation}}
+\newcommand{\ben}[1]{\begin{enumerate}\label{enum:#1}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\beq}[1]{\begin{equation}\label{eq:#1}}
 \newcommand{\eeq}{\end{equation}}
-\newcommand{\bfig}{\begin{figure}}
+\newcommand{\bfig}[1]{\begin{figure}\label{fig:#1}}
 \newcommand{\efig}{\end{figure}}
-\newcommand{\btab}{\begin{tabular}}
+\newcommand{\btab}[1]{\begin{tabular}\label{tab:#1}}
 \newcommand{\etab}{\end{tabular}}
 
 % --- Define the general look ---
