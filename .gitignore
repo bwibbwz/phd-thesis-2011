@@ -6,5 +6,7 @@
 *.swp
 *.fff
 *.lof
+*.ttt
+*.lot
 
 thesis.pdf
