@@ -43,7 +43,8 @@
 \newcommand{\mAA}{\mathring{\mathrm{A}}}                               % AAngstrom
 \def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}           % Tilda for use in URLs
 \newcommand{\mytilde}{{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}} % A nicer looking tilde for use in the text
-\newcommand{\sap}[1]{\ensuremath{\text{SP}_{#1}}}
+\newcommand{\sap}[1]{\ensuremath{\text{SP}_{#1}}}                      % Saddle Point (SP) shortcut
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}                     % Ensure that units are not italic
 
 % --- Vector shortcuts ---
 \newcommand{\vF}{\vect{F}}
