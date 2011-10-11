@@ -35,6 +35,7 @@
 %\usepackage{rotating}
 %\usepackage{listings}
 %\usepackage{lstpatch}
+\usepackage{endfloat}
 
 % --- New command definitions ---
 %\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
