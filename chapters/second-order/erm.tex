@@ -7,15 +7,14 @@ through a \sap2,
 continuing along an SDP to, finally, arrive at the latter \sap1.
 The path represents two SDPs, from the \sap2 to each \sap1 respectively.
 
-For a function $V$ of multiple variables, $\vR$, a ridge is a collection of points where the gradient, $\vF \equiv -\nabla V(\vR)$, prependicular to the path,
+For a function $V$ of multiple variables, $\vR$, a ridge is a collection of points where the gradient, $\vF \equiv -\nabla V(\vR)$, prependicular to the path, defined by its tangent, $\uvt$,
 \beq
 \vF^\perp \equiv \vF - (\vF \cdot \uvt)\uvt,
 \eeq
 vanishes,
 \beq
-\vF^\perp_\text{@ridge} = \vect{0},
+\vF^\perp_\text{@ridge} = \vect{0}.
 \eeq
-where $\uvt$ is the tangent of the path.
 To distinguish ridges from other SDPs, a condition of the Hessian must be set, one negative eigenvalue must be present in a reduced Hessian for the subspace excluding the paths tangent.
 
 
