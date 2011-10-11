@@ -13,7 +13,9 @@
 \LoadClass{\baseclass}
 
 % --- Load external packages ---
-\usepackage{amsmath}     % begin{multline}
+\usepackage{amsmath}     % General mathy stuff (\text{} and more)
+%\usepackage{amssymb}     % 
+%\usepackage{amsfonts}     % 
 \usepackage{graphicx}
 %\usepackage{vmargin}     % Margins
 %\usepackage{setspace}    % Linespacing
@@ -22,7 +24,7 @@
 %\usepackage{footmisc}    % Footnote refernce
 %\usepackage[scriptsize,loose]{subfigure}
 %\usepackage[T1]{fontenc} % Render \dh{} for icelandic
-%\usepackage{bm}          % Vectors
+\usepackage{bm}          % Vectors
 %\usepackage{amssymb}
 %\usepackage{epstopdf}
 %\usepackage{epsfig}
@@ -33,7 +35,8 @@
 %\usepackage{lstpatch}
 
 % --- New command definitions ---
-\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
+%\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
+\newcommand{\vect}[1]{{\bm{#1}}}                                       % Bold vectors (extra {} to fix issues with sub/superscript vectors)
 \newcommand{\HRule}{\rule{15cm}{0.5mm}}                                % Horizontal line
 \newcommand{\mAA}{\mathring{\mathrm{A}}}                               % AAngstrom
 \def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}           % Tilda for use in URLs
