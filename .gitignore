@@ -4,5 +4,7 @@
 *.dvi
 *.log
 *.swp
+*.fff
+*.fof
 
 thesis.pdf
