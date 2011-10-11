@@ -18,6 +18,7 @@
 %\usepackage{amsfonts}     % 
 \usepackage{graphicx}
 \usepackage{upgreek}      % Sane greek letter vectors. NB: This is a hack! (Might be a different font)
+\usepackage[plain]{fancyref} % Support for \fref, context aware reference macro.
 %\usepackage{vmargin}     % Margins
 %\usepackage{setspace}    % Linespacing
 %\usepackage{caption}     % Control the captions
