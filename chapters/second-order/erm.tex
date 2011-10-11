@@ -59,9 +59,9 @@ Since a discrete representation of the path is used, the path's tangent needs to
 In NEB calculations, it has been found to be important, for numerical convergence, to use the vector displacement to the higher energy neighbouring image so as to minimize the formation of kinks in the path\cite{neb-tangent-2000}.
 This same tangent estimate was also used in the calculations presented here.
 
-In order to perform the force transformation described in \eref{eq:force-mapping}, it is necessary to be able to find the eigenmode associated with the lowest eigenvalue (hereafter referred to as the minimum mode) of the reduced Hessian matrix.
+In order to perform the force transformation described in \fref{eq:force-mapping}, it is necessary to be able to find the eigenmode associated with the lowest eigenvalue (hereafter referred to as the minimum mode) of the reduced Hessian matrix.
 For this purpose we use the dimer method\cite{dimer-original-1999, dimer-olsen-2004} since it gives the minimum mode using only the force as input.  It is also possible to use the Lanczos method for this purpose \cite{dimer-olsen-2004} at a similar computational effort.
-For clarity, we rewrite \eref{eq:force-mapping} for each image, $i$
+For clarity, we rewrite \fref{eq:force-mapping} for each image, $i$
 \begin{equation}
 \vF_i^t = \vF^\perp_i - 2 (\vF^\perp_i \cdot \uvn_i) \uvn_i,
 \label{eq:minmode-force}
@@ -75,12 +75,12 @@ which is applied after the dimer has been rotated subject to a constraint $\uvn_
 \begin{center}
 \includegraphics[width=0.5\linewidth]{figures/erm-forces}
 \caption{
-The construction of the effective force, $\vF_i^\text{eff}$, used in the iterative optimization for finding an energy ridge, from \eref{eq:effective-force}.
+The construction of the effective force, $\vF_i^\text{eff}$, used in the iterative optimization for finding an energy ridge, from \fref{eq:effective-force}.
 $\vF_i$ (orange) is the real force, $\vF_i = -\nabla E_i$ acting on the image,
-$\vF^t_i$ (red) is the transformed force, inverted in the direction of the minimum mode, from \eref{eq:minmode-force},
+$\vF^t_i$ (red) is the transformed force, inverted in the direction of the minimum mode, from \fref{eq:minmode-force},
 $\vF^\perp_i$ (purple) is the component of the transformed force, $\vF^t_i$, that remains after the component parallel to the tangent has been removed,
-$\vS_i$ (green) is the spring force, from \eref{eq:full-spring-force},
-$\vF^\text{eff}_i$ (blue) is the effective force acting on the image, from \eref{eq:effective-force}.
+$\vS_i$ (green) is the spring force, from \fref{eq:full-spring-force},
+$\vF^\text{eff}_i$ (blue) is the effective force acting on the image, from \fref{eq:effective-force}.
 For legibility, the image number subscript, $i$, is omitted from all the force symbols.
 The solid grey line is the ridge%, the dotted grey line is the current estimate of the ridge
 and the black dots represent the current location of the images.}
@@ -105,10 +105,10 @@ The effective force, $\vF_i^\text{eff}$, acting on each image can now be written
 \vF_i^\text{eff} = \vF_i^t + \vF_i^\text{S}
 \label{eq:effective-force}
 \end{equation}
-where the first term is the transformed force from \eref{eq:minmode-force}%,
+where the first term is the transformed force from \fref{eq:minmode-force}%,
 %the second term removes any components of the transformed force parallel to the path,
 and the %third 
-second term is the spring force from \eref{eq:full-spring-force} that controls the distribution of the images along the path and increases numerical stability.
+second term is the spring force from \fref{eq:full-spring-force} that controls the distribution of the images along the path and increases numerical stability.
 The construction of the effective force is illustrated in \fref{fig:force-comparison}.
 
 The spring force tends to shorten the path by allowing the component perpendicular to the path to pull it off the ridge.
@@ -125,8 +125,8 @@ The climbing image algorithm \cite{neb-ci-2000} can be used on the highest energ
 %By turning on the climbing image \cite{neb-ci-2000} algorithm for the highest energy image in the path,
 % after the RMS force on the images has dropped to below $??? \unit{eV/\mAA}$
 %a convergence to the highest \sap{2} along the path, which usually is the most interesting one for the present study is obtained even with the full spring force. \tb{(REWRITE THE ABOVE SENTENCE)}
-%The climbing image \cite{neb-ci-2000} algorithm decouples the highest energy image from the springs and inverts the force along the tangent in a manner similar to \eref{eq:minmode-force}\cite{neb-ci-2000},
-This is accomplished by decoupling the highest energy image from the springs and inverting the force along the tangent in a manner similar to \eref{eq:minmode-force},
+%The climbing image \cite{neb-ci-2000} algorithm decouples the highest energy image from the springs and inverts the force along the tangent in a manner similar to \fref{eq:minmode-force}\cite{neb-ci-2000},
+This is accomplished by decoupling the highest energy image from the springs and inverting the force along the tangent in a manner similar to \fref{eq:minmode-force},
 \begin{equation}
 \vF_{i_\text{max}}^\text{eff} = \vF_{i_\text{max}}^\ddagger - 2 (\vF_{i_\text{max}}^\ddagger \cdot \uvt_{i_\text{max}})\uvt_{i_\text{max}},
 \label{eq:neb-ci}
@@ -151,7 +151,7 @@ The energy surface is generated by minimizing the energy of the adatom along the
 Each sphere represents a different image in the path. The cyan sphere is the climbing image and the dotted spheres are omitted for clarity.
 The arrows represent the in-plane force acting on each image.
 White: The force derived from the energy surface, $-\nabla E$.
-Black: The effective force, given by \eref{eq:effective-force} or \eref{eq:neb-ci}, which is used in the iterative optimization.
+Black: The effective force, given by \fref{eq:effective-force} or \fref{eq:neb-ci}, which is used in the iterative optimization.
 The red lines represent the tangent and the blue lines represent the minimum mode estimate.
 The red areas of the surface represent high potential energy and the blue areas low potential energy.
 The immobile substrate atoms are located at the centre of the high potential areas.
