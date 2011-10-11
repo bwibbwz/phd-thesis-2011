@@ -17,7 +17,7 @@
 %\usepackage{amssymb}     % 
 %\usepackage{amsfonts}     % 
 \usepackage{graphicx}
-\usepackage{upgreek}      % Sane greek letter vectors
+\usepackage{upgreek}      % Sane greek letter vectors. NB: This is a hack! (Might be a different font)
 %\usepackage{vmargin}     % Margins
 %\usepackage{setspace}    % Linespacing
 %\usepackage{caption}     % Control the captions
@@ -37,7 +37,7 @@
 
 % --- New command definitions ---
 %\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
-\newcommand{\vect}[1]{{\ensuremath{\mathrm{\mathbf{\bm{#1}}}}}}        % Bold vectors (extra {} to fix issues with sub/superscript vectors). BROKEN: greek stuff is still in italics.
+\newcommand{\vect}[1]{{\ensuremath{\mathrm{\mathbf{\bm{#1}}}}}}        % Bold vectors. HACK: Extra {} to fix issues with sub/superscript vectors. BUG: Greek stuff is in italics without the upgreek package.
 \newcommand{\HRule}{\rule{15cm}{0.5mm}}                                % Horizontal line
 \newcommand{\mAA}{\mathring{\mathrm{A}}}                               % AAngstrom
 \def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}           % Tilda for use in URLs
