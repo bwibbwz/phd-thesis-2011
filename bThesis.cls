@@ -17,7 +17,7 @@
 %\usepackage{amssymb}     % 
 %\usepackage{amsfonts}     % 
 \usepackage{graphicx}
-\usepackage{upgreek}
+\usepackage{upgreek}      % Sane greek letter vectors
 %\usepackage{vmargin}     % Margins
 %\usepackage{setspace}    % Linespacing
 %\usepackage{caption}     % Control the captions
