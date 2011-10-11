@@ -52,6 +52,7 @@
 \newcommand{\uvt}{\hat{\vt}}
 \newcommand{\vn}{\vect{\epsilon}}
 \newcommand{\uvn}{\hat{\vn}}
+\newcommand{\uvm}{\hat{\vn}^\text{min}}
 
 % --- New commands, macros and external packages for development purposes ---
 \usepackage{verbatim} % Comment environment.
