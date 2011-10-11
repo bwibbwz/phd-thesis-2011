@@ -1,10 +1,40 @@
-\section{Energy Ridge Mapping}
-The goal is to define a path which can be iteratively optimized to align itself with a specific steepest decent path,
+\section{Ridge Mapping}
+The goal is to define a path which can be iteratively optimized to align itself with a specific steepest decent path (SDP),
 starting at a \sap2 and ending at a \sap1.
 To accomplish this a path between neighboring \sap1s is defined,
-which once converged will lead from one \sap1 along a ridge,
+which once converged will lead from one \sap1 along an SDP,
 through a \sap2,
-continuing along the ridge to, finally, arrive at the latter \sap1.
+continuing along an SDP to, finally, arrive at the latter \sap1.
+The path represents two SDPs, from the \sap2 to each \sap1 respectively.
+%We shall refer to this pair of SDPs as a ridge.
+
+For a function $V$ of multiple variables, $\vR$, a ridge is a collection of points where the gradient, $\vF \equiv -\nabla V(\vR)$, prependicular to the path,
+\beq
+\vF^\perp \equiv \vF - (\vF \cdot \uvt)\uvt,
+\eeq
+vanishes,
+\beq
+\vF^\perp_\text{@ridge} = \vect{0},
+\eeq
+where $\uvt$ is the tangent of the path,
+and for a reduced Hessian matrix, where any components along the path have been removed, only one eigenvalue is negative, corresponding to an eigenvector that is perpendicular to the path.
+
+
 
 
 \incomplete
+
+
+
+
+\subsection{Energy Ridge Mapping}
+In the context of atomic simulations, the function in question is often the potential energy as a function of all atomic co-ordinates.
+
+
+
+
+
+\incomplete
+
+
+
