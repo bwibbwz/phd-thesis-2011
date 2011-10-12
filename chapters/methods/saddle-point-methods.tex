@@ -1,5 +1,7 @@
-\section{Saddle Point Methods}
+\section{First Order Saddle Point Methods}
 \label{sec:sps}
+
+Finding saddle points is a non-trivial task in multiple dimensions, when only local information is available.
 
 \placeholder
 
@@ -12,11 +14,16 @@ On the other hand, finding specific SDPs that end at minima is not.
 The goal here is to find two SDPs each leading from the same \sap1 to different minima without any further information than the minima.
 
 
-
 \placeholder
 
 % ------------------------------------------------------------------
 \subsection{Dimer}
 \label{sec:dimer}
+
+Given only a single point, the goal is to locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional value and the first derivative.
+In order to do so, indirect information about the Hessian is required.
+The Dimer method can be split into two phases.
+First acquiring indirect information about the Hessian, in particular the eigenmode corresponding to the lowest eigenvalue.
+Then modifying the local gradient to transform \sap1s into minima.
 
 \placeholder
