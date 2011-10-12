@@ -66,6 +66,7 @@
 \newcommand{\incomplete}{\tred{INCOMPLETE}}
 \newcommand{\placeholder}{\tred{PLACEHOLDER}}
 \newcommand{\unread}{\tred{OLD TEXT, NOT READ}}
+\newcommand{\recent}{\tblue{WRITTEN RECENTLY, NOT READ}}
 
 % --- Shortcuts for environments
 \newcommand{\bit}{\begin{itemize}}
