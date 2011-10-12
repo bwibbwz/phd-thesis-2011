@@ -1,6 +1,9 @@
 \section{Important Concepts}
 \label{sec:important-concepts}
 
+This secion shortly introduces a few concepts that are important to the work being presented.
+
+\incomplete
 % ------------------------------------------------------------------
 \subsection{The Born-Oppenheimer Approximation}
 \label{sec:born-oppenheimer}
@@ -27,11 +30,36 @@
 \subsection{The Hessian Matrix}
 \label{sec:hessian}
 
-The Hessian matrix contains the second derivatives of a given function.
-Its dimensions are $N\times N$, where $N$ is the amount of degrees of freedom of the function.
-In the context of atomic simulations N is generally 3 time the number of atoms in the system, as each one has 3 indepentand degrees of freedom.
+For a real function $f$ of $n$ variables, $\vect{x} = (x_1, x_2, \ldots, x_n)$,
+there exists an $n\times n$ matrix, $H$, which contains all the second partial derivatives, if they exist,
+\beq{hessian-matrix}
+H =
+\begin{bmatrix}
+\vspace{0.5em} % To create a bit of space AFTER the first line.
+\frac{\partial^2f}{\partial x_1^2} & 
+\frac{\partial^2f}{\partial x_1 \partial x_2} & 
+\cdots &
+\frac{\partial^2f}{\partial x_1 \partial x_n} \\
 
-\incomplete
+\frac{\partial^2f}{\partial x_2 \partial x_1} & 
+\frac{\partial^2f}{\partial x_2^2} & 
+\cdots &
+\frac{\partial^2f}{\partial x_2 \partial x_n} \\
+
+\vdots & \vdots & \ddots & \vdots \\
+
+\frac{\partial^2f}{\partial x_n \partial x_1} & 
+\frac{\partial^2f}{\partial x_n \partial x_2} & 
+\cdots &
+\frac{\partial^2f}{\partial x_n^2} & 
+\end{bmatrix}
+\eeq
+The second derivative of a function contains, in particular, information about its local curvature, or how rapidly the first derivative changes.
+$H$ is named after the German mathematician Ludwig Otto Hesse and is commonly referred to as the Hessian matrix, or Hessian for short. \tred{[original ref]}
+
+In the context of atomic simulations $n$ is generally 3 times the number of atoms in the system, as each one has 3 independant degrees of freedom.
+The function in question is often the potential energy of the system, whose gradient is commonly referred to as the force.
+In most modern software packages both the potential energy and force are readily available while the second derivatives are, generally, not available without explicit and, often, costly calculations.
 
 % ------------------------------------------------------------------
 \subsection{Steepest Decent Paths}
