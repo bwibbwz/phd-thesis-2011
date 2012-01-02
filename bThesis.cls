@@ -68,6 +68,7 @@
 \newcommand{\placeholder}{\tred{PLACEHOLDER}}
 \newcommand{\unread}{\tred{OLD TEXT, NOT READ}}
 \newcommand{\recent}{\tblue{WRITTEN RECENTLY, NOT READ}}
+\newcommand{\okay}{\tblue{REVISED UNTIL HERE}}
 
 % --- Shortcuts for environments
 \newcommand{\bit}{\begin{itemize}}
