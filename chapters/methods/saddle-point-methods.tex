@@ -20,10 +20,14 @@ The goal here is to find two SDPs each leading from the same \sap1 to different 
 \subsection{Dimer}
 \label{sec:dimer}
 
-Given only a single point, the goal is to locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional value and the first derivative.
-In order to do so, indirect information about the Hessian is required.
-The Dimer method can be split into two phases.
-First acquiring indirect information about the Hessian, in particular the eigenmode corresponding to the lowest eigenvalue.
-Then modifying the local gradient to transform \sap1s into minima.
+Given only an initial point, $\vR$, on a multidimensional function, $V(\vR)$, the goal is to locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional values and the first derivatives.
+Indiredct information about the Hessian is used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
+Using the minimum mode, it is possible to locally transform \sap1s to minima and using conventianl techniques to find them.
+
+The dimer method can be split into two independant phases.
+\ben{dimer-phases}
+\item Estimating the minimum mode.
+\item Invert the gradient components that lie parallel to the minimum mode and translating system.
+\een
 
 \incomplete
