@@ -20,14 +20,30 @@ The goal here is to find two SDPs each leading from the same \sap1 to different 
 \subsection{Dimer}
 \label{sec:dimer}
 
-Given only an initial point, $\vR$, on a multidimensional function, $V(\vR)$, the goal is to locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional values and the first derivatives.
-Indiredct information about the Hessian is used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
-Using the minimum mode, it is possible to locally transform \sap1s to minima and using conventianl techniques to find them.
+Given only an initial point, $\vR$, on a multidimensional function, $F(\vR)$, the goal is to locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional values and the first derivatives.
+Indiredct information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
+Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima and using conventianl techniques to find them.
 
 The dimer method can be split into two independant phases.
 \ben{dimer-phases}
 \item Estimating the minimum mode.
-\item Invert the gradient components that lie parallel to the minimum mode and translating system.
+\item Transforming the gradient to make \sap1 seem as minima.
+%\item Invert the gradient components that lie parallel to the minimum mode and translating system.
 \een
+
+\subsubsection{Minimum Mode Estimation}
+A pair of points, $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close to current point $\vR_0$, such that
+\beq{dimer-separation}
+\vR_\text{A} + \partial_\text{sep}\uvn = \vR_0 \quad \text{and} \quad \vR_\text{B} - \partial_\text{sep}\uvn = \vR_0
+\eeq
+
+\subsubsection{Gradient Transformation}
+Once a minimum mode estimate is available for the current point, $\vR_0$, it is possible to transform the gradient so that any \sap1 is transformed to a minimum.
+\beq{dimer-transform}
+\nabla{}F(\vR_0)
+\eeq
+
+
+
 
 \incomplete
