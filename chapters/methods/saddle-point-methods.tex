@@ -20,6 +20,8 @@ The goal here is to find two SDPs each leading from the same \sap1 to different 
 \subsection{Dimer}
 \label{sec:dimer}
 
+The Dimer method was inspired by Voter\cite{voter-hyperdynamics-1997}
+
 Given only an initial point, $\vR$, on a multidimensional function, $F(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional values and the first derivatives.
 Indiredct information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
 Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima and using conventianl techniques to move up-hill to locate the \sap1.
@@ -39,7 +41,7 @@ A pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close 
 \eeq
 where $\Delta_\text{D}$ is a predefined constant to determine the length of the dimer.
 
-Rotating the dimer around its central point, $\vR_0$, until $F(\vR_\text{A}) + F(\vR_\text{B})$ is minimized yields a good estimate of the lowest curvature direction and thus the minimum mode.
+Rotating the dimer around its central point, $\vR_0$, until $F(\vR_\text{A}) + F(\vR_\text{B})$ is minimized yields a good estimate of the lowest curvature direction and thus the minimum mode. \cite{voter-hyperdynamics-1997}
 The manner in which this rotation is performed is varied...
 
 \incomplete
