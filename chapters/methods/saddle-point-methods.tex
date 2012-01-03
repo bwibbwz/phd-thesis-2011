@@ -20,7 +20,7 @@ The goal here is to find two SDPs each leading from the same \sap1 to different 
 \subsection{Dimer}
 \label{sec:dimer}
 
-Given only an initial point, $\vR$, on a multidimensional function, $F(\vR)$, the goal is to locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional values and the first derivatives.
+Given only an initial point, $\vR$, on a multidimensional function, $F(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional values and the first derivatives.
 Indiredct information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
 Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima and using conventianl techniques to find them.
 
@@ -32,7 +32,7 @@ The dimer method can be split into two independant phases.
 \een
 
 \subsubsection{Minimum Mode Estimation}
-A pair of points, $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close to current point $\vR_0$, such that
+A pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close to current point $\vR_0$, such that
 \beq{dimer-separation}
 \vR_\text{A} + \partial_\text{sep}\uvn = \vR_0 \quad \text{and} \quad \vR_\text{B} - \partial_\text{sep}\uvn = \vR_0
 \eeq
@@ -43,6 +43,7 @@ Once a minimum mode estimate is available for the current point, $\vR_0$, it is 
 \nabla{}F(\vR_0)
 \eeq
 
+\tblue{This latter step is not unique to the dimer algorithm... Lancoszs...}
 
 
 
