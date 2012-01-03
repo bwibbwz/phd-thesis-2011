@@ -24,10 +24,11 @@ Given only an initial point, $\vR$, on a multidimensional function, $F(\vR)$, th
 Indiredct information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
 Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima and using conventianl techniques to find them.
 
-The dimer method can be split into two independant phases.
+The dimer method can be split into three independant phases.
 \ben{dimer-phases}
 \item Estimating the minimum mode.
 \item Transforming the gradient to make \sap1 seem as minima.
+\item Translating the point according to the transformed gradient.
 %\item Invert the gradient components that lie parallel to the minimum mode and translating system.
 \een
 
@@ -37,6 +38,8 @@ A pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close 
 \vR_\text{A} + \partial_\text{sep}\uvn = \vR_0 \quad \text{and} \quad \vR_\text{B} - \partial_\text{sep}\uvn = \vR_0
 \eeq
 
+\incomplete
+
 \subsubsection{Gradient Transformation}
 Once a minimum mode estimate is available for the current point, $\vR_0$, it is possible to transform the gradient so that any \sap1 is transformed to a minimum.
 \beq{dimer-transform}
@@ -45,6 +48,8 @@ Once a minimum mode estimate is available for the current point, $\vR_0$, it is 
 
 \tblue{This latter step is not unique to the dimer algorithm... Lancoszs...}
 
+\incomplete
 
+\subsubsection{Iterative Translation}
 
 \incomplete
