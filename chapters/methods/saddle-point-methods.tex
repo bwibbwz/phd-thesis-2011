@@ -1,7 +1,7 @@
 \section{First Order Saddle Point Methods}
 \label{sec:sps}
 
-Finding saddle points is a non-trivial task in multiple dimensions, when only local information is available.
+Finding saddle points is a non-trivial task in multiple dimensions, when only local information is available and computational resources are limited, such that calculation of the Hessian matrix is infeasible.
 
 \incomplete
 
@@ -9,7 +9,7 @@ Finding saddle points is a non-trivial task in multiple dimensions, when only lo
 \subsection{Nudged Elastic Band}
 \label{sec:neb}
 
-Finding Steepest Decent Paths (SDPs) from a given point is simple by following the gradient with a small stepsize.
+Finding Steepest Decent Paths (SDPs) from a given point is simple by following the gradient with a small step size.
 On the other hand, finding specific SDPs that end at minima is not.
 The goal here is to find two SDPs each leading from the same \sap1 to different minima without any further information than the minima.
 
@@ -23,15 +23,14 @@ The goal here is to find two SDPs each leading from the same \sap1 to different 
 The Dimer method was inspired by Voter\cite{voter-hyperdynamics-1997}
 
 Given only an initial point, $\vR$, on a multidimensional function, $f(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional values and the first derivatives.
-Indiredct information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
-Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima and using conventianl techniques to move up-hill to locate the \sap1.
+Indirect information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
+Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima and using conventional techniques to move up-hill to locate the \sap1.
 
-The dimer method can be split into three independant phases.
+The dimer method can be split into three independent phases.
 \ben{dimer-phases}
 \item Estimating the minimum mode.
 \item Transforming the gradient to make \sap1 seem as minima.
 \item Translating the point according to the transformed gradient.
-%\item Invert the gradient components that lie parallel to the minimum mode and translating system.
 \een
 
 \subsubsection{Minimum Mode Estimation}
