@@ -52,11 +52,15 @@
 \newcommand{\vF}{\vect{F}}
 \newcommand{\vR}{\vect{R}}
 \newcommand{\vs}{\vect{s}}
+\newcommand{\uvs}{\hat{\vs}}
 \newcommand{\vt}{\vect{\uptau}}
 \newcommand{\uvt}{\hat{\vt}}
 \newcommand{\vn}{\vect{\upepsilon}}
 \newcommand{\uvn}{\hat{\vn}}
 \newcommand{\uvm}{\hat{\vn}^\text{min}}
+
+% --- Stuff that might change definitions ---
+\newcommand{\Dsep}{\Delta_\text{D}}
 
 % --- New commands, macros and external packages for development purposes ---
 \usepackage{verbatim} % Comment environment.
