@@ -51,8 +51,6 @@
 % --- Vector shortcuts ---
 \newcommand{\vF}{\vect{F}}
 \newcommand{\vR}{\vect{R}}
-\newcommand{\vS}{\vect{S}}
-\newcommand{\vC}{\vect{C}}
 \newcommand{\vt}{\vect{\uptau}}
 \newcommand{\uvt}{\hat{\vt}}
 \newcommand{\vn}{\vect{\upepsilon}}
