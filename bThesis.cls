@@ -69,6 +69,7 @@
 \newcommand{\tblue}[1]{\textcolor{blue}{#1}}
 \newcommand{\incomplete}{\tred{INCOMPLETE}}
 \newcommand{\placeholder}{\tred{PLACEHOLDER}}
+\newcommand{\missing}{\tred{MISSING}}
 \newcommand{\unread}{\tred{OLD TEXT, NOT READ}}
 \newcommand{\recent}{\tblue{WRITTEN RECENTLY, NOT READ}}
 \newcommand{\okay}{\tblue{REVISED UNTIL HERE}}
