@@ -22,9 +22,9 @@ The goal here is to find two SDPs each leading from the same \sap1 to different 
 
 The Dimer method was inspired by Voter\cite{voter-hyperdynamics-1997}
 
-Given only an initial point, $\vR$, on a multidimensional function, $f(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional values and the first derivatives.
+Given only an initial point, $\vR$, on a multidimensional function, $V(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional values and the gradient, $\nabla V(\vR)$.
 Indirect information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
-Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima and using conventional techniques to move up-hill to locate the \sap1.
+Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima and using conventional techniques to move up-hill and locate the \sap1.
 
 The dimer method can be split into three independent phases.
 \ben{dimer-phases}
@@ -34,14 +34,30 @@ The dimer method can be split into three independent phases.
 \een
 
 \subsubsection{Minimum Mode Estimation}
-A pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close to current point $\vR_0$, such that
+Estimating the second derivative of $V$ along a given unit vector, $\uvs$, at point $\vR$ can be done numerically, using finite differences.
+For the occasion, a pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close to current point $\vR_0$, such that
 \beq{dimer-separation}
-\vR_\text{A} = \vR_0 + \Delta_\text{D}\uvn \quad \text{and} \quad \vR_\text{B} = \vR_0  - \Delta_\text{D}\uvn
+\vR_\text{A} = \vR_0 + \Dsep \uvs \quad \text{and} \quad \vR_\text{B} = \vR_0  - \Dsep \uvs,
 \eeq
-where $\Delta_\text{D}$ is a predefined constant to determine the length of the dimer.
+where $\Dsep$ is a predefined constant to determine the length of the dimer and the separation in the finite difference estimate.
+Using only the functional values
+\beq{second-derivative-function}
+C_\vs \equiv \frac{\partial^2 V}{\partial \uvs^2} \approx \frac{V_\text{A} + V_\text{B} - 2V_0}{\Dsep^2},
+\eeq
+where $V_\text{x} \equiv V(\vR_\text{x})$ and $C_\vs$ is the curvature or second derivative.
+As gradient points away from each minimum, it is convenient to define a force, $\vF$ that points towards minima instead, for use in the iterative minima search,
+\beq{gradient-force}
+\vF_\text{x} \equiv - \nabla V(\vR_\text{x}).
+\eeq
+If the gradient is readily available, \fref{eq:second-derivative-function} can be rewritten to depend on it instead,
+\beq{second-derviative-gradient}
+C_\vs \approx \frac{(\vF_\text{B} - \vF_\text{A}) \cdot \uvs}{\Dsep}.
+\eeq
 
-Rotating the dimer around its central point, $\vR_0$, until $f(\vR_\text{A}) + f(\vR_\text{B})$ is minimized yields a good estimate of the lowest curvature direction and thus the minimum mode. \cite{voter-hyperdynamics-1997}
-The manner in which this rotation is performed is varied...
+Rotating $\uvs$ around $\vR_0$ until $C_\vs$ is minimized yields an estimate for, both, the lowest eigenvalue, $C_\text{min} = C_\vs$, of the Hessian and it corresponding eigenmode, the minimum mode, $\uvn$.
+
+
+%The manner in which this rotation is performed is varied...
 
 %% Need to introduce the gradient as a symbol first....
 %Often $f(\vR_0)$ has either been evaluated or needs to be.
