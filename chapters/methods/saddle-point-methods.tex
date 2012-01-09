@@ -60,25 +60,21 @@ Rotating $\uvs$ around $\vR_0$, according to the rotational force,
 \vF^\circlearrowright = \vF_\text{A} - \vF_\text{B} + ((\vF_\text{B} - \vF_\text{A}) \cdot \vs)\vs,
 \eeq
 until $C_\vs$ is minimized yields an estimate for, both, the lowest eigenvalue, $C_\text{min} = C_\vs$, of the Hessian and its corresponding eigenmode, the minimum mode, $\uvn$.
-A number of rotational schemes can be employed, such as...
+A number of rotational schemes can be employed, such as \missing
 
+Often $\vF_0$ needs to be calculated, this can be taken advantage of in order to cut down the amount of computations.
+The gradient at either of the dimer's endpoints can be extrapolated from the other two,
+\beq{dimer-point-extrapolate}
+\vF_\text{B} = 2\vF_0 - \vF_\text{A}.
+\eeq
+Since $\vF_0$ is static, performing this extrapolation yields significant reductions in \missing up to a facgtor of $1/2 - 1$...
 
-%The manner in which this rotation is performed is varied...
+Further extrapolations are possible ... if multiple rotations are required (which is often not the case)...
 
-%% Need to introduce the gradient as a symbol first....
 %Often $f(\vR_0)$ has either been evaluated or needs to be.
 %This can be taken advantage of as this neccesary calculation can be used to extrapolate values for one of the end points.
 %To illustrate this $f(\vR_0)$ and $f(\vR_\text{A})$ have already been calculated.
 %The value at $\vR_\text{B}$ can then be extrapolated,
-%\beq{dimer-extrapolate}
-%f(\vR_\text{B}) = 2f(\vR_0) - f()
-%\vR_\text{}
-%\vR_\text{}
-%\vR_\text{}
-%\vR_\text{}
-%\vR_\text{}
-%\vR_\text{}
-%\eeq
 
 \incomplete
 
