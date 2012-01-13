@@ -20,9 +20,9 @@ The goal here is to find two SDPs each leading from the same \sap1 to different 
 \subsection{Dimer}
 \label{sec:dimer}
 
-The Dimer method was inspired by Voter\cite{voter-hyperdynamics-1997}
+%The Dimer method was inspired by Voter\cite{voter-hyperdynamics-1997}
 
-Given only an initial point, $\vR$, on a multidimensional function, $V(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only functional values and the gradient, $\nabla V(\vR)$.
+Given only an initial point, $\vR$, on a multidimensional function, $V(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only the function's values and its gradient, $\nabla V(\vR)$.
 Indirect information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
 Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima and using conventional techniques to move up-hill and locate the \sap1.
 
@@ -32,6 +32,7 @@ The dimer method can be split into three independent phases.
 \item Transforming the gradient to make \sap1 seem as minima.
 \item Translating the point according to the transformed gradient.
 \een
+Only the first of the phases is unique to the dimer algorithm.
 
 \subsubsection{Minimum Mode Estimation}
 Estimating the second derivative of $V$ along a given unit vector, $\uvs$, at point $\vR$ can be done numerically, using finite differences.
@@ -40,7 +41,7 @@ For the occasion, a pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, 
 \vR_\text{A} = \vR_0 + \Dsep \uvs \quad \text{and} \quad \vR_\text{B} = \vR_0  - \Dsep \uvs,
 \eeq
 where $\Dsep$ is a predefined constant to determine the length of the dimer and the separation in the finite difference estimate.
-Using only the functional values, the second derivative (or curvature), $C_\vs$, becomes
+Using only the function's values, the second derivative (or curvature), $C_\vs$, becomes
 \beq{second-derivative-function}
 C_\vs \equiv \frac{\partial^2 V}{\partial \uvs^2} \approx \frac{V_\text{A} + V_\text{B} - 2V_0}{\Dsep^2},
 \eeq
@@ -71,18 +72,22 @@ Since $\vF_0$ is static, performing this extrapolation yields significant reduct
 
 Further extrapolations are possible ... if multiple rotations are required (which is often not the case) \missing
 
+\recent
+
 \incomplete
 
 \subsubsection{Gradient Transformation}
-Once a minimum mode estimate is available for the current point, $\vR_0$, it is possible to transform the gradient so that any \sap1 is transformed to a minimum.
+Once a minimum mode estimate is available for the current point, $\vR_0$, it is possible to transform the force so that any \sap1 is transformed to a minimum.
+As discussed above, saddle points are stationary and the Hessian has as many negative eigenvalues as the order of the saddle point, i.c. for a \sap1 the Hessian has one and only one negative eigenvalue.
 \beq{dimer-transform}
-\nabla{}f(\vR_0)
+2
 \eeq
-
-\tblue{This latter step is not unique to the dimer algorithm... Lancoszs...}
 
 \incomplete
 
 \subsubsection{Iterative Translation}
+Since the force has been transformed such that \sap1s appear as minima - \sap1s, however, remain unchanged with regards to the function's value - it is possible to use conventional algorithms for finding minima as long as they support systematic increase in the function's value.
+
+
 
 \incomplete
