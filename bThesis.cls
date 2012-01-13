@@ -14,7 +14,7 @@
 
 % --- Load external packages ---
 \usepackage{amsmath}     % General mathy stuff (\text{} and more)
-%\usepackage{amssymb}     % 
+\usepackage{amssymb}     % 
 %\usepackage{amsfonts}     % 
 \usepackage{graphicx}
 \usepackage{upgreek}      % Sane greek letter vectors. NB: This is a hack! (Might be a different font)

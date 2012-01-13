@@ -45,7 +45,7 @@ Using only the functional values, the second derivative (or curvature), $C_\vs$,
 C_\vs \equiv \frac{\partial^2 V}{\partial \uvs^2} \approx \frac{V_\text{A} + V_\text{B} - 2V_0}{\Dsep^2},
 \eeq
 where $V_\text{x} \equiv V(\vR_\text{x})$.
-As gradient points away from each minimum, it is convenient to define a force, $\vF$ that points towards minima instead, for use in the iterative minima search,
+As the gradient points away from each minimum, it is convenient to define a force, $\vF$ that points towards minima instead, for use in the iterative minima search,
 \beq{gradient-force}
 \vF_\text{x} \equiv - \nabla V(\vR_\text{x}).
 \eeq
@@ -53,28 +53,23 @@ If the gradient is readily available, \fref{eq:second-derivative-function} can b
 \beq{second-derviative-gradient}
 C_\vs \approx \frac{(\vF_\text{B} - \vF_\text{A}) \cdot \uvs}{\Dsep}.
 \eeq
-
 Rotating $\uvs$ around $\vR_0$, according to the rotational force,
 \beq{rotational-force}
-%\vF^\circlearrowright = (\vF_\text{A} - (\vF_\text{A} \cdot \vs)\vs) - (\vF_\text{B} - (\vF_\text{B} \cdot \vs)\vs)
-\vF^\circlearrowright = \vF_\text{A} - \vF_\text{B} + ((\vF_\text{B} - \vF_\text{A}) \cdot \vs)\vs,
+%\vF^\circlearrowright = (\vF_\text{A} - (\vF_\text{A} \cdot \uvs)\uvs) - (\vF_\text{B} - (\vF_\text{B} \cdot \uvs)\uvs)
+\vF^\circlearrowright = \vF_\text{A} - \vF_\text{B} + ((\vF_\text{B} - \vF_\text{A}) \cdot \uvs)\uvs,
 \eeq
 until $C_\vs$ is minimized yields an estimate for, both, the lowest eigenvalue, $C_\text{min} = C_\vs$, of the Hessian and its corresponding eigenmode, the minimum mode, $\uvn$.
 A number of rotational schemes can be employed, such as \missing
 
-Often $\vF_0$ needs to be calculated, this can be taken advantage of in order to cut down the amount of computations.
+Often $\vF_0$ needs to be calculated to get a more accurate translational force (see below), this can be taken advantage of in order to cut down the amount of computations.
 The gradient at either of the dimer's endpoints can be extrapolated from the other two,
 \beq{dimer-point-extrapolate}
-\vF_\text{B} = 2\vF_0 - \vF_\text{A}.
+\vF_\text{B} = 2\vF_0 - \vF_\text{A},
 \eeq
+with $\vF_\text{B}$ being the extrapolated, virtual, force.
 Since $\vF_0$ is static, performing this extrapolation yields significant reductions in \missing up to a facgtor of $1/2 - 1$...
 
-Further extrapolations are possible ... if multiple rotations are required (which is often not the case)...
-
-%Often $f(\vR_0)$ has either been evaluated or needs to be.
-%This can be taken advantage of as this neccesary calculation can be used to extrapolate values for one of the end points.
-%To illustrate this $f(\vR_0)$ and $f(\vR_\text{A})$ have already been calculated.
-%The value at $\vR_\text{B}$ can then be extrapolated,
+Further extrapolations are possible ... if multiple rotations are required (which is often not the case) \missing
 
 \incomplete
 
