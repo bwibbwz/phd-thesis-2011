@@ -83,7 +83,8 @@ Further extrapolations are possible ... if multiple rotations are required (whic
 
 \subsubsection{Gradient Transformation}
 Once a minimum mode estimate is available for the current point, $\vR_0$, it is possible to transform the force so that any \sap1 is transformed to a minimum.
-As discussed above, saddle points are stationary and the Hessian has as many negative eigenvalues as the order of the saddle point, i.c. for a \sap1 the Hessian has one and only one negative eigenvalue.
+As discussed above, \sap1s are stationary (with zero gradient) and the Hessian has one and only one negative eigenvalue.
+%As discussed above, saddle points are stationary and the Hessian has as many negative eigenvalues as the order of the saddle point, i.c. for a \sap1 the Hessian has one and only one negative eigenvalue.
 The goal is thus to maximize the function's value along the minimum mode while minimizing it along all other eigenmodes.
 This can be achieved, simply, by inverting any force components along the minimum mode,
 \beq{dimer-transform}
@@ -100,7 +101,7 @@ This latter transformation simply inverts the whole force.
 \recent
 
 \subsubsection{Iterative Translation}
-Since the force has been transformed such that \sap1s appear as minima - \sap1s, however, remain unchanged with regards to the function's value - it is possible to use conventional algorithms for finding minima as long as they support a systematic increase in the function's value.
+After the force has been transformed such that \sap1s appear as minima - \sap1s, however, remain unchanged with regards to the function's value - it is possible to use conventional algorithms for finding minima as long as they support a systematic increase in the function's value.
 \tblue{Should this be detailed any further?}
 
 \recent
