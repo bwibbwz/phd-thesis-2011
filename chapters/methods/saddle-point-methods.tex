@@ -20,13 +20,14 @@ The goal here is to find two SDPs each leading from the same \sap1 to different 
 \subsection{Dimer}
 \label{sec:dimer}
 
-%The Dimer method is in essence a method
+The Dimer algorithm~\cite{dimer-original-1999} is in essence a method for finding the eigenmode corresponding to the lowest eigenvalue of the Hessian, while performing no direct calculations of the second derivatives.
+This information is then used to locate \sap1s.
 
 %The Dimer method was inspired by Voter\cite{voter-hyperdynamics-1997}
 
 Given only an initial point, $\vR$, on a multidimensional function, $V(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only the function's values and its gradient, $\nabla V(\vR)$.
-Indirect information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (minimum mode).
-Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima and using conventional techniques to move up-hill and locate the \sap1.
+Indirect information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (the minimum mode).
+Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima while using conventional techniques to move up-hill and locate the \sap1.
 
 The dimer method can be split into three independent phases.
 \ben{dimer-phases}
@@ -54,7 +55,7 @@ As the gradient points away from each minimum, it is convenient to define a forc
 \beq{gradient-force}
 \vF_\text{x} \equiv - \nabla V(\vR_\text{x}).
 \eeq
-If the gradient is readily available, \fref{eq:second-derivative-function} can be rewritten to depend on it instead,
+Should the gradient is readily available, as it often is, \fref{eq:second-derivative-function} can be rewritten to depend on it instead,
 \beq{second-derviative-gradient}
 C_\vs \approx \frac{(\vF_\text{B} - \vF_\text{A}) \cdot \uvs}{\Dsep}.
 \eeq
@@ -67,7 +68,7 @@ until $C_\vs$ is minimized yields an estimate for, both, the lowest eigenvalue, 
 A number of rotational schemes can be employed, such as \missing
 
 Often $\vF_0$ needs to be calculated to get a more accurate translational force (see below), this can be taken advantage of in order to cut down the amount of computations.
-The gradient at either of the dimer's endpoints can be extrapolated from the other two,
+The gradient at either of the dimer's endpoints can be extrapolated from the other two~\cite{dimer-olsen-2004},
 \beq{dimer-point-extrapolate}
 \vF_\text{B} = 2\vF_0 - \vF_\text{A},
 \eeq
