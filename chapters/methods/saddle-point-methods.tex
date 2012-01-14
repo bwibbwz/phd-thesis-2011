@@ -36,10 +36,12 @@ The dimer method can be split into three independent phases.
 \item Translating the point according to the transformed gradient.
 \een
 Only the first of the phases is unique to the dimer algorithm.
-A setup phase is also required if the search starts from a minimum.???
+A setup phase, which typically includes randomly displacing $\vR$ is also required if the search starts from a minimum.
 \recent
 
 \subsubsection{Minimum Mode Estimation}
+Inspired by the hyperdynamics method by Voter~\cite{voter-hyperdynamics-1997}.
+
 Estimating the second derivative of $V$ along a given unit vector, $\uvs$, at point $\vR$ can be done numerically, using finite differences.
 For the occasion, a pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close to current point $\vR_0$, such that
 \beq{dimer-separation}
@@ -65,21 +67,22 @@ Rotating $\uvs$ around $\vR_0$, according to the rotational force,
 \vF^\circlearrowright = \vF_\text{A} - \vF_\text{B} + ((\vF_\text{B} - \vF_\text{A}) \cdot \uvs)\uvs,
 \eeq
 until $C_\vs$ is minimized yields an estimate for, both, the lowest eigenvalue, $C_\text{min} = C_\vs$, of the Hessian and its corresponding eigenmode, the minimum mode, $\uvn$.
-A number of rotational schemes can be employed, such as \missing
+The rotation happens in a plane spanned by $\uvn$ and $\uvT \equiv \vF̣^\circlearrowright / \left| \vF^\circlearrowright \right|$
+A number of rotational schemes can be employed, such as a finite difference, conjugate gradient, approximation~\cite{dimer-original-1999} and, as described in~\cite{dimer-heyden-2005}, by expanding the curvature, exactly, as a Fourier series.
+Both of the mentioned schemes require extra calculations to figure out the optimal angle of rotation but the latter is better suited when the accuracy and/or consistency of the force cannot be guaranteed~\cite{dimer-heyden-2005}.
 
-Often $\vF_0$ needs to be calculated to get a more accurate translational force (see below), this can be taken advantage of in order to cut down the amount of computations.
-The gradient at either of the dimer's endpoints can be extrapolated from the other two~\cite{dimer-olsen-2004},
+Often $\vF_0$ needs to be calculated to get a more accurate translational force, this can be taken advantage of in order to cut down the amount of computations.
+Assuming a quadratic behaviour near the dimer, the gradient at either of the dimer's endpoints can be extrapolated from the other endpoint and the central point~\cite{dimer-olsen-2004},
 \beq{dimer-point-extrapolate}
 \vF_\text{B} = 2\vF_0 - \vF_\text{A},
 \eeq
 with $\vF_\text{B}$ being the extrapolated, virtual, force.
-Since $\vF_0$ is static, performing this extrapolation yields significant reductions in \missing up to a facgtor of $1/2 - 1$...
+Since $\vF_0$ is static and does not require additional calculations during the iterative rotation, performing this extrapolation yields significant calculational reductions, up to a factor of half.
 
-Further extrapolations are possible ... if multiple rotations are required (which is often not the case) \missing
+Further extrapolations are possible, if multiple rotations are performed (which is often not the case), it is possible to use previous calculations of either end point to extrapolate the rotated values.
+These, however, yield much less reductions than the extrapolation in \fref{eq:dimer-point-extrapolate}.
 
 \recent
-
-\incomplete
 
 \subsubsection{Gradient Transformation}
 Once a minimum mode estimate is available for the current point, $\vR_0$, it is possible to transform the force so that any \sap1 is transformed to a minimum.
@@ -88,21 +91,20 @@ As discussed above, \sap1s are stationary (with zero gradient) and the Hessian h
 The goal is thus to maximize the function's value along the minimum mode while minimizing it along all other eigenmodes.
 This can be achieved, simply, by inverting any force components along the minimum mode,
 \beq{dimer-transform}
-\vF_0^\text{t} = \vF_0 - (\vF_0 \cdot \uvn)\uvn.
+\vF_0^\text{t} = \vF_0 - 2(\vF_0 \cdot \uvn)\uvn.
 \eeq
-
 A different force transformation,
 \beq{dimer-transform-minima}
 \vF_0^\text{t} = -\vF_0,
 \eeq
 is often used in areas of positive curvature in order to decrease the amount of iterations spent near minima.
-This latter transformation simply inverts the whole force.
+This latter transformation simply inverts the whole force, making it point towards maxima instead of minima or \sap1s.
 
 \recent
 
 \subsubsection{Iterative Translation}
 After the force has been transformed such that \sap1s appear as minima - \sap1s, however, remain unchanged with regards to the function's value - it is possible to use conventional algorithms for finding minima as long as they support a systematic increase in the function's value.
-\tblue{Should this be detailed any further?}
+A finitie difference method was suggested in the original implementation~\cite{dimer-original-1999} while more recent papers~\cite{dimer-kastner-2008} have used other methods, such as the L-BFGS algorithm~\cite{lbfgs}.
 
 \recent
 
