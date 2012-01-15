@@ -76,6 +76,7 @@
 \newcommand{\recent}{\tblue{WRITTEN RECENTLY, NOT READ}}
 \newcommand{\okay}{\tblue{REVISED UNTIL HERE}}
 \newcommand{\fix}{\tred{FIX ME!}}
+\newcommand{\noneed}{\tblue{PROBABLY NOT NEEDED}}
 
 % --- Shortcuts for environments
 \newcommand{\bit}{\begin{itemize}}
