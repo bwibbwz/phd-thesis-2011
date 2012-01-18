@@ -77,6 +77,7 @@
 \newcommand{\okay}{\tblue{REVISED UNTIL HERE}}
 \newcommand{\fix}{\tred{FIX ME!}}
 \newcommand{\noneed}{\tblue{PROBABLY NOT NEEDED}}
+\newcommand{\figmiss}[1]{\textcolor{red}{MISSING FIGURE: #1}}
 
 % --- Shortcuts for environments
 \newcommand{\bit}{\begin{itemize}}
