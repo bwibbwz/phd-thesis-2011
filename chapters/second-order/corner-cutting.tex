@@ -2,6 +2,21 @@
 \label{sec:erm-corner-cutting}
 % ------------------------------------------------------------------
 
-Should finding the exact ridge be the goal, multiple strategies can be envisioned...
+Should finding the exact ridge be the goal, multiple strategies can be envisioned all of which aim at somehow reducing the perpendicular component of the spring force while avoiding and/or minimising the instabilities discussed above.
 
-\placeholder
+\bit
+\item Iteratively remove parts of $\vF^\text{S}_\perp$ and relax
+\item Detect corner cutting ($\hat{\vF^\text{t}_\perp} \cdot \hat{\vF^\text{S}_\perp \approx -1}$ and $|\vF^\text{t}_\perp| \approx |\vF^\text{S}_\perp|$). Maybe detect a cone around the corner cutting direction and reduce containment there for the next steps also.
+\eit
+
+--- Minor fluctuations in the tangent ... 
+
+A possible "solution" is to keep the dimer fixed after switching to the "reduce corner-cutting phase" but then the dimer WILL be wrong after a few iteration in the last phase.
+Maybe the answer is to take an average of previous tangents, etc.
+
+Since there is no guarantee that the eigenmodes align with the tangent and minimum mode at all points on the ridge (see \fref{fig:modes}), it is not adviable to let go of the orthogonality constraint bwteen the minumum mode and the tangent,
+\beq{orthogonality-constraint}
+\uvn \cdot \uvt = 0.
+\eeq
+
+\incomplete
