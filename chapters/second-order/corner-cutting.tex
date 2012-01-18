@@ -8,15 +8,18 @@ Should finding the exact ridge be the goal, multiple strategies can be envisione
 \item Iteratively remove parts of $\vF^\text{S}_\perp$ and relax
 \item Detect corner cutting ($\hat{\vF^\text{t}_\perp} \cdot \hat{\vF^\text{S}_\perp \approx -1}$ and $|\vF^\text{t}_\perp| \approx |\vF^\text{S}_\perp|$). Maybe detect a cone around the corner cutting direction and reduce containment there for the next steps also.
 \eit
+I've tried both with moderate to good success rate on the hop diffusion of Al (EMT).
+Need to move on to more complicated systems (concerted self-diffusion of Al).
 
 --- Minor fluctuations in the tangent ... 
 
 A possible "solution" is to keep the dimer fixed after switching to the "reduce corner-cutting phase" but then the dimer WILL be wrong after a few iteration in the last phase.
 Maybe the answer is to take an average of previous tangents, etc.
 
-Since there is no guarantee that the eigenmodes align with the tangent and minimum mode at all points on the ridge (see \fref{fig:modes}), it is not adviable to let go of the orthogonality constraint bwteen the minumum mode and the tangent,
+Since there is no guarantee that the eigenmodes align with the tangent and minimum mode at all points on the ridge (see \fref{fig:modes}), it is not advisable to let go of the orthogonality constraint bewteen the minumum mode and the tangent,
 \beq{orthogonality-constraint}
 \uvn \cdot \uvt = 0.
 \eeq
+Early tests of releasing the constraint on some of the images were not reliable.
 
 \incomplete
