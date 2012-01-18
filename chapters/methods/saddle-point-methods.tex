@@ -93,12 +93,14 @@ This can be achieved, simply, by inverting any force components along the minimu
 \beq{dimer-transform}
 \vF_0^\text{t} = \vF_0 - 2(\vF_0 \cdot \uvn)\uvn.
 \eeq
-A different force transformation,
+In cases were the dimer aligns itself with a contour of the potential in a convex region (where the Hessian has only positive eigenvalues), it is possible that a lot of time will be spent there.
+In order to circumvent this, a different force transformation,
 \beq{dimer-transform-minima}
-\vF_0^\text{t} = -\vF_0,
+\vF_0^\text{t} = -(\vF_0 \cdot \uvn)\uvn ,
 \eeq
-is often used in areas of positive curvature in order to decrease the amount of iterations spent near minima.
-This latter transformation simply inverts the whole force, making it point towards maxima instead of minima or \sap1s.
+is often used in convex regions.
+This latter transformation simply inverts the force along the minimum mode while ignoring any other components.
+This along with a fixed, artificially large, step size should yield less iterations spent near minima and more near \sap1s.~\cite{dimer-original-1999}
 
 \recent
 
