@@ -17,7 +17,7 @@ Nevertheless, DFT has produced many interesting and good results and is now a we
 
 %The founding father of DFT is Walter Kohn who received the Nobel Prize in chemistry for his development of the density functional theory \cite{kohn1999} in 1998 along with John Pople who received the prize for his development of computational methods in quantum chemistry \cite{pople1999}.
 
-\subsection{The Schr\"odinger equation}
+\subsubsection{The Schr\"odinger equation}
 \label{sec:schrodinger}
 A system of N electrons can be described by the Schr\"odinger equation,
 \begin{equation}
@@ -46,7 +46,7 @@ and
 where $\widehat{K}$ is the kinetic part, $\widehat{U}$ is the interaction between electron pairs and $\widehat{v}$ is the interaction between electrons and the environment, called the ionic and external part. In equation \ref{eq:generalHamiltonianElectronElectron} $r_{ij}$ is the distance from electron $j$ to electron $i$. In equation \ref{eq:generalHamiltonianEnviroment} the $\frac{1}{r_{iA}}$ term is the interaction between the electrons and the nucleus while $V_\mathrm{ext}$ is any other external influence. 
 %\\-What is in $V_\mathrm{ext}$ ? $V_{xc}$ ... I think I answer that in the K-S section.
 
-\subsection{The Hohenberg-Kohn Theorem}
+\subsubsection{The Hohenberg-Kohn Theorem}
 According to the Hohenberg-Kohn (H-K) theorem there is a one-to-one correspondence between the wavefunction and the electron density of the ground state. Once this has been established, it is simple to see that the total energy is a unique functional of the electron density, $\rho(\textbf{r})$, which is an observable while the wavefunction is not,
 \begin{equation}
 \label{eq:H-KenergyDensity}
@@ -59,7 +59,7 @@ The Raleigh-Ritz variational principle is used to minimize the energy and find t
 \end{equation}
 This is the basis of DFT, developed by Hohenberg and Kohn \cite{hohenberg1964} in 1964.
 
-\subsection{The Kohn-Sham Equations}
+\subsubsection{The Kohn-Sham Equations}
 Currently there is no known way to perform the one-to-one mapping suggested by the H-K theorem. However in 1965 Kohn and Sham (K-S) published an indirect approach for calculating the energy functional $E[\rho]$ \cite{kohn1965}.
 They showed that the interacting many-electron system can be mapped, approximately, onto a non-interacting system of single electron states, $\{\phi_i\}$, where each electron is subject to the effective potential $v_{eff}(\vect{r})$ due to all other particles. These one electron wavefunctions can be produced by solving the K-S equations,
 \begin{equation}
@@ -90,7 +90,7 @@ and
 \end{equation}
 is the potential due to the exchange-correlation functional, $E_{XC}[\rho]$, which will be discussed in section \ref{sec:XCfunctional} 
 
-\subsection{The Exchange-Correlation Functional}
+\subsubsection{The Exchange-Correlation Functional}
 \label{sec:XCfunctional}
 The Kohn-Sham equations are in principle exact, however the exchange-correlation functional, $E_{XC}[\rho]$, is generally not known and has to be approximated. The accuracy of the approximation becomes a major issue in solving the Kohn-Sham equations.
 
@@ -112,7 +112,7 @@ with
 \end{equation}
 %The calculations in chapter \ref{ch:japan} use GGA based on the PBE functional \cite{perdew1996} while the calculations in chapter \ref{ch:dacapo} use GGA based on the RPBE functional \cite{hammer1999}.
 
-\subsection{The Plane Wave Basis Set}
+\subsubsection{The Plane Wave Basis Set}
 In implementing DFT calculations, the Kohn-Sham wavefunctions are expanded in a particular basis set. In our work plane waves are used under periodic boundary conditions in accordance with Bloch's theorem,
 \begin{equation}
 \label{eq:blochsTherom}
