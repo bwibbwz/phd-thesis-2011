@@ -70,7 +70,7 @@
 \usepackage{color} % To color indocument comments.
 \newcommand{\tred}[1]{\textcolor{red}{#1}}
 \newcommand{\tblue}[1]{\textcolor{blue}{#1}}
-\newcommand{\incomplete}{\tred{INCOMPLETEi }}
+\newcommand{\incomplete}{\tred{INCOMPLETE }}
 \newcommand{\placeholder}{\tred{PLACEHOLDER }}
 \newcommand{\missing}{\tred{MISSING }}
 \newcommand{\unread}{\tred{OLD TEXT, NOT READ }}
