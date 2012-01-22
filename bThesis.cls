@@ -69,15 +69,15 @@
 \usepackage{color} % To color indocument comments.
 \newcommand{\tred}[1]{\textcolor{red}{#1}}
 \newcommand{\tblue}[1]{\textcolor{blue}{#1}}
-\newcommand{\incomplete}{\tred{INCOMPLETE}}
-\newcommand{\placeholder}{\tred{PLACEHOLDER}}
-\newcommand{\missing}{\tred{MISSING}}
-\newcommand{\unread}{\tred{OLD TEXT, NOT READ}}
-\newcommand{\recent}{\tblue{WRITTEN RECENTLY, NOT READ}}
-\newcommand{\okay}{\tblue{REVISED UNTIL HERE}}
-\newcommand{\fix}{\tred{FIX ME!}}
-\newcommand{\noneed}{\tblue{PROBABLY NOT NEEDED}}
-\newcommand{\figmiss}[1]{\textcolor{red}{MISSING FIGURE: #1}}
+\newcommand{\incomplete}{\tred{INCOMPLETEi }}
+\newcommand{\placeholder}{\tred{PLACEHOLDER }}
+\newcommand{\missing}{\tred{MISSING }}
+\newcommand{\unread}{\tred{OLD TEXT, NOT READ }}
+\newcommand{\recent}{\tblue{WRITTEN RECENTLY, NOT READ }}
+\newcommand{\okay}{\tblue{REVISED UNTIL HERE }}
+\newcommand{\fix}{\tred{FIX ME! }}
+\newcommand{\noneed}{\tblue{PROBABLY NOT NEEDED }}
+\newcommand{\figmiss}[1]{\textcolor{red}{MISSING FIGURE: #1 }}
 
 % --- Shortcuts for environments
 \newcommand{\bit}{\begin{itemize}}
