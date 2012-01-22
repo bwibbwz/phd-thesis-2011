@@ -37,6 +37,7 @@
 %\usepackage{lstpatch}
 \usepackage[nolists]{endfloat}
 \usepackage[version=3]{mhchem}
+\usepackage[final]{pdfpages}
 
 % --- New command definitions ---
 %\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
