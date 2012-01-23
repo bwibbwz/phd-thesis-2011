@@ -35,9 +35,10 @@
 %\usepackage{rotating}
 %\usepackage{listings}
 %\usepackage{lstpatch}
-\usepackage[nolists]{endfloat}
-\usepackage[version=3]{mhchem}
-\usepackage[draft]{pdfpages}
+\usepackage[nolists]{endfloat} % Put the figures at the end (and possibly list of figures = LTP)
+\usepackage[version=3]{mhchem} % Chemistry formulas
+\usepackage[draft]{pdfpages} % Used for including the papers
+\usepackage[notcite, notref]{showkeys} % Keep track of the labels
 
 % --- New command definitions ---
 %\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
