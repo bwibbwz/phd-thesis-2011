@@ -35,7 +35,7 @@
 %\usepackage{rotating}
 %\usepackage{listings}
 %\usepackage{lstpatch}
-\usepackage[nolists]{endfloat} % Put the figures at the end (and possibly list of figures = LTP)
+%\usepackage[nolists]{endfloat} % Put the figures at the end (and possibly list of figures = LTP)
 \usepackage[version=3]{mhchem} % Chemistry formulas
 \usepackage[draft]{pdfpages} % Used for including the papers
 %\usepackage[notcite, notref]{showkeys} % Keep track of the labels
@@ -82,6 +82,7 @@
 \newcommand{\figmiss}[1]{\textcolor{red}{MISSING FIGURE: #1}}
 \newcommand{\citemiss}{\textcolor{red}{[MISSING]}}
 \newcommand{\pending}{\textcolor{blue}{[NAME PENDING]}}
+\newcommand{\expand}{\textcolor{red}{EXPAND}}
 
 % --- Shortcuts for environments
 \newcommand{\bit}{\begin{itemize}}
