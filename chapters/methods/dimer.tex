@@ -4,8 +4,6 @@
 The Dimer algorithm~\cite{dimer-original-1999} is in essence a method for finding the eigenmode corresponding to the lowest eigenvalue of the Hessian, while performing no direct calculations of the second derivatives.
 This information is then used to locate \sap1s.
 
-%The Dimer method was inspired by Voter\cite{voter-hyperdynamics-1997}
-
 Given only an initial point, $\vR$, on a multidimensional function, $V(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only the function's values and its gradient, $\nabla V(\vR)$.
 Indirect information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (the minimum mode).
 Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima while using conventional techniques to move up-hill and locate the \sap1.
@@ -32,6 +30,7 @@ $\perp$ and $\parallel$ in superscripts refer to the specific component of the f
 $\text{t}$ in a superscript refers to the transformed force (\fref{eq:dimer-transform}),
 $\circlearrowright$ refers to the rotational force (\fref{eq:rotational-force}) and no superscript refers to the PES force.
 $\Dsep$ is the distance between dimer points (\fref{eq:dimer-separation} and $\uvn$ is the current minimum mode estimate.
+\recent
 }}
     \label{fig:dimer-force-overview}
   \end{center}
