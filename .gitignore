@@ -9,5 +9,6 @@
 *.ttt
 *.lot
 *.toc
+*.out
 
 thesis.pdf
