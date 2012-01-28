@@ -40,6 +40,7 @@
 \usepackage[draft]{pdfpages} % Used for including the papers
 %\usepackage[notcite, notref]{showkeys} % Keep track of the labels
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+\usepackage{hyperref}
 
 % --- New command definitions ---
 %\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
