@@ -3,20 +3,25 @@
 
 \bit
 \item Positioning this bit is rather difficult. Should it be in the "random stuff" section, the HTST section or the saddle-point methods section?
+\item \figmiss{I'd like to have a saddle for horse riding as a comparison here.}
 \eit
 
 Saddle points are stationary points, i.e. with zero gradient, on a multidimensional function, $f(\vR)$, that are neither maxima nor minima.
 
 \begin{figure}[h]
   \begin{center}
+  \subfigure[2D saddle point][2D saddle point, $f(x=0, y=0) = x^2 - y^2$. A minimum is the $x$ direction and a maximum in the $y$ direction]{
     \includegraphics[width=0.6\linewidth]{saddle-point}
+    \label{fig:2d-saddle-point}
+    }
+  \subfigure[1D saddle point][1D saddle point, $f(x=0) = x^3$. Neither a maximum nor a minimum but the gradient is vanishing.]{
+    \includegraphics[width=0.26\linewidth]{saddle-point-1d}
+    \label{fig:1d-saddle-point}
+    }
     \parbox{0.85\linewidth}{
-      \caption{A first order saddle point.
-      $f(x=0, y=0) = x^2 - y^2$. A minimum in the $x$ direction and a maximum in the $y$ direction.
-      \figmiss{I'd like to have a saddle for horse riding as a comparison here.}
-      \figmiss{1D: $f(x=0) = x^3$}
+      \caption{Examples of first order saddle points.
       }
-      \label{fig:2d-saddle-point}
+      \label{fig:saddle-points}
     }
   \end{center}
 \end{figure}
@@ -28,8 +33,10 @@ The order of the saddle point is decided by the amount of directions that are no
 As such, \fref{fig:2d-saddle-point} shows a first order saddle point on a two dimensional function.
 In this thesis, saddle points of order $N$ will be indicated by \sap{N} from here on.
 
-The Hessian at the \sap{} displayed in \fref{fig:2d-saddle-point} has one negative eigenvalue, however, a saddle point with one or more vanishing eigenvalues is also possible, such as the 1D example $f(x = 0) = x^3$, as seen in \fref{fig:1d-saddle-point}.
+The Hessian at the \sap{} displayed in \fref{fig:2d-saddle-point} has one negative eigenvalue, however, a saddle point with one or more vanishing eigenvalues is also possible, such as the 1D example $f(x = 0) = x^3$, seen in \fref{fig:1d-saddle-point}.
 
 Locating \sap{}s in multiple dimensions is a non-trivial task as only a limited number of steepest decent paths lead to each one while the majority lead to minima.
-A number of schemes have been suggested~\citemiss, two popular ones are discussed below, in \fref{sec:saddle-point-methods}: The Dimer method and the Nudged Elastic Band method.
+A number of schemes  for locating \sap{1}s have been suggested (see \cite{sp-mep-review-2002} for a reivew), out of which two popular ones are discussed below, in \fref{sec:saddle-point-methods}: The Dimer method and the Nudged Elastic Band method.
+Furthermore, an extension to these methods for finding higher order \sap{}s is presented in \fref{chap:erm}.
 
+In the context of atomic simulations, \sap{}s are very important in describing reactions and reaction rates.
