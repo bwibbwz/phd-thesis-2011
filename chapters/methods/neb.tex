@@ -1,8 +1,6 @@
 \subsection{Nudged Elastic Band}
 \label{sec:neb}
 
-\figmiss{NEB force diagram}
-
 \figmiss{Initial and final paths on a PES}
 
 Finding Steepest Decent Paths (SDPs) from a given point is simple by following the gradient with a small step size.
@@ -13,15 +11,16 @@ The Nudged Elastic Band (NEB) algorithm is concerned with aligning a path with c
   \begin{center}
     \includegraphics[width=0.6\linewidth]{neb-force-overview}
 \parbox{0.85\linewidth}{\caption{An overview schematic of the force components acting within the NEB method.
-%$\vR_\text{A}$ and $\vR_0$ are the positions of the dimer images with the greyed out $\vR_\text{B}$ as the virtual image (see \fref{eq:dimer-point-extrapolate}).
-%Each force component is labeled with super- and subscripts as follow:
-%$0$, $\text{A}$ and $\text{B}$ in subscripts refer to at which point they are calculated,
-%$\perp$ and $\parallel$ in superscripts refer to the specific component of the full force (perpendicular and parallel to the minimum mode estimate, respectively),
-%$\text{t}$ in a superscript refers to the transformed force (\fref{eq:dimer-transform}),
-%$\circlearrowright$ refers to the rotational force (\fref{eq:rotational-force}) and no superscript refers to the PES force.
-%$\Dsep$ is the distance between dimer points (\fref{eq:dimer-separation} and $\uvn$ is the current minimum mode estimate.
-}}
-    \label{fig:neb-force-overview}
+$\vR_{[i+1, i, i-1]}$ represent the positions of each image.
+The label $i$ is ommited from the force symbols as all of them originate at image number $i$.
+$\vF$ (orange) is the PES force,
+$\vF^\perp$ (red) is the force perpendicular to the tangent (\fref{eq:neb-real-force}),
+$\vF^\text{S}$ (blue) is the spring force (\fref{eq:neb-spring-force}) and
+$\vF^\text{eff}$ (purple) is the effective force (\fref{eq:neb-effective-force}).
+The tangent, $\uvt$, is the unit vector pointing towards the neighboring heigher energy image, $i+1$, while $i-1$ is lower in energy.
+}
+\label{fig:neb-force-overview}
+}
   \end{center}
 \end{figure}
 
@@ -43,7 +42,7 @@ A more recent, but succesful, way is to depend on the norms to the neighboring i
 where $k$, is still present as a stiffness parameter.
 By varying the stiffness parameter for each image, it is possible to increase the density of images in interesting areas, such as near \sap{1}s.~\cite{neb-ci-2000}
 
-Combining the forces from equations \ref{eq:neb-real-force} and \ref{eq:neb-spring-force} into an effective force,
+Combining the forces from equations \ref{eq:neb-real-force} and \ref{eq:neb-spring-force} into an effective force, as seen in \fref{fig:neb-force-overview},
 \beq{neb-effective-force}
 \vF_i^\text{eff} = \vF_i^\perp + \vF_i^\text{S},
 \eeq
@@ -54,9 +53,7 @@ will iteratively bring the path to a discretisised version of the MEP, with even
 Since the path is discretisised, the tangent is not trivially defined.
 Multiple possibilities for its definition are available but one that considers only the displacement to the neighboring, higher energy, image has been succesful in minimising kinks in the paths.~\cite{neb-tangent-2000}
 
-Each image will, energy-wise, fit into one of four cases:
-%For a given image, numbered $i$, check its energy in relation with the neighboring images.
-%It will fit into one of four cases:
+Each image, $i$, will, energy-wise, fit into one of four cases:
 \ben{neb-tangent-cases}
 \item $E_{i-1} < E_i < E_{e+1}$
 \item $E_{i-1} > E_i > E_{e+1}$
