@@ -36,7 +36,7 @@ $\Dsep$ is the distance between dimer points (\fref{eq:dimer-separation} and $\u
   \end{center}
 \end{figure}
 
-Inspired by the hyperdynamics method by Voter~\cite{voter-hyperdynamics-1997}.
+\tblue{Inspired by the hyperdynamics method by Voter~\cite{voter-hyperdynamics-1997}.}
 
 Estimating the second derivative of $V$ along a given unit vector, $\uvs$, at point $\vR$ can be done numerically, using finite differences.
 For the occasion, a pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close to current point $\vR_0$, such that
@@ -65,7 +65,7 @@ Rotating $\uvs$ around $\vR_0$, according to the rotational force,
 until $C_\vs$ is minimized yields an estimate for, both, the lowest eigenvalue, $C_\text{min} = C_\vs$, of the Hessian and its corresponding eigenmode, the minimum mode, $\uvn$.
 The rotation happens in a plane spanned by $\uvn$ and $\uvT \equiv \vF̣^\circlearrowright / \left| \vF^\circlearrowright \right|$
 A number of rotational schemes can be employed, such as a finite difference, conjugate gradient, approximation~\cite{dimer-original-1999} and, as described in~\cite{dimer-heyden-2005}, by expanding the curvature, exactly, as a Fourier series.
-Both of the mentioned schemes require extra calculations to figure out the optimal angle of rotation but the latter is better suited when the accuracy and/or consistency of the force cannot be guaranteed~\cite{dimer-heyden-2005}.
+Both of the mentioned schemes require extra calculations to figure out the optimal angle of rotation but the latter is better suited when the accuracy and/or consistency of the force cannot be guaranteed~\cite{dimer-heyden-2005}, e.g. when doing DFT calculations.
 
 Often $\vF_0$ is calculated to get a more accurate translational force, this can be taken advantage of in order to cut down the amount of computations.
 Assuming a quadratic behaviour near the dimer, the gradient at either of the dimer's endpoints can be extrapolated from the other endpoint and the central point~\cite{dimer-olsen-2004},
@@ -80,8 +80,7 @@ These, however, yield much less reductions than the extrapolation in \fref{eq:di
 
 \subsubsection{Gradient Transformation}
 Once a minimum mode estimate is available for the current point, $\vR_0$, it is possible to transform the force so that any \sap1 is transformed to a minimum.
-As discussed above, \sap1s are stationary (with zero gradient) and the Hessian has one and only one negative eigenvalue.
-%As discussed above, saddle points are stationary and the Hessian has as many negative eigenvalues as the order of the saddle point, i.c. for a \sap1 the Hessian has one and only one negative eigenvalue.
+As discussed above, \sap{1}s are stationary (with zero gradient) and the Hessian has one and only one negative eigenvalue.
 The goal is thus to maximize the function's value along the minimum mode while minimizing it along all other eigenmodes.
 This can be achieved, simply, by inverting any force components along the minimum mode,
 \beq{dimer-transform}
