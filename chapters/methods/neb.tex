@@ -9,6 +9,22 @@ Finding Steepest Decent Paths (SDPs) from a given point is simple by following t
 On the other hand, finding specific SDPs that end at minima is not.
 The Nudged Elastic Band (NEB) algorithm is concerned with aligning a path with certain SDP paths, the MEP, leading to two minima from a common \sap{1}.
 
+\begin{figure}[t]
+  \begin{center}
+    \includegraphics[width=0.6\linewidth]{neb-force-overview}
+\parbox{0.85\linewidth}{\caption{An overview schematic of the force components acting within the NEB method.
+%$\vR_\text{A}$ and $\vR_0$ are the positions of the dimer images with the greyed out $\vR_\text{B}$ as the virtual image (see \fref{eq:dimer-point-extrapolate}).
+%Each force component is labeled with super- and subscripts as follow:
+%$0$, $\text{A}$ and $\text{B}$ in subscripts refer to at which point they are calculated,
+%$\perp$ and $\parallel$ in superscripts refer to the specific component of the full force (perpendicular and parallel to the minimum mode estimate, respectively),
+%$\text{t}$ in a superscript refers to the transformed force (\fref{eq:dimer-transform}),
+%$\circlearrowright$ refers to the rotational force (\fref{eq:rotational-force}) and no superscript refers to the PES force.
+%$\Dsep$ is the distance between dimer points (\fref{eq:dimer-separation} and $\uvn$ is the current minimum mode estimate.
+}}
+    \label{fig:neb-force-overview}
+  \end{center}
+\end{figure}
+
 An initial guess of the path is commonly a, discretisised, linear interpolation bewteen the minima but any guess is suitable as long as the force can be calculated.
 Each of the discretisation points is referred to as an image and is simply a replica of the system in question but with different coordinates from the other images.
 Each image, $i$, feels two separate forces.
