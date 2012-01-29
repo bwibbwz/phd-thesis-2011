@@ -73,12 +73,14 @@ and
 \uvt_i = \frac{\vt_i^-}{\left| \vt_i^- \right|} \quad \text{if} \quad E_{i-1} > E_i > E_{e+1}.
 \eeq
 The other two cases occur when the image is either a local maximum or a local minimum.
-In these latter cases a linear combination --- controlled by the difference in energy --- of the possible tangents is used, in order to avoid any artifacts due to discontinuity.
+In these latter cases a weighted average
+--- controlled by the difference in energy, $\Delta{}E = \left[ \left| E_{i+1} - E_i \right|, \left| E_{i-1} - E_i \right| \right]$ ---
+of the neighboring tangents is used, in order to avoid any artifacts due to discontinuity,
 \beq{neb-tangent-minmax}
-\vt_i = \vt_i^+ \missing
+\uvt_i = \frac{\vt_i^+ \upsilon_i^\pm + \vt_i^- \upsilon_i^\mp}{\left| \vt_i^+ \upsilon_i^\pm + \vt_i^- \upsilon_i^\mp \right|} \quad \text{if} \quad E_{i\pm1} > E_{i\mp1},
+%\vt_i = \vt_i^+ \upsilon_i^\text{min} + \vt_i^- \upsion_i^\text{max} \quad \text{if} \quad E_{i+1} < E_{i-1}
 \eeq
-
-\incomplete
+where $\upsilon_i^+ = \text{max}(\Delta{}E)$ and $\upsilon_i^- = \text{min}(\Delta{}E)$ are the weights.
 
 \subsubsection{Finding the Exact Saddle Point}
 The force modifications described above do not guarantee that an image will be exactly at the \sap{1} in question once converged.
