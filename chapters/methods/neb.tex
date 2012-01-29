@@ -35,7 +35,7 @@ However, only the component perpendicular to the path is retained,
 where $\uvt$ is the tangent to the path.
 Second, there is a force acting purely along the tangent, which is tasked with equally spacing the images along the path.
 There are multiple ways to implement this force, the original implementation of NEB~\cite{neb-original-1998} modelled a spring between each set of neighboring images with a tunable spring constant, $k$.
-A more recent, but succesful, way is to depend on the norms to the neighboring images instead of the full vectors~\cite{neb-tangent-2000},
+A more recent, and succesful, version of the spring force, depends on the norms to the neighboring images instead of the full vectors~\cite{neb-tangent-2000},
 \beq{neb-spring-force}
 \vF_i^\text{S} = k(\left| \vR_{i+1} - \vR_i \right| - \left| \vR_i - \vR_{i-1}\right|),
 \eeq
@@ -88,7 +88,7 @@ By decoupling the top energy image from the spring force it becomes independant 
 \beq{neb-ci-transform}
 \vF_{i_\text{max}}^\text{eff} = \vF_i - (\vF_i \cdot \uvt_i)\uvt_i,
 \eeq
-where $i_\text{max}$ refers to the image with the highest energy.
+where $i_\text{max}$ refers to the image with the highest energy.~\cite{neb-ci-2000}
 
 %\subsubsection{Other Similar methods}
 %\tblue{Is this a section we'd like, where we could cite the various methods and reviews?}
