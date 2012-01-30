@@ -56,6 +56,7 @@
 % --- Vector shortcuts ---
 \newcommand{\vF}{\vect{F}}
 \newcommand{\vR}{\vect{R}}
+\newcommand{\vr}{\vect{r}}
 \newcommand{\vs}{\vect{s}}
 \newcommand{\uvs}{\hat{\vs}}
 \newcommand{\vt}{\vect{\uptau}}
