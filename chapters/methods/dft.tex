@@ -2,43 +2,42 @@
 \label{sec:methods-QM}
 
 With increased computing power and, in particular, advances in parallel algortims, it is now possible to calculate a range of physical properties for materials on the atomic level without the use of any experimental parameters.
-
+Such \textit{ab initio} (from the beginning) methods ...
 \expand
 
 \subsection{The Electronic Structure Problem}
-The Schr\"odinger equation is the quantum analoge of Newton's equations of motion and thus governs the motions of the quantum system in question and its observables.
+The Schr\"odinger equation is the quantum analoge of Newton's equations of motion and thus governs the motions of the quantum system in question as well as its observables.
 \expand
 
-The Born-Oppenheimer approximation (\fref{sec:born-oppenheimer}) allows the separation of Hamiltonian to an electronic part and a nuclear part.\expand
+The Born-Oppenheimer approximation (\fref{sec:born-oppenheimer}) allows the separation of the Hamiltonian to an electronic part and a nuclear part.
+Thus, the positions of the nucleii, $\vR_I$ only enter the calculations as parameters.
+A full quantum treatment will not be discussed here.
 \expand
 
-%\subsubsection{The Schr\"odinger equation}
-%\label{sec:methods-schrodinger}
-A system of N electrons can be described by the Schr\"odinger equation,
+A non-relativistic system of N electrons is described by the time independant Schr\"odinger equation,
 \beq{eq:schrodinger-basic}
- \widehat{H}\Psi = E \Psi,
+ \widehat{H}\Psi = E\Psi,
 \eeq
-where $\Psi = \Psi(\textbf{r}_{1}, \textbf{r}_{2}, ... ,\textbf{r}_{N})$ is the wave function, depending on the spatial coordinates, $\textbf{r}_{i}$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian,
-\begin{equation}
- \widehat{H} = \widehat{K} + \widehat{U} + \widehat{v},
- \label{eq:generalHamiltonian}
-\end{equation}
-with
-\begin{equation}
- \widehat{K} = \displaystyle\sum_{{i}} - \frac{1}{2}\nabla^2_{i}
- \label{eq:generalHamiltonianKinetic},
-\end{equation}
-\begin{equation}
- \widehat{U} = \displaystyle\sum_{{i}}\sum_{{j}>{i}}\frac{1}{r_{ij}}
- \label{eq:generalHamiltonianElectronElectron},
-\end{equation}
-and
-\begin{equation}
- \widehat{v} = \displaystyle\sum_{i}\sum_{A}\frac{1}{r_{iA}} + V_\mathrm{ext}
- \label{eq:generalHamiltonianEnviroment}
-\end{equation}
-where $\widehat{K}$ is the kinetic part, $\widehat{U}$ is the interaction between electron pairs and $\widehat{v}$ is the interaction between electrons and the environment, called the ionic and external part. In equation \ref{eq:generalHamiltonianElectronElectron} $r_{ij}$ is the distance from electron $j$ to electron $i$. In equation \ref{eq:generalHamiltonianEnviroment} the $\frac{1}{r_{iA}}$ term is the interaction between the electrons and the nucleus while $V_\mathrm{ext}$ is any other external influence. 
-%\\-What is in $V_\mathrm{ext}$ ? $V_{xc}$ ... I think I answer that in the K-S section.
+where $\Psi \equiv \Psi(\vr_1, \vr_2, ... ,\vr_N)$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian.
+The hamiltonian is often separated into three terms: the kinetic term,
+\beq{eq:hamiltonian-kinetic}
+ \widehat{K} = \sum_i^N -\frac{\nabla^2_i}{2},
+\eeq
+the electron-electron interaction term,
+\beq{eq:hamiltonian-electron-electron}
+ \widehat{V}_\text{e-e} = \sum_i^N\sum_{j>i}^N\frac{1}{\left| \vr_i - \vr_j \right|},
+\eeq
+and the electron-environment interaction term,
+\beq{eq:hamiltonian-environment}
+ \widehat{V}_\text{env} = \sum_i^N \sum_I^{N_I} \frac{1}{\left| \vr_i - \vR_I \right|} + V_\text{ext},
+\eeq
+where the $N_I$ is the number of nuclei and $V_\text{ext}$ is any further external influence, e.g. an applied electric field.
+Combining the above terms, yields the full hamiltonian,
+\beq{eq:hamiltonian}
+ \widehat{H} = \widehat{K} + \widehat{V}_\text{e-e} + \widehat{V}_\text{env}.
+\eeq
+
+Innocent it may look but solving the Schr\"odinger equation is a daunting task and in most cases significant approximations must be made.
 
 \subsection{Density Functional Theory}
 \label{sec:methods-dft}
