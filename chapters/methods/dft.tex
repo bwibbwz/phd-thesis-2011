@@ -14,30 +14,19 @@ Thus, the positions of the nucleii, $\vR_I$ only enter the calculations as param
 A full quantum treatment will not be discussed here.
 \expand
 
-A non-relativistic system of N electrons is described by the time independant Schr\"odinger equation,
-\beq{eq:schrodinger-basic}
+A non-relativistic system of $N$ electrons (and $N_I$ nuclei) is described by the time independant Schr\"odinger equation,
+\beq{schrodinger-basic}
  \widehat{H}\Psi = E\Psi,
 \eeq
 where $\Psi \equiv \Psi(\vr_1, \vr_2, ... ,\vr_N)$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian.
-The hamiltonian is often separated into three terms: the kinetic term,
-\beq{eq:hamiltonian-kinetic}
- \widehat{K} = \sum_i^N -\frac{\nabla^2_i}{2},
+The hamiltonian,
+\beq{hamiltonian}
+\widehat{H} = -\sum_i^N \frac{\nabla^2_i}{2} - \sum_i^N \sum_{j>i}^N \frac{1}{\left| \vr_i - \vr_j \right|} - \sum_i^N \sum_I^{N_I} \frac{1}{\left| \vr_i - \vR_I \right|} + V_\text{ext},
 \eeq
-the electron-electron interaction term,
-\beq{eq:hamiltonian-electron-electron}
- \widehat{V}_\text{e-e} = \sum_i^N\sum_{j>i}^N\frac{1}{\left| \vr_i - \vr_j \right|},
-\eeq
-and the electron-environment interaction term,
-\beq{eq:hamiltonian-environment}
- \widehat{V}_\text{env} = \sum_i^N \sum_I^{N_I} \frac{1}{\left| \vr_i - \vR_I \right|} + V_\text{ext},
-\eeq
-where the $N_I$ is the number of nuclei and $V_\text{ext}$ is any further external influence, e.g. an applied electric field.
-Combining the above terms, yields the full hamiltonian,
-\beq{eq:hamiltonian}
- \widehat{H} = \widehat{K} + \widehat{V}_\text{e-e} + \widehat{V}_\text{env}.
-\eeq
+consists of 4 terms.
+First there is the kinetic energy of the electrons, then the electron-electron interaction, followed by the electron-nuclei interaction and finally any external influence (e.g. an applied electric field).
 
-Innocent it may look but solving the Schr\"odinger equation is a daunting task and in most cases significant approximations must be made.
+Though it may look innocent, solving the Schr\"odinger equation is a daunting task and in most cases significant approximations must be made.
 
 \subsection{Density Functional Theory}
 \label{sec:methods-dft}
