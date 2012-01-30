@@ -18,7 +18,7 @@ A non-relativistic system of $N$ electrons (and $N_I$ nuclei) is described by th
 \beq{schrodinger-basic}
  \widehat{H}\Psi = E\Psi,
 \eeq
-where $\Psi \equiv \Psi(\vr_1, \vr_2, ... ,\vr_N)$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian,
+where $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots ,\vr_N)$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian,
 \beq{hamiltonian}
 \widehat{H} = -\sum_i^N \frac{\nabla^2_i}{2} - \sum_i^N \sum_{j>i}^N \frac{1}{\left| \vr_i - \vr_j \right|} - \sum_i^N \sum_I^{N_I} \frac{1}{\left| \vr_i - \vR_I \right|} + V_\text{ext},
 \eeq
@@ -34,10 +34,13 @@ One of the most popular and common teqchniques for solving the electronic struct
 However, in practice, approximations must be made for all but the most simple systems.
 Nevertheless, DFT has produced many interesting and good results and is now a well established formalism that is continually being reviewed and improved.
 Furthermore, the \textit{ab initio} nature of DFT makes it a great companion to experimental research, not only for comparison and prediction of interesting materials but also to assist and expand upon data analysis.
-%The founding father of DFT is Walter Kohn who received the Nobel Prize in chemistry for his development of the density functional theory \cite{kohn1999} in 1998 along with John Pople who received the prize for his development of computational methods in quantum chemistry \cite{pople1999}.
+
+The success of DFT has yielded one of its founders, Walter Kohn, one half of the Nobel Prize in chemistry in 1998, for the development of the density functional theory~\cite{kohn1999} along with John Pople for his development of computational methods in quantum chemistry~\cite{pople1999}.
 
 \subsubsection{The Hohenberg-Kohn Theorem}
-According to the Hohenberg-Kohn (H-K) theorem there is a one-to-one correspondence between the wavefunction and the electron density of the ground state. Once this has been established, it is simple to see that the total energy is a unique functional of the electron density, $\rho(\textbf{r})$, which is an observable while the wavefunction is not,
+The origin of DFT lies in the Hohnberg-Kohn theorem, which reformulates the electronic structure problem to depend on the $3$ dimensional, ground state, electron density, $\rho(\vr)$, instead of the $3N$ dimensional wavefunction, $\Psi(\vr_1, \vr_2, \ldots, \vr_N)$.
+According to the Hohenberg-Kohn theorem~\citemiss there is a one-to-one correspondence between the wavefunction and the electron density of the ground state.
+Once this has been established, it is simple to see that the total energy is a unique functional of the electron density, $\rho(\textbf{r})$, which is an observable while the wavefunction is not,
 \begin{equation}
 \label{eq:H-KenergyDensity}
  E[\rho] = \langle \Psi[\rho] | \widehat{H} | \Psi[\rho] \rangle.
