@@ -18,13 +18,12 @@ A non-relativistic system of $N$ electrons (and $N_I$ nuclei) is described by th
 \beq{schrodinger-basic}
  \widehat{H}\Psi = E\Psi,
 \eeq
-where $\Psi \equiv \Psi(\vr_1, \vr_2, ... ,\vr_N)$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian.
-The hamiltonian,
+where $\Psi \equiv \Psi(\vr_1, \vr_2, ... ,\vr_N)$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian,
 \beq{hamiltonian}
 \widehat{H} = -\sum_i^N \frac{\nabla^2_i}{2} - \sum_i^N \sum_{j>i}^N \frac{1}{\left| \vr_i - \vr_j \right|} - \sum_i^N \sum_I^{N_I} \frac{1}{\left| \vr_i - \vR_I \right|} + V_\text{ext},
 \eeq
-consists of 4 terms.
-First there is the kinetic energy of the electrons, then the electron-electron interaction, followed by the electron-nuclei interaction and finally any external influence (e.g. an applied electric field).
+which consists of 4 terms.
+First there is the kinetic energy of the electrons, then the electron-electron interaction, followed by the electron-nuclei interaction and finally any external influence (e.g. an applied electric field) is represented by a single term.
 
 Though it may look innocent, solving the Schr\"odinger equation is a daunting task and in most cases significant approximations must be made.
 
