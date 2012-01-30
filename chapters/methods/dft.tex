@@ -1,29 +1,23 @@
-\section{Density Functional Theory}
-\label{sec:dft}
+\section{Quantum Calculations}
+\label{sec:methods-QM}
 
-% ------------------------------------------------------------------
-With increased computing power and, in particular, advances in parallel algortims, it is now possible to calculate a range of physical properties for materials on the atomic level.
-One of the most popular and common teqchniques is the Density Functional Theory (DFT) which can, from first principles (\textit{ab initio}), exactly (in theory) solve the Schr\"odinger equation (see \fref{sec:schrodinger} below).
-However, in practice, approximations must be made for all but the most simple systems.
-Nevertheless, DFT has produced many interesting and good results and is now a well established formalism that is continually being reviewed and improved.
+With increased computing power and, in particular, advances in parallel algortims, it is now possible to calculate a range of physical properties for materials on the atomic level without the use of any experimental parameters.
 
-\recent
+\expand
 
-\unread
-%With the advances in computing power in recent years, both with more powerful computers and, in particular, parallel computing, intensive calculations have become more viable.
-%One such method is Density Functional Theory (DFT), which can be used to approximate a solution to the Scr\"odinger equation (section \ref{sec:schrodinger}) for many-electron systems using \textit{ab initio} (from the beginning) methods. 
+\subsection{The Electronic Structure Problem}
+The Schr\"odinger equation is the quantum analoge of Newton's equations of motion and thus governs the motions of the quantum system in question and its observables.
+\expand
 
-%What is, perhaps, most remarkable about DFT is the fact that it is founded in \textit{ab initio} methods and as such has not been fitted to any experimental results on chemical bonding.
+The Born-Oppenheimer approximation (\fref{sec:born-oppenheimer}) allows the separation of Hamiltonian to an electronic part and a nuclear part.\expand
+\expand
 
-%The founding father of DFT is Walter Kohn who received the Nobel Prize in chemistry for his development of the density functional theory \cite{kohn1999} in 1998 along with John Pople who received the prize for his development of computational methods in quantum chemistry \cite{pople1999}.
-
-\subsubsection{The Schr\"odinger equation}
-\label{sec:schrodinger}
+%\subsubsection{The Schr\"odinger equation}
+%\label{sec:methods-schrodinger}
 A system of N electrons can be described by the Schr\"odinger equation,
-\begin{equation}
-\label{eq:schrodingerBasic}
+\beq{eq:schrodinger-basic}
  \widehat{H}\Psi = E \Psi,
-\end{equation}
+\eeq
 where $\Psi = \Psi(\textbf{r}_{1}, \textbf{r}_{2}, ... ,\textbf{r}_{N})$ is the wave function, depending on the spatial coordinates, $\textbf{r}_{i}$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian,
 \begin{equation}
  \widehat{H} = \widehat{K} + \widehat{U} + \widehat{v},
@@ -45,6 +39,15 @@ and
 \end{equation}
 where $\widehat{K}$ is the kinetic part, $\widehat{U}$ is the interaction between electron pairs and $\widehat{v}$ is the interaction between electrons and the environment, called the ionic and external part. In equation \ref{eq:generalHamiltonianElectronElectron} $r_{ij}$ is the distance from electron $j$ to electron $i$. In equation \ref{eq:generalHamiltonianEnviroment} the $\frac{1}{r_{iA}}$ term is the interaction between the electrons and the nucleus while $V_\mathrm{ext}$ is any other external influence. 
 %\\-What is in $V_\mathrm{ext}$ ? $V_{xc}$ ... I think I answer that in the K-S section.
+
+\subsection{Density Functional Theory}
+\label{sec:methods-dft}
+
+One of the most popular and common teqchniques for solving the electronic structure problem is the Density Functional Theory (DFT) which can, from first principles (\textit{ab initio}), exactly (in theory) solve the Schr\"odinger equation.
+However, in practice, approximations must be made for all but the most simple systems.
+Nevertheless, DFT has produced many interesting and good results and is now a well established formalism that is continually being reviewed and improved.
+Furthermore, the \textit{ab initio} nature of DFT makes it a great companion to experimental research, not only for comparison and prediction of interesting materials but also to assist and expand upon data analysis.
+%The founding father of DFT is Walter Kohn who received the Nobel Prize in chemistry for his development of the density functional theory \cite{kohn1999} in 1998 along with John Pople who received the prize for his development of computational methods in quantum chemistry \cite{pople1999}.
 
 \subsubsection{The Hohenberg-Kohn Theorem}
 According to the Hohenberg-Kohn (H-K) theorem there is a one-to-one correspondence between the wavefunction and the electron density of the ground state. Once this has been established, it is simple to see that the total energy is a unique functional of the electron density, $\rho(\textbf{r})$, which is an observable while the wavefunction is not,
@@ -111,6 +114,9 @@ with
  s(\vect{r}) = \frac{\left|\nabla \rho(\vect{r})\right|}{2\sqrt[3]{3\pi^2\rho(\vect{r})} \rho(\vect{r})}.
 \end{equation}
 %The calculations in chapter \ref{ch:japan} use GGA based on the PBE functional \cite{perdew1996} while the calculations in chapter \ref{ch:dacapo} use GGA based on the RPBE functional \cite{hammer1999}.
+
+\subsection{Implementation of DFT}
+\label{sec:methods-dft-implemetnation}
 
 \subsubsection{The Plane Wave Basis Set}
 In implementing DFT calculations, the Kohn-Sham wavefunctions are expanded in a particular basis set. In our work plane waves are used under periodic boundary conditions in accordance with Bloch's theorem,
