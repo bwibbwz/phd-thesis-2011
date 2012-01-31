@@ -66,6 +66,7 @@
 \newcommand{\uvm}{\hat{\vn}^\text{min}}
 \newcommand{\vT}{\vect{\uptheta}}
 \newcommand{\uvT}{\hat{\vT}}
+\newcommand{\vQ}{\vect{Q}}
 
 % --- Stuff that might change definitions ---
 \newcommand{\Dsep}{\Delta_\text{D}}
