@@ -23,3 +23,42 @@ Since there is no guarantee that the eigenmodes align with the tangent and minim
 Early tests of releasing the constraint on some of the images were not reliable.
 
 \incomplete
+
+\subsubsection{\blue{Informal Babble}}
+
+I have two ideas that I'm currently working on.
+\paragraph{The first scheme}
+By gradually removing $\vF^{\text{S}\perp}$, the path is brought closer to the true path.
+There are multiple ways to do this but the way I do it currently is to detect the corner cutting and its direction.
+When the perpendicular spring force and the perpendicular transformed force are pointing in opposide directions,
+\beq{asdf1}
+\frac{\vF^{\text{t}\perp}_i}{|\vF^{\text{t}\perp}_i|} \approx -\frac{\vF^{\text{S}\perp}_i}{|\vF^{\text{S}\perp}_i|},
+\eeq
+and their length is the same,
+\beq{asdf2}
+|\vF^{\text{t}\perp}_i| \approx |\vF^{\text{S}\perp}_i|,
+\eeq
+corner cutting has taken place.
+When these criteria are satisfied, $\vF^{\text{S}\perp}_i$ is permanently decreased by a factor, $\xi_i$,
+\beq{asdf3}
+\vF^{\text{S}\perp\text{eff}}_i = \vF^{\text{S}\perp\text{full}}_i \xi_i.
+\eeq
+Currently there is no good way to decide how much $\xi_i$ is decreased when corner cutting is detected but it should be easy to devise a scheme.
+
+This has worked well on the hop-hop test system in multiple dimensions to reduce the corner cutting significantly (90\%) but not fully as the band becomes unstable (in particular when many images are used, above 40).
+
+\paragraph{The second scheme}
+It seems that there are two conflicting factors that hinder finding the true path.
+\bit
+\item When the tangent and dimer are kept perpendicular to each other, kinks seem to form in the band (I have not managed to fully understand why) and once this happens, everything goes bad quickly
+\item This is less so when the dimer is allowed to freely rotate but allowing this in systems where the true eigenmodes do not align with the ridge yields forces that quickly pull the band far off the ridge. 
+\eit
+
+Initial testing (on the hop-hop system) shows that changing the eigenmode-tangent orthogonality constraint to use a different tangent ($\vR_{i+1} - \vR_{i-1}$) which is more similar to the real ridge when an image gets slightly off the ridge, yields up to $100\%$ reduction of corner cutting.
+
+The corner cutting is measured by dotting together the effective force and the tangent,
+\beq{asdf4}
+\text{measure} = \frac{\vF_i^\text{eff}}{|\vF_i^\text{eff}|} \cdot \uvt,
+\eeq
+When this is $1$, there is no corner cutting.
+
