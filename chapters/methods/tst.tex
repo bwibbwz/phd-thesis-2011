@@ -4,21 +4,28 @@
 
 Transition State Theory (TST) is a formalism dedicated to providing reaction rates in a purely theoretical setting where running dynamical trajectories of the required length is infeasible.
 
-\recent
-
 \incomplete
 
+\subsection{Motivation}
+
 \subsubsection{The Time-scale Problem}
+
 \figmiss{Timescale problem (I have one somewhere, just need to polish it and stick it in)}
+
 In atomistic simulations there is a often a clear separation of timescales between the most interesting events.
 With local vibration of the atoms being very fast, typically on the order of $10^14 \unit{Hz}$~\citemiss,
-while non-local reordering of atoms, motion between minima on the PES, can be considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$~\citemiss.
-Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^12$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
+while non-local reordering of atoms, motion between minima on the PES, can be considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$ for a system with an energy barrier of $0.5 \unit{eV}$.~\citemiss
+Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^10$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
 
 Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, e.g. by minimising vibrations to allow for longer timesteps~\citemiss, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
 
 In the problem lies also the solution, since there is such a clear separation of time-scales, it is possible to treat the problem with statistical methods.
 Essentially dealing with the vibrational areas of the PES (the basins) by averaging over them and seperately locating ares of transitions.
+
+\subsection{The Basics}
+
+\subsubsection{The Transition State}
+\placeholder
 
 \subsubsection{Statistical Methods}
 
@@ -44,7 +51,11 @@ Maxwell distribution (velocity)...
 \eit
 \placeholder
 
-\subsubsection{Reaction Rates}
+\subsection{Reaction Rates}
+
+First consider the total energy of the system
+
+
 \placeholder
 
 \subsubsection{Variational TST}
@@ -62,3 +73,12 @@ Maxwell distribution (velocity)...
 %A prevailant misconception regarding TST is that there is an "activated complex" that every rare-event becomes before moving to the product state
 %
 %\placeholder
+
+\subsection{Methods for Metadynamics}
+\bit
+\item Some references here would be nice but \tblue{not a priority}.
+\item Hyperdynamics
+\item AKMC
+\eit
+\placeholder
+
