@@ -9,23 +9,16 @@ Transition State Theory (TST) is a formalism dedicated to providing reaction rat
 \incomplete
 
 \subsubsection{The Time-scale Problem}
-\bit
-\item Don't undersell current long time MD simulations
-\eit
 \figmiss{Timescale problem (I have one somewhere, just need to polish it and stick it in)}
 In atomistic simulations there is a often a clear separation of timescales between the most interesting events.
-With local vibration of the atoms being very fast, typically on the order of \missing,
-while non-local reordering of atoms, or reactions?, can be considered as rare-events, typically occur on the order of \missing.
+With local vibration of the atoms being very fast, typically on the order of $10^14 \unit{Hz}$~\citemiss,
+while non-local reordering of atoms, motion between minima on the PES, can be considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$~\citemiss.
+Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^12$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
 
-%This separation makes it nearly impossible to perform dynamical trajectories that include both types of events.
-%In fact, such calculations would generally take a time on the order of \missing.
-Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest.
+Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
 
-In the problem lies also the solution ...
-
-\recent
-
-\incomplete
+In the problem lies also the solution, since there is such a clear separation of time-scales, it is possible to treat the problem with statistical methods.
+Essentially defining surfaces that separate the basins where the vibrations occur and then averaging over each basin.
 
 \subsubsection{Statistical Methods}
 
@@ -65,8 +58,7 @@ Maxwell distribution (velocity)...
 \item No long discussion on QTST.
 \eit
 
-\subsubsection{Misconception???}
-A prevailant misconception regarding TST is that there is an "activated complex" that every rare-event becomes before moving to the product state
-
-\placeholder
-
+%\subsubsection{Misconception???}
+%A prevailant misconception regarding TST is that there is an "activated complex" that every rare-event becomes before moving to the product state
+%
+%\placeholder
