@@ -15,10 +15,10 @@ With local vibration of the atoms being very fast, typically on the order of $10
 while non-local reordering of atoms, motion between minima on the PES, can be considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$~\citemiss.
 Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^12$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
 
-Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
+Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, e.g. by minimising vibrations to allow for longer timesteps~\citemiss, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
 
 In the problem lies also the solution, since there is such a clear separation of time-scales, it is possible to treat the problem with statistical methods.
-Essentially defining surfaces that separate the basins where the vibrations occur and then averaging over each basin.
+Essentially dealing with the vibrational areas of the PES (the basins) by averaging over them and seperately locating ares of transitions.
 
 \subsubsection{Statistical Methods}
 
