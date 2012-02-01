@@ -38,7 +38,6 @@
 %\usepackage[nolists]{endfloat} % Put the figures at the end (and possibly list of figures = LTP)
 \usepackage[version=3]{mhchem} % Chemistry formulas
 \usepackage[draft]{pdfpages} % Used for including the papers
-%\usepackage[notcite, notref]{showkeys} % Keep track of the labels
 %\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=up]{caption}
 \usepackage{hyperref}
@@ -74,6 +73,7 @@
 % --- New commands, macros and external packages for development purposes ---
 \usepackage{verbatim} % Comment environment.
 \usepackage{color} % To color indocument comments.
+%\usepackage[notcite, notref]{showkeys} % Keep track of the labels
 \newcommand{\tred}[1]{\textcolor{red}{#1}}
 \newcommand{\tblue}[1]{\textcolor{blue}{#1}}
 \newcommand{\incomplete}{\tred{INCOMPLETE}}
