@@ -51,11 +51,16 @@ This has worked well on the hop-hop test system in multiple dimensions to reduce
 It seems that there are two conflicting factors that hinder finding the true path.
 \bit
 \item When the tangent and dimer are kept perpendicular to each other, kinks seem to form in the band (I have not managed to fully understand why) and once this happens, everything goes bad quickly
-\item This is less so when the dimer is allowed to freely rotate but allowing this in systems where the true eigenmodes do not align with the ridge yields forces that quickly pull the band far off the ridge. 
+\item This  seems to be less of a problem when the dimer is allowed to freely rotate but allowing this in systems where the true eigenmodes do not align with the ridge yields forces that quickly pull the band far off the ridge. 
 \eit
 
-Initial testing (on the hop-hop system) shows that changing the eigenmode-tangent orthogonality constraint to use a different tangent ($\vR_{i+1} - \vR_{i-1}$) which is more similar to the real ridge when an image gets slightly off the ridge, yields up to $100\%$ reduction of corner cutting.
+Initial testing (on the hop-hop system) shows that changing the eigenmode-tangent orthogonality constraint to use a different tangent ($\vR_{i+1} - \vR_{i-1}$) which is more similar to the real ridge when an image gets slightly off the ridge, yields up to $100\%$ reduction of corner cutting, when used along with a complete removal of $\vF^{\text{S}\perp}$.
 
+The current tangent (which only depends on the displacement to the top energy image) is less accurate but works better due to stability issues (kinks do not form).
+
+It does seem that alining the dimer perpendicular to the ridge is essential because otherwise the significantly sized force that lies along the ridge (and should get "nudged" out) get deflected and produces a force in the wrong direction.
+
+\paragraph{Measuring corner cutting}
 The corner cutting is measured by dotting together the effective force and the tangent,
 \beq{asdf4}
 \text{measure} = \frac{\vF_i^\text{eff}}{|\vF_i^\text{eff}|} \cdot \uvt,
