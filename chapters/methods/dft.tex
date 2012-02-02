@@ -19,7 +19,7 @@ A non-relativistic system of $N$ electrons (and $N_I$ nuclei) is described by th
  \widehat{H}\Psi = E\Psi,
 \eeq
 where $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots ,\vr_N)$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian,
-\beq{hamiltonian}
+\beq{hamiltonian-full}
 \widehat{H} = -\sum_i^N \frac{\nabla^2_i}{2} - \sum_i^N \sum_{j>i}^N \frac{1}{\left| \vr_i - \vr_j \right|} - \sum_i^N \sum_I^{N_I} \frac{1}{\left| \vr_i - \vR_I \right|} + V_\text{env},
 \eeq
 which consists of 4 terms.
@@ -32,7 +32,7 @@ V_\text{ext} = \sum_i^N \sum_I^{N_I} \frac{1}{\left| \vr_i - \vR_I \right|} + V_
 Though it may look innocent, solving the Schr\"odinger equation, which is a second order partial derivative problem \tred{(is this correct?)}, is a daunting task and in most cases significant approximations must be made.
 
 \bit
-\item In particular, storing the wavefunction of a large system requires more data capacity than practical.
+\item In particular, storing the wavefunction of a large system requires more data capacity than practical. (Exponential wall)
 \eit
 
 \subsection{Density Functional Theory}
@@ -49,13 +49,18 @@ The success of DFT has yielded one of its founders, Walter Kohn, one half of the
 \eit
 
 \subsubsection{The Hohenberg-Kohn Theorem}
-The origin \tblue{(What about the Thomas-Fermi model)} of DFT lies in the Hohnberg-Kohn theorem, which reformulates the electronic structure problem to depend on the $3$ dimensional, ground state, electron density, $\rho(\vr)$, instead of the $3N$ dimensional wavefunction, $\Psi(\vr_1, \vr_2, \ldots, \vr_N)$.
-According to the first Hohenberg-Kohn theorem~\cite{hohenberg-kohn-1964}, any external term, $V_\text{ext}$, in \fref{eq:hamiltonian} yields a different electron density from any non-identical $V'_\text{ext}$ up to trivial additive constant.
+The origin of DFT lies in the Hohnberg-Kohn theorem, which reformulates the electronic structure problem to depend on the $3$ dimensional, ground state, electron density, $\rho(\vr)$, instead of the $3N$ dimensional wavefunction, $\Psi(\vr_1, \vr_2, \ldots, \vr_N)$.
+According to the first Hohenberg-Kohn theorem~\cite{hohenberg-kohn-1964}, any external term, $V_\text{ext}$, in \fref{eq:hamiltonian-full} yields a different electron density from any non-identical $V'_\text{ext}$ up to trivial additive constant.
 In other words: there is a one-to-one correspondence between the wavefunction and the electron density of the ground state and all observables that depend on the wavefunction can, thus, be extracted from the ground state density.
 This allows a re-formulation of the Schrodinger equation, with the energy as a functional of the electron density, 
 \beq{reformulated-schrodinger-equation}
 E[\rho] = \bra \Psi(\rho) | \widehat{H} | \Psi(\rho) \ket.
 \eeq
+Expanding the hamiltonian,
+\beq{reformulated-schrodinger-equation-universal}
+E[\rho] = \bra \ket
+\eeq
+
 Furthermore, the second Hohenberg-Kohn theorem~\cite{hohenberg-kohn-1964} adds a variational~\cite{variational-rayleigh-1870, variational-ritz-1909} way to discover the true ground state density and ground state energy,
 \beq{variational-density}
 E_0 = \min_\rho E[\rho].
@@ -64,6 +69,10 @@ E_0 = \min_\rho E[\rho].
 This work alone is still missing key elements in order to efficiently solve for the wavefunction and energy, namely the wavefunction to density mapping is not known.
 
 \subsubsection{The Kohn-Sham Equations}
+An indirect way to find the ground state 
+
+
+
 Currently there is no known way to perform the one-to-one mapping suggested by the H-K theorem. However in 1965 Kohn and Sham (K-S) published an indirect approach for calculating the energy functional $E[\rho]$ \cite{kohn1965}.
 They showed that the interacting many-electron system can be mapped, approximately, onto a non-interacting system of single electron states, $\{\phi_i\}$, where each electron is subject to the effective potential $v_{eff}(\vect{r})$ due to all other particles. These one electron wavefunctions can be produced by solving the K-S equations,
 \begin{equation}
