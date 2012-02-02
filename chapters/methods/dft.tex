@@ -46,7 +46,8 @@ The origin \tblue{(What about the Thomas-Fermi model)} of DFT lies in the Hohnbe
 According to the first Hohenberg-Kohn theorem~\cite{hohenberg-kohn-1964}, any external term, $V_\text{ext}$, in \fref{eq:hamiltonian} yields a different electron density from any non-identical, up to a constant, $V'_\text{ext}$.
 In other words: there is a one-to-one correspondence between the wavefunction and the electron density of the ground state and all observables that depend on the wavefunction can, thus, be extracted from the ground state density.
 Furthermore, the second Hohenberg-Kohn theorem~\cite{hohenberg-kohn-1964} adds a variational way to discover the true ground state density and thus ground state energy, $E_0$.
-The energy is a functional of the electron density, $E[\rho(\vr)]$...
+
+A re-formulation of the Schrodinger equation, shows the energy as a functional of the electron density, $E[\rho(\vr)] = \bra a |b | c \ket$\expand
 
 \tred{Revised until here}
 
@@ -61,6 +62,10 @@ The Raleigh-Ritz variational principle is used to minimize the energy and find t
 \label{eq:H-Kvariational}
 \end{equation}
 This is the basis of DFT, developed by Hohenberg and Kohn \cite{hohenberg1964} in 1964.
+
+\bit
+\item The earliest mention of DFT type calculations were made by Thomas~\citemiss and Fermi~\citemiss.
+\eit
 
 \subsubsection{The Kohn-Sham Equations}
 Currently there is no known way to perform the one-to-one mapping suggested by the H-K theorem. However in 1965 Kohn and Sham (K-S) published an indirect approach for calculating the energy functional $E[\rho]$ \cite{kohn1965}.
