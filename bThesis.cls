@@ -67,6 +67,10 @@
 \newcommand{\uvT}{\hat{\vT}}
 \newcommand{\vQ}{\vect{Q}}
 
+% Notation
+\newcommand{\bra}{\langle}
+\newcommand{\ket}{\rangle}
+
 % --- Stuff that might change definitions ---
 \newcommand{\Dsep}{\Delta_\text{D}}
 
