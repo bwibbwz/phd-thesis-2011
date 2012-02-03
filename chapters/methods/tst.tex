@@ -13,24 +13,30 @@ Transition State Theory (TST) is a formalism dedicated to providing reaction rat
 \figmiss{Timescale problem (I have one somewhere, just need to polish it and stick it in)}
 
 In atomistic simulations there is a often a clear separation of timescales between the most interesting events.
-With local vibration of the atoms being very fast, typically on the order of $10^14 \unit{Hz}$~\citemiss,
-while non-local reordering of atoms, motion between minima on the PES, can be considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$ for a system with an energy barrier of $0.5 \unit{eV}$.~\citemiss
+With local vibration of the atoms being very fast, typically on the order of $10^{14} \unit{Hz}$~\citemiss,
+while non-local reordering of atoms, motion between minima on the PES, often considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$ for a system with an energy barrier of $0.5 \unit{eV}$.~\citemiss
 Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^10$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
 
-Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, e.g. by minimising vibrations to allow for longer timesteps~\citemiss, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
+Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, e.g. by minimising vibrations to allow for longer timesteps~\citemiss or modifying the PES~\cite{hyperdynamics-voter-1997}, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
+This is true, in particular, for calculations that rely on costly, but accurate, quantum calculations and/or large systems.
 
-In the problem lies also the solution, since there is such a clear separation of time-scales, it is possible to treat the problem with statistical methods.
+In the problem lies also the solution, when there is such a clear separation of time-scales, it is possible to treat the problem with statistical methods.
 Essentially dealing with the vibrational areas of the PES (the basins) by averaging over them and seperately locating ares of transitions.
 
 \subsection{The Basics}
 
 \subsubsection{The Transition State}
-\placeholder
+
+\figmiss{Transition State}
+
+When dividing the phase space (position and momentum) into two areas, reactants (R) and products (P), a hypersurface separating the two emerges.
+This hypersurface is referred to as the transition state ($\ts$)\footnote{The dagger, $\ts$, is a conventional symbol for the transition state} and represents a bottleneck region which each reactive trajectory crosses on its way from R to P.
+Commonly, momentum is disregarded in the definition of the phase space, which is then  $3N$ dimensional, within which the $\ts$ is $3N-1$ dimensional subspace.
 
 \subsubsection{Statistical Methods}
 
 \bit
-\item Configuration Integrals
+\item Configuration Integrals (or partition functions?)
 \eit
 
 Take advantage of the time-scale separation ...
@@ -39,6 +45,12 @@ TST aims at overcoming the time-scale problem by way of "averaging" over the fas
 
 Boltzmann distribution...
 Maxwell distribution (velocity)...
+
+The partition functions require the total energy of the $N$ atoms system,
+\beq{tst-total-energy}
+E(\vR, \vect{v}) = V(\vR) + \frac{1}{2} \sum_i^{N} m_i \left| \vect{v}_i \right|^2
+\eeq
+with atoms at $\vR$ with velocity $\vect{v}$, travelling on the PES, $V$.
 
 \incomplete
 
@@ -51,9 +63,21 @@ Maxwell distribution (velocity)...
 \eit
 \placeholder
 
-\subsection{Reaction Rates}
+The most important assumption remains, any trajectories that cross the TS do not recross it.
+This assumtion is also the weakest link \expand
 
-First consider the total energy of the system
+\subsection{Reaction Rates}
+The reaction rate, $k^\text{TST}$, is defined as the probability of being at the $\ts$,
+%$P_\ts = \langle \delta(\vR - \vR_\ts) \rangle_\text{R}$,
+\beq{ts-probability-partition-simple}
+P_\ts = \frac{Z_\ts}{Z_\text{R}},
+\eeq
+thermally averaged over R, with velocity away from R,\citemiss
+\beq{tst-rate-initial}
+k^\text{TST} = \frac{1}{2}|\vect{v}_\perp| P_\ts,
+\eeq
+where $\vect{v}_\perp$ is the velocity component perpendicular to the $\ts$ and the factor $1/2$ comes from the fact that only half of the trajectories will be moving away from R.
+Due to the different dimensionality of the $\ts$ and R, $P_\ts$ isn't strictly a probability as it has the unit $\unit{m^{-1}}$. \expand
 
 
 \placeholder
@@ -62,6 +86,9 @@ First consider the total energy of the system
 \bit
 \item Dynamical Recrossings
 \eit
+
+The choice of the TS is essential for an accurate rate.
+In fact, TST offers a variational \expand
 
 \subsubsection{Quantum TST}
 \bit
