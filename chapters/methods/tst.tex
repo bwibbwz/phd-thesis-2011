@@ -25,13 +25,22 @@ Essentially dealing with the vibrational areas of the PES (the basins) by averag
 
 \subsection{The Basics}
 
+\subsubsection{Assumptions}
+\bit
+\item Born-Oppenheimer
+\item Classical Dynamics (No tunnelling)
+\item Thermal Equilibrium (Boltzmann)
+\item No recrossings (Most severe and the reason for the variational property of the TS???)
+\eit
+\placeholder
+
 \subsubsection{The Transition State}
 
 \figmiss{Transition State}
 
 When dividing the phase space (position and momentum) into two areas, reactants (R) and products (P), a hypersurface separating the two emerges.
 This hypersurface is referred to as the transition state ($\ts$)\footnote{The dagger, $\ts$, is a conventional symbol for the transition state} and represents a bottleneck region which each reactive trajectory crosses on its way from R to P.
-Commonly, momentum is disregarded in the definition of the phase space, which is then  $3N$ dimensional, within which the $\ts$ is $3N-1$ dimensional subspace.
+Commonly, momentum is disregarded in the definition of the phase space, which is then  $3N$ dimensional, within which the $\ts$ is a $3N-1$ dimensional subspace.
 
 \subsubsection{Statistical Methods}
 
@@ -46,22 +55,13 @@ TST aims at overcoming the time-scale problem by way of "averaging" over the fas
 Boltzmann distribution...
 Maxwell distribution (velocity)...
 
-The partition functions require the total energy of the $N$ atoms system,
-\beq{tst-total-energy}
-E(\vR, \vect{v}) = V(\vR) + \frac{1}{2} \sum_i^{N} m_i \left| \vect{v}_i \right|^2
-\eeq
-with atoms at $\vR$ with velocity $\vect{v}$, travelling on the PES, $V$.
+%The partition functions require the total energy of the $N$ atoms system,
+%\beq{tst-total-energy}
+%E(\vR, \vect{v}) = V(\vR) + \frac{1}{2} \sum_i^{N} m_i \left| \vect{v}_i \right|^2
+%\eeq
+%with atoms at $\vR$ with velocity $\vect{v}$, travelling on the PES, $V$.
 
 \incomplete
-
-\subsubsection{Assumptions}
-\bit
-\item Born-Oppenheimer
-\item Classical Dynamics (No tunnelling)
-\item Thermal Equilibrium (Boltzmann)
-\item No recrossings (Most severe and the reason for the variational property of the TS???)
-\eit
-\placeholder
 
 The most important assumption remains, any trajectories that cross the TS do not recross it.
 This assumtion is also the weakest link \expand
@@ -79,6 +79,15 @@ k^\text{TST} = \frac{1}{2}|\vect{v}_\perp| P_\ts,
 where $\vect{v}_\perp$ is the velocity component perpendicular to the $\ts$ and the factor $1/2$ comes from the fact that only half of the trajectories will be moving away from R.
 Due to the different dimensionality of the $\ts$ and R, $P_\ts$ isn't strictly a probability as it has the unit $\unit{m^{-1}}$. \expand
 
+The velocity at each point $\vR$ can be taken from a Maxwell distribution, \tred{(Why is this okay?)}
+\beq{tst-maxwell-velocity}
+\langle |\vect{v}| \rangle = \sqrt{\frac{2kT}{\pi m}},
+\eeq
+where $m$ is the mass of the particles \tred{(This is wrong)}.
+The rate then becomes
+\beq{tst-rate-full}
+k_\text{TST} = \sqrt{\frac{kT}{2\pi m}} \frac{Z_\ts}{Z_\text{R}}. \quad \text{\expand}
+\eeq
 
 \placeholder
 
@@ -95,6 +104,16 @@ In fact, TST offers a variational \expand
 \item If a short introduction with citations is possible.
 \item No long discussion on QTST.
 \eit
+
+\subsubsection{Assumptions Revisited}
+Discuss the implications of the assumptions.
+\bit
+\item Born-Oppenheimer
+\item Classical Dynamics (No tunnelling)
+\item Thermal Equilibrium (Boltzmann)
+\item No recrossings (Most severe and the reason for the variational property of the TS???)
+\eit
+\placeholder
 
 %\subsubsection{Misconception???}
 %A prevailant misconception regarding TST is that there is an "activated complex" that every rare-event becomes before moving to the product state
