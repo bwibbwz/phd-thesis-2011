@@ -26,13 +26,19 @@ Essentially dealing with the vibrational areas of the PES (the basins) by averag
 \subsection{The Basics}
 
 \subsubsection{Assumptions}
-\bit
-\item Born-Oppenheimer
-\item Classical Dynamics (No tunnelling)
-\item Thermal Equilibrium (Boltzmann)
-\item No recrossings (Most severe and the reason for the variational property of the TS???)
-\eit
-\placeholder
+There are four main assumptions made within TST, which vary in severity.
+\paragraph{Born-Oppenheimer}
+The Hamiltonian of the system can be separated, resulting in a single PES for the trajectories.
+\paragraph{Classical Dynamics}
+No tunnelling or other quantum effects --- apart from those offered by the calculational method of the PES --- are taken into account in the vanilla TST.
+The motion of the system is governed by classical dynamics.
+Quatnum effects are included in extensions to TST (see for example \cite{qtst-hj-1997, qtst-hj-1998, qtst-hj-2009}~\citemiss) but this is not relevant to the work presented in this thesis and will not be discussed further.
+\paragraph{Thermal Equilibrium}
+The system will spend considerable time in each basin of the PES, long enough such that the Boltzmann distribution for ... can be employed.
+For systems with large energy barriers in comparison with the thermal energy~\footnote{A rule of thumb is that $E_\text{b} > 5\kB T$~\citemiss}, this assumption holds well but for smaller barriers or high temperatures it breaks down as thermal equilibrium becomes difficult to achieve and the separation of timescales is lost
+\paragraph{No Re-Crossings}
+Once the system has left a basin, it does not return for a significant amount of time (long enough to thermalise in the new basin).
+This assumption is the most serious and efforts to minimise its effects are discussed below.
 
 \subsubsection{The Transition State}
 
@@ -91,13 +97,19 @@ k_\text{TST} = \sqrt{\frac{kT}{2\pi m}} \frac{Z_\ts}{Z_\text{R}}. \quad \text{\e
 
 \placeholder
 
-\subsubsection{Variational TST}
+\subsubsection{Optimisation of the Rate}
 \bit
 \item Dynamical Recrossings
+\item Variational TST
+\item Search for the true TS
 \eit
 
 The choice of the TS is essential for an accurate rate.
-In fact, TST offers a variational \expand
+In fact, due to the assumption of no recrossings, TST offers a variational way to discover the true rate,
+\beq{tst-variational-rate}
+k^\text{TST} \ge k^\text{exact},
+\eeq
+where the transition state is the variational parameter.
 
 \subsubsection{Quantum TST}
 \bit
