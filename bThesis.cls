@@ -71,6 +71,7 @@
 \newcommand{\bra}{\langle}
 \newcommand{\ket}{\rangle}
 \newcommand{\ts}{\dagger}
+\newcommand{\kB}{k_\text{B}}
 
 % --- Stuff that might change definitions ---
 \newcommand{\Dsep}{\Delta_\text{D}}
