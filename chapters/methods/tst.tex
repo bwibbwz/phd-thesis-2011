@@ -27,16 +27,16 @@ Essentially dealing with the vibrational areas of the PES (the basins) by averag
 
 \subsubsection{Assumptions}
 There are four main assumptions made within TST, which vary in severity.
-\paragraph{Born-Oppenheimer}
+\explain{Born-Oppenheimer}
 The Hamiltonian of the system can be separated, resulting in a single PES for the trajectories.
-\paragraph{Classical Dynamics}
+\explain{Classical Dynamics}
 No tunnelling or other quantum effects --- apart from those offered by the calculational method of the PES --- are taken into account in the vanilla TST.
 The motion of the system is governed by classical dynamics.
 Quatnum effects are included in extensions to TST (see for example \cite{qtst-hj-1997, qtst-hj-1998, qtst-hj-2009}~\citemiss) but this is not relevant to the work presented in this thesis and will not be discussed further.
-\paragraph{Thermal Equilibrium}
+\explain{Thermal Equilibrium}
 The system will spend considerable time in each basin of the PES, long enough such that the Boltzmann distribution for ... can be employed.
 For systems with large energy barriers in comparison with the thermal energy~\footnote{A rule of thumb is that $E_\text{b} > 5\kB T$~\citemiss}, this assumption holds well but for smaller barriers or high temperatures it breaks down as thermal equilibrium becomes difficult to achieve and the separation of timescales is lost
-\paragraph{No Re-Crossings}
+\explain{No Re-Crossings}
 Once the system has left a basin, it does not return for a significant amount of time (long enough to thermalise in the new basin).
 This assumption is the most serious and efforts to minimise its effects are discussed below.
 
@@ -108,6 +108,15 @@ Either it ended again in R or crossed the $\ts$ multiple times on its way to P.
 Thus the $\ts$ can act as a variational parameter for the TST rate,~\cite{vtst-1938, vtst-review-1984, vtst-2005}
 \beq{tst-variational-rate}
 k^\text{TST} \ge k^\text{exact}.
+\eeq
+
+Should varying the $\ts$ be infeasable or insufficient, a different approach can be taken to bring $k_\text{TST}$ closer to the exact rate by estimating the error and correcting for it with a multiplication factor $\kappa_\text{D}$,
+\beq{tst-dynamical-corrections}
+k_\text{exact} = \kappa_\text{D} k_\text{TST}.
+\eeq
+By starting dynamical trajectories from the $\ts$, which must still be reasonably good, and counting the recrossings while tracking which basin the trajectories end in, a ratio between reactive trajectories and non-reactive ones can be constructed,
+\beq{tst-dynamical-factor}
+\kappa_\text{D} = ...
 \eeq
 
 \incomplete
