@@ -74,7 +74,6 @@ This assumtion is also the weakest link \expand
 
 \subsection{Reaction Rates}
 The reaction rate, $k^\text{TST}$, is defined as the probability of being at the $\ts$,
-%$P_\ts = \langle \delta(\vR - \vR_\ts) \rangle_\text{R}$,
 \beq{ts-probability-partition-simple}
 P_\ts = \frac{Z_\ts}{Z_\text{R}},
 \eeq
@@ -99,25 +98,19 @@ k_\text{TST} = \sqrt{\frac{kT}{2\pi m}} \frac{Z_\ts}{Z_\text{R}}. \quad \text{\e
 
 \subsubsection{Optimisation of the Rate}
 \bit
-\item Dynamical Recrossings
-\item Variational TST
+\item Dynamical Corrections
 \item Search for the true TS
 \eit
 
 Choosing a good $\ts$ is essential for the accuracy of TST.
-
-%The choice of the TS is essential for an accurate rate.
-In fact, due to the assumption of no recrossings, TST offers a variational way to discover the true rate,
+A trajectory that crosses the $\ts$ more than once will result in a reaction rate that is higher than the exact rate.
+Either it ended again in R or crossed the $\ts$ multiple times on its way to P.
+Thus the $\ts$ can act as a variational parameter for the TST rate,~\cite{vtst-1938, vtst-review-1984, vtst-2005}
 \beq{tst-variational-rate}
-k^\text{TST} \ge k^\text{exact},
+k^\text{TST} \ge k^\text{exact}.
 \eeq
-where the transition state is the variational parameter.
 
-%\subsubsection{Quantum TST}
-%\bit
-%\item If a short introduction with citations is possible.
-%\item No long discussion on QTST.
-%\eit
+\incomplete
 
 \subsubsection{Assumptions Revisited}
 Discuss the implications of the assumptions.
