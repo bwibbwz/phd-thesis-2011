@@ -106,6 +106,7 @@
 \newcommand{\efig}{\end{figure}}
 \newcommand{\btab}[1]{\begin{tabular}\label{tab:#1}}
 \newcommand{\etab}{\end{tabular}}
+\newcommand{\explain}[1]\paragraph{#1}\hangindent=1em\hangafter=0}
 
 % --- Define the general look ---
 %%\usepackage{vmargin}
