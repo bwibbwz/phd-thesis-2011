@@ -98,7 +98,6 @@ k_\text{TST} = \sqrt{\frac{kT}{2\pi m}} \frac{Z_\ts}{Z_\text{R}}. \quad \text{\e
 
 \subsubsection{Optimisation of the Rate}
 \bit
-\item Dynamical Corrections
 \item Search for the true TS
 \eit
 
@@ -110,16 +109,20 @@ Thus the $\ts$ can act as a variational parameter for the TST rate,~\cite{vtst-1
 k^\text{TST} \ge k^\text{exact}.
 \eeq
 
-Should varying the $\ts$ be infeasable or insufficient, a different approach can be taken to bring $k_\text{TST}$ closer to the exact rate by estimating the error and correcting for it with a multiplication factor $\kappa_\text{D}$,
-\beq{tst-dynamical-corrections}
-k_\text{exact} = \kappa_\text{D} k_\text{TST}.
-\eeq
-By starting dynamical trajectories from the $\ts$, which must still be reasonably good, and counting the recrossings while tracking which basin the trajectories end in, a ratio between reactive trajectories and non-reactive ones can be constructed,
-\beq{tst-dynamical-factor}
-\kappa_\text{D} = ...
-\eeq
+Searching for the optimal $\ts$ \expand
 
-\incomplete
+Should optimising the $\ts$ be infeasable or insufficient, a different approach can be taken to bring $k_\text{TST}$ closer to the exact rate by estimating the error and correcting for it with a multiplication factor $\kappa_\text{D} \in [0, 1]$,
+\beq{tst-dynamical-corrections}
+k_\text{exact} = \kappa_\text{D} \text{ } k_\text{TST}.
+\eeq
+By starting dynamical trajectories from the $\ts$, which must still be reasonably good, and counting the recrossings while tracking which basin the trajectories end in, a ratio between reactive trajectories and non-reactive ones can be calculated~\cite{dynamical-corrections-keck-1962},
+\beq{tst-dynamical-factor}
+%\kappa_\text{D} = \frac{\text{Reactive trajectories}}{\text{Total trajectories}} \quad \text{started from } \vR \in \ts.
+\kappa_\text{D} = \lim_{n \rightarrow \infty} \frac{n_\text{react.}}{n},
+\eeq
+where $n$ is the total amount of trajectories, started from $\vR \in \ts$, and $n_\text{react.}$ is the number of trajectories that end in P.
+More recent schemes (see for example \cite{vtst-2005, dynamical-corrections-chandler-1977, dynamical-corrections-bennett-1977}) work in the same spirit, albeit slightly more rigorous.
+The scheme presented in \fref{eq:tst-dynamical-factor}, nevertheless, captures the essence of dynamical corrections.
 
 \subsubsection{Assumptions Revisited}
 Discuss the implications of the assumptions.
