@@ -1,5 +1,8 @@
 % Set up the document
-\documentclass[a4paper, 12pt, oneside]{bThesis} % My own class, based on the report class
+%\documentclass[a4paper, 12pt, oneside]{bThesis} % My own class, based on the report class
+%\documentclass[a5paper, 10pt]{bThesis} % Looks more like a book
+%\documentclass[a5paper]{bThesis} % Looks more like a book
+\documentclass[a5paper,DIV=12,BCOR=9mm,headsepline,headings=small,cleardoubleempty,10pt]{bThesis} % Looks more like a book
 
 % Info
 \author{J\'on Bergmann Maronsson}
@@ -29,8 +32,8 @@
 \bibliography{thesis}
 
 % Using pdfpages strips all links from the pdfs. There is a package called pax that restores some (all?) of the links. Check it out if you have the time.
-%\includepdf[pages=-]{papers/calcium.pdf}
-%\includepdf[pages=-]{papers/magnesium.pdf}
-%\includepdf[pages=-]{papers/second-order.pdf}
+\includepdf[pages=-]{papers/calcium.pdf}
+\includepdf[pages=-]{papers/magnesium.pdf}
+\includepdf[pages=-]{papers/second-order.pdf}
 
 \end{document}

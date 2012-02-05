@@ -3,7 +3,9 @@
 \ProvidesClass{bThesis}
 
 % --- Define the baseclass ---
-\def\baseclass{report}
+%\def\baseclass{report}
+%\def\baseclass{scrreprt}
+\def\baseclass{scrbook}
 
 % --- Pass the normal options to the baseclass ---
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{\baseclass}}
@@ -11,6 +13,8 @@
 
 % --- Load the baseclass ---
 \LoadClass{\baseclass}
+
+\usepackage{scrpage2}
 
 % --- Load external packages ---
 \usepackage{amsmath}     % General mathy stuff (\text{} and more)
@@ -37,7 +41,7 @@
 %\usepackage{lstpatch}
 %\usepackage[nolists]{endfloat} % Put the figures at the end (and possibly list of figures = LTP)
 \usepackage[version=3]{mhchem} % Chemistry formulas
-\usepackage[draft]{pdfpages} % Used for including the papers
+\usepackage[final]{pdfpages} % Used for including the papers
 %\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=up]{caption}
 \usepackage{hyperref}
