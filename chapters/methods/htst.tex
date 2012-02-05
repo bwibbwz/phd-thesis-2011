@@ -16,9 +16,24 @@ Between any two basins there exists a \sap{1}, which represents the lowest possi
 Exploiting this, the $\ts$ can a chosen as a hyperplane in which the \sap{1} resides and whose normal is the eigenmode that corresponds with the lowest eigenvalue of the Hessian.
 This greatly simplifies the definition of the $\ts$.
 Furthermore, in order to simplify the calculation of the partition functions, the PES near both $\ts$, $E_\ts$, and R, $E_\text{R}$, are represented by second degree Taylor expansions,
-\beq{htst-taylor-expansion}
-E_\ts \approx E_\text{\sap{1}} 
+\beq{htst-taylor-expansion-min}
+E_\text{R}(\vect{q}_\text{R}) \approx E(\vR_\text{min.}) + \frac{1}{2} \sum_i^{3N} k_{\text{R},i} q_{\text{R},i}^2,
 \eeq
+\beq{htst-taylor-expansion-sp}
+E_\ts(\vect{q}_\ts) \approx E(\vR_\text{\sap{1}}) + \frac{1}{2} \sum_i^{3N-1} k_{\ts,i} q_{\ts,i}^2,
+\eeq
+where $\vect{q}_{[\ts, \text{R}]}$ are the eigenvectors of the Hessian, $q_{[\ts, \text{R}],i}$ is the displacement along eigenvector $i$, $k_{[\ts, \text{R}],i}$ are the corresponding Taylor coefficients, all for the $\ts$ and R respectively, and $E(\vR_{[\sap{1}, \text{min.}]})$ are the energies at the \sap{1} and the minimum of the R basin, respectively.
+Since the central points of the expansions are stationary, the first derivatives vanish from the expression, leaving only a constant as well as the second order terms.
+
+Due to the format of the energy approximations, the configurational integrals become trivial Gaussian integrals,
+\beq{htst-gaussian-integral}
+\int_{-\infty}^\infty e^{-k_iq_i^2/2 \kB T} dq_i = \sqrt{\frac{2 \pi \kB T}{k_i}}.
+\eeq
+The reaction rate then reduces to
+\beq{htst-reaciton-rate}
+k_\text{HTST} = \sqrt{\frac{\kB T}{2 \pi \mu}}\frac{e^{-E(\vR_{\sap{1}})/\kB T}\prod_i^{3N-1}\sqrt{\frac{2 \pi \kB T}{k_{\ts, i}}}}{e^{-E(\vR_\text{min.})/\kB T}\prod_i^{3N}\sqrt{\frac{2 \pi \kB T}{k_{\text{R}, i}}}}.
+\eeq
+Much of the pararmeters "styttast ut" \expand
 
 
 \incomplete
