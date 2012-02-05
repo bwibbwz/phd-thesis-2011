@@ -73,7 +73,7 @@
 % Notation
 \newcommand{\bra}{\langle}
 \newcommand{\ket}{\rangle}
-\newcommand{\ts}{\dagger}
+\newcommand{\ts}{\ddagger}
 \newcommand{\kB}{k_\text{B}}
 
 % --- Stuff that might change definitions ---
