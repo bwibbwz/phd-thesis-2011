@@ -14,8 +14,6 @@
 % --- Load the baseclass ---
 \LoadClass{\baseclass}
 
-\usepackage{scrpage2}
-
 % --- Load external packages ---
 \usepackage{amsmath}     % General mathy stuff (\text{} and more)
 \usepackage{amssymb}     % 
@@ -38,6 +36,7 @@
 %\usepackage{booktabs}
 %\usepackage{rotating}
 %\usepackage{listings}
+%\usepackage{scrpage2}
 %\usepackage{lstpatch}
 %\usepackage[nolists]{endfloat} % Put the figures at the end (and possibly list of figures = LTP)
 \usepackage[version=3]{mhchem} % Chemistry formulas
