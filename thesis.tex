@@ -20,12 +20,14 @@
 \input{preamble/preamble}
 
 % Include the chapters
-%\part{Thesis}
 \part{Introduction}
+\label{part:introduction}
 \input{chapters/introduction/introduction}
 \part{Theoretical Methods}
+\label{part:theory}
 \input{chapters/methods/methods}
 \part{Thesis Proper \pending}
+\label{part:methods}
 \input{chapters/borohydrides/borohydrides}
 \input{chapters/second-order/second-order}
 \input{chapters/al-self-diffusion/al-self-diffusion}
@@ -39,6 +41,7 @@
 
 % Using pdfpages strips all links from the pdfs. There is a package called pax that restores some (all?) of the links. Check it out if you have the time.
 \part{Papers}
+\label{part:papers}
 \includepdf[pages=1]{papers/calcium.pdf}
 \includepdf[pages=1]{papers/magnesium.pdf}
 \includepdf[pages=1]{papers/second-order.pdf}
