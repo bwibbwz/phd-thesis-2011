@@ -1,14 +1,17 @@
-\section{Transition State Theory}
-\label{sec:tst}
+\chapter{Transition State Theory}
+\label{chap:tst}
 % ------------------------------------------------------------------
+\bit
+\item Misconception: Activated complex
+\eit
 
 Transition State Theory (TST) is a formalism dedicated to providing reaction rates in a purely theoretical setting where running dynamical trajectories of the required length is infeasible.
 
 \expand
 
-\subsection{Motivation}
+\section{Motivation}
 
-\subsubsection{The Time-scale Problem}
+\subsection{The Time-scale Problem}
 
 \figmiss{Timescale problem (I have one somewhere, just need to polish it and stick it in)}
 
@@ -23,9 +26,9 @@ This is true, in particular, for calculations that rely on costly, but accurate,
 In the problem lies also the solution, when there is such a clear separation of time-scales, it is possible to treat the problem with statistical methods.
 Essentially dealing with the vibrational areas of the PES (the basins) by averaging over them and seperately locating ares of transitions.
 
-\subsection{The Basics}
+\section{The Basics}
 
-\subsubsection{Assumptions}
+\subsection{Assumptions}
 There are four main assumptions made within TST, which vary in severity.
 \explain{Born-Oppenheimer}
 The Hamiltonian of the system can be separated, resulting in a single PES for the trajectories.
@@ -40,7 +43,7 @@ For systems with large energy barriers in comparison with the thermal energy~\fo
 Once the system has left a basin, it does not return for a significant amount of time (long enough to thermalise in the new basin).
 This assumption is the most serious and efforts to minimise its effects are discussed below.
 
-\subsubsection{The Transition State}
+\subsection{The Transition State}
 
 \figmiss{Transition State}
 
@@ -48,7 +51,7 @@ When dividing the phase space (position and momentum) into two areas, reactants 
 This hypersurface is referred to as the transition state ($\ts$)\footnote{The dagger, $\ts$, is a conventional symbol for the transition state} and represents a bottleneck region which each reactive trajectory crosses on its way from R to P.
 Commonly, momentum is disregarded in the definition of the phase space, which is then  $3N$ dimensional, within which the $\ts$ is a $3N-1$ dimensional subspace.
 
-\subsubsection{Statistical Methods}
+\subsection{Statistical Methods}
 
 \bit
 \item Configuration Integrals (or partition functions?)
@@ -72,7 +75,7 @@ Maxwell distribution (velocity)...
 The most important assumption remains, any trajectories that cross the TS do not recross it.
 This assumtion is also the weakest link \expand
 
-\subsection{Reaction Rates}
+\section{Reaction Rates}
 The reaction rate, $k^\text{TST}$, is defined as the probability of being at the $\ts$,
 \beq{ts-probability-partition-simple}
 P_\ts = \frac{Z_\ts}{Z_\text{R}},
@@ -96,7 +99,7 @@ k_\text{TST} = \sqrt{\frac{kT}{2\pi m}} \frac{Z_\ts}{Z_\text{R}}. \quad \text{\e
 
 \placeholder
 
-\subsubsection{Optimisation of the Rate}
+\subsection{Optimisation of the Rate}
 Choosing a good $\ts$ is essential for the accuracy of TST.
 A trajectory that crosses the $\ts$ more than once will result in a reaction rate that is higher than the exact rate.
 Either it ended again in R or crossed the $\ts$ multiple times on its way to P.
@@ -120,26 +123,4 @@ where $n$ is the total amount of trajectories, started from $\vR \in \ts$, and $
 More recent schemes (see for example \cite{vtst-2005, dynamical-corrections-chandler-1977, dynamical-corrections-bennett-1977}) work in the same spirit, albeit slightly more rigorous.
 The scheme presented in \fref{eq:tst-dynamical-factor}, nevertheless, captures the essence of dynamical corrections.
 
-%\subsubsection{Assumptions Revisited}
-%Discuss the implications of the assumptions.
-%\bit
-%\item Born-Oppenheimer
-%\item Classical Dynamics (No tunnelling)
-%\item Thermal Equilibrium (Boltzmann)
-%\item No recrossings (Most severe and the reason for the variational property of the TS???)
-%\eit
-%\placeholder
-
-%\subsubsection{Misconception???}
-%A prevailant misconception regarding TST is that there is an "activated complex" that every rare-event becomes before moving to the product state
-%
-%\placeholder
-
-%\subsection{Methods for Metadynamics}
-%\bit
-%\item Some references here would be nice but \tblue{not a priority}.
-%\item Hyperdynamics
-%\item AKMC
-%\eit
-%\placeholder
-
+\input{chapters/methods/htst}

@@ -8,7 +8,7 @@
 
 % Info
 \author{J\'on Bergmann Maronsson}
-\title{Theoretical Calculations of Electrochemical Systems}
+\title{\pending}
 
 % Paths
 \graphicspath{{figures/}}
@@ -21,11 +21,11 @@
 
 % Include the chapters
 %\part{Thesis}
-%\part{Introduction}
+\part{Introduction}
 \input{chapters/introduction/introduction}
-%\part{Methods}
+\part{Theoretical Methods}
 \input{chapters/methods/methods}
-%\part{Thesis}
+\part{Thesis Proper \pending}
 \input{chapters/borohydrides/borohydrides}
 \input{chapters/second-order/second-order}
 \input{chapters/al-self-diffusion/al-self-diffusion}
@@ -38,7 +38,10 @@
 \bibliography{thesis}
 
 % Using pdfpages strips all links from the pdfs. There is a package called pax that restores some (all?) of the links. Check it out if you have the time.
-%\part{Papers}
+\part{Papers}
+\includepdf[pages=0]{papers/calcium.pdf}
+\includepdf[pages=0]{papers/magnesium.pdf}
+\includepdf[pages=0]{papers/second-order.pdf}
 %\includepdf[pages=-]{papers/calcium.pdf}
 %\includepdf[pages=-]{papers/magnesium.pdf}
 %\includepdf[pages=-]{papers/second-order.pdf}
