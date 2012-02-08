@@ -1,12 +1,12 @@
 \subsection{The Schr\"odinger Equation}
 \label{sec:scrodinger}
 
-A central theme in atomic simulations is the solution of the Schr\"odinger equation~\cite{scrodinger-equation-1926}, which is the quantum analogue of Newton's equations of motion~\cite{newton-latin}, governing the motion of the electrons and nuclei, as well as any other observables.
+A central theme in atomic simulations is the solution of the Schr\"odinger equation~\cite{schrodinger-equation-1926}, which is the quantum analogue of Newton's equations of motion~\cite{newton-latin}, governing the motion of the electrons and nuclei, as well as any other observables.
 For a non-relativistic system of $N = N_e + N_n$ particles ($N_e$ electrons and $N_n$ nuclei), the time independant Schr\"odinger equation \tred{(Why not the time dependant one?)},
 \beq{schrodinger-basic}
  \widehat{H}\Psi = E\Psi,
 \eeq
-must be solved in order to calculate the total energy of the system, $E$, and the wave function, $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots, \vr_{N_e}, \vR_1, \vR_2, \ldots, \vR_{N_n})$, which depends on the spatial coordinates, $\vr_i$, of each electron and, $\vR_i$, each nuclei, using the total energy operator (More commonly referred to as the Hamiltonian), $\widehat{H} = \sum_i^{N}\widehat{T}_i  + \widehat{V}$.
-Similarly to classical systems the Hamiltonian encompasses both kinetic, $\widehat{T}_i = \hbar^2\nabla_i^2/2m_i$ and potential, $\widehat{V} = V(\vR, \vr)$, effects, represented in the traditional R-basis, which will be used exclusively in this thesis.
+must be solved in order to calculate the total energy of the system, $E$, and the wave function, $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots, \vr_{N_e}, \vR_1, \vR_2, \ldots, \vR_{N_n})$, which depends on the spatial coordinates, $\vr_i$, of each electron and, $\vR_i$, each nuclei, using the total energy operator (more commonly referred to as the Hamiltonian), $\widehat{H} = \sum_i^{N}\widehat{T}_i  + \widehat{V}$.
+Similar to classical systems the Hamiltonian encompasses both kinetic, $\widehat{T}_i = \hbar^2\nabla_i^2/2m_i$ and potential, $\widehat{V} = V(\vR, \vr)$, effects, represented in the traditional R-basis, which will be used exclusively in this thesis.
 Though it may look innocent, solving the Schr\"odinger equation, which is a second order partial derivative problem, is a daunting task and in most cases significant approximations must be made.
 Efforts to solve the Schr\"odinger equation are discussed below in \fref{sec:methods-qm}.
