@@ -44,6 +44,7 @@
 %\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=up]{caption}
 \usepackage{hyperref}
+\usepackage{nameref} % Allows for the calling of names and not just numbers with \ref
 
 % --- New command definitions ---
 %\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
@@ -54,6 +55,8 @@
 \newcommand{\mytilde}{{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}} % A nicer looking tilde for use in the text
 \newcommand{\sap}[1]{\ensuremath{\text{SP}_{#1}}}                      % Saddle Point (SP) shortcut
 \newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}                     % Ensure that units are not italic
+\newcommand{\nref}[1]{\fref{#1} : \nameref{#1}}
+\newcommand{\Nref}[1]{\Fref{#1} : \nameref{#1}}
 
 % --- Vector shortcuts ---
 \newcommand{\vF}{\vect{F}}
