@@ -1,9 +1,9 @@
 \section{The Dimer Method}
 \label{sec:dimer}
 
-\figmiss{Maybe a Dimer on a PES for clarity. low priority}
+\figmiss{Maybe a Dimer on a PES for clarity. Low priority}
 
-The Dimer algorithm~\cite{dimer-original-1999} is in essence a method for finding the eigenmode corresponding to the lowest eigenvalue of the Hessian, while performing no direct calculations of the second derivatives.
+The Dimer algorithm~\cite{dimer-original-1999} is in essence a method for finding the eigenmode corresponding to the lowest eigenvalue of the Hessian, while performing no direct calculations of the second derivatives\cite{hyperdynamics-voter-1997}.
 This information is then used to locate \sap1s.
 
 Given only an initial point, $\vR$, on a multidimensional function, $V(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only the function's values and its gradient, $\nabla V(\vR)$.
@@ -20,8 +20,6 @@ Only the first of the phases is unique to the dimer algorithm.
 A setup phase, which typically includes randomly displacing $\vR$~\cite{akmc-2001} is also required if the search starts from a minimum (or any other stationary point).
 
 \subsubsection{Minimum Mode Estimate}
-\tblue{Inspired by the hyperdynamics method by Voter~\cite{hyperdynamics-voter-1997}.}
-
 Estimating the second derivative of $V$ along a given unit vector, $\uvs$, at point $\vR$ can be done numerically, using finite differences.
 For the occasion, a pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close to current point $\vR_0$, such that
 \beq{dimer-separation}
@@ -38,7 +36,7 @@ Should the gradient be readily available, as it often is, \fref{eq:second-deriva
 \beq{second-derviative-gradient}
 C_\vs \approx \frac{(\vF_\text{B} - \vF_\text{A}) \cdot \uvs}{\Dsep}.
 \eeq
-Rotating $\uvs$ around $\vR_0$, according to the rotational force (see \fref{fig:dimer-force-overview}),
+Rotating $\uvs$ around $\vR_0$, according to the rotational force (as seen in \fref{fig:dimer-force-overview}),
 \beq{rotational-force}
 \vF^\circlearrowright = (\vF_\text{A} - \vF_\text{B}) - ((\vF_\text{A} - \vF_\text{B}) \cdot \uvs)\uvs,
 \eeq
@@ -70,7 +68,6 @@ $\perp$ and $\parallel$ in superscripts refer to the specific component of the f
 $\text{t}$ in a superscript refers to the transformed force (\fref{eq:dimer-transform}),
 $\circlearrowright$ refers to the rotational force (\fref{eq:rotational-force}) and no superscript refers to the gradient force.
 $\Dsep$ is the distance between dimer points (\fref{eq:dimer-separation} and $\uvn$ is the current minimum mode estimate.
-\tblue{There is no reference to this figure in the text.}
 }
 \label{fig:dimer-force-overview}
 }
