@@ -17,7 +17,6 @@ The dimer method can be split into three independent phases.
 Only the first of the phases is unique to the dimer algorithm.
 A setup phase, which typically includes randomly displacing $\vR$ is also required if the search starts from a minimum (or any other stationary point).
 
-\subsubsection{Minimum Mode Estimate}
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.6\linewidth]{dimer-force-overview}
@@ -36,6 +35,7 @@ $\Dsep$ is the distance between dimer points (\fref{eq:dimer-separation} and $\u
   \end{center}
 \end{figure}
 
+\subsubsection{Minimum Mode Estimate}
 \tblue{Inspired by the hyperdynamics method by Voter~\cite{hyperdynamics-voter-1997}.}
 
 Estimating the second derivative of $V$ along a given unit vector, $\uvs$, at point $\vR$ can be done numerically, using finite differences.
