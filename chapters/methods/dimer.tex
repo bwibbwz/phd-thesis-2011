@@ -1,6 +1,8 @@
 \section{The Dimer Method}
 \label{sec:dimer}
 
+\figmiss{Maybe a Dimer on a PES for clarity. low priority}
+
 The Dimer algorithm~\cite{dimer-original-1999} is in essence a method for finding the eigenmode corresponding to the lowest eigenvalue of the Hessian, while performing no direct calculations of the second derivatives.
 This information is then used to locate \sap1s.
 
@@ -15,7 +17,7 @@ The dimer method can be split into three independent phases.
 \item Translating the point according to the transformed gradient.
 \een
 Only the first of the phases is unique to the dimer algorithm.
-A setup phase, which typically includes randomly displacing $\vR$~\citemiss is also required if the search starts from a minimum (or any other stationary point).
+A setup phase, which typically includes randomly displacing $\vR$~\cite{akmc-2001} is also required if the search starts from a minimum (or any other stationary point).
 
 \subsubsection{Minimum Mode Estimate}
 \tblue{Inspired by the hyperdynamics method by Voter~\cite{hyperdynamics-voter-1997}.}
@@ -54,7 +56,7 @@ with $\vF_\text{B}$ being the extrapolated, virtual, force.
 Since $\vF_0$ is static and does not require additional calculations during the iterative rotation, performing this extrapolation yields significant calculational reductions, up to a factor of half.
 
 Further extrapolations are possible, if multiple rotations are performed (which is often not the case).
-It is possible to use previous calculations of either end point to extrapolate the rotated values.\citemiss
+Between rotational iterations, it is possible to use the previous calculations of an end point to extrapolate the rotated values for the next iteration.\cite{dimer-kastner-2008}
 These, however, yield much less reductions than the extrapolation in \fref{eq:dimer-point-extrapolate}.
 
 \begin{figure}[h]
@@ -90,7 +92,7 @@ In order to circumvent this, a different force transformation,
 \eeq
 is often used in these regions.
 This latter transformation simply inverts the force along the minimum mode while ignoring any other components.
-This along with a fixed, artificially large, step size should yield less iterations spent near minima and more near \sap1s.~\cite{dimer-original-1999}~\citemiss
+This along with a fixed, artificially large, step size should yield less iterations spent near minima and more near \sap1s.~\cite{dimer-original-1999}
 
 \subsubsection{Iterative Translation}
 After the force has been transformed such that \sap1s appear as minima --- \sap1s, however, remain unchanged with regards to the function's value --- it is possible to use conventional algorithms for finding minima as long as they support a systematic increase in the function's value.
