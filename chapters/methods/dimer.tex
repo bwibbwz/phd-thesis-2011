@@ -105,13 +105,11 @@ Multiple scenarios can be envisioned where the Dimer method brightly shines, two
 In such a situation the Dimer will quickly, and at low computational cost, find the \sap{1} exactly.
 ~\cite{dneb-2004}
 \item As discussed in \fref{sec:tst-timescale-problem}, performing long time-scale dynamics is difficult.
-The dimer can be used to map all relevant \sap{1}s leading out of a basin\footnote{It is, of course, nearly impossible to find \emph{all} \sap{1}s associated with a basin and even more difficult to know when all the \sap{1}s have been found. \expand}, then using HTST (\fref{sec:htst}) to find the reaction rates for each \sap{1}, it is possible to construct a probability table of possible events.
+The dimer can be used to map all relevant \sap{1}s leading out of a basin\footnote{It is, of course, nearly impossible to find \emph{all} \sap{1}s associated with a basin and even more difficult to know when they have all been found and ref. \cite{dimer-sampling-2011} discusses efforts to that end.}, then using HTST (\fref{sec:htst}) to find the reaction rates for each \sap{1}, it is possible to construct a probability table of possible events.
 Using this table of events within the Kinetic Monte Carlo formalism~\citemiss, it is possible to traverse the PES in an accelerated manner.
 ~\cite{akmc-2001}
 \een
 
 \subsubsection{Performance}
-\placeholder
-
-
-
+Since the Dimer heavily depends on finite difference methods, inaccurate gradients can, thus, render the method useless.
+When used with classical potentials, this is not a problem, but when used with quantum mechanical forces, such as those provided by DFT, care must be taken to converge the electronic structure well.
