@@ -1,7 +1,6 @@
 \section{The Nudged Elastic Band Method}
 \label{sec:neb}
 
-\figmiss{Initial and final paths on a PES}
 \tblue{The Dimer section is written without reference to energies and atomic simulations specific stuff.}
 
 Finding Steepest Decent Paths (SDPs) on a multidimensional function, $E(\vR)$, from a given point is simple by following the negative gradient (force) with a small step size.
@@ -50,6 +49,16 @@ Combining the forces from equations \ref{eq:neb-real-force} and \ref{eq:neb-spri
 \vF_i^\text{eff} = \vF_i^\perp + \vF_i^\text{S},
 \eeq
 will iteratively bring the path to a discretisised version of the MEP, with even or controlled spacing.
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.6\linewidth]{neb-pes-paths}
+\parbox{0.85\linewidth}{\caption{Bla
+}
+\label{fig:neb-pes-paths}
+}
+\end{center}
+\end{figure}
 
 \subsubsection{Tangent}
 Since the path must be discretisised, the tangent can not be trivially defined.
