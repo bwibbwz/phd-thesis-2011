@@ -7,7 +7,7 @@ Finding Steepest Decent Paths (SDPs) on a multidimensional function, $E(\vR)$, f
 On the other hand, finding specific SDPs that end at minima is not.
 The Nudged Elastic Band (NEB) algorithm is concerned with aligning a path with certain SDP paths, genreally the MEP (see~\cite{neb-polemic-henkelman1} for an exeption), leading to two minima from a common \sap{1}.
 
-\begin{figure}[t]
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.6\linewidth]{neb-force-overview}
 \parbox{0.85\linewidth}{\caption{An overview schematic of the force components acting within the NEB method.
@@ -50,7 +50,7 @@ Combining the forces from equations \ref{eq:neb-real-force} and \ref{eq:neb-spri
 \eeq
 will iteratively bring the path to a discretisised version of the MEP, with even or controlled spacing, as can be seen in \fref{fig:neb-pes-paths}.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
     \includegraphics[width=0.6\linewidth]{neb-pes-paths}
 \parbox{0.85\linewidth}{\caption{Snapshots from a NEB optimisation of a MEP.
