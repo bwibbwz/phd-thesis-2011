@@ -28,7 +28,7 @@ For the occasion, a pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, 
 where $\Dsep$ is a predefined constant to determine the length of the dimer and the separation in the finite difference estimate.
 Using only the function's values, the second derivative (or curvature), $C_\vs$, becomes
 \beq{second-derivative-function}
-C_\vs(\vR_0) \equiv \frac{\partial^2 V}{\partial \uvs^2}|_{\vR_0} \approx \frac{V(\vR_\text{A}) + V(\vR_\text{B}) - 2V(\vR_0)}{\Dsep^2},
+C_\vs(\vR_0) \equiv \left.\frac{\partial^2 V}{\partial \uvs^2}\right|_{\vR_0} \approx \frac{V(\vR_\text{A}) + V(\vR_\text{B}) - 2V(\vR_0)}{\Dsep^2},
 \eeq
 where $V_\text{x} \equiv V(\vR_\text{x})$.
 As the gradient points away from each minimum, it is convenient to define a force, $\vF$ that points towards minima instead, for use in the iterative minima search, $\vF_\text{x} \equiv - \nabla V(\vR_\text{x})$, where $x$ represents any subscript of $\vR$.
