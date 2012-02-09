@@ -1,6 +1,5 @@
 \section{The Nudged Elastic Band Method}
 \label{sec:neb}
-
 Finding Steepest Decent Paths (SDPs) on a multidimensional function, $V(\vR)$, from a given point is simple by following the negative gradient (force) with a small step size.
 On the other hand, finding specific SDPs that end at minima is not.
 The Nudged Elastic Band (NEB) algorithm is concerned with aligning a path with certain SDP paths, genreally the MEP (see~\cite{neb-polemic-henkelman1} for an exeption), leading to two minima from a common \sap{1}.
@@ -99,6 +98,8 @@ By decoupling the top function value image from the spring force, it becomes ind
 where $i_\text{max}$ refers to the image with the highest function value.~\cite{neb-ci-2000}
 
 \subsubsection{Usage in Atomic Simulations}
+The NEB method was developed within the context of atomic simulations, where the function in question is the PES and the variables the spatial degrees of freedom of each atom in the system.
 
-\placeholder
+Beyond finding the \sap{1} for use within TST (\fref{chap:tst}), the MEP is often a good visual indication as to the reaction path and unexpected minima can be detected.
 
+The NEB has been used extensively since its inception, late last century, and a search of the literature for interesting examples will be left as an easy exercise for the reader.
