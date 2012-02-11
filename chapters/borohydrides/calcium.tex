@@ -16,17 +16,18 @@ The bulk of the initial data from the QENS experiments indicated rotational diff
 Thus, the work focused mainly on rotations around the possible symmetry axes, $C_2$ and $C_3$, of the \ce{BH4-} unit.
 By choosing the appropriate axes, a contour plot of the rigid rotation was produced in order to get an overview of the possible rotations, pure or coupled, and an estimate of their relative barrier heights.
 
- \figmiss{The PES and energy profiles, side-by-side}
+\figmiss{The PES and energy profiles, side-by-side}
 
-Since the rotational system has three dimensions but the contourplot has only two, the axes had to be chosen very carefully as to avoid missing an interesting event.
-Due to the alignment of the  threefold symmetry of the \ce{BH4-} unit's environment with the unit's $C_2$ axes, all the $C_2$ axes are roughly equal, so the axis was chosen to maximise the hydrogen-calcium distance but this choice was not critical.
-The choice of $C_3$ axis was not important either as they all get implicitly sampled via the environmental symmetry.
-Thus, in the end the particular choice of axes was not important due to symmetry reasons.
+Since the rotational system has three dimensions but the contourplot has only two, the axes had to be chosen very carefully as to sample all interesting events.
+Each $C_2$ axis roughly lines up with a \ce{Ca}-\ce{B} vector, which means that with regards to symmetry they are all nearly equivalent.
+The one with maximal \ce{H}-\ce{Ca} distance was chosen as one of the contour axes.
+The choice of the $C_3$ axis had a similar goal, to minimise \ce{H}-\ce{Ca} interaction.
+This was accomplished by choosing the axis which lies closest to the plane spanned by the three nearest neighbor calcium atoms.
+This axis samples half of the possible $C_3$ axes when the full $C_2$ rotation is taken into account.
+Due to symmetrical similarity it is likely that the remaining $C_3$ axes are indirectly sampled also.
 
 The contour plots give an important insight as to which of the possible rotations are the interesting ones and, thus, calculating the more resource intensive MEPs can be limited to the interesting processes.
-
-Some symmetry breaking can be seen in the PESes.
-This is to be expected as the tetragonal symmetry can be slightly broken during the minimisation.
+Some symmetry breaking can be seen in the PES, which is to be expected as the tetragonal symmetry is slightly broken during the minimisation, due to the environment.
 
 \Fref{fig:ca-pes01} shows that a $C_3$ axis is lowest in energy and that a wobbly $C_2$ axis with a small intermediate minimum is the lowest energy $C_2$ type rotation.
 Using these as the starting paths for NEB calculations, the MEPs shown overlayed in \fref{fig:ca-pes01} are found and shown as energy profiles in \fref{fig:ca-barriers}.
