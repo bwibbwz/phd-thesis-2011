@@ -44,8 +44,8 @@
 \usepackage[final]{pdfpages} % Used for including the papers
 %\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=up]{caption}
-\usepackage{hyperref}
 \usepackage{nameref} % Allows for the calling of names and not just numbers with \ref
+\usepackage[final]{hyperref}
 
 % --- New command definitions ---
 %\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
