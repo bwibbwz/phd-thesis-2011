@@ -2,37 +2,40 @@
 \label{sec:methods-qm}
 
 With increased computing power and, in particular, advances in parallel algortims, it is now possible to calculate a range of physical properties for materials on the atomic level without the use of any experimental parameters.
-Such \textit{ab initio} (from the beginning) methods ...
-\expand
+Such \textit{ab initio} methods are generally attempts at solving or approximating the Schr\"odinger equation (\fref{sec:schrodinger}) for the ground state\footnote{Non ground state calculations are not considered in this thesis.}.
+Multiple strategies exist --- choosing one generally involves considering the trade-off between accuracy and computational effort --- but the main one used in this thesis is the Density Functional Theory, where the many-electron problem is \emph{exactly} divided into multiple one-electron problems.
+\expand?
 
 \subsection{The Electronic Structure Problem}
-Solving the Schr\"odinger equation (\fref{sec:schrodinger}) is not a menial task, as it generally appears as a second order partial derivative equation \expand
+Solving the Schr\"odinger equation (\fref{sec:schrodinger}) is not a menial task, as it is a second order partial derivative equation in multiple dimensions and can only be solved exactly for very small systems.
+Due to the high dimensionality of the wavefunction, simply storing it for a medium-to-large system is physically impossible.\footnote{Consider a system of only $16$ electrons (e.g. an oxygen molecule), sampled on a grid of $10$ points in each direction. Since each electron has 3 degrees of freedom the number of gridpoints will be $10^{16\times3} = 10^{48}$. Compared with the estimated amount of atoms in/on the Earth, $\mytilde10^{50}$\citemiss, the amount of gridpoints is impossible to store, even for a modest system.}
 
 The Born-Oppenheimer approximation (\fref{sec:born-oppenheimer}) allows the separation of the Hamiltonian to an electronic part and a nuclear part.
 Thus, the positions of the nuclei, $\vR_I$ only enter the calculations as parameters.
-A full quantum treatment will not be discussed here.
-\expand
+A full quantum treatment will not be discussed here (see for example~\citemiss).
 
-A non-relativistic system of $N$ electrons (and $N_I$ nuclei) is described by the time independant Schr\"odinger equation~\cite{schrodinger-equation-1926}~\footnote{see \url{http://www.zbp.univie.ac.at/schrodinger/ebibliographie/publications.htm} for other possible citations},
+A non-relativistic system of $N_e$ electrons (and $N_n$ nuclei) is described by the time independant Schr\"odinger equation~\cite{schrodinger-equation-1926}
 \beq{schrodinger-basic-again}
  \widehat{H}\Psi = E\Psi,
 \eeq
-where $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots ,\vr_N)$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian,
+where $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots ,\vr_{N_e})$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian,
 \beq{hamiltonian-full}
-\widehat{H} = -\sum_i^N \frac{\nabla^2_i}{2} - \sum_i^N \sum_{j>i}^N \frac{1}{\left| \vr_i - \vr_j \right|} - \sum_i^N \sum_I^{N_I} \frac{1}{\left| \vr_i - \vR_I \right|} + V_\text{env},
+\widehat{H} = -\frac{1}{2} \sum_i^{N_e} \nabla^2_i - \sum_i^{N_e} \sum_{j>i}^{N_e} \frac{1}{\left| \vr_i - \vr_j \right|} - \sum_i^{N_e} \sum_I^{N_n} \frac{1}{\left| \vr_i - \vR_I \right|} + \widehat{V}_\text{env},
 \eeq
 which consists of 4 terms.
-First there is the kinetic energy of the electrons, then the electron-electron interaction, followed by the electron-nuclei interaction and finally any further environmental influence (e.g. an applied electric field) is represented by a single term.
+First there is the kinetic energy of the electrons, $\widehat{T}_e = -2^{-1}\sum_i^{N_e}\nabla_i^2$,
+then the electron-electron interaction, $\widehat{U}_\text{ee} = \sum_i^{N_e}\sum_{j>i}^{N_e}(\left| \vr_i - \vr_j \right|)^{-1}$,
+followed by the electron-nuclei interaction, $\sum_i^{N_e}\sum_I^{N_n}(\left| \vr_i - \vR_I \right|)^{-1}$,
+and finally any further environmental influence (e.g. an applied electric field) is represented by a single term, $\widehat{V}_\text{env}$.
 The last two terms are often bundled into a single external term,
 \beq{hamiltonian-external}
-V_\text{ext} = \sum_i^N \sum_I^{N_I} \frac{1}{\left| \vr_i - \vR_I \right|} + V_\text{env}.
+V_\text{ext} = \sum_i^{N_e} \sum_I^{N_n} \frac{1}{\left| \vr_i - \vR_I \right|} + V_\text{env},
 \eeq
+since these are system dependant, while the others can be considered universal.
 
-Though it may look innocent, solving the Schr\"odinger equation, which is a second order partial derivative problem \tred{(is this correct?)}, is a daunting task and in most cases significant approximations must be made.
-
-\bit
-\item In particular, storing the wavefunction of a large system requires more data capacity than practical. (Exponential wall)
-\eit
+%\beq{hamitonian-shorthand}
+%\widehat{H} = \widehat{T}_e - \widehat{U}_{ee} -  \widehat{V}_\text{ext}.
+%\eeq
 
 \subsection{Density Functional Theory}
 \label{sec:methods-dft}
