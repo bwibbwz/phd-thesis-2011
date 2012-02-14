@@ -1,6 +1,9 @@
 \section{Quantum Calculations}
 \label{sec:methods-qm}
 
+% Add a footnote about the spin density DFT (see Kieron's stuff for a reference)
+% Also footnote on degeneracy
+
 With increased computing power and, in particular, advances in parallel algortims, it is now possible to calculate a range of physical properties for materials on the atomic level without the use of any experimental parameters.
 Such \textit{ab initio} methods are generally attempts at solving or approximating the Schr\"odinger equation (\fref{sec:schrodinger}) for the ground state\footnote{Non ground state calculations are not considered in this thesis.}.
 Multiple strategies exist --- choosing one generally involves considering the trade-off between accuracy and computational effort --- but the main one used in this thesis is the Density Functional Theory, where the many-electron problem is \emph{exactly} divided into multiple one-electron problems.
@@ -23,7 +26,7 @@ where $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots ,\vr_{N_e})$ is the wave function, 
 \widehat{H} = -\frac{1}{2} \sum_i^{N_e} \nabla^2_i + \sum_i^{N_e} \sum_{j>i}^{N_e} \frac{1}{\left| \vr_i - \vr_j \right|} + \sum_i^{N_e} \sum_I^{N_n} \frac{1}{\left| \vr_i - \vR_I \right|} + \widehat{V}_\text{env},
 \eeq
 which consists of 4 terms.
-First there is the kinetic energy of the electrons, $\widehat{T}_e = -2^{-1}\sum_i^{N_e}\nabla_i^2$,
+First there is the kinetic energy of the electrons, $\widehat{T}_\text{e} = -2^{-1}\sum_i^{N_e}\nabla_i^2$,
 then the electron-electron interaction, $\widehat{U}_\text{ee} = \sum_i^{N_e}\sum_{j>i}^{N_e}(\left| \vr_i - \vr_j \right|)^{-1}$,
 followed by the electron-nuclei interaction, $\sum_i^{N_e}\sum_I^{N_n}(\left| \vr_i - \vR_I \right|)^{-1}$,
 and finally any further environmental influence (e.g. an applied electric field) is represented by a single term, $\widehat{V}_\text{env}$.
@@ -31,11 +34,7 @@ The last two terms are often bundled into a single external term,
 \beq{hamiltonian-external}
 V_\text{ext} = \sum_i^{N_e} \sum_I^{N_n} \frac{1}{\left| \vr_i - \vR_I \right|} + V_\text{env},
 \eeq
-since these are system dependant, while the others can be considered universal.
-
-%\beq{hamitonian-shorthand}
-%\widehat{H} = \widehat{T}_e - \widehat{U}_{ee} -  \widehat{V}_\text{ext}.
-%\eeq
+since these are system dependant, while $\widehat{T}_\text{e}$ and $\widehat{U}_\text{ee}$ can be considered universal.
 
 \subsection{Density Functional Theory}
 \label{sec:methods-dft}
@@ -44,10 +43,10 @@ However, in practice, approximations must be made for all but the most simple sy
 Nevertheless, DFT has produced many interesting and good results and is now a well established formalism that is continually being reviewed and improved.
 Furthermore, the \textit{ab initio} nature of DFT makes it a great companion to experimental research, not only for comparison and prediction of interesting materials but also to assist and expand upon data analysis.
 
-The success of DFT has yielded one of its founders, Walter Kohn, one half of the Nobel Prize in chemistry in 1998, for the development of the density functional theory~\cite{kohn1999} along with John Pople for his development of computational methods in quantum chemistry~\cite{pople1999}.
+The success of DFT yielded one of its founders, Walter Kohn, one half of the Nobel Prize in chemistry in 1998, for the development of the density functional theory~\cite{kohn-1999} along with John Pople for his development of computational methods in quantum chemistry~\cite{pople-1999}.
 
 \subsubsection{The Hohenberg-Kohn Theorems}
-The earliest mention of a DFT type method were made by Thomas~\citemiss and Fermi~\citemiss but the heart of DFT lies in the Hohnberg-Kohn theorem, which reformulates the electronic structure problem to depend on the $3$ dimensional, ground state, electron density, $\rho(\vr)$, instead of the $3N$ dimensional wavefunction, $\Psi(\vr_1, \vr_2, \ldots, \vr_N)$.
+The earliest mention of a DFT type method were made by Thomas~\cite{thomas-1927} and Fermi~\cite{1927} but the heart of DFT lies in the Hohnberg-Kohn theorem, which reformulates the electronic structure problem to depend on the $3$ dimensional, ground state, electron density, $\rho_0(\vr)$, instead of the $3N$ dimensional wavefunction, $\Psi(\vr_1, \vr_2, \ldots, \vr_N)$.
 According to the first Hohenberg-Kohn theorem~\cite{hohenberg-kohn-1964}, any external term, $V_\text{ext}$, in \fref{eq:hamiltonian-full} yields a different electron density from any non-identical $V'_\text{ext}$ up to trivial additive constant, for the ground state.
 In other words: there is a one-to-one correspondence between the wavefunction and the electron density of the ground state and all observables that depend on the wavefunction can, thus, be extracted from the ground state density.
 This allows a re-formulation of the Schr\"odinger equation, with the energy as a functional of the electron density, 
@@ -63,45 +62,35 @@ E_0 = \min_\rho E[\rho].
 This work alone is still missing key elements in order to efficiently solve for the wavefunction and energy, namely the wavefunction to density mapping is not known.
 
 \subsubsection{The Kohn-Sham Equations}
+Counter-intuatively re-introducing wave functions was the solution proposed by Walter Kohn and Lui Jeu Sham in 1965~\cite{kohn-sham-1965}.
+Inspired by Hartree's work nearly four decades earlier~\cite{hartree-1928}, multiple non-interacting single particle wave functions, $\phi_i(\vr_i)$ took the place of the many-body wave function (or electron density), such that
+\beq{kohn-sham-density}
+ \rho(\vr) = \sum_{i=1}^{N_e} \left| \phi_i(\vr_i) \right|^2,
+\eeq
+where each electron would be subject to an effective potential, $v(\vr)$, due to all the particles in the system (including itself, the nuclei and any external factors).
+Solving for $\phi_i$ and $\epsilon_i$ (the Kohn-Sham energies) using multiple Schr\"odinger type equations,
+\beq{kohn-sham-equations}
+ \left\{-\frac{1}{2} \nabla ^2 + v(\vr) \right\} \phi_i(\vr_i) = \epsilon_i \phi_i(\vr_i),
+\eeq
+can be done iteratively in a variational manner, from an initial guess for the electron density.
 
-%An indirect way to find the ground state 
+Constructing the effective potential becomes the main problem here, since an exact $v(\vr)$ yields an exact solution to the whole electronic structure problem.
+The external potential, $\widehat{V}_\text{ext}$, from \fref{eq:hamiltonian-external} enters unchanged as it contains only static information.
+The electron-electron interaction, $\widehat{U}_\text{ee}$, enters in a changed form.
+In fact it is introduced as two terms, one for interaction with the electron density, commonly referred to as the hartree potential ($v_\text{H}(\vr)$) and a second one for self-interaction, $v_\text{XC}(\vr)$,
+\beq{effective-potential}
+v(\vr) = V_\text{ext}(\vr) + v_\text{H}(\vr) + v_\text{XC}(\vr).
+\eeq
+The hartree potential is an integral over the electron density,
+\beq{hartree-potential}
+v_\text{H}(\vr) = \int \frac{\rho(\vr')}{\left| \vr - \vr' \right|}d^3\vr',
+\eeq
+and the exchange-correlation potential is of the form,
+\beq{exchange-correlation-potential}
+v_\text{XC}(\vr) = \frac{\partial E_{XC}[\rho(\vr)]}{\partial \rho(\vr)}.
+\eeq
 
-% Add a footnote about the spin density DFT (see Kieron's stuff for a reference)
-
-%Expanding the hamiltonian,
-%\beq{reformulated-schrodinger-equation-universal}
-%E[\rho_0] = \bra \Psi[\rho_0] | \widehat{T}_e + \widehat{U}_{ee} + \widehat{V}_\text{ext} | \Psi[\rho_0] \ket,
-%\eeq
-
-Currently there is no known way to perform the one-to-one mapping suggested by the H-K theorem. However in 1965 Kohn and Sham (K-S) published an indirect approach for calculating the energy functional $E[\rho]$ \cite{kohn1965}.
-They showed that the interacting many-electron system can be mapped, approximately, onto a non-interacting system of single electron states, $\{\phi_i\}$, where each electron is subject to the effective potential $v_{eff}(\vect{r})$ due to all other particles. These one electron wavefunctions can be produced by solving the K-S equations,
-\begin{equation}
-\label{eq:K-Sequation}
- \left\{-\frac{1}{2} \nabla ^2 + v_\mathrm{eff}(\vect{r}) \right\} \phi_i(\vect{r}) = \epsilon_i \phi_i(\vect{r}).
-\end{equation}
-Since both the effective potential and the wavefunctions are unknown these equations must be solved self-consistently.
-The electron density can then be produced using the square of the wavefunctions,
-\begin{equation}
-\label{eq:electronDensity}
- \rho(\vect{r}) = \sum_{i=1}^N \left| \phi_i(\vect{r}) \right|^2.
-\end{equation}
-The effective potential can be written as
-\begin{equation}
-\label{eq:effectivePotential}
- v_\mathrm{eff}(\vect{r}) = v(\vect{r}) + v_{H}(\vect{r}) + v_{XC}(\vect{r})
-\end{equation}
-where $v(\vect{r})$ is the sum of the potential due to the kinetic and ionic parts in equation \ref{eq:hamiltonian-full}%[Is this correct and do I need to include this reference]
-, $v_{H}(\vect{r})$ is the Hartree potential,
-\begin{equation}
-\label{eq:hartreePotential}
- v_{H}(\vect{r}) = \int d^3r \frac{\rho(\vect{r'})}{\left| \vect{r} - \vect{r} \right|},
-\end{equation}
-and
-\begin{equation}
-\label{eq:XCpotential}
- v_{XC}(\vect{r}) = \frac{\delta E_{XC}[\rho]}{\delta \rho(\vect{r})}
-\end{equation}
-is the potential due to the exchange-correlation functional, $E_{XC}[\rho]$, which will be discussed in section \ref{sec:XCfunctional} 
+Thus far the formalism is exact, however, all the difficult parts, $v_\text{XC}$, have yet to be discussed.
 
 \subsubsection{The Exchange-Correlation Functional}
 \label{sec:XCfunctional}
