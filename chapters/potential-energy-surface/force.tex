@@ -10,6 +10,21 @@ Defining a force that, similarly to real world forces, points the system towards
 \eeq
 
 The gradient is not directly available from DFT calculations, as for other non-analytical PESes.
-Luckily, the fine work of Feymann and Hellmann allows \expand
+Fortunatelly, for variational calculations, such as DFT, a force theorem has been developed, stating that $\partial E / \partial\lamda$ can be evaluated for for a continous parameter $\lambda$ on which the wavefunction, $\Psi(\lambda)$, depends implictily,
+\beq{hellmann-feynman-forces-full}
+\frac{\partial E}{\partial \lambda} = 
+\bra \frac{\partial \Psi}{\partial \lambda} | \widehat{H} | \Psi \ket +
+\bra \Psi | \frac{\partial \widehat{H}}{\partial \lambda} | \Psi \ket +
+\bra \Psi | \widehat{H} | \frac{\partial \Psi}{\partial \lambda} \ket.
+\eeq
+Utilizing the orthogoanlity of the wave function, the first and last terms are zero, 
+\beq{hellmann-feynman-forces-final}
+\frac{\partial E}{\partial \lambda} = \bra \Psi | \frac{\partial \widehat{H}}{\partial \lambda} | \Psi \ket.
+\eeq
+Once the electronic wave function has been constructed, which is the most time consuming part, the gradient can be calculated.
+For DFT, and any other Born-Oppenheimer calculation, $\lambda$ can be the nuclear coordinates.
+%\beq{dft-nuclear-forces}
+%\vF_\lambda = \frac{\partial E}{\partial \vR_\lambda} = \bra \Psi | \frac{\partial \widehat{H}}{\partial \vR_\lambda} | \Psi \ket = 
+%\eeq
 
-
+The theorem has been proved independantly by multiple authors~\cite{forces-pauli-1933, forces-guttinger-1932} but is generally attributed to Richard Feynman\cite{forces-feynman-1939} and Hans Hellmann~\cite{forces-hellmann-1937}, as the Hellmann-Feynmann Theorem.
