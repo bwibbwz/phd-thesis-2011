@@ -1,11 +1,29 @@
-\section{Potential Functions \pending}
+\section{Potential Functions}
 \label{sec:potentials}
 
 \bit
+\item New title: Analytical PES???
 \item Introduce pairwise potentials
 \item Why / When they are preferred to QM calculations
 \item Quickly discuss EAM/EMT
+\item EAM parameterised after DFT?
 \eit
+
+For very large systems or when timing is a factor, it is possible employ classical potential functions for calculating the potential energy and gradient.
+Such potential functions are tailor made for a given bond and generally give poor physical insight when used on a different system.
+
+Most common are pair-potentials\footnote{Many-body potentials are also possible}, where each atom in the system feels an interaction with each other atom, where each interaction can be tuned by emperical parameters.
+
+EAM~\cite{eam-1983}
+
+An example of such for a 2 atom system is the Morse potential~\cite{morse-1929},
+\beq{morse-potential}
+E^\text{Morse}(r) = D_e(1 - e^{-\alpha(r-r_e)})^2,
+\eeq
+where $r$ is the distance between the atoms, $D_e$ is the bond energy, $r_e$ is the bond length and $\alpha$ controls the curvature of the potential well, defined by $D_e$ and $r_e$.
+All the parameters can be tuned to represent a given bond.
+
+Many potential functions exist at different levels of complexity and accuracy.
 
 Extensive use was made of potential functions in this thesis.
 Simple and quick test cases served to produce PESes that could be visualised in two dimensions, while still retaining the properties of truly multidimensional systems.
