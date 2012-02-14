@@ -102,8 +102,9 @@ The Local Density Approximation (LDA)~\cite{kohn-sham-1965} treats exchange-corr
 \beq{xc-lda}
 E_\text{XC}^\text{LDA}[\rho(\vr)] = \int \epsilon_\text{XC}^\text{hom.}[\rho(\vr)]\rho(\vr)d^3\vr,
 \eeq
-where $\epsilon_\text{XC}\text{hom.}$ \expand
+where $\epsilon_\text{XC}\text{hom.} = \epsilon_\text{X}^\text{hom.} + \epsilon_\text{C}^\text{hom.}$ is the \expand
 
+\tred{I've removed the Implementation (DACAPO) section. Including it and a PAW section would be nice. Also included a list of stuff DFT is good/bad for would make sense. High priority}
 %The approximations used in our work are based on the so-called Generalized Gradient Approach (GGA). The GGA uses the the exchange-correlation energy of a homogeneous electron gas at point $\vect{r}$ like the Local Density Approximation (LDA) \cite{kohn1965} but also uses the gradient of the density to account for inhomogeneity. This, however, is not a good choice by itself so a reduced density gradient, $s(\vect{r})$, is used, as suggested by Langreth and Perdew \cite{langreth1977}. The exchange-correlation functional then becomes
 %\begin{equation}
 %  E_{XC}^{GGA}[\rho] = \int d^3r\, \epsilon_{XC}^{GGA}(\rho(\vect{r}), s(\vect{r}))\rho(\vect{r})
