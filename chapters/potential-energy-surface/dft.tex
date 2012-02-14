@@ -76,8 +76,9 @@ can be done iteratively in a variational manner, from an initial guess for the e
 
 Constructing the effective potential becomes the main problem here, since an exact $v(\vr)$ yields an exact solution to the whole electronic structure problem.
 The external potential, $\widehat{V}_\text{ext}$, from \fref{eq:hamiltonian-external} enters unchanged as it contains only static information.
-The electron-electron interaction, $\widehat{U}_\text{ee}$, enters in a changed form.
-In fact it is introduced as two terms, one for interaction with the electron density, commonly referred to as the hartree potential ($v_\text{H}(\vr)$) and a second one for self-interaction, $v_\text{XC}(\vr)$,
+Conversely, the electron-electron interaction, $\widehat{U}_\text{ee}$, enters in a changed form.
+In fact, it is introduced as two terms, one for interaction with the electron density as a whole, commonly referred to as the hartree potential ($v_\text{H}(\vr)$) and a second one for many-electron and Pauli-exclusion effects, %self-interaction effects, 
+$v_\text{XC}(\vr)$, the so-called exchange-correlation potential,
 \beq{effective-potential}
 v(\vr) = V_\text{ext}(\vr) + v_\text{H}(\vr) + v_\text{XC}(\vr).
 \eeq
@@ -90,11 +91,11 @@ and the exchange-correlation potential is of the form,
 v_\text{XC}(\vr) = \frac{\partial E_{XC}[\rho(\vr)]}{\partial \rho(\vr)}.
 \eeq
 
-Thus far the formalism is exact, however, all the difficult parts, $v_\text{XC}$, have yet to be discussed.
+Thus far the formalism is exact, however, all the difficult parts, $E_\text{XC}[\rho(\vr)]$, have yet to be discussed.
 
 \subsubsection{The Exchange-Correlation Functional}
-\label{sec:XCfunctional}
-The Kohn-Sham equations are in principle exact, however the exchange-correlation functional, $E_{XC}[\rho]$, is generally not known and has to be approximated. The accuracy of the approximation becomes a major issue in solving the Kohn-Sham equations.
+The Kohn-Sham equations are in principle exact, however, the exchange-correlation functional, $E_\text{XC}[\rho(\vr)]$, is generally not known and has to be approximated.
+The accuracy of the approximation becomes a major issue in solving the Kohn-Sham equations.
 
 The exchange-correlation functional is a local functional which describes the electron-electron interaction,
 \begin{equation}
