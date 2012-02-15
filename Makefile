@@ -2,6 +2,7 @@ thesis:
 	pdflatex thesis
 
 bib:
+	make cleanpdf
 	pdflatex thesis
 	bibtex thesis
 	pdflatex thesis
