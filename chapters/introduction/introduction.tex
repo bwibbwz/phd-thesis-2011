@@ -2,9 +2,9 @@
 \label{chap:introduction}
 
 \bit
-\item Stationary Points in general
-\item Finding extrema
-\item Other sorts of stationary points
+%\item Stationary Points in general
+%\item Finding extrema
+%\item Other sorts of stationary points
 \item Minima in theoretical chemistry
 \item Saddle points in Chemistry (reaction rates)
 \item Why do we want to find higher order saddle points in chemistry.
@@ -17,15 +17,13 @@
 \item The thesis is heavily biased towards chemistry
 \eit
 
-\tred{Turning points vs. stationary points}
-
 The border between mathematics, physics and chemistry is often times fuzzy and the methods developed for one may very well benefit the others (for example \expand \citemiss).
-Common to all, is some form of functional analysis where the study of stationary points is generally of great interest.
+Common to all, is some form of functional analysis where the study of stationary points\footnote{Points where the first derivative is zero.} is generally of great interest.
 For systems of limited dimensionality, finding stationary points becomes no more complex than solving a root problem for the function's derivative.
 However, once systems grow beyond a few dimensions, solving the root problem becomes infeasible.
-Furthermore, the lack of a global analytical function makes it impossible to simply solve for the roots.
+Furthermore, the lack of a global analytical function \tred{(Is analytical correct in this context?)} makes it impossible to simply solve for the roots.
 This is, generally, the case in atomistic simulations, which is the main subject of this thesis.
-While the methods discussed herewithin are developed in this field, applying them to purely mathmatical problems and other fields is mearly a question of implementation, thus they are presented as general as possible in order to appeal to wider audiences.
+While the methods discussed herewithin are developed in this field, applying them to purely mathmatical problems and within other fields is mearly a question of implementation, thus they are presented as general as possible in order to appeal to wider audiences.
 
 Locating extrema using local information, i.e. the gradient, is a well known technique\citemiss, whereas the gradient is simply followed in the appropriate direction (positive for maxima and negative for minima) until it vanishes.
 Finding other stationary points is less obvious and classifying them depends on the second order derivatives (or even higher in special cases\footnote{e.g. the Monkey Saddle \url{http://mathworld.wolfram.com/MonkeySaddle.html}})
