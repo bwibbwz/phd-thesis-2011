@@ -47,6 +47,9 @@
 \usepackage{nameref} % Allows for the calling of names and not just numbers with \ref
 \usepackage[final]{hyperref}
 
+% --- Fonts ---
+\usepackage{cmbright}
+
 % --- New command definitions ---
 %\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
 \newcommand{\vect}[1]{{\ensuremath{\mathrm{\mathbf{\bm{#1}}}}}}        % Bold vectors. HACK: Extra {} to fix issues with sub/superscript vectors. BUG: Greek stuff is in italics without the upgreek package.
