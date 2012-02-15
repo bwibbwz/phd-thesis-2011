@@ -21,4 +21,41 @@
 \item The PES: $E(\vR)$
 \eit
 
+
+\section{Old Methods Introduction}
+\tblue{The order of the topics for discussion in this chapter is still a bit off.
+Born-Oppenheimer is needed before TST but it should be introduced at the same (similar) time as the Schr\"odinger equation which in turn should accompany the DFT section (close to which the potential function section should lie).}
+\bit
+\item Perhaps use the Newton/Schr\"odinger figure I made a bit back (modified if needed)
+\item General on atomistic simulations (seguing to potential functions and DFT)
+\item Why statistical methods
+\item Why path techniques (introduction to be expanded on in the TST section)
+\item It is now "possible" to do long timescale MD simlations but statistical methods are still more suited to find "all" the processes (chat with Elvar on MD)
+\item (Why these methods but not some other?)
+\item Methods that or of particular interest get better coverage.
+
+\item Would be nice to have a figure of each of the main guys for each methodology
+\bit
+\item Born, Oppenheimer
+\item Hesse
+\item Arrhenius, Kramer
+\item Hannes, Graeme
+\item Hohnberg, Kohn
+\eit
+\eit
+
+The focus of this thesis is the application of theoretical methods to calculational reaction chemistry.
+The underlying methods that allow this are numerous and their discovery span ages in time, from Newton's equations of motion~\cite{newton-latin} up to modern day methods for solving Sch\"odinger's equation~\cite{schrodinger-equation-1926} for quantum systems\cite{hohenberg-kohn-1964, gpaw-review-2010}, from the discovery of calculus\citemiss\footnote{see Leibnitz: \url{http://books.google.dk/books?id=UdGBy8iLpocC&pg=PA46&redir_esc=y\#v=onepage&q&f=false}} and vector math~\citemiss to modern methods for solving eigenvalue problems\citemiss.
+This chapter will give a brief look at the main methods employed with special emphasis on those that constitute the basis of the novel method presented in \fref{chap:erm}.
+
+Simulations of atomic systems are an integral part of modern atomic scale research, whether it be to investigate specific electronic structure properties\citemiss, performing atomic dynamics\citemiss or investigating macroscopic properties\citemiss.
+Simulations are commonly employed in the analysis of interesting material properties (see for example catalytic properties\citemiss), the screening of candidate materials --- to eliminate the need to synthesize as many unsuccesful materials --- for various processes (see for example hydrogen storage\citemiss) and further collaboration and comparison with experiments (see for example \citemiss).
+
+Reaction chemistry happens on a timescale of microseconds which is, essentially, eternity when seen from the vantage point of the fast moving vibrations, which happen on a timescale of femtoseconds.
+Briding this gap is an important research subject which remains open, despite noble efforts that have moved the field a long way\citemiss.
+
+\tblue{Perhaps most of this belongs in the main introduction.}
+\tblue{Perhaps this introduction is not needed, in particular if I opt for the Part/more chapters model.}
+%Dating back to well before modern large scale computer clusters, synamical studies were even performed using tools no more complicated than balls, sticks, pens and paper~\cite{old-simulations-bernal-1962} ATH: Vegetable Staticks (Stephen Hales, 1727)
+
 \input{chapters/introduction/chapters}
