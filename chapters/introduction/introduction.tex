@@ -5,8 +5,8 @@
 %\item Stationary Points in general
 %\item Finding extrema
 %\item Other sorts of stationary points
-\item Minima in theoretical chemistry
-\item Saddle points in Chemistry (reaction rates)
+%\item Minima in theoretical chemistry
+%\item Saddle points in Chemistry (reaction rates)
 \item Why do we want to find higher order saddle points in chemistry.
 \item Energy storage, conversion and mobility (Hydrogen as an example)
 \item The importance of assessing reaction rates (Kinetics is a very important aspect for the above)
@@ -28,6 +28,15 @@ While the methods discussed herewithin are developed in this field, applying the
 Locating extrema using local information, i.e. the gradient, is a well known technique\citemiss, whereas the gradient is simply followed in the appropriate direction (positive for maxima and negative for minima) until it vanishes.
 Finding other stationary points is less obvious and classifying them depends on the second order derivatives (or even higher in special cases\footnote{e.g. the Monkey Saddle \url{http://mathworld.wolfram.com/MonkeySaddle.html}})
 Finding such points without explicitly evaluating higher order derivatives is an important subject within atomic simulations, since their calculation is is very costly when using non-analytical \tred{(Is QM technically non-analytical and what is the exact definition of analytical?)} models to describe the atomic interaction.
+
+\subsubsection{Significance of Stationary Points in Atomic Simulations}
+The potential energy of atomic systems can be evaluated as a function of the atomic coordinates.~\cite{born-oppenheimer-1927, schrodinger-equation-1926, kohn-1999}
+The interesting features of such a mapping are generally considered to be the minima which represent stable configurations of the atoms.
+The transition between minima is then considered to be a chemical reaction.
+These can range, for example, from rotations of specific groups with minimal impact on the properties of the material (\fref{chap:borohydride}) and motion of water molecules in liquid water~\citemiss to adsorption~\citemiss and the breaking of strong chemical bonds~\citemiss.
+In understanding the transition in question the path of least resistance is an essential concept, since the highest point along it defines the potential energy that must be overcome.
+This point is a non-extremal stationary point and information about the frequency of a given transition (its reaction rate) can be inferred from from it and its surroundings, which is of central importance in chemistry.\cite{htst-wert-1949, htst-vineyard-1957}
+
 
 Other low order stationary points are often of particular interest in reaction rate chemistry and atomic physics\expand
 
