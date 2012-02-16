@@ -1,41 +1,43 @@
 \section{Magnesium Borohydride [$\beta-$\ce{Mg(BH4)2}]}
 \label{sec:borohydrides-magnesium}
 
-\bit
-\item Calculate rigid rotations of \ce{BH4-} to get a "feel" for the landscape for all the different borons in the cell
-\item Show multiple PESes
-\item Then calculate the reaction paths (MEPs) and saddle points
-\item Prepare HTST rates and compare with experiments
-\item Revise the experimental rates as applicable
-\item Flat landscape $\rightarrow$ Introduce the next section
-\eit
+%\bit
+%\item Calculate rigid rotations of \ce{BH4-} to get a "feel" for the landscape for all the different borons in the cell
+%\item Show multiple PESes
+%\item Then calculate the reaction paths (MEPs) and saddle points
+%\item Prepare HTST rates and compare with experiments
+%\item Flat landscape $\rightarrow$ Introduce the next section
+%\eit
 
-The calculational supercell was relaxed, from the  $fddd$ spacegroup ($\#70$), totalling 176 atoms.
+The calculational supercell was relaxed, from the $fddd$ spacegroup ($\#70$), totalling 176 atoms.
+The structure consists of 5 symmetry inequivelant \ce{BH4} sites which all have similar local structure, being wedged between 2 \ce{Mg} atoms (\fref{fig;mg-local-structure}).
+The symmetry inequivilance stems from the fact that each \ce{BH4} was slightly away from the \ce{Mg}-\ce{Mg} axis.
+The distance, $L$, from the \ce{B} to the axis, influences the barriers.
 
-The structure consists of 5 symmetry inequivelant \ce{BH4} sites.
-For each one a PES was constructed
+The experimental data detected only rotational diffusion.
+Thus, the work exclusively revolved around understanding which rotations correpsonded with the experiments.
 
-\figmiss{All the PESes and possibly the barriers}
+For each inequivelant site a number of rigid rotation PESes were constructed in order to get an overview of the interesting events and to limit computations spent on the MEP calculations, similar to \fref{sec:calcium}.
+Due to symmetry not all the axes needed to be considered.
+
+The general result from the PESes was that rotations that maximised the \ce{Mg}-\ce{H}, $d_{H-Mg}$ distance showed the lowest energies \tblue{Make this figure, it looks very convincing the $\min(d_{H-Mg})$, high priority, the data is ready!}
+In this respect, two distinct types of $C_2$ axes were seen, those parallel to the \ce{Mg}-\ce{Mg} axis, $C_2^\parallel$, which maximised $d_{H-Mg}$ and those perpendicular to it, $C_2^\perp$, where $d_{H-Mg}$ was generally lower and had higher barriers.
+MEP calculations for the latter found a combination of other axes yielded the same permutation but at a much lower energy cost.
+The difference in relative barrier height decreased with decreasing $L$.\footnote{The relative difference would be non-existant for $L=0$ but non of the \ce{BH4} fulfill that critrion.}
+
+No such clear distinction could be made with regards to the $C_3$ axes.
+However, due to symmetry all the $C_3$ axes for a given site yield a very similar PES. \tblue{(Should I show the four PESes for B04?)}
+
+The rigid rotation plots
+
+\figmiss{The Different gengeral types of PESes.}
 
 \figmiss{Barrier dependancy on distance}
 
 \figmiss{Environment, for explaining the axes used}
 
-Each \ce{BH4} unit is wedged between, or close to an axis at a distance of $L$, the two nearest neighbour magnesium atoms. \expand
-
-\subsubsection{Rotation of \ce{BH4-}}
-The experimental data suggested only rotational dynamics present at the relevant temperatures.
-Thus, the work exclusively revolved around understanding which rotations correpsonded with the experiments.
-
-For each symmetry inequivelant \ce{BH4} unit, a contourplot was constructed in order to get an overview of the possible rotations.
-Since the rotational system has three dimensions but the contourplot has only two, the axes had to be chosen carefully as to sample all interesting events for each site.
-
-
-Choosing the $C_2$ axis essentially consisted of
-
 It is unsurprising to find that there is a direct relationship between $L$, the distance from the \ce{Mg}-\ce{Mg} axis to \ce{B}, and the $C_2$ barrier height.
 In fact, the relationship is linear, as can be seen in %\fref{fig:mg-barriers}.
 On the other hand, no such direct relationship could be found for the $C_3$ axes.
-
 
 \incomplete
