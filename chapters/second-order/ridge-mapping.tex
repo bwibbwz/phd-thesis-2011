@@ -11,7 +11,7 @@ Unlike the NEB method, further force modifications are needed, in order to let t
 
 The path is defined by its tangent, $\uvt$, and in order for the path to be at a SDP (such as the ridge), any force components perpendicular to it,
 \beq{perpendicular-force}
-\vF^\perp \equiv \vF -(\F \cdot \uvt)\uvt,
+\vF^\perp \equiv \vF -(\vF \cdot \uvt)\uvt,
 \eeq
 must be zero,
 \beq{ridge-force}
@@ -31,7 +31,7 @@ at all times.
 
 \subsubsection{Numerical Instabilities}
 \bit
-\item The orthgonality constraint, introduced in \fref{orthogonality-constraint}, has the possibility to introduce numerical instabilities.
+\item The orthgonality constraint, introduced in \fref{eq:orthogonality-constraint}, has the possibility to introduce numerical instabilities.
 \item Simply using the dimer introduces instabilities.
 \item Odd starting profiles (monotonic or inverted barriers) are dangerous.
 \eit
