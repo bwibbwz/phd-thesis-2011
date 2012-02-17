@@ -60,6 +60,14 @@ The current tangent (which only depends on the displacement to the top energy im
 
 It does seem that alining the dimer perpendicular to the ridge is essential because otherwise the significantly sized force that lies along the ridge (and should get "nudged" out) get deflected and produces a force in the wrong direction.
 
+\paragraph{Scheme 1.5}
+How about applying the first schem from the Saddle point downwards.
+Either converging points $i_\text{max} \plusminus 1$ and then locking them in place (similar to the CI) and then converging points $i_\text{max} \plusminus 2$, etc.
+
+OR using the first cheme but never allowing constricting $\xi_i$ to be higher than for the neighboring higher energy image.
+
+It is very easy to try this latter implementation but the first one requires a bit of programming.
+
 \paragraph{Measuring corner cutting}
 The corner cutting is measured by dotting together the effective force and the tangent,
 \beq{asdf4}
