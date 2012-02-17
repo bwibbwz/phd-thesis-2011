@@ -1,16 +1,19 @@
 \section{Magnesium Borohydride [$\beta-$\ce{Mg(BH4)2}]}
 \label{sec:borohydrides-magnesium}
 
-The calculational supercell was relaxed, from the $fddd$ spacegroup ($\#70$), totalling 176 atoms.
+The calculations were carried out using the Atomic Simulation Environment\footnote{\url{https://wiki.fysik.dtu.dk/ase/}}~\cite{ase-2002} and its implementation of the relevant algorithms.
+The energies and forces were provided by the Dacapo\footnote{\url{https://wiki.fysik.dtu.dk/dacapo}} DFT implementation.~\cite{dacapo-1999}
+The calculational parameters can be found in DFT Calculations section of Paper \ref{pap:magnesium}.
+The calculational supercell was relaxed from the $fddd$ spacegroup ($\#70$)~\cite{mgbh42-structure-fddd}, totalling 176 atoms.
 The structure consists of 5 symmetry inequivelant \ce{BH4} sites which all have similar local structure, being wedged between 2 \ce{Mg} atoms (\fref{fig:mg-local-structure}).
-The symmetry inequivilance stems from the fact that each \ce{BH4} was slightly away from the \ce{Mg}-\ce{Mg} axis.
+The symmetry inequivilance stems from the fact that each \ce{BH4} is slightly displaced from the \ce{Mg}-\ce{Mg} axis.
 The distance, $L$, from the \ce{B} to the axis, influences the barriers.
 
 \begin{figure}
 \begin{center}
 %\figmiss{Environment, for explaining the axes used}
     \includegraphics[width=0.7\linewidth]{mg-local-structure}
-    \parbox{0.85\linewidth}{
+    \parbox{0.5\linewidth}{
 \caption{Schematic representation of the environment of each \ce{B} atom, and how the different types of axes relates to it.
 \tred{Temporary graphics}
 }
@@ -22,13 +25,13 @@ The distance, $L$, from the \ce{B} to the axis, influences the barriers.
 The experimental data detected only rotational diffusion.
 Thus, the work exclusively revolved around understanding which rotations correpsonded with the experiments.
 
-For each inequivelant site a number of rigid rotation PESes were constructed\footnote{Examples of which can be seen in figures 13 and 14 of paper \ref{pap:magnesium}} in order to get an overview of the interesting events and to limit computations spent on the MEP calculations, similar to \fref{sec:borohydrides-calcium}.
+For each inequivelant site a number of rigid rotation PESes were constructed\footnote{Examples of which can be seen in figures 13 and 14 of paper \ref{pap:magnesium}} in order to get an overview of the interesting events and to limit computations spent on the costly MEP calculations, in a similar fashion as in \fref{sec:borohydrides-calcium}.
 Due to symmetry not all the axes needed to be considered.
 
 The general result from the PESes was that rotations that maximised the \ce{Mg}-\ce{H}, $d_{H-Mg}$ distance showed the lowest energies (\fref{fig:h-mg-distances}).
-In this respect, two distinct types of $C_2$ axes were seen, those parallel to the \ce{Mg}-\ce{Mg} axis, $C_2^\parallel$, which maximised $d_{H-Mg}$ and those perpendicular to it, $C_2^\perp$, where $d_{H-Mg}$ was generally lower and had higher barriers.
-MEP calculations for the latter found a combination of other axes yielded the same permutation but at a much lower energy cost.
-The difference in relative barrier height decreased with decreasing $L$.\footnote{The relative difference would be non-existant for $L=0$ but non of the \ce{BH4} fulfill that critrion.}
+In this respect, two distinct types of $C_2$ axes were seen, those parallel to the \ce{Mg}-\ce{Mg} axis, $C_2^\parallel$, which maximised $d_{H-Mg}$ and those perpendicular to it, $C_2^\perp$, where $d_{H-Mg}$ was generally lower and showed higher barriers.
+MEP calculations for $C_2^\perp$ found a combination of other axes yielded the same permutation but at a much lower energy cost.
+The difference in relative barrier height decreased with decreasing $L$.\footnote{The relative difference would be non-existant for $L=0$ (and $L=\infty$) but non of the \ce{BH4} fulfill that critrion.}
 
 \begin{figure}[h]
 \begin{center}
@@ -54,7 +57,7 @@ No such clear distinction could be made with regards to the $C_3$ axes.
 However, due to symmetry all the $C_3$ axes for a given site yield a very similar PES.
 
 The rigid rotation plots are not able to give a full description of the events, neither their geometry nor their energetics.
-Thus MEP calculations were performed with the lowest energy rigid rotation paths as starting positions.
+Thus MEP calculations, for each symmetry inequivelant \ce{BH4}, were performed with the lowest energy rigid rotation paths as starting positions.
 
 \begin{figure}[h]
 \begin{center}
@@ -82,5 +85,6 @@ It is unsurprising to find that there is, in fact, a direct relationship between
 In fact, the relationship is linear, as can be seen in \fref{fig:mg-barriers}, the barrier increases with increased $L$ which is most likely due more \ce{H}-\ce{Mg} interaction.
 On the other hand, no such direct relationship could be found for the $C_3$ axes.
 
+\expand
 
 
