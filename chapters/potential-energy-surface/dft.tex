@@ -96,15 +96,29 @@ Thus far the formalism is exact, however, all the difficult parts, $E_\text{XC}[
 \subsubsection{The Exchange-Correlation Functional}
 The Kohn-Sham equations are in principle exact, however, the exchange-correlation functional, $E_\text{XC}[\rho(\vr)]$, is generally not known and has to be approximated.
 The accuracy of the this approximation is a major factor in determining the accuracy of DFT as a whole.
-A detailed discussion of Exchange-Correlation functionals is material enough for a whole chapter, thus only the basic approximations will be discussed here.
+A detailed discussion of Exchange-Correlation functionals is material enough for a whole chapter, thus only the basic approximation will be discussed here.
 
-The Local Density Approximation (LDA)~\cite{kohn-sham-1965} treats exchange-correlation as if it were a homogeneous electron gas,
-\beq{xc-lda}
-E_\text{XC}^\text{LDA}[\rho(\vr)] = \int \epsilon_\text{XC}^\text{hom.}[\rho(\vr)]\rho(\vr)d^3\vr,
+The Local Density Approximation (LDA)~\cite{kohn-sham-1965} treats exchange-correlation as if it were a homogeneous electron gas.
+The exchange part is known exactly,
+\beq{exchange-lda}
+E_\text{X}^\text{LDA}[\rho(\vr)] = - \frac{3}{4} \sqrt[3]{\frac{3}{\pi}} \int \sqrt[3]{\rho^4(\vr)}.
 \eeq
-where $\epsilon_\text{XC}\text{hom.} = \epsilon_\text{X}^\text{hom.} + \epsilon_\text{C}^\text{hom.}$ is the \expand
+The correlation part, however, is not known but has been tabulated using accurate Quantum Monte-Carlo simulations.~\citemiss
+LDA calculations tend to \expand
 
-\tred{I've removed the Implementation (DACAPO) section. Including it and a PAW section would be nice. Also included a list of stuff DFT is good/bad for would make sense. High priority}
+Multiple exchange-correlation functionals exist with different strong suits.
+\expand
+
+
+%\beq{xc-lda}
+%E_\text{XC}^\text{LDA}[\rho(\vr)] = \int \epsilon_\text{XC}^\text{hom.}[\rho(\vr)]\rho(\vr)d^3\vr,
+%\eeq
+%where $\epsilon_\text{XC}^\text{hom.} = \epsilon_\text{X}^\text{hom.} + \epsilon_\text{C}^\text{hom.}$ is the exchagne-correlation density.
+%$\epsilon_\text{X}^\text{hom.}$ 
+
+
+
+%\tred{I've removed the Implementation (DACAPO) section. Including it and a PAW section would be nice. Also included a list of stuff DFT is good/bad for would make sense. High priority}
 %The approximations used in our work are based on the so-called Generalized Gradient Approach (GGA). The GGA uses the the exchange-correlation energy of a homogeneous electron gas at point $\vect{r}$ like the Local Density Approximation (LDA) \cite{kohn1965} but also uses the gradient of the density to account for inhomogeneity. This, however, is not a good choice by itself so a reduced density gradient, $s(\vect{r})$, is used, as suggested by Langreth and Perdew \cite{langreth1977}. The exchange-correlation functional then becomes
 %\begin{equation}
 %  E_{XC}^{GGA}[\rho] = \int d^3r\, \epsilon_{XC}^{GGA}(\rho(\vect{r}), s(\vect{r}))\rho(\vect{r})
