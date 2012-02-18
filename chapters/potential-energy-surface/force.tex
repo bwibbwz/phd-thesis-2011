@@ -10,14 +10,14 @@ Defining a force that, similarly to real world forces, points the system towards
 \eeq
 
 The gradient is not directly available from DFT calculations, as for other non-analytical PESes.
-Fortunatelly, for variational calculations, such as DFT, a force theorem has been developed, stating that $\partial E / \partial\lambda$ can be evaluated for for a continous parameter $\lambda$ on which the wavefunction, $\Psi(\lambda)$, depends implictily,
+Fortunately, for such variational calculations, a force theorem has been developed, stating that $\partial E / \partial\lambda$ can be evaluated for for a continuous parameter $\lambda$ on which the wavefunction, $\Psi(\lambda)$, depends implicitly,
 \beq{hellmann-feynman-forces-full}
 \frac{\partial E}{\partial \lambda} = 
 \bra \frac{\partial \Psi}{\partial \lambda} | \widehat{H} | \Psi \ket +
 \bra \Psi | \frac{\partial \widehat{H}}{\partial \lambda} | \Psi \ket +
 \bra \Psi | \widehat{H} | \frac{\partial \Psi}{\partial \lambda} \ket.
 \eeq
-Utilising the orthogoanlity of the wave function, the first and last terms are zero, 
+Utilising the orthogonality of the wave function, the first and last terms are zero, 
 \beq{hellmann-feynman-forces-final}
 \frac{\partial E}{\partial \lambda} = \bra \Psi | \frac{\partial \widehat{H}}{\partial \lambda} | \Psi \ket.
 \eeq
@@ -29,4 +29,4 @@ For DFT, and any other Born-Oppenheimer calculations, $\lambda$ can be the nucle
 %\eeq
 Since the forces depend on the variational determination of the wave function (or electron density), their accuracy cannot be guaranteed and they tend to have numerical noise\citemiss which must be considered when using the forces.
 
-The theorem has been proved independantly by multiple authors~\cite{forces-pauli-1933, forces-guttinger-1932} but is generally attributed to Richard Feynman\cite{forces-feynman-1939} and Hans Hellmann~\cite{forces-hellmann-1937}, as the Hellmann-Feynman Theorem.
+The theorem has been proved independently by multiple authors~\cite{forces-pauli-1933, forces-guttinger-1932} but is generally attributed to Richard Feynman\cite{forces-feynman-1939} and Hans Hellmann~\cite{forces-hellmann-1937}, as the Hellmann-Feynman Theorem.
