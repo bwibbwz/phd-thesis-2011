@@ -26,13 +26,15 @@ H =
 \end{bmatrix}.
 \eeq
 The second derivative of a function represents, in particular, information about its local curvature, or how rapidly the first derivative changes.
+Classification of stationary points (and implicitly critical points) relies on the eigenvalues of $H$, $\lambda_i$,
+\bit
+\item Minimum if all $\lambda_i > 0$
+\item Maximum if all $\lambda_i < 0$
+\item Saddle Point if some but not all $\lambda_i < 0$
+\item Otherwise higher order derivatives are needed for classification
+\eit
 
 $H$ is named after the German mathematician Ludwig Otto Hesse and is commonly referred to as the Hessian matrix, or Hessian for short.~\citemiss
 
-In the context of atomic simulations $n$ is generally 3 times the number of atoms in the system, as each one has 3 independant degrees of freedom.
-The function in question is often the potential energy of the system, whose negative gradient is commonly referred to as the force.
+In the context of atomic simulations, $n$ is generally 3 times the number of atoms in the system, as each one has 3 independent degrees of freedom and the function in question is often the potential energy of the system.%, whose negative gradient is commonly referred to as the force.
 In most modern software packages both the potential energy and force are readily available while the second derivatives are, generally, not available without explicit and, often, costly calculations.
-
-\bit
-\item Second derivative test: \url{http://en.wikipedia.org/wiki/Second_partial_derivative_test}
-\eit
