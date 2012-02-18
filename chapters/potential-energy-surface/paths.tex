@@ -1,44 +1,42 @@
 \section{Steepest Descent Paths}
 \label{sec:sdps}
 
-\figmiss{Showing a few general SDPs and at least one MEP and one ridge}
+\figmiss{Showing a few general SDPs and at least one MEP and one ridge, High priority}
 
 Steepest Descent Paths (SDPs) are paths on a multidimensional function, $f$, for which there is no perpendicular gradient component,
 \beq{sdp-definition}
-\nabla f - (\nabla f \cdot \tau)\tau = \vect{0}, \tblue{ATH: vectors?}
+\nabla \vect{f} - (\nabla \vect{f} \cdot \uvt)\uvt = \vect{0},
 \eeq
-where $\tau$ is the tangent to the path.
+where $\uvt$ is the tangent to the path.
 They can be created by following the negative gradient until it vanishes.
 SDPs can begin anywhere, apart from points with a vanishing gradient, but, generally, end at minima (most common) or \sap{}s.
 Two sorts of SDPs are of particular interest for the work presented in this thesis, both of which are discussed below.
 
-\bit
-\item Missing citation, maybe it is okay to use \cite{gradient-extremals-ruedenberg-1993}
-\eit
+%\bit
+%\item Missing citation, maybe it is okay to use \cite{gradient-extremals-ruedenberg-1993}
+%\eit
 
-\subsection{Minimum Energy Paths}
-\label{sec:meps}
+\subsubsection{Minimum Energy Paths}
+%\label{sec:meps}
 
-\bit
-\item Need a good definition and/or citation.
+%\bit
+%\item Need a good definition and/or citation.
 %Check this reference:
 %Transition-Path Theory and Path-Finding Algorithms for the Study of Rare Events
 %(Weinan E and Eric Vanden-Eijnden)
-\eit
+%\eit
 
-The Minimum Energy Path (MEP) is specific SDP, used in the context of theoretical reaction chemistry and represents a likely reaction path on the PES.
-The MEP's formal definition is generally the same as for any SDP (\fref{eq:sdp-definition}) but with the added criteria that the energy must be at a minimum perpendicular to the path~\cite{neb-polemic-henkelman1},
-\beq{mep-definition}
-\text{\expand}
-\eeq
+The Minimum Energy Path (MEP) is a collection of two specific SDPs, used in the context of theoretical reaction chemistry and represents a likely reaction path on the PES.
+It leads between two minima through a \sap{1}, where each SDP begins.~\cite{neb-polemic-henkelman1},
 
-\subsection{Ridges}
-\label{sec:ridges}
+%The MEP's formal definition is generally the same as for any SDP (\fref{eq:sdp-definition}) but with the added criteria that the energy must be at a minimum perpendicular to the path~\cite{neb-polemic-henkelman1},
+%\beq{mep-definition}
+%\text{\expand}
+%\eeq
 
-Similar to MEPs, ridges are specific SDPs, except with beginning and end points in \sap{2}s and \sap{1}s respectively.
-Of course, MEPs do not exists near \sap{2}s, and the anlogue ends there as the criteria for ridges \expand
+\subsubsection{Ridges}
+%\label{sec:ridges}
 
-\bit
-\item Need a good definition and/or citation.
-\eit
+Similar to MEPs, ridges are collections of specific SDPs, but with their start points at a \sap{2}s and their end points in \sap{1}s.
+Of course, MEPs do not exists near \sap{2}s, and the anlogue ends there as the criterion for a ridge demands a negative eigenvalue in the reduced Hessian, perpendicular to the path.
 
