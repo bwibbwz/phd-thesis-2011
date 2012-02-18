@@ -7,11 +7,11 @@
 With increased computing power and, in particular, advances in parallel algortims, it is now possible to calculate a range of physical properties for materials on the atomic level without the use of any experimental parameters.
 Such \textit{ab initio} methods are generally attempts at solving or approximating the Schr\"odinger equation (\fref{sec:schrodinger}) for the ground state\footnote{Non ground state calculations are not considered in this thesis.}.
 Multiple strategies exist --- choosing one generally involves considering the trade-off between accuracy and computational effort --- but the main one used in this thesis is the Density Functional Theory, where the many-electron problem is \emph{exactly} divided into multiple one-electron problems.
-\expand?
+%\expand?
 
 \subsection{The Electronic Structure Problem}
 Solving the Schr\"odinger equation (\fref{sec:schrodinger}) is not a menial task, as it is a second order partial derivative equation in multiple dimensions and can only be solved exactly for very small systems.
-Due to the high dimensionality of the wavefunction, simply storing it for a medium-to-large system is physically impossible.\footnote{Consider a system of only $16$ electrons (e.g. an oxygen molecule), sampled on a grid of $10$ points in each direction. Since each electron has 3 degrees of freedom the number of gridpoints will be $10^{16\times3} = 10^{48}$. Compared with the estimated amount of atoms in/on the Earth, $\mytilde10^{50}$\citemiss, the amount of gridpoints is impossible to store, even for a modest system.}
+Due to the high dimensionality of the wavefunction, simply storing it for a medium-to-large system is physically impossible.\footnote{Consider a system of only $16$ electrons (e.g. an oxygen molecule), sampled on a grid of $10$ points in each direction. Since each electron has 3 degrees of freedom the number of gridpoints will be $10^{16\times3} = 10^{48}$. Compared with the estimated amount of atoms in/on the Earth, $\mytilde10^{50}$, the amount of gridpoints is impossible to store, even for a modest system. This problem is commonly referred to as the exponential wall~\cite{kohn-1999}}
 
 The Born-Oppenheimer approximation (\fref{sec:born-oppenheimer}) allows the separation of the Hamiltonian to an electronic part and a nuclear part.
 Thus, the positions of the nuclei, $\vR_I$ only enter the calculations as parameters.
