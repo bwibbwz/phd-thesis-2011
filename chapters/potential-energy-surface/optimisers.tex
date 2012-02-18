@@ -1,11 +1,12 @@
-\section{Optimisers}
-\label{sec:optimisers}
+\section{Locating Minima}
+\label{sec:minima}
 
-\bit
-\item Introduce optimisers (minimisers, is there a difference)
-\item What are they used for? Newton solvers with friction
-\item Possibly introduce, quickly, specific algorithms: Steepest Descent, FIRE, (L)BFGS
-\eit
+Searching for minima\footnote{or equivalently maxima but due to the contxet of atomic simulations the discussion will be on minima.} is an important subject as they represent stable structures on PESes.
+Using the available local information, the energy and the force, it is possible to follow the force with an appropriate stepsize until the gradient is zero, at which time a stationary point has been reached.
+Generally this point will be a minimum but classifying non-minima will be discussed below.
 
-\placeholder
+Multiple techniques exist for performing these minimisations\footnote{Also often referred to as optimisations} in as few iterations as possible.
+Some are as simple as adjusting the stepsize~\citemiss to simulate velocity, while others detect changes in this fictional velocity and adjust accordingly~\citemiss.
+Still other methods build up information about the curvature to predict the appropriate stepsize~\citemiss and yet others make quadratic assumptions about the environment~\citemiss.
 
+All these methods have a common theme of solving Newton's equations of motion with some type of fictional friction in order to reduce the kinetic and total energy of the system to bring it to a potential energy minimum.
