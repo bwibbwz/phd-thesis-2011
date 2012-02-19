@@ -6,8 +6,8 @@ The path should, in particular, lie through any intermediate \sap{2}s so that a 
 The method should, furthermore, lead to the identification of previously unknown \sap{1}(s) on the ridge in between the given end points, should they exist.
 
 \subsubsection{Gradient Modification}
-Similarly to the NEB method~\cite{neb-original-1998} (\fref{sec:neb}), a path of $N$ images, $[\vR_0, \vR_1, \ldots, \vR_N]$, is iteratively aligned with the ridge by modifying the gradient or force, $\vF_i \equiv -\nabla E(\vR_i)$.
-Unlike the NEB method, further force modifications are needed, in order to let the ridge appear as a MEP.
+Similarly to the NEB method~\cite{neb-original-1998} (\fref{sec:neb}), a path of $N$ discrete images, $[\vR_0, \vR_1, \ldots, \vR_N]$, is iteratively aligned with the ridge by modifying the gradient or force, $\vF_i \equiv -\nabla E(\vR_i)$, for each one.
+However, unlike the NEB method, further force modifications are needed, in order to let the ridge appear as a MEP.
 
 The path is at each image defined by its tangent, $\uvt_i$, and in order for the path to be at a SDP (such as the ridge), any force components perpendicular to it,
 \beq{perpendicular-force}
@@ -29,6 +29,21 @@ Since eigenvectors are not neccesarily perpendicular to the ridge (as can be see
 \eeq
 at all times.
 
+Similarly to the NEB method, an artificial force is employed in order to keep the images equally\footnote{or with controlled sapcing} distributed along the path.
+For the NEB method this force acts only along the path and is generally referred to as the spring force as it resembles springs connecting the images.
+However in the case of ridge calculations, the full spring force most be used,
+\beq{full-spring-force}
+\vF_i^\text{S} = k \left[ \left( \vR_{i+1} - \vR_i \right) - \left( \vR_i - \vR_{i-1} \right) \right],
+\eeq
+where $k$ is the spring constant, which controls the stiffness of the springs.
+Retention of the full spring force is neccesary due to numerical instabilities which proved to be more prominent in ridge calculations than MEP calculations.
+
+Combining the above forces, $\vF_i^\text{t}$ and $\vF_i^\text{S}$, into an effective force (as shown in \fref{fig:erm-force-diagram}),
+\beq{erm-effective-force}
+\vF_i^\text{eff} = \vF_i^\text{t} + \vF_i^\text{S},
+\eeq
+will allow the path iteratively converge to a close to the ridge.
+
 \subsubsection{Numerical Instabilities}
 \bit
 \item The orthgonality constraint, introduced in \fref{eq:orthogonality-constraint}, has the possibility to introduce numerical instabilities.
@@ -36,11 +51,14 @@ at all times.
 \item Odd starting profiles (monotonic or inverted barriers) are dangerous.
 \eit
 
-\placeholder
+\subsubsection{Exact Convergence to the \sap{2}}
+Beyond the problems already discussed regarding converging exactly to the \sap{1} in NEB calculations, corner cutting due to the retention of the full spring force makes it unlikely that using only \fref{eq:erm-effective-force} will yield an image at the exact \sap{2}.
+
 
 \subsection{Energy Ridge Mapping}
 \label{sec:energy-ridge-mapping}
-
 In the context of atomic simulations, the function in question is often the potential energy as a function of all atomic co-ordinates.
 
-\incomplete
+Information about energy ridges can be useful when considering reaction rates, e.g. for checking the validity of the harmonic approximation to TST (\fref{sec:tst-htst}).
+Futhermore, should HTST not be sufficient it is possible to make adjustments to the rate using information about the ridge.
+This move beyond harmonicity is discussed in \fref{chap:al} and paper \ref{pap:second-order}.
