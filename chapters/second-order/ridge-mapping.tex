@@ -52,13 +52,20 @@ will allow the path iteratively converge to a close to the ridge.
 \eit
 
 \subsubsection{Exact Convergence to the \sap{2}}
-Beyond the problems already discussed regarding converging exactly to the \sap{1} in NEB calculations, corner cutting due to the retention of the full spring force makes it unlikely that using only \fref{eq:erm-effective-force} will yield an image at the exact \sap{2}.
+Beyond the problems already discussed regarding converging exactly to the \sap{1} in NEB calculations, systematic errors due to the retention of the full spring force makes it unlikely that using only \fref{eq:erm-effective-force} will yield an image at the exact \sap{2}.
+As with the NEB method a Dimer-type solution is possible --- similar to equations \ref{eq:dimer-transform} and \ref{eq:neb-ci-transform} --- where the highest value image is decoupled from the springs and force components along the \emph{two} lowest eigenvalued eigenmodes, as defined by the minimum mode and the tangent,
+\beq{erm-ci}
+\vF_{i_\text{max.}}^\text{eff.} = \vF_{i_\text{max.}} - 2(\vF_{i_\text{max.}} \cdot \uvt_{i_\text{max.}})\uvt_{i_\text{max.}} - 2(\vF_{i_\text{max.}} \cdot \uvn_{i_\text{max.}})\uvn_{i_\text{max}},
+\eeq
+where $i_\text{max.}$ refers to the image with the highest functional value.
 
+Unlike the NEB, the computational effort involved is not easily measured due to the systematic errors introduced by the full spring force but there is no reason to suspect increased effort by applying \fref{eq:erm-ci}.
+Also, this addition can not be considered optional, as it can technically for NEB, as it serves as an indirect stabilisation tool at the top of the path, where the environment is concave\footnote{Curves downwards} in 2 dimensions rather than 1 as is the case with a MEP.
 
 \subsection{Energy Ridge Mapping}
 \label{sec:energy-ridge-mapping}
 In the context of atomic simulations, the function in question is often the potential energy as a function of all atomic co-ordinates.
 
-Information about energy ridges can be useful when considering reaction rates, e.g. for checking the validity of the harmonic approximation to TST (\fref{sec:tst-htst}).
+Information about energy ridges can be useful when considering reaction rates, e.g. for checking the validity of the harmonic approximation to TST (\fref{sec:htst}).
 Futhermore, should HTST not be sufficient it is possible to make adjustments to the rate using information about the ridge.
 This move beyond harmonicity is discussed in \fref{chap:al} and paper \ref{pap:second-order}.
