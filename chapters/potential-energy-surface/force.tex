@@ -1,6 +1,6 @@
 \section{Force}
 \label{sec:force}
-Since the PES, $E(\vR)$, is, generally, not known \textit{a priori}, traversing it is difficult without a guide.
+Since the PES, $E(\vR)$, is generally not known \textit{a priori}, traversing it is difficult without a guide.
 Such a guide exists in the form of the gradient, $\nabla E(\vR)$, in which information about the increase/decrease of the function (here: PES) is encoded.
 The gradient points towards the direction of greatest increase, however, in atomic simulations such areas are, commonly, of little interest.
 Most of the time, systems are at, or near, stable structures, which are represented by minima on the PES.
@@ -10,7 +10,7 @@ Defining a force that, similarly to real world forces, points the system towards
 \eeq
 
 The gradient is not directly available from DFT calculations, as for other non-analytical PESes.
-Fortunately, for such variational calculations, a force theorem has been developed, stating that $\partial E / \partial\lambda$ can be evaluated for for a continuous parameter $\lambda$ on which the wavefunction, $\Psi(\lambda)$, depends implicitly,
+Fortunately, for such variational calculations, a force theorem has been developed, stating that $\partial E / \partial\lambda$ can be evaluated for a continuous parameter $\lambda$ on which the wavefunction, $\Psi(\lambda)$, depends implicitly,
 \beq{hellmann-feynman-forces-full}
 \frac{\partial E}{\partial \lambda} = 
 \bra \frac{\partial \Psi}{\partial \lambda} | \widehat{H} | \Psi \ket +

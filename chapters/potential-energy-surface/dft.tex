@@ -4,7 +4,7 @@
 % Add a footnote about the spin density DFT (see Kieron's stuff for a reference)
 % Also footnote on degeneracy
 
-With increased computing power and, in particular, advances in parallel algortims, it is now possible to calculate a range of physical properties for materials on the atomic level without the use of any experimental parameters.
+With increased computing power and, in particular, advances in parallel algortims, it is now possible to calculate a range of physical properties for materials at the atomic level without the use of any experimental parameters.
 Such \textit{ab initio} methods are generally attempts at solving or approximating the Schr\"odinger equation (\fref{sec:schrodinger}) for the ground state\footnote{Non ground state calculations are not considered in this thesis.}.
 Multiple strategies exist --- choosing one generally involves considering the trade-off between accuracy and computational effort --- but the main one used in this thesis is the Density Functional Theory, where the many-electron problem is \emph{exactly} divided into multiple one-electron problems.
 %\expand?
@@ -14,7 +14,7 @@ Solving the Schr\"odinger equation (\fref{sec:schrodinger}) is not a menial task
 Due to the high dimensionality of the wavefunction, simply storing it for a medium-to-large system is physically impossible.\footnote{Consider a system of only $16$ electrons (e.g. an oxygen molecule), sampled on a grid of $10$ points in each direction. Since each electron has 3 degrees of freedom the number of gridpoints will be $10^{16\times3} = 10^{48}$. Compared with the estimated amount of atoms in/on the Earth, $\mytilde10^{50}$, the amount of gridpoints is impossible to store, even for a modest system. This problem is commonly referred to as the exponential wall~\cite{kohn-1999}}
 
 The Born-Oppenheimer approximation (\fref{sec:born-oppenheimer}) allows the separation of the Hamiltonian to an electronic part and a nuclear part.
-Thus, the positions of the nuclei, $\vR_I$ only enter the calculations as parameters.
+Thus, the positions of the nuclei, $\vR_I$, only enter the calculations as parameters.
 A full quantum treatment will not be discussed here (see for example~\citemiss).
 
 A non-relativistic system of $N_e$ electrons (and $N_n$ nuclei) is described by the time independant Schr\"odinger equation~\cite{schrodinger-equation-1926}
@@ -63,7 +63,7 @@ This work alone is still missing key elements in order to efficiently solve for 
 
 \subsubsection{The Kohn-Sham Equations}
 Counter-intuatively re-introducing wave functions was the solution proposed by Walter Kohn and Lui Jeu Sham in 1965~\cite{kohn-sham-1965}.
-Inspired by Hartree's work nearly four decades earlier~\cite{hartree-1928}, multiple non-interacting single particle wave functions, $\phi_i(\vr_i)$ took the place of the many-body wave function (or electron density), such that
+Inspired by Hartree's work nearly four decades earlier~\cite{hartree-1928}, multiple non-interacting single particle wave functions, $\phi_i(\vr_i)$, took the place of the many-body wave function (or electron density), such that
 \beq{kohn-sham-density}
  \rho(\vr) = \sum_{i=1}^{N_e} \left| \phi_i(\vr_i) \right|^2,
 \eeq
@@ -95,7 +95,7 @@ Thus far the formalism is exact, however, all the difficult parts, $E_\text{XC}[
 
 \subsubsection{The Exchange-Correlation Functional}
 The Kohn-Sham equations are in principle exact, however, the exchange-correlation functional, $E_\text{XC}[\rho(\vr)]$, is generally not known and has to be approximated.
-The accuracy of the this approximation is a major factor in determining the accuracy of DFT as a whole.
+The accuracy of this approximation is a major factor in determining the accuracy of DFT as a whole.
 A detailed discussion of Exchange-Correlation functionals is material enough for a whole chapter, thus only the basic approximation will be discussed here.
 
 The Local Density Approximation (LDA)~\cite{kohn-sham-1965} treats exchange-correlation as if it were a homogeneous electron gas.

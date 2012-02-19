@@ -1,12 +1,12 @@
 \section{Analytical Potential Energy Surfaces}
 \label{sec:potentials}
 
-For very large systems or when timing is a factor, it is possible employ classical potential functions for calculating the potential energy and gradient.
+For very large systems or when timing is a factor, it is possible to employ classical potential functions for calculating the potential energy and gradient.
 Such potential functions are tailor made for a given bond and generally give poor physical insight when used on a different system.
 
 Most common are pair-potentials\footnote{Many-body potentials are also possible (see for example~\cite{stillinger-weber-potential})}, where each atom in the system feels an interaction with each other atom, where each interaction can be tuned by emperical parameters.
 Such potentials are very helpful during the development of methods and two such were extensively used for testing the novel method presented in \fref{chap:erm} and paper \ref{pap:second-order}.~\cite{eam-1983, eam-1986, emt-1987, emt-1996}
-Furthermore, if tuning the parameters of the potential well enough is possible, the potential can be used to perform calculations that are infeasable for quantum methods, such as long timescale dynamics of large systems.~\citemiss
+Furthermore, if tuning the parameters of the potential well enough is possible, the potential can be used to perform calculations that are infeasable for quantum methods, such as long term molecular dynamics of large systems.~\citemiss
 
 \subsubsection{Embedded Atom Model}
 The Embedded Atom Model (EAM)~\cite{eam-1983} operates under the principle an atom's energy is a functional of the system's electron density.
@@ -16,7 +16,7 @@ E_i = F_\alpha \left( \sum_{i \not= j} \rho_\beta(\left| \vR_i - \vR_j \right|)\
 \eeq
 where $\phi_{\alpha\beta}$ is a short-range pairwise-potential function, $\rho_\beta$ is the contribution to the electron charge density from atom $j$ of type $\beta$ at $\vR_i$ and $F_\alpha$ is an embedding function that represents the energy required to place atom $i$ of type $\alpha$ into the electron cloud.
 
-EAM has been parameterised very well, e.g. for \ce{Al} surfaces using DFT data~\cite{eam-1986} and used in studies of the self-diffusional mechanisms on the \ce{Al}(100) surface~\cite{dimer-original-1999}
+EAM has been parameterised very well, e.g. for \ce{Al} surfaces using DFT data~\cite{eam-1986} and used successfully in studies of the self-diffusional mechanisms on the \ce{Al}(100) surface~\cite{dimer-original-1999}
 
 Extensive use was made of potential functions in this thesis.
 Simple and quick test cases served to produce PESes that could be visualised in two dimensions, while still retaining the properties of truly multidimensional systems in \fref{chap:erm}.
