@@ -8,7 +8,7 @@
 In atomistic simulations there is a often a clear separation of timescales between the most interesting events.
 With local vibration of the atoms being very fast, typically on the order of $10^{14} \unit{Hz}$~\citemiss,
 while non-local reordering of atoms, motion between minima on the PES, often considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$ for a system with an energy barrier of $0.5 \unit{eV}$.~\citemiss
-Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^10$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
+Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^{10}$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
 
 Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, e.g. by minimising vibrations to allow for longer timesteps~\citemiss or modifying the PES~\cite{hyperdynamics-voter-1997}, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
 This is true, in particular, for calculations that rely on costly, but accurate, quantum calculations and/or large systems.
@@ -25,9 +25,9 @@ The Hamiltonian of the system can be separated, resulting in a single PES for th
 \explain{Classical Dynamics}
 No tunnelling or other quantum effects --- apart from those offered by the calculational method of the PES --- are taken into account in the vanilla TST.
 The motion of the system is governed by classical dynamics.
-Quatnum effects are included in extensions to TST (see for example \cite{qtst-hj-1997, qtst-hj-1998, qtst-hj-2009}~\citemiss) but this is not relevant to the work presented in this thesis and will not be discussed further.
+Quantum effects are included in extensions to TST (see for example \cite{qtst-hj-1997, qtst-hj-1998, qtst-hj-2009}~\citemiss) but this is not relevant to the work presented in this thesis and will not be discussed further.
 \explain{Thermal Equilibrium}
-The system will spend considerable time in each basin of the PES, long enough such that the Boltzmann distribution for ... can be employed.
+The system will spend considerable time in each basin of the PES, long enough such that a Boltzmann distribution for system can be employed.
 For systems with large energy barriers in comparison with the thermal energy~\footnote{A rule of thumb is that $E_\text{b} > 5\kB T$~\citemiss}, this assumption holds well but for smaller barriers or high temperatures it breaks down as thermal equilibrium becomes difficult to achieve and the separation of timescales is lost
 \explain{No Re-Crossings}
 Once the system has left a basin, it does not return for a significant amount of time (long enough to thermalise in the new basin).
