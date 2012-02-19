@@ -6,6 +6,7 @@
 %\def\baseclass{report}
 %\def\baseclass{scrreprt}
 \def\baseclass{scrbook}
+%\def\baseclass{book}
 %\def\baseclass{memoir}
 
 % --- Pass the normal options to the baseclass ---
