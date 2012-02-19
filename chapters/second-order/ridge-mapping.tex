@@ -1,31 +1,31 @@
 \section{Ridge Mapping}
 \label{sec:ridge-mapping}
 
-Given a function, $E$, of multiple varibles, $\vR$, its gradient, $\nabla E(\vR)$, and two \sap{1}s, the goal is to identify a path that lies close to the ridge on which the two \sap{1}s lie.
+Given a function, $E$, of multiple varibles, $\vR$, its gradient, $\nabla E(\vR)$, and two \sap{1}s, the goal is to identify a path that lies close to the ridge between the two \sap{1}s.
 The path should, in particular, lie through any intermediate \sap{2}s so that a comparison of the height of \sap{2}s with respect to the \sap{1}s can be made.
 The method should, furthermore, lead to the identification of previously unknown \sap{1}(s) on the ridge in between the given end points, should they exist.
 
 \subsubsection{Gradient Modification}
-Similarly to the NEB method~\cite{neb-original-1998} (\fref{sec:neb}), a path is iteratively aligned with the ridge by modifying the gradient or force, $\vF \equiv -\nabla E(\vR)$.
-Unlike the NEB method, further force modifications are needed, in order to let the ridge seem as a MEP.
+Similarly to the NEB method~\cite{neb-original-1998} (\fref{sec:neb}), a path of $N$ images, $[\vR_0, \vR_1, \ldots, \vR_N]$, is iteratively aligned with the ridge by modifying the gradient or force, $\vF_i \equiv -\nabla E(\vR_i)$.
+Unlike the NEB method, further force modifications are needed, in order to let the ridge appear as a MEP.
 
-The path is defined by its tangent, $\uvt$, and in order for the path to be at a SDP (such as the ridge), any force components perpendicular to it,
+The path is at each image defined by its tangent, $\uvt_i$, and in order for the path to be at a SDP (such as the ridge), any force components perpendicular to it,
 \beq{perpendicular-force}
-\vF^\perp \equiv \vF -(\vF \cdot \uvt)\uvt,
+\vF_i^\perp \equiv \vF_i -(\vF_i \cdot \uvt_i)\uvt_i,
 \eeq
 must be zero,
 \beq{ridge-force}
 \vF^\perp_\text{ridge} = \vect{0}.
 \eeq
 Furthermore, one negative eigenvalue of the Hessian, perpendicular to the path, must be guaranteed.\footnote{If finding higher order ridges is desired, more negative eigenvalues must be guaranteed.}
-Utilising the Dimer methodology~\cite{dimer-original-1999, dimer-olsen-2004} (\fref{sec:dimer}) for finding lowest eigenvalue and the corresponding eigenvector (minimum mode), $\uvn$, a transformed force,
+The Dimer methodology~\cite{dimer-original-1999, dimer-olsen-2004} (\fref{sec:dimer}) for finding the lowest eigenvalue and the corresponding eigenvector (minimum mode) of the Hessian, $\uvn_i$, can produce a transformed force,
 \beq{transformed-force}
-\vF^\text{t} = \vF^\perp - 2(\vF^\perp \cdot \uvn)\uvn,
+\vF_i^\text{t} = \vF_i^\perp - 2(\vF_i^\perp \cdot \uvn_i)\uvn_i,
 \eeq
-will let ridges appear, locally as MEPs.
+that will let ridges appear, locally as MEPs.
 Since eigenvectors are not neccesarily perpendicular to the ridge (as can be seen in figure 1 of paper \ref{pap:second-order}), the path itself must be left out of the Hessian's vector space, thus applying an orthogonality constraint on the minimum mode,
 \beq{orthogonality-contrainst}
-\uvt \cdot \uvn = 0,
+\uvt_i \cdot \uvn_i = 0,
 \eeq
 at all times.
 

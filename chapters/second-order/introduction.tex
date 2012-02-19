@@ -2,14 +2,22 @@
 \label{sec:erm-introduction}
 % -----------------------------------------------------------------
 
-A ridge is a collection of steepest decent paths (SDPs) between any \sap2s and \sap1s between two end \sap1s.
+A collection of two specific steepest descent paths starting infinitesimally close to a \sap{2} and ending at the neighboring \sap{1}s can be considered a ridge.
+Such a path is non-trivial to find as information about the curvature, the Hessian, is essential but often unavailable in a direct manner.
+
+A given point, $\vR$, is located on a ridge if its gradient is parallel with its tangent and the Hessian matrix for a reduced space where the tangent is excluded has a single negative eigenvalue~\footnote{Higher order "ridges" can be identified if the Hessian has more negative eigenvalue.}.
+
+
+
+
+
 
 We shall first introduce the finding of ridges for any given function of multiple variables before taking the specific example of potential energy surfaces (PESes) and atomic simulations and,
 finally, investigating the quality of HTST in \tblue{2 systems}:
 The diffusion of Al on an Al(100) surface and \tblue{hydrogen diffusion in perovskites}.
 
-\bit
-\item The methods presented here are not exclusive to atomistic simulations
-\eit
+%\bit
+%\item The methods presented here are not exclusive to atomistic simulations
+%\eit
 
 \incomplete
