@@ -1,22 +1,37 @@
 \section{Corner Cutting}
 \label{sec:erm-corner-cutting}
 
+
+
+
 Should finding the exact ridge be the goal, multiple strategies can be envisioned all of which aim at somehow reducing the perpendicular component of the spring force while avoiding and/or minimising the instabilities discussed above.
 
 \subsubsection{What is corner cutting}
-\placeholder
+The spring force tries to keep each image as close as possible as it can to its neighbors.
+Without any further influence, the images align evenly spaced in a straight line.
+However, since there are other forces at work, perpendicular to the path, $\vF^\text{t}$, an equilibirium between the conflicting forces will be reached, when they are equal in length but with opposide direction,
+\beq{corner-cutting-equilibrium}
+\vF^{\text{S}\perp} = -\vF^\text{t}.
+\eeq
+Since the goal of the whole method is to fulfil \fref{eq:ridge-force}, such an equilibrium is not satisfactury.
 
-\subsubsection{Detecting corner cutting}
-\placeholder
+This problem existed in the infancy of NEB calculations but was made a thing of the past with more numerically suitable tangent and spring force definitions.~\cite{neb-tangent-2000}
 
-\subsection{Minimise conrner cutting}
-\emph{This section is speculative and serves as an outlook than a complete discussion.}
+\figmiss{Graphic representation of corner cutting. Medium priority.}
+
+\subsection{Minimise corner cutting}
+After publishing paper \ref{pap:second-order} some effort went into finding the exact ridge instead of paths that suffer from corner cutting.
+The methods and ideas here are somewhat speculative and serve more as a detailed outlook for future work than a complete discussion.
+
+In order to reduce/remove corner cutting 
+
 
 \bit
 \item Iteratively remove the perpendicular component of the spring force. Multiple schemes for reducing.
 \item Change the orthogonality constraint (depending on how the dimer influences the stability of the calcluation)
 \eit
 
+The main problem with simply removing the perpendicular spring force is the instabilities that exist due to the orthogonality constraint (see above) of \fref{eq:orthogonality-constraint}, which in turn is employed to overcome other instabilities.
 
 \subsection{Older stuff}
 
