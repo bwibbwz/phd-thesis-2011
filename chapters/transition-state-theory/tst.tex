@@ -38,35 +38,30 @@ This assumption is the most serious and efforts to minimise its effects are disc
 \figmiss{Transition State}
 
 When dividing the phase space (position and momentum) into two areas, reactants (R) and products (P), a hypersurface separating the two emerges.
-This hypersurface is referred to as the transition state ($\ts$)\footnote{The double dagger, $\ts$, is a conventional symbol for the transition state} and represents a bottleneck region which each reactive trajectory crosses on its way from R to P.
-Commonly, momentum is disregarded in the definition of the phase space, which is then  $3N$ dimensional, within which the $\ts$ is a $3N-1$ dimensional subspace.
+This hypersurface is referred to as the transition state ($\ts$)\footnote{The double dagger, $\ts$, is a conventional symbol for the transition state} and represents a bottleneck region with regards to the free energy, which each reactive trajectory crosses on its way from R to P.
+Commonly, momentum is disregarded in the definition of the phase space, which is then $3N$ dimensional (for a system of $N$ particles), within which the $\ts$ is a $3N-1$ dimensional subspace.
 
-\subsection{Statistical Methods}
+%\subsection{Statistical Methods}
 
-\bit
-\item Configuration Integrals (or partition functions?)
-\eit
+%Take advantage of the time-scale separation ...
 
-Take advantage of the time-scale separation ...
+%TST aims at overcoming the time-scale problem by way of "averaging" over the fast vibrational motion to present a reaction rate for the rare-events.
 
-TST aims at overcoming the time-scale problem by way of "averaging" over the fast vibrational motion to present a reaction rate for the rare-events.
+%Boltzmann distribution...
+%Maxwell distribution (velocity)...
 
-Boltzmann distribution...
-Maxwell distribution (velocity)...
+%\incomplete
 
-%The partition functions require the total energy of the $N$ atoms system,
-%\beq{tst-total-energy}
-%E(\vR, \vect{v}) = V(\vR) + \frac{1}{2} \sum_i^{N} m_i \left| \vect{v}_i \right|^2
-%\eeq
-%with atoms at $\vR$ with velocity $\vect{v}$, travelling on the PES, $V$.
-
-\incomplete
-
-The most important assumption remains, any trajectories that cross the TS do not recross it.
-This assumtion is also the weakest link \expand
+%The most important assumption remains, any trajectories that cross the TS do not recross it.
+%This assumtion is also the weakest link \expand
 
 \section{Reaction Rates}
-The reaction rate, $k_\text{TST}$, is defined as the probability of being at the $\ts$,
+Considering a canonincal ensemble\footnote{the number of particles and volume is constant and there is a well defined temperature.}, the probability that a system in thermal equilibrium, i.e. described by a Boltzmann distribution, is in a given state $S$ is dependant on its configurational integral~\footnote{The continuous classical analogue to the discrete partition function.},
+\beq{configurational-integral}
+Z_S = \int_S e^{-E(\vR) / \kB T}d\vR
+\eeq
+
+The reaction rate, $k_\text{TST}$, is defined as the probability of being in the $\ts$ subsapce of $\text{R}$,
 \beq{ts-probability-partition-simple}
 P_\ts = \frac{Z_\ts}{Z_\text{R}},
 \eeq
