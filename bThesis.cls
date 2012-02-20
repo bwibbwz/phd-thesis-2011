@@ -49,7 +49,7 @@
 \usepackage[final]{hyperref}
 
 % --- Fonts ---
-\usepackage{cmbright}
+%\usepackage{cmbright} % Displayes vectors in suprscripts wrong
 
 % --- New command definitions ---
 %\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
