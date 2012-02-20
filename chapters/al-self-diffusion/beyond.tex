@@ -11,7 +11,30 @@ The literature is unspecific as to what a sufficient difference is but a commonl
 It is reasonable to assume a similar criterion for $E(\vR_\sap{2}) - E(\vR_\sap{1})$.
 
 Ridge calculations can be used to check if this criterion is fulfilled but further, they can be used to improve the reaction rate.
-By comparing the configurational integral of the harmonic energy profile to that of the ridge corrections can be made to the reaction rate.
+By comparing the configurational integral of the harmonic energy profile for a given degree of freedom, 
+\beq{harmonic-configurational-integral}
+Z_\ts^\text{harm.} = \int_{-\infty}^\infty e^{\alpha x^2/ \kB T}dx,
+\eeq
+to that of the ridge,
+\beq{ridge-configurational-integral}
+Z_\ts^\text{ridge} = \int_\text{ridge} e^{-E(x)/ \kB T}dx,
+\eeq
+where x is the displacement along the particular degree of freedom under investigation and $\alpha$ is the corresponding Taylor coefficient, corrections can be made to the reaction rate.
+The ratio of the configrational integrals,
+\beq{htst-correction-factor}
+\Gamma = \frac{Z_\ts^\text{ridge}}{Z_\ts^\text{harm.}},
+\eeq
+can be used as a multiplicative correction factor to the harmonic reaction rate,
+\beq{corrected-htst-rate}
+k_\text{HTST}^\text{corrected} = \Gamma \k_\text{HTST},
+\eeq
+for each investigated degree of freedom.
 
+Since the harmonic integral has a larger range, $[\-infty, \infty]$, than the ridge integral, $[\sap{2}^\text{A}, \sap{2}^\text{B}]$, it is possible for the ratio to become larger than 1.0.
+Such ratios are artefacts and should not be used to increase the reaction rate.
+It is possible to limit the harmonic integral to the same range as the ridge integral\footnote{using the error function.} to avoid this but the tests presented here did not see $ç\Gamma > 1.0$ as a serious problem and thus used the infinite limits.
 
-
+Choosing the direction of $x$ is non-trivial.
+In this work, it is implicitly chosen when $\alpha$ is prepared by means of a least squares analysis of the 4 lowest energy images of the ridge.
+Another method would be to use the tangent of the ridge at the \sap{1} in question to extract the corresponding vibrational frequency from the Hessian but this method was not tested.
+In general, the accuracy of $\Gamma$ is not essential as it can only offer a rough correction estimate rather than a rigorous correction to HTST.
