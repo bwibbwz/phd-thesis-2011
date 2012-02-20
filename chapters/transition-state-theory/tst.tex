@@ -3,7 +3,16 @@
 \subsection{The Time-scale Problem}
 \label{sec:tst-timescale-problem}
 
-\figmiss{Timescale problem (I have one somewhere, just need to polish it and stick it in)}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.5\linewidth]{timescale-problem}
+    \parbox{0.85\linewidth}{
+\caption{The time-scale problem.
+The system will mostly spend time near the minimum of the reactants basin (R), the red trajectory, while the reactions of interest, green arrow, happen only rarely.}
+\label{fig:timescale-problem}
+    }
+\end{center}
+\end{figure}
 
 In atomistic simulations there is a often a clear separation of timescales between the most interesting events.
 With local vibration of the atoms being very fast, typically on the order of $10^{14} \unit{Hz}$~\citemiss,
@@ -35,7 +44,17 @@ This assumption is the most serious and efforts to minimise its effects are disc
 
 \subsection{The Transition State}
 
-\figmiss{Transition State}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.5\linewidth]{transition-state}
+    \parbox{0.85\linewidth}{
+\caption{The transition state, $\ts$.
+Representing a bottlenck region through wich all reactive trajectories (going from reactants, R, to products, P) must go.
+}
+\label{fig:transition-state}
+    }
+\end{center}
+\end{figure}
 
 When dividing the phase space (position and momentum) into two areas, reactants (R) and products (P), a hypersurface separating the two emerges.
 This hypersurface is referred to as the transition state ($\ts$)\footnote{The double dagger, $\ts$, is a conventional symbol for the transition state} and represents a bottleneck region with regards to the free energy, which each reactive trajectory crosses on its way from R to P.
@@ -60,6 +79,18 @@ Considering a canonincal ensemble\footnote{the number of particles and volume is
 \beq{configurational-integral}
 Z_S = \int_S e^{-E(\vR) / \kB T}d\vR
 \eeq
+
+% This figure is probably not needed. Still, keep it here for safety.
+%\begin{figure}[h]
+%\begin{center}
+%\includegraphics[width=0.5\linewidth]{transition-state-theory}
+%    \parbox{0.85\linewidth}{
+%\caption{An overview of the 
+%}
+%\label{fig:transition-state-theory}
+%    }
+%\end{center}
+%\end{figure}
 
 The reaction rate, $k_\text{TST}$, is defined as the probability of being in the $\ts$ subsapce of $\text{R}$,
 \beq{ts-probability-partition-simple}
