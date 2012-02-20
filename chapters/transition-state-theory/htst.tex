@@ -1,9 +1,11 @@
 \subsection{Harmonic Transition State Theory}
 \label{sec:htst}
+\tred{this section is probably missing some citations.}
+
 To actually calculate the partition functions can be a tedious task and finding a good transition state is a non-trivial one, if possible.
 Fortunately, for many systems (e.g. solid state materials), the transition state can be approximated and the configuration integrals simplified.
 
-Between any two basins there exists a \sap{1}, which represents the lowest possible potential energy that the system must overcome in order for a tranistion to occur.
+Between any two basins there exists a \sap{1}, which represents the lowest possible potential energy that the system must overcome in order for a transition to occur.
 Exploiting this, the $\ts$ can a chosen as a hyperplane in which the \sap{1} resides and whose normal is the eigenmode that corresponds with the lowest eigenvalue of the Hessian.
 This greatly simplifies the definition of the $\ts$.
 Furthermore, in order to simplify the calculation of the partition functions, the PES near both $\ts$, $E_\ts$, and R, $E_\text{R}$, are represented by second degree Taylor expansions,
@@ -14,7 +16,7 @@ E_\text{R}(\vect{q}_\text{R}) \approx E(\vR_\text{min.}) + \frac{1}{2} \sum_i^{3
 E_\ts(\vect{q}_\ts) \approx E(\vR_\text{\sap{1}}) + \frac{1}{2} \sum_i^{3N-1} k_{\ts,i} q_{\ts,i}^2,
 \eeq
 where $\vect{q}_{[\ts, \text{R}]}$ are the eigenvectors of the Hessian, $q_{[\ts, \text{R}],i}$ is the displacement along eigenvector $i$, $k_{[\ts, \text{R}],i}$ are the corresponding Taylor coefficients, all for the $\ts$ and R respectively, and $E(\vR_{[\sap{1}, \text{min.}]})$ are the energies at the \sap{1} and the minimum of the R basin, respectively.
-Since the central points of the expansions are stationary, the first derivatives vanish from the expression, leaving only a constants along with the second order terms.
+Since the central points of the expansions are stationary, the first derivatives vanish from the expression, leaving only constants along with the second order terms.
 
 Due to the format of the energy approximations, the configurational integrals become trivial Gaussian integrals,
 \beq{htst-gaussian-integral}
@@ -30,7 +32,7 @@ Rearrangement of \fref{eq:htst-reaction-rate-raw}, along with the multiplication
 k_\text{HTST} = (2\pi)^{-1} \frac{\prod_i^{3N} \sqrt{\frac{k_{\text{min.},i}}{\mu}}}{\prod_i^{3N-1} \sqrt{\frac{k_{\ts,i}}{\mu}}}
 e^{-(E(\vR_{\sap{1}}) - E(\vR_\text{min})) /\kB T}.
 \eeq
-It is possible to insert the respective vibrational frequencies,
+Now it is possible to insert the respective vibrational frequencies,
 \beq{htst-vibrational-frequencies}
 \nu_\text{*} = \sqrt{\frac{k_\text{*}}{\mu}}(2\pi)^{-1},
 \eeq
@@ -41,7 +43,9 @@ e^{-(E(\vR_{\sap{1}}) - E(\vR_\text{min})) /\kB T},
 \eeq
 for a rate that depends only on the vibrational frequencies and energies at the \sap{1} and minimum as well as the temperature.
 This form of the rate agrees with the empirically observed temperature dependance of the rate originally expressed by Arrhenius~\citemiss.
-The potential energy barrier is addressed in the exponent while the entropical effects are addressed in the so-called prefactor \expand free energy ...
+The potential energy barrier is addressed in the exponent while the entropical effects are addressed in the so-called prefactor.
+
+\tred{Everything below needs much work but is not terribly important in this section.}
 
 \bit
 \item Discuss which system sit performs well with

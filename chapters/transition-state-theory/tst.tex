@@ -66,28 +66,26 @@ The most important assumption remains, any trajectories that cross the TS do not
 This assumtion is also the weakest link \expand
 
 \section{Reaction Rates}
-The reaction rate, $k^\text{TST}$, is defined as the probability of being at the $\ts$,
+The reaction rate, $k_\text{TST}$, is defined as the probability of being at the $\ts$,
 \beq{ts-probability-partition-simple}
 P_\ts = \frac{Z_\ts}{Z_\text{R}},
 \eeq
 thermally averaged over R, with velocity away from R,\citemiss
 \beq{tst-rate-initial}
-k^\text{TST} = \frac{1}{2}|\vect{v}_\perp| P_\ts,
+k_\text{TST} = \frac{1}{2}|\vect{v}_\perp| P_\ts,
 \eeq
 where $\vect{v}_\perp$ is the velocity component perpendicular to the $\ts$ and the factor $1/2$ comes from the fact that only half of the trajectories will be moving away from R.
-Due to the different dimensionality of the $\ts$ and R, $P_\ts$ isn't strictly a probability as it has the unit $\unit{m^{-1}}$. \expand
+Due to the different dimensionality of the $\ts$ and R, $P_\ts$ isn't strictly a probability as it has the unit $\unit{m^{-1}}$ but looking at it as such aids general understanding of the rate's definition.
 
-The velocity at each point $\vR$ can be taken from a Maxwell distribution, \tred{(Why is this okay?)}
+The velocity at each point $\vR$ can be taken from a Maxwell distribution,
 \beq{tst-maxwell-velocity}
-\langle |\vect{v}| \rangle = \sqrt{\frac{2kT}{\pi m}},
+\langle |\vect{v}| \rangle = \sqrt{\frac{2kT}{\pi \mu}},
 \eeq
-where $m$ is the mass of the particles \tred{(This is wrong)}.
+where $\mu$ is the effective mass of the transitioning system.
 The rate then becomes
 \beq{tst-rate-full}
-k_\text{TST} = \sqrt{\frac{kT}{2\pi m}} \frac{Z_\ts}{Z_\text{R}}. \quad \text{\expand}
+k_\text{TST} = \sqrt{\frac{kT}{2\pi m}} \frac{Z_\ts}{Z_\text{R}}.
 \eeq
-
-\placeholder
 
 \subsection{Optimisation of the Rate}
 Choosing a good $\ts$ is essential for the accuracy of TST.
@@ -95,10 +93,11 @@ A trajectory that crosses the $\ts$ more than once will result in a reaction rat
 Either it ended again in R or crossed the $\ts$ multiple times on its way to P.
 Thus the $\ts$ can act as a variational parameter for the TST rate,~\cite{vtst-1938, vtst-review-1984, vtst-2005}
 \beq{tst-variational-rate}
-k^\text{TST} \ge k^\text{exact}.
+k_\text{TST} \ge k_\text{exact}.
 \eeq
 
-Searching for the optimal $\ts$ \expand
+Some efforts have been put into searching for optimal $\ts$s~\citemiss but these generally require costly free energy calculations.
+\tred{This bit needs expansion if it is to be included.}
 
 Should optimising the $\ts$ be infeasable or insufficient, a different approach can be taken to bring $k_\text{TST}$ closer to the exact rate by estimating the error and correcting for it with a multiplication factor $\kappa_\text{D} \in [0, 1]$,
 \beq{tst-dynamical-corrections}
