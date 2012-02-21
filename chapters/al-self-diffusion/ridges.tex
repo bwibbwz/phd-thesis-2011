@@ -28,6 +28,12 @@ As can be seen in \fref{fig:discovery} there is a significant energy ridge "barr
 More interestingly, ridge calculations between the more populous concerted \sap{1}s (3 and 4 atom) and the hop revealed that they were interspersed with the concerted 2 atom \sap{1}.
 This is not surprising as the concerted mechanisms are all quite similar with regards to their coordinates, while the hop mechanism is inherently different.
 
+Finding the intermediate \sap{1} is only accurate in the limit of an infinite amount of images and no corner cutting, but the lowest energy image gives a good starting guess, both for the coordinates and the minimum mode, for traditional \sap{1} methods, such as the Dimer.
+It would be possible to implement a "sinking" image alteration of the effective force in a manner similar to the climbing image but this was not done here.
+Similarly, corner cutting prevents rigorous convergence to the lower energy \sap{2}.
+A second climbing image would converge exactly to this point but this was not done.\footnote{Implementing multiple climbing or sinking images is in principle not difficult but the ramifications could be dire, e.g. in systems with rugged landscapes and a limited amount of images.}
+However, performing a second ridge calculation with the intermediate \sap{1}(s) as end points yields the exact \sap{1} and, apart from the possible corner cutting, the ridge.
+These latter paths are displayed as red curves in \fref{fig:discovery}
 
 \subsubsection{Beyond Harmonicity}
 \begin{figure}[hp]
@@ -43,7 +49,7 @@ The atom colours correspond to the coloured spheres of the energy ridge.
 \label{fig:low-barriers}
 \end{center}
 \end{figure}
-Considering only the simil
+Considering only the similar "protected" by the gateway.
 
 
 \bit
