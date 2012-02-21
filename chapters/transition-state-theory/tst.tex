@@ -19,7 +19,7 @@ With local vibration of the atoms being very fast, typically on the order of $10
 while non-local reordering of atoms, motion between minima on the PES, often considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$ for a system with an energy barrier of $0.5 \unit{eV}$.~\citemiss
 Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^{10}$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
 
-Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, e.g. by minimising vibrations to allow for longer timesteps~\citemiss or modifying the PES~\cite{hyperdynamics-voter-1997}, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
+Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, e.g. by minimising vibrations to allow for longer timesteps~\cite{shake-1977, rattle-1983} or modifying the PES~\cite{hyperdynamics-voter-1997}, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
 This is true, in particular, for calculations that rely on costly, but accurate, quantum calculations and/or large systems.
 
 In the problem lies also the solution, when there is such a clear separation of time-scales, it is possible to treat the problem with statistical methods.
