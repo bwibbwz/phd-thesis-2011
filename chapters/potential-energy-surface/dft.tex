@@ -4,7 +4,7 @@
 % Add a footnote about the spin density DFT (see Kieron's stuff for a reference)
 % Also footnote on degeneracy
 
-With increased computing power and, in particular, advances in parallel algortims, it is now possible to calculate a range of physical properties for materials at the atomic level without the use of any experimental parameters.
+With increased computing power and, in particular, advances in parallel algoritms, it is now possible to calculate a range of physical properties for materials at the atomic level without the use of any experimental parameters.
 Such \textit{ab initio} methods are generally attempts at solving or approximating the Schr\"odinger equation (\fref{sec:schrodinger}) for the ground state\footnote{Non ground state calculations are not considered in this thesis.}.
 Multiple strategies exist --- choosing one generally involves considering the trade-off between accuracy and computational effort --- but the main one used in this thesis is the Density Functional Theory, where the many-electron problem is \emph{exactly} divided into multiple one-electron problems.
 %\expand?
@@ -15,13 +15,13 @@ Due to the high dimensionality of the wavefunction, simply storing it for a medi
 
 The Born-Oppenheimer approximation (\fref{sec:born-oppenheimer}) allows the separation of the Hamiltonian to an electronic part and a nuclear part.
 Thus, the positions of the nuclei, $\vR_I$, only enter the calculations as parameters.
-A full quantum treatment will not be discussed here (see for example~\citemiss).
+A full quantum treatment will not be discussed here as the goal is to build a PES.
 
-A non-relativistic system of $N_e$ electrons (and $N_n$ nuclei) is described by the time independant Schr\"odinger equation~\cite{schrodinger-equation-1926}
+A non-relativistic system of $N_e$ electrons (and $N_n$ nuclei) is described by the time independent Schr\"odinger equation~\cite{schrodinger-equation-1926}
 \beq{schrodinger-basic-again}
  \widehat{H}\Psi = E\Psi,
 \eeq
-where $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots ,\vr_{N_e})$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the hamiltonian,
+where $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots ,\vr_{N_e})$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the Hamiltonian,
 \beq{hamiltonian-full}
 \widehat{H} = -\frac{1}{2} \sum_i^{N_e} \nabla^2_i + \sum_i^{N_e} \sum_{j>i}^{N_e} \frac{1}{\left| \vr_i - \vr_j \right|} + \sum_i^{N_e} \sum_I^{N_n} \frac{1}{\left| \vr_i - \vR_I \right|} + \widehat{V}_\text{env},
 \eeq
@@ -38,7 +38,7 @@ since these are system dependant, while $\widehat{T}_\text{e}$ and $\widehat{U}_
 
 \subsection{Density Functional Theory}
 \label{sec:methods-dft}
-One of the most popular and common teqchniques for solving the electronic structure problem is the Density Functional Theory (DFT) which can exactly (in theory) solve the Schr\"odinger equation.
+One of the most popular and common techniques for solving the electronic structure problem is the Density Functional Theory (DFT) which can exactly (in theory) solve the Schr\"odinger equation.
 However, in practice, approximations must be made for all but the most simple systems.
 Nevertheless, DFT has produced many interesting and good results and is now a well established formalism that is continually being reviewed and improved.
 Furthermore, the \textit{ab initio} nature of DFT makes it a great companion to experimental research, not only for comparison and prediction of interesting materials but also to assist and expand upon data analysis.
@@ -103,10 +103,10 @@ The exchange part is known exactly,
 \beq{exchange-lda}
 E_\text{X}^\text{LDA}[\rho(\vr)] = - \frac{3}{4} \sqrt[3]{\frac{3}{\pi}} \int \sqrt[3]{\rho^4(\vr)}.
 \eeq
-The correlation part, however, is not known but has been tabulated using accurate Quantum Monte-Carlo simulations.~\citemiss
+The correlation part, however, is not known but has been tabulated using accurate Quantum Monte-Carlo simulations.~\cite{correlation-1980}
 
-Multiple exchange-correlation functionals exist, each with different strong suits, some fitted to empirical data\footnote{putting into question their \textit{ab initio} nature.}~\citemiss, while others are hybrids of previous functionals~\citemiss.
-Those mainly used in this thesis are of the generalised gradient approxion variety~\citemiss, similiar to LDA but the gradient is also taken into account.
+Multiple exchange-correlation functionals exist, each with different strong suits, some fitted to empirical data\footnote{putting into question their \textit{ab initio} nature.}~\cite{blyp-1993}, while others are hybrids of previous functionals~\citemiss.
+Those mainly used in this thesis are of the generalised gradient approximation (GGA) variety~\cite{gga-original-1986, gga-1996, pw91}, similiar to LDA but the gradient is also taken into account.
 
 %\beq{xc-lda}
 %E_\text{XC}^\text{LDA}[\rho(\vr)] = \int \epsilon_\text{XC}^\text{hom.}[\rho(\vr)]\rho(\vr)d^3\vr,
