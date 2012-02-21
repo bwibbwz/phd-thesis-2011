@@ -96,25 +96,28 @@ Thus far the formalism is exact, however, all the difficult parts, $E_\text{XC}[
 \subsubsection{The Exchange-Correlation Functional}
 The Kohn-Sham equations are in principle exact, however, the exchange-correlation functional, $E_\text{XC}[\rho(\vr)]$, is generally not known and has to be approximated.
 The accuracy of this approximation is a major factor in determining the accuracy of DFT as a whole.
-A detailed discussion of Exchange-Correlation functionals is material enough for a whole chapter, thus only the basic approximation will be discussed here.
+A detailed discussion of Exchange-Correlation functionals is material enough for a whole chapter, thus only the basic approximations will be discussed here.
 
 The Local Density Approximation (LDA)~\cite{kohn-sham-1965} treats exchange-correlation as if it were a homogeneous electron gas.
+\beq{xc-lda}
+E_\text{XC}^\text{LDA}[\rho(\vr)] = \int \epsilon_\text{XC}^\text{hom.}[\rho(\vr)]\rho(\vr)d^3\vr,
+\eeq
+where $\epsilon_\text{XC}^\text{hom.} = \epsilon_\text{X}^\text{hom.} + \epsilon_\text{C}^\text{hom.}$ is the exchange-correlation density.
 The exchange part is known exactly,
 \beq{exchange-lda}
-E_\text{X}^\text{LDA}[\rho(\vr)] = - \frac{3}{4} \sqrt[3]{\frac{3}{\pi}} \int \sqrt[3]{\rho^4(\vr)}.
+\epsion_\text{X}^\text{hom.}(\vr) = - \frac{3}{4} \sqrt[3]{\frac{3}{\pi}} \int \sqrt[3]{\rho^4(\vr)}.
 \eeq
 The correlation part, however, is not known but has been tabulated using accurate Quantum Monte-Carlo simulations.~\cite{correlation-1980}
+The LDA favors systems with slowly changing densities, such as solid systems, and has been successfully used in one form or another for a long time.
+Molecules are, however, not described as well by LDA and binding energies tend to be overestimated.~\cite{lda-gga-bond-energies-1991, lda-gga-bond-energies-1992}
+A better description of molecules can be attained with the use of the generalised gradient approximation (GGA)~\cite{gga-original-1986, gga-1996, pw91}, which is similiar to LDA but the gradient of the electron density is also taken into account.
+\expand
 
-Multiple exchange-correlation functionals exist, each with different strong suits, some fitted to empirical data\footnote{putting into question their \textit{ab initio} nature.}~\cite{blyp-1993}, while others are hybrids of previous functionals~\citemiss.
-Those mainly used in this thesis are of the generalised gradient approximation (GGA) variety~\cite{gga-original-1986, gga-1996, pw91}, similiar to LDA but the gradient is also taken into account.
+Multiple exchange-correlation functionals exist, each with different strong suits, some fitted to empirical data\footnote{putting into question their \textit{ab initio} nature.}~\cite{blyp-1993} in order to increase accuracy by sacrificing their physical intuition, while others are hybrids of previous functionals~\cite{xc-review-1999, jacobs-ladder-2001}, aimed at improving the accuracy at the cost of computational time.
 
-%\beq{xc-lda}
-%E_\text{XC}^\text{LDA}[\rho(\vr)] = \int \epsilon_\text{XC}^\text{hom.}[\rho(\vr)]\rho(\vr)d^3\vr,
-%\eeq
-%where $\epsilon_\text{XC}^\text{hom.} = \epsilon_\text{X}^\text{hom.} + \epsilon_\text{C}^\text{hom.}$ is the exchagne-correlation density.
+In this thesis the GGA functional developed by Perdew and Wang in 1991 is mainly used.~\cite{pw91}
+
 %$\epsilon_\text{X}^\text{hom.}$ 
-
-
 
 %\tred{I've removed the Implementation (DACAPO) section. Including it and a PAW section would be nice. Also included a list of stuff DFT is good/bad for would make sense. High priority}
 %The approximations used in our work are based on the so-called Generalized Gradient Approach (GGA). The GGA uses the the exchange-correlation energy of a homogeneous electron gas at point $\vect{r}$ like the Local Density Approximation (LDA) \cite{kohn1965} but also uses the gradient of the density to account for inhomogeneity. This, however, is not a good choice by itself so a reduced density gradient, $s(\vect{r})$, is used, as suggested by Langreth and Perdew \cite{langreth1977}. The exchange-correlation functional then becomes
