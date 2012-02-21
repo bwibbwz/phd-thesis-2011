@@ -1,7 +1,7 @@
 \section{Ridge Mapping}
 \label{sec:ridge-mapping}
 
-Given a function, $E$, of multiple varibles, $\vR$, its gradient, $\nabla E(\vR)$, and two \sap{1}s, the goal is to identify a path that lies close to the ridge between the two \sap{1}s.
+Given a function, $E$, of multiple variables, $\vR$, its gradient, $\nabla E(\vR)$, and two \sap{1}s, the goal is to identify a path that lies close to the ridge between the two \sap{1}s.
 The path should, in particular, lie through any intermediate \sap{2}s so that a comparison of the height of \sap{2}s with respect to the \sap{1}s can be made.
 The method should, furthermore, lead to the identification of previously unknown \sap{1}(s) on the ridge in between the given end points, should they exist.
 
@@ -23,20 +23,20 @@ The Dimer methodology~\cite{dimer-original-1999, dimer-olsen-2004} (\fref{sec:di
 \vF_i^\text{t} = \vF_i^\perp - 2(\vF_i^\perp \cdot \uvn_i)\uvn_i,
 \eeq
 that will let ridges appear, locally as MEPs.
-Since eigenvectors are not neccesarily perpendicular to the ridge (as can be seen in figure 1 of paper \ref{pap:second-order}), the path itself must be left out of the Hessian's vector space, thus applying an orthogonality constraint on the minimum mode,
+Since eigenvectors are not necessarily perpendicular to the ridge (as can be seen in figure 1 of paper \ref{pap:second-order}), the path itself must be left out of the Hessian's vector space, thus applying an orthogonality constraint on the minimum mode,
 \beq{orthogonality-constraint}
 \uvt_i \cdot \uvn_i = 0,
 \eeq
 at all times.
 
-Similarly to the NEB method, an artificial force is employed in order to keep the images equally\footnote{or with controlled sapcing} distributed along the path.
+Similarly to the NEB method, an artificial force is employed in order to keep the images equally\footnote{or with controlled spacing} distributed along the path.
 For the NEB method this force acts only along the path and is generally referred to as the spring force as it resembles springs connecting the images.
 However in the case of ridge calculations, the full spring force most be used,
 \beq{full-spring-force}
 \vF_i^\text{S} = k \left[ \left( \vR_{i+1} - \vR_i \right) - \left( \vR_i - \vR_{i-1} \right) \right],
 \eeq
 where $k$ is the spring constant, which controls the stiffness of the springs.
-Retention of the full spring force is neccesary due to numerical instabilities which proved to be more prominent in ridge calculations than MEP calculations.
+Retention of the full spring force is necessary due to numerical instabilities which proved to be more prominent in ridge calculations than MEP calculations.
 
 Combining the above forces, $\vF_i^\text{t}$ and $\vF_i^\text{S}$, into an effective force (as shown in \fref{fig:erm-force-diagram}),
 \beq{erm-effective-force}
@@ -46,7 +46,7 @@ will allow the path iteratively converge to a close to the ridge.
 
 \subsubsection{Numerical Instabilities}
 \bit
-\item The orthgonality constraint, introduced in \fref{eq:orthogonality-constraint}, has the possibility to introduce numerical instabilities.
+\item The orthogonality constraint, introduced in \fref{eq:orthogonality-constraint}, has the possibility to introduce numerical instabilities.
 \item Simply using the dimer introduces instabilities.
 \item Odd starting profiles (monotonic or inverted barriers) are dangerous.
 \eit
@@ -67,5 +67,5 @@ Also, this addition can not be considered optional, as it can technically for NE
 In the context of atomic simulations, the function in question is often the potential energy as a function of all atomic co-ordinates.
 
 Information about energy ridges can be useful when considering reaction rates, e.g. for checking the validity of the harmonic approximation to TST (\fref{sec:htst}).
-Futhermore, should HTST not be sufficient it is possible to make adjustments to the rate using information about the ridge.
+Furthermore, should HTST not be sufficient it is possible to make adjustments to the rate using information about the ridge.
 This move beyond harmonicity is discussed in \fref{chap:al} and paper \ref{pap:second-order}.
