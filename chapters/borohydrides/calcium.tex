@@ -6,11 +6,11 @@ The energies and forces were provided by the Dacapo\footnote{\url{https://wiki.f
 The calculational parameters can be found in DFT Calculations section of Paper \ref{pap:calcium}.
 The calculational supercell was relaxed from the $P4_2/m$ space group ($\#84$)~\cite{cabh42-structure-p42m}, which contains two formula units, repeated once in each direction, totalling 176 atoms.
 
+The bulk of the initial data from the QENS experiments indicated rotational diffusion of hydrogen, while possible high temperature long-range diffusion was also detected.
 The experimental data suggested three unique processes, two of which were assigned to rotational diffusion of hydrogen, while the latter was assigned to longer range diffusion.
+The work focused mainly on rotations around the possible symmetry axes, $C_2$ and $C_3$, of the \ce{BH4-} unit.
 
 \subsubsection{Rotation of \ce{BH4-}}
-The bulk of the initial data from the QENS experiments indicated rotational diffusion of hydrogen, while possible high temperature long-range diffusion was also detected.
-Thus, the work focused mainly on rotations around the possible symmetry axes, $C_2$ and $C_3$, of the \ce{BH4-} unit.
 By choosing appropriate axes, a contour plot of the rigid rotation was produced (\fref{fig:ca-pes01}) in order to get an overview of the possible rotations, pure or coupled, and an estimate of their relative barrier heights.
 
 \begin{figure}[h]
@@ -34,7 +34,7 @@ It should be noted that some symmetry breaking can be seen in the PES, which is 
 \end{figure}
 
 Since the rotational system has three dimensions but the contour plot is limited to only two, the axes had to be chosen carefully as to sample all interesting events.
-Each $C_2$ axis roughly lines up with a \ce{Ca}-\ce{B} vector, which means that with regards to symmetry they are all nearly equivalent.
+Each \ce{BH4} group has 3 nearest neighbour \ce{Ca} atoms and each $C_2$ axis roughly lines up with one of the three, nearly equivalent, \ce{Ca}-\ce{B} vectors, which means that with regards to symmetry they are also all nearly equivalent.
 The one with maximal \ce{H}-\ce{Ca} distance was chosen as one of the contour axes.
 The choice of the $C_3$ axis had a similar goal, to minimise \ce{H}-\ce{Ca} interaction.
 This was accomplished by choosing the axis which lies closest to the plane spanned by the three nearest neighbour calcium atoms.
@@ -51,11 +51,12 @@ This beautifully illustrates how theory and experiments complement and can be us
 In the end, the calculations complemented the experimental data very well, both with regards to the barrier height as well as the characteristic times which are derived from the HTST reaction rates. (see Table 2 in Paper \ref{pap:calcium})
 
 \subsubsection{Long-range diffusion}
+The remaining process was assigned to some sort of longer range hydrogen diffusion.
 Multiple diffusional species and mechanisms can easily be imagined.
-Vacancy mediated \ce{BH3},  \ce{BH4} and \ce{H} diffusion, interstitial hydrogen, atomic and molecular, and two different interstitial waters were all investigated, the results shown in table 3 of paper \ref{pap:calcium}.
+Vacancy mediated \ce{BH3},  \ce{BH4} and \ce{H} diffusion, interstitial hydrogen, atomic and molecular, and two different interstitial waters were all investigated with NEB calculations, and their results are shown in table 3 of paper \ref{pap:calcium}.
 
 The vacancies all had high formation energies ($1.56\unit{eV}$ - $2.83\unit{eV}$) and barriers ($0.46\unit{eV}$ - $1.92\unit{eV}$) while the stable interstitial defects, had lower formation energies ($-0.05\unit{eV}$ - $0.40\unit{eV}$) and barriers ($0.09\unit{eV}$ - $0.68\unit{eV}$).
-The \ce{H}-interstitial proved to be unstable and formed a \ce{H2}-interstitial coupled to a \ce{H}-vacancy.
+The \ce{H}-interstitial proved to be unstable and formed an \ce{H2}-interstitial coupled to an \ce{H}-vacancy.
 
 The only defect that agreed to any significance with the experimental data, was the \ce{H2}-interstitial, with a barrier of $0.09\unit{eV}$ (exp. $\mytilde0.12\unit{eV}$) and diffusional length of $2.1\unit{\mAA}$ (exp. $\mytilde2.5\unit{\mAA}$).
 The characteristic times were, however, not in agreement (theoretical $0.06\unit{ps}$ vs. exp. $4\unit{ps}$).

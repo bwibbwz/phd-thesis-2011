@@ -1,9 +1,10 @@
 \section{Magnesium Borohydride [$\beta-$\ce{Mg(BH4)2}]}
 \label{sec:borohydrides-magnesium}
 
-The calculations were carried out using the Atomic Simulation Environment\footnote{\url{https://wiki.fysik.dtu.dk/ase/}}~\cite{ase-2002} and its implementation of the relevant algorithms.
-The energies and forces were provided by the Dacapo\footnote{\url{https://wiki.fysik.dtu.dk/dacapo}} DFT implementation.~\cite{dacapo-1999}
-The calculational parameters can be found in DFT Calculations section of Paper \ref{pap:magnesium}.
+%The calculations were carried out using the Atomic Simulation Environment\footnote{\url{https://wiki.fysik.dtu.dk/ase/}}~\cite{ase-2002} and its implementation of the relevant algorithms.
+%The energies and forces were provided by the Dacapo\footnote{\url{https://wiki.fysik.dtu.dk/dacapo}} DFT implementation.~\cite{dacapo-1999}
+The calculations were carried out using the same packages as before (\fref{sec:borohydrides-calcium}), ASE and Dacapo.
+The calculational parameters can be found in DFT calculations section of Paper \ref{pap:magnesium}.
 The calculational supercell was relaxed from the $fddd$ spacegroup ($\#70$)~\cite{mgbh42-structure-fddd}, totalling 176 atoms.
 The structure consists of 5 symmetry inequivalent \ce{BH4} sites which all have similar local structure, being wedged between 2 \ce{Mg} atoms (\fref{fig:mg-local-structure}).
 The symmetry inequivalance stems from the fact that each \ce{BH4} is slightly displaced from the \ce{Mg}-\ce{Mg} axis, that distance, $L$, from the \ce{B} to the axis, influences the barriers.
@@ -32,7 +33,7 @@ Due to symmetry not all the axes needed to be considered.
 The general result from the PESes was that rotations that maximised the \ce{Mg}-\ce{H}, $d_{H-Mg}$ distance showed the lowest energies (\fref{fig:h-mg-distances}).
 In this respect, two distinct types of $C_2$ axes were seen, those parallel to the \ce{Mg}-\ce{Mg} axis, $C_2^\parallel$, which maximised $d_{H-Mg}$ and those perpendicular to it, $C_2^\perp$, where $d_{H-Mg}$ was generally lower and showed higher barriers.
 MEP calculations for $C_2^\perp$ found a combination of other axes yielded the same permutation but at a much lower energy cost.
-The difference in relative barrier height decreased with decreasing $L$.\footnote{The relative difference would be non-existent for $L=0$ (and $L=\infty$) but non of the \ce{BH4} fulfil that criterion.}
+The difference in relative barrier height decreased with decreasing $L$.\footnote{The relative difference would be non-existent for $L=0$ (and $L=\infty$) but none of the \ce{BH4} fulfil that criterion.}
 
 \begin{figure}[htb]
 \begin{center}
@@ -55,7 +56,7 @@ A clear trend for lower energies with higher distances can be seen.
 \end{figure}
 
 No such clear distinction could be made with regards to the $C_3$ axes.
-However, due to symmetry many the $C_3$ axes for a given site yield a very similar PES and the rest would yield barriers that were not in any tune with the experimental results.
+However, due to symmetry many of the $C_3$ axes for a given site yield a very similar PES and the rest would yield barriers that were not in any tune with the experimental results.
 
 The rigid rotation plots are not able to give a full description of the events, neither their geometry nor their energetics.
 Thus MEP calculations, for each symmetry inequivalent \ce{BH4}, were performed with the lowest energy rigid rotation paths as starting positions.
@@ -74,6 +75,7 @@ A clear linear relationship (the line) can be seen for the $C_2$ axes.
 Comparison of the experimental and theoretical results.
 Arrhenius-type behaviour, where $\Gamma = \Gamma_0 exp(-E_a / \kB T)$ and $\Gamma_0$ is the prefactor.
 The circles, triangles and squares represent the experimental data while the dashed and dash-dotted lines represent the theoretical data for the $C_2^\parallel$ and $C_3$ type rotations, respectively.
+The shaded area represents characteristic times of the range $[0.1, 1.0]\unit{ps}$ with a barrier of $0.1\unit{eV}$.
   ]{
     \includegraphics[width=0.45\linewidth]{mg-experimental-comparison}
     \label{fig:mg-experimental-comparison}
@@ -95,5 +97,5 @@ This is, likely, due to the relatively constant $d_{H-Mg}$ for the $C_2^\paralle
 
 \Fref{fig:mg-experimental-comparison} shows that the theoretical results (HTST reaction rates) form a distribution in which the experimental results fit rather well.
 The $C_3$-type rotations correspond to one the experimentally observed events, while the $C_2$-type rotations correspond to the other two.
-The experimental results indicated that $\mytilde 15\%$ of the hydrogen would move at a lower temperature than the others which is consistent with the lowest theoretical barrier which applied to $12.5\%$ of the hydrogen.
+The experimental results indicated that $\mytilde 15\%$ of the hydrogen would move at a lower temperature than the others which is consistent with the lowest theoretical barrier which applied to $12.5\%$ of the hydrogen ($1/8$th as can be seen table 1 of paper \ref{pap:magensium}).
 
