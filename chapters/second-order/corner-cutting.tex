@@ -31,7 +31,7 @@ Using the dual tangent scheme, presented above, it is possible to significantly 
 In some test cases even allowing for the complete exclusion of the perpendicular spring force after turning on the climbing image.
 However, should this not be possible, a multiplication factor, $\xi_i \in [0, 1]$, for the perpendicular spring force,
 \beq{spring-force-perpendicular}
-\vF_i{\text{S}\perp} = \vF_i^\text{S} - (\vF_i^\text{S} \cdot \uvt_i)\uvt_i,
+\vF_i^{\text{S}\perp} = \vF_i^\text{S} - (\vF_i^\text{S} \cdot \uvt_i)\uvt_i,
 \eeq
 can be defined,
 \beq{spring-force-reduction}
@@ -43,7 +43,7 @@ Multiple schemes for reducing $\xi_i$ can be envisioned.
 One that initial testing showed to be successful is reducing $\xi_i$ each time corner cutting is detected.
 By how much could either be a fixed ratio or, preferably, dependant on the amount of corner cutting.\footnote{Only the fixed ratio scheme was tested.}
 In order for the path to converge evenly, $\xi_i$ must be constricted to be within a certain range of $\xi_{i-1}$ and $\xi_{i+1}$.
-Using a scheme such as this, the corner cutting was significantly reduced in the test systems\footnote{Both custom potentials and the Al self diffusion (\fref{chap:al} systems were tested but not extensively.} it was applied to.
+Using a scheme such as this, the corner cutting was significantly reduced in the test systems\footnote{Both custom potentials and the Al self diffusion (\fref{chap:al}) systems were tested but not extensively.} it was applied to.
 
 It warrants repeating that the ridge method, as presented originally in paper \ref{pap:second-order}, is able to find the \sap{2} exactly without problem but if the ridge is curved, corner cutting will take place.
 While the removal of corner cutting would present a truer picture of the ridge, the method as it stood is still of good use.
