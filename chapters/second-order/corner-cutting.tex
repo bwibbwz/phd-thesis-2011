@@ -26,19 +26,28 @@ The methods and ideas presented here serve more as a detailed outlook for future
 In order to reduce/remove corner cutting, the perpendicular component of the spring force most be removed/reduced at each image.
 Then in tune with the equilibrium presented in \fref{eq:corner-cutting-equilibrium}, \fref{eq:ridge-force} will be fulfilled and the exact ridge found.
 
-\tred{Iterative reduction. Need to understand/motivate the instabilities first.}
+Using the dual tangent scheme, presented above, it is possible to significantly reduce the numerical instabilities of the ridge calculation.
+In some test cases even allowing for the complete exclusion of the perpendicular spring force after turning on the climbing image.
+However, should this not be possible, a multiplication factor, $\xi_i \in [0, 1]$, for the perpendicular spring force,
+\beq{spring-force-perpendicular}
+\vF_i{\text{S}\perp} = \vF_i^\text{S} - (\vF_i^\text{S} \cdot \uvt_i)\uvt_i,
+\eeq
+can be defined,
+\beq{spring-force-reduction}
+\vF_i^{\text{S, eff.}\perp} = \xi_i \vF_i^{\text{S}, \perp},
+\eeq
+to iteratively bring the effective perpendicular component, $\vF_i^{\text{S, eff.}\perp}$, to zero and thus converging to the exact ridge.
 
-%\bit
-%\item Iteratively remove the perpendicular component of the spring force. Multiple schemes for reducing.
-%\item Change the orthogonality constraint (depending on how the dimer influences the stability of the calculation)
-%\eit
-
-The main problem with simply removing the perpendicular spring force is the instabilities that exist due to the orthogonality constraint (see above) of \fref{eq:orthogonality-constraint}, which in turn is employed to overcome other instabilities.
+Multiple schemes for reducing $\xi_i$ can be envisioned.
+One that initial testing showed to be successful is reducing $\xi_i$ each time corner cutting is detected.
+By how much could either be a fixed ratio or, preferably, dependant on the amount of corner cutting.\footnote{Only the fixed ratio scheme was tested.}
+In order for the path to converge evenly, $\xi_i$ must be constricted to be within a certain range of $\xi_{i-1}$ and $\xi_{i+1}$.
+Using a scheme such as this, the corner cutting was significantly reduced in the test systems\footnote{Both custom potentials and the Al self diffusion (\fref{chap:al} systems were tested but not extensively.} it was applied to.
 
 It warrants repeating that the ridge method, as presented originally in paper \ref{pap:second-order}, is able to find the \sap{2} exactly without problem but if the ridge is curved, corner cutting will take place.
 While the removal of corner cutting would present a truer picture of the ridge, the method as it stood is still of good use.
 
-\incomplete
+%The main problem with simply removing the perpendicular spring force is the instabilities that exist due to the orthogonality constraint (see above) of \fref{eq:orthogonality-constraint}, which in turn is employed to overcome other instabilities.
 
 \begin{comment}
 \subsection{Older stuff}
