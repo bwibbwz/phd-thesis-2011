@@ -80,7 +80,28 @@ Unlike the NEB, the computational effort involved is not easily measured due to 
 Furthermore, this addition can not be considered optional, as it can technically for NEB, since it serves as an indirect stabilisation tool at the top of the path, where the environment is concave\footnote{Curves downwards} in 2 dimensions rather than 1 as is the case with a MEP.
 
 \subsubsection{Numerical Instabilities}
-\figmiss{Orthogonality instabilities, VERY HIGH PRIORITY!}
+\begin{figure}[htb!]
+\begin{center}
+  \subfigure[The minimum mode is kept orthogonal to a central difference tangent.]{
+    \includegraphics[width=0.45\linewidth]{orthogonal-good}
+    \label{fig:orthogonal-good}
+    }
+  \subfigure[The minimum mode is kept orthogonal to the top image tangent.]{
+    \includegraphics[width=0.45\linewidth]{orthogonal-bad}
+    \label{fig:orthogonal-bad}
+    }
+    \parbox{0.85\linewidth}{
+\caption{
+The ridge is the black dashed line.
+The white arrow are the PES force, the grey arrows are the dimer transformed forces and the black arrows are the effective forces.
+The red line is the top image tangent and the blue line is the minimum mode estimate.
+}
+\label{fig:orthogonal}
+}
+\end{center}
+\end{figure}
+
+\tred{Need to rewrite some of the text below. And even make the claim that I understand the instabilities.}
 
 Simply using the Dimer, or any other non-exact, estimate of the minimum mode introduces instabilities in the forces, as the ridge$\rightarrow$MEP mapping can get inaccurate.
 This is not a problem hindering convergence, directly, since the Dimer generally has ample time to converge to the nearly exact minimum mode during the iterative convergence.
@@ -88,7 +109,7 @@ More serious, seems to be the interaction between the minimum mode and the tange
 The tangent is designed to minimise numerical instabilities in the NEB~\cite{neb-tangent-2000} but not to offer a particularly good estimate of the path's tangent at any given time, however, once converged, it offers a reasonably good estimate\footnote{A better estimate of the steepest descent path in question (the minimum energy path) would be a tangent pointing downwards rather than upwards.} and in the limit of infinite amount of images, an exact tangent.
 Using a tangent that depends on both neighbouring images, the path would form kinks under minute perturbations that would not even out with more iterations.
 The orthogonality constraint (\fref{eq:orthogonality-constraint}) enforces an equally wrong minimum mode estimate under perturbations to the path.
-This, in turn, introduces similar instabilities as the kinks, when the ridge$\rightarrow$MEP mapping becomes increasingly inaccurate (\fref{fig:dimer-instabilities}).
+This, in turn, introduces similar instabilities as the kinks, when the ridge$\rightarrow$MEP mapping becomes increasingly inaccurate (\fref{fig:orthogonal}).
 The exact reason for this effect is not yet fully understood.
 In paper \ref{pap:second-order}, these instabilities are countered by the inclusion of the perpendicular spring force component which yield the more systematic error of corner cutting (discussed below).
 Further analysis of these instabilities showed that enforcing the orthogonality constraint (\fref{eq:orthogonality-constraint}) using a tangent estimate that is focused on accuracy, rather than stability, highly reduces the problematic behaviour.
