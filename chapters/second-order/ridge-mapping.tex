@@ -51,6 +51,28 @@ will allow the path iteratively converge to a close to the ridge.
 \item Odd starting profiles (monotonic or inverted barriers) are dangerous.
 \eit
 
+Simply using the Dimer, or any other non-exact, estimate of the minimum mode introduces instabilities in the forces, as the ridge$\rightarrow$MEP mapping can be inaccurate.
+This, directly, is not a problem hindering convergence since the Dimer has \expand
+
+More serious, seems to be the interaction between the minimum mode and the tangent, as enforced by \fref{eq:orthogonality-constraint}.
+The tangent is designed to minimise numerical instabilities in the NEB~\cite{neb-tangent-2000} but not to offer a particularly good estimate of the path's tangent at any given time, however, once converged, it offers a reasonably good estimate\footnote{A better estimate of the SDP or MEP would be a tangent pointing downwards in energy rather than upwards} and in the limit of infinite amount of images, an exact tangent.
+Using a tangent that depends on both neighbouring images, the path would form kinks under minute perturbations that would not even out with more iterations.
+
+
+
+
+
+
+
+Since the end points of the ridge are not local minima, there is no intrinsic energy barrier separating them, as is the case for NEB calculations.
+In fact, the initial energy profile can have any shape, including a monotonic one or even an inverted barrier, if it lies near a local minimum, which is not unlikely.
+This means that the initial environment of the path is drastically different from that of the ridge.
+To help bring the path nearer to the ridge, the full spring force \expand
+
+
+
+
+
 \subsubsection{Exact Convergence to the \sap{2}}
 Beyond the problems already discussed regarding converging exactly to the \sap{1} in NEB calculations, systematic errors due to the retention of the full spring force makes it unlikely that using only \fref{eq:erm-effective-force} will yield an image at the exact \sap{2}.
 As with the NEB method a Dimer-type solution is possible --- similar to equations \ref{eq:dimer-transform} and \ref{eq:neb-ci-transform} --- where the highest value image is decoupled from the springs and force components along the \emph{two} lowest eigenvalued eigenmodes, as defined by the minimum mode and the tangent,
@@ -64,8 +86,8 @@ Also, this addition can not be considered optional, as it can technically for NE
 
 \subsection{Energy Ridge Mapping}
 \label{sec:energy-ridge-mapping}
-In the context of atomic simulations, the function in question is often the potential energy as a function of all atomic co-ordinates.
+In the context of atomic simulations, the function in question is often the potential energy as a function of all atomic co-ordinates, or the Potential Energy Surface.
 
 Information about energy ridges can be useful when considering reaction rates, e.g. for checking the validity of the harmonic approximation to TST (\fref{sec:htst}).
 Furthermore, should HTST not be sufficient it is possible to make adjustments to the rate using information about the ridge.
-This move beyond harmonicity is discussed in \fref{chap:al} and paper \ref{pap:second-order}.
+This move beyond harmonicity is discussed below in \fref{sec:beyond-harmonicity}, in \fref{chap:al} and paper \ref{pap:second-order}.
