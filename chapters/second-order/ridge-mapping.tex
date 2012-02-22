@@ -1,11 +1,24 @@
 \section{Ridge Mapping}
 \label{sec:ridge-mapping}
 
-Given a function, $E$, of multiple variables, $\vR$, its gradient, $\nabla E(\vR)$, and two \sap{1}s, the goal is to identify a path that lies close to the ridge between the two \sap{1}s.
-The path should, in particular, lie through any intermediate \sap{2}s so that a comparison of the height of \sap{2}s with respect to the \sap{1}s can be made.
+Given a function, $E$, of multiple variables, $\vR$, its gradient, $\nabla E(\vR)$, and two \sap{1}s, the goal is to identify a path that lies close to the ridge between the \sap{1}s.
+The path should, in particular, lie through any intermediate \sap{2}s so that a comparison of their height with respect to the endpoints can be made.
 The method should, furthermore, lead to the identification of previously unknown \sap{1}(s) on the ridge in between the given end points, should they exist.
 
 \subsubsection{Gradient Modification}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width = 1.0\linewidth]{erm-forces}
+    \parbox{0.85\linewidth}{
+\caption{
+\missing
+}
+\label{fig:erm-forces}
+}
+\end{center}
+\end{figure}
+
+
 Similarly to the NEB method~\cite{neb-original-1998} (\fref{sec:neb}), a path of $N$ discrete images, $[\vR_0, \vR_1, \ldots, \vR_N]$, is iteratively aligned with the ridge by modifying the gradient or force, $\vF_i \equiv -\nabla E(\vR_i)$, for each one.
 However, unlike the NEB method, further force modifications are needed, in order to let the ridge appear as a MEP.
 
@@ -36,13 +49,13 @@ However in the case of ridge calculations, the full spring force most be used,
 \vF_i^\text{S} = k \left[ \left( \vR_{i+1} - \vR_i \right) - \left( \vR_i - \vR_{i-1} \right) \right],
 \eeq
 where $k$ is the spring constant, which controls the stiffness of the springs.
-Retention of the full spring force is necessary due to numerical instabilities which proved to be more prominent in ridge calculations than MEP calculations.
+Retention of the full spring force is necessary due to numerical instabilities which proved to be more prominent in ridge calculations than MEP calculations (see below).
 
-Combining the above forces, $\vF_i^\text{t}$ and $\vF_i^\text{S}$, into an effective force (as shown in \fref{fig:erm-force-diagram}),
+Combining the above forces, $\vF_i^\text{t}$ and $\vF_i^\text{S}$, into an effective force (as shown in \fref{fig:erm-forces}),
 \beq{erm-effective-force}
 \vF_i^\text{eff} = \vF_i^\text{t} + \vF_i^\text{S},
 \eeq
-will allow the path iteratively converge to a close to the ridge.
+will allow the path iteratively converge close to the ridge.
 
 \subsubsection{Exact Convergence to the \sap{2}}
 Beyond the problems already discussed regarding converging exactly to the \sap{1} in NEB calculations, systematic errors due to the retention of the full spring force makes it unlikely that using only \fref{eq:erm-effective-force} will yield an image at the exact \sap{2}.
@@ -53,17 +66,20 @@ As with the NEB method a Dimer-type solution is possible --- similar to equation
 where $i_\text{max.}$ refers to the image with the highest functional value.
 
 Unlike the NEB, the computational effort involved is not easily measured due to the systematic errors introduced by the full spring force but there is no reason to suspect increased effort by applying \fref{eq:erm-ci}.
-Also, this addition can not be considered optional, as it can technically for NEB, as it serves as an indirect stabilisation tool at the top of the path, where the environment is concave\footnote{Curves downwards} in 2 dimensions rather than 1 as is the case with a MEP.
+Furthermore, this addition can not be considered optional, as it can technically for NEB, since it serves as an indirect stabilisation tool at the top of the path, where the environment is concave\footnote{Curves downwards} in 2 dimensions rather than 1 as is the case with a MEP.
 
 \subsubsection{Numerical Instabilities}
+\figmiss{Orthogonality instabilities, VERY HIGH PRIORITY!}
+
 Simply using the Dimer, or any other non-exact, estimate of the minimum mode introduces instabilities in the forces, as the ridge$\rightarrow$MEP mapping can get inaccurate.
-This, directly, is not a problem hindering convergence since the Dimer generally has ample time to converge to the nearly exact minimum mode.
+This is not a problem hindering convergence, directly, since the Dimer generally has ample time to converge to the nearly exact minimum mode during the iterative convergence.
 More serious, seems to be the interaction between the minimum mode and the tangent, as enforced by \fref{eq:orthogonality-constraint}.
-The tangent is designed to minimise numerical instabilities in the NEB~\cite{neb-tangent-2000} but not to offer a particularly good estimate of the path's tangent at any given time, however, once converged, it offers a reasonably good estimate\footnote{A better estimate of the steepest descent path in question (the minimum energy path) would be a tangent pointing downwards in energy rather than upwards.} and in the limit of infinite amount of images, an exact tangent.
+The tangent is designed to minimise numerical instabilities in the NEB~\cite{neb-tangent-2000} but not to offer a particularly good estimate of the path's tangent at any given time, however, once converged, it offers a reasonably good estimate\footnote{A better estimate of the steepest descent path in question (the minimum energy path) would be a tangent pointing downwards rather than upwards.} and in the limit of infinite amount of images, an exact tangent.
 Using a tangent that depends on both neighbouring images, the path would form kinks under minute perturbations that would not even out with more iterations.
-The orthogonality constraint enforces an equally wrong minimum mode estimate under perturbations of the path.
+The orthogonality constraint (\fref{eq:orthogonality-constraint}) enforces an equally wrong minimum mode estimate under perturbations to the path.
 This, in turn, introduces similar instabilities as the kinks, when the ridge$\rightarrow$MEP mapping becomes increasingly inaccurate (\fref{fig:dimer-instabilities}).
-In paper \ref{pap:second-order}, these instabilities are countered by the inclusion of the perpendicular spring force component which yield a more systematic error of corner cutting (discussed below).
+The exact reason for this effect is not yet fully understood.
+In paper \ref{pap:second-order}, these instabilities are countered by the inclusion of the perpendicular spring force component which yield the more systematic error of corner cutting (discussed below).
 Further analysis of these instabilities showed that enforcing the orthogonality constraint (\fref{eq:orthogonality-constraint}) using a tangent estimate that is focused on accuracy, rather than stability, highly reduces the problematic behaviour.
 The system would then have two tangent definitions co-existing, a numerically stable one for the NEB-type force scheme (\fref{eq:perpendicular-force}) and a more accurate representation of the ridge,
 \beq{central-difference-tangent}
@@ -74,10 +90,12 @@ for the space reduction of the Hessian (\fref{eq:orthogonality-constraint}).
 This latter scheme was neither employed in paper \ref{pap:second-order} nor \fref{chap:al} and has not been tested fully.
 Nevertheless, the initial results are promising for the removal/reduction of corner cutting.
 
-Since the end points of the ridge are not local minima, there is no intrinsic energy barrier separating them, as is the case for NEB calculations.
-In fact, the initial energy profile can have any shape, including a monotonic one or even an inverted barrier, if it lies near a local minimum, which is not unlikely.
+Since the end points of the ridge are not local minima, there is no intrinsic barrier separating them, as is the case for NEB calculations.
+In fact, the initial profile can have any shape, including a monotonic one or even an inverted barrier, if it lies near a local minimum, which is \emph{not} unlikely.
 This means that the initial environment of the path is drastically different from that of the ridge.
 To help bring the path nearer to the ridge, the full spring force was used.
-Furthermore, the usage of the climbing image becomes questionable as the immobile end images may very well be those with the highest values.
+Furthermore, the usage of the climbing image becomes questionable as the immobile end images may very well be the highest ones.
 If using the climbing image from the outset is required, non-highest images must be used as the climbing image.
 Images numbered $1$ and $N-1$ are partially restrained by the immobility of the endpoints, thus images even further in must be used, $2$ or $N-2$.
+
+\figmiss{Strange initial profiles, medium priority.}
