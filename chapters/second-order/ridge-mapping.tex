@@ -45,24 +45,29 @@ Combining the above forces, $\vF_i^\text{t}$ and $\vF_i^\text{S}$, into an effec
 will allow the path iteratively converge to a close to the ridge.
 
 \subsubsection{Numerical Instabilities}
-\bit
-\item The orthogonality constraint, introduced in \fref{eq:orthogonality-constraint}, has the possibility to introduce numerical instabilities.
-\item Simply using the dimer introduces instabilities.
-\item Odd starting profiles (monotonic or inverted barriers) are dangerous.
-\eit
+%\bit
+%\item The orthogonality constraint, introduced in \fref{eq:orthogonality-constraint}, has the possibility to introduce numerical instabilities.
+%\item Simply using the dimer introduces instabilities.
+%\item Odd starting profiles (monotonic or inverted barriers) are dangerous.
+%\eit
 
-Simply using the Dimer, or any other non-exact, estimate of the minimum mode introduces instabilities in the forces, as the ridge$\rightarrow$MEP mapping can be inaccurate.
-This, directly, is not a problem hindering convergence since the Dimer has \expand
-
+Simply using the Dimer, or any other non-exact, estimate of the minimum mode introduces instabilities in the forces, as the ridge$\rightarrow$MEP mapping can get inaccurate.
+This, directly, is not a problem hindering convergence since the Dimer generally has ample time to converge to the nearly exact minimum mode.
 More serious, seems to be the interaction between the minimum mode and the tangent, as enforced by \fref{eq:orthogonality-constraint}.
-The tangent is designed to minimise numerical instabilities in the NEB~\cite{neb-tangent-2000} but not to offer a particularly good estimate of the path's tangent at any given time, however, once converged, it offers a reasonably good estimate\footnote{A better estimate of the SDP or MEP would be a tangent pointing downwards in energy rather than upwards} and in the limit of infinite amount of images, an exact tangent.
+The tangent is designed to minimise numerical instabilities in the NEB~\cite{neb-tangent-2000} but not to offer a particularly good estimate of the path's tangent at any given time, however, once converged, it offers a reasonably good estimate\footnote{A better estimate of the SDP or MEP would be a tangent pointing downwards in energy rather than upwards.} and in the limit of infinite amount of images, an exact tangent.
 Using a tangent that depends on both neighbouring images, the path would form kinks under minute perturbations that would not even out with more iterations.
+The orthogonality constraint enforces an equally wrong minimum mode estimate under perturbations of the path.
+This, in turn, introduces similar instabilities as the kinks, when the ridge$\rightarrow$MEP mapping becomes increasingly inaccurate (\fref{fig:dimer-instabilities}).
+In paper \ref{pap:second-order}, these instabilities are countered by the inclusion of the perpendicular spring force component which yield a more systematic error of corner cutting (discussed below).
+Further analysis of these instabilities showed that enforcing the orthogonality constraint (\fref{eq:orthogonality-constraint}) using a tangent estimate that is focused on accuracy, rather than stability, highly reduces the problematic behaviour.
+The system would then have two tangent definitions co-existing, a numerically stable one for the NEB-type force scheme (\fref{eq:perpendicular-force}) and a more accurate representation of the ridge,
+\beq{central-difference-tangent}
+\uvt_i^\text{ridge} = \frac{\vR_{i+1} - \vR_{i-1}}{\left| \vR_{i+1} - \vR_{i-1} \right|},
+\eeq
+for the space reduction of the Hessian (\fref{eq:orthogonality-constraint}).
 
-
-
-
-
-
+This latter scheme was neither employed in paper \ref{pap:second-order} nor \fref{chap:al} and has not been tested fully.
+Nevertheless, the initial results are promising for the removal/reduction of corner cutting.
 
 Since the end points of the ridge are not local minima, there is no intrinsic energy barrier separating them, as is the case for NEB calculations.
 In fact, the initial energy profile can have any shape, including a monotonic one or even an inverted barrier, if it lies near a local minimum, which is not unlikely.
