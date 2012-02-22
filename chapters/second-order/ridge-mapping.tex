@@ -8,10 +8,21 @@ The method should, furthermore, lead to the identification of previously unknown
 \subsubsection{Gradient Modification}
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width = 1.0\linewidth]{erm-forces}
+\includegraphics[width = 0.5\linewidth]{erm-forces}
     \parbox{0.85\linewidth}{
 \caption{
-\missing
+The construction of the effective force, $\vF^\text{eff}$,
+which acts on image $i$ of the path and is used in the iterative optimisation.
+The solid grey line indicates the ridge,
+the black filled circles represent the current location of three adjacent images,
+the black solid line shows the tangent estimate, $\uvt$
+and the black dashed line shows the minimum mode estimate, $\uvn$, at image $i$.
+The orange arrow shows the gradient force, $\vF= -\nabla E$.
+The red arrow shows the transformed force, $\vF^t$ (\fref{eq:transformed-force}),
+%obtained by inverting $\vF$ in the direction of the minimum mode, $\epsilon$ (see \eref{eq:minmode-force}).
+The purple arrow shows $\vF^\perp$, the component of the transformed force that is perpendicular to the tangent.
+The green arrow shows $\vF_i^\text{S}$ (\fref{eq:full-spring-force}), %the spring force given by \eref{eq:full-spring-force}.
+The blue arrow shows $\vF^\text{eff}$, as given by \fref{eq:erm-effective-force}.
 }
 \label{fig:erm-forces}
 }
