@@ -89,6 +89,10 @@ of the neighboring tangents is used, in order to avoid any artifacts due to disc
 \eeq
 where $\upsilon_i^+ = \text{max}(\Delta{}E)$ and $\upsilon_i^- = \text{min}(\Delta{}E)$ are the weights.
 
+Using such a tangent, rather than one that depends on both neighbouring images, allows for any perturbations of the path to be dealt with from the top down, independently of the images below.
+The tangent of the higher image remains accurate and the perturbed image is able to re-converge.
+\expand
+
 \subsubsection{Finding the Exact Saddle Point}
 The force modifications described above do not guarantee that an image will be exactly at the \sap{1} in question once converged.
 By decoupling the top function value image from the spring force, it becomes independant and guiding it to the \sap{1} can be done in a manner similar to \fref{eq:dimer-transform} with the tangent estimate functioning as the minimum mode estimate,
