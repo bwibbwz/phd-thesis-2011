@@ -44,13 +44,18 @@ Combining the above forces, $\vF_i^\text{t}$ and $\vF_i^\text{S}$, into an effec
 \eeq
 will allow the path iteratively converge to a close to the ridge.
 
-\subsubsection{Numerical Instabilities}
-%\bit
-%\item The orthogonality constraint, introduced in \fref{eq:orthogonality-constraint}, has the possibility to introduce numerical instabilities.
-%\item Simply using the dimer introduces instabilities.
-%\item Odd starting profiles (monotonic or inverted barriers) are dangerous.
-%\eit
+\subsubsection{Exact Convergence to the \sap{2}}
+Beyond the problems already discussed regarding converging exactly to the \sap{1} in NEB calculations, systematic errors due to the retention of the full spring force makes it unlikely that using only \fref{eq:erm-effective-force} will yield an image at the exact \sap{2}.
+As with the NEB method a Dimer-type solution is possible --- similar to equations \ref{eq:dimer-transform} and \ref{eq:neb-ci-transform} --- where the highest value image is decoupled from the springs, forming the so-called climbing image, and force components along the \emph{two} lowest eigenvalued eigenmodes, as defined by the minimum mode and the tangent,
+\beq{erm-ci}
+\vF_{i_\text{max.}}^\text{eff.} = \vF_{i_\text{max.}} - 2(\vF_{i_\text{max.}} \cdot \uvt_{i_\text{max.}})\uvt_{i_\text{max.}} - 2(\vF_{i_\text{max.}} \cdot \uvn_{i_\text{max.}})\uvn_{i_\text{max}},
+\eeq
+where $i_\text{max.}$ refers to the image with the highest functional value.
 
+Unlike the NEB, the computational effort involved is not easily measured due to the systematic errors introduced by the full spring force but there is no reason to suspect increased effort by applying \fref{eq:erm-ci}.
+Also, this addition can not be considered optional, as it can technically for NEB, as it serves as an indirect stabilisation tool at the top of the path, where the environment is concave\footnote{Curves downwards} in 2 dimensions rather than 1 as is the case with a MEP.
+
+\subsubsection{Numerical Instabilities}
 Simply using the Dimer, or any other non-exact, estimate of the minimum mode introduces instabilities in the forces, as the ridge$\rightarrow$MEP mapping can get inaccurate.
 This, directly, is not a problem hindering convergence since the Dimer generally has ample time to converge to the nearly exact minimum mode.
 More serious, seems to be the interaction between the minimum mode and the tangent, as enforced by \fref{eq:orthogonality-constraint}.
@@ -72,27 +77,7 @@ Nevertheless, the initial results are promising for the removal/reduction of cor
 Since the end points of the ridge are not local minima, there is no intrinsic energy barrier separating them, as is the case for NEB calculations.
 In fact, the initial energy profile can have any shape, including a monotonic one or even an inverted barrier, if it lies near a local minimum, which is not unlikely.
 This means that the initial environment of the path is drastically different from that of the ridge.
-To help bring the path nearer to the ridge, the full spring force \expand
-
-
-
-
-
-\subsubsection{Exact Convergence to the \sap{2}}
-Beyond the problems already discussed regarding converging exactly to the \sap{1} in NEB calculations, systematic errors due to the retention of the full spring force makes it unlikely that using only \fref{eq:erm-effective-force} will yield an image at the exact \sap{2}.
-As with the NEB method a Dimer-type solution is possible --- similar to equations \ref{eq:dimer-transform} and \ref{eq:neb-ci-transform} --- where the highest value image is decoupled from the springs and force components along the \emph{two} lowest eigenvalued eigenmodes, as defined by the minimum mode and the tangent,
-\beq{erm-ci}
-\vF_{i_\text{max.}}^\text{eff.} = \vF_{i_\text{max.}} - 2(\vF_{i_\text{max.}} \cdot \uvt_{i_\text{max.}})\uvt_{i_\text{max.}} - 2(\vF_{i_\text{max.}} \cdot \uvn_{i_\text{max.}})\uvn_{i_\text{max}},
-\eeq
-where $i_\text{max.}$ refers to the image with the highest functional value.
-
-Unlike the NEB, the computational effort involved is not easily measured due to the systematic errors introduced by the full spring force but there is no reason to suspect increased effort by applying \fref{eq:erm-ci}.
-Also, this addition can not be considered optional, as it can technically for NEB, as it serves as an indirect stabilisation tool at the top of the path, where the environment is concave\footnote{Curves downwards} in 2 dimensions rather than 1 as is the case with a MEP.
-
-\subsection{Energy Ridge Mapping}
-\label{sec:energy-ridge-mapping}
-In the context of atomic simulations, the function in question is often the potential energy as a function of all atomic co-ordinates, or the Potential Energy Surface.
-
-Information about energy ridges can be useful when considering reaction rates, e.g. for checking the validity of the harmonic approximation to TST (\fref{sec:htst}).
-Furthermore, should HTST not be sufficient it is possible to make adjustments to the rate using information about the ridge.
-This move beyond harmonicity is discussed below in \fref{sec:beyond-harmonicity}, in \fref{chap:al} and paper \ref{pap:second-order}.
+To help bring the path nearer to the ridge, the full spring force was used.
+Furthermore, the usage of the climbing image becomes questionable as the immobile end images may very well be those with the highest values.
+If using the climbing image from the outset is required, non-highest images must be used as the climbing image.
+Images numbered $1$ and $N-1$ are partially restrained by the immobility of the endpoints, thus images even further in must be used, $2$ or $N-2$.
