@@ -1,16 +1,14 @@
 \chapter{First Order Saddle Point Methods}
 \label{chap:saddle-point-methods}
 
-\tred{Change the PES symbol to $E$ (from $V$ to conform with the rest of the thesis. High priority.)}
-
-Finding \sap{}s is a non-trivial task in multiple dimensions, when only local information is available and computational resources are limited, such that calculation of the Hessian matrix is infeasible.
+Finding first order saddle points (\sap{1}s) is a non-trivial task in multiple dimensions, when only local information is available and computational resources are limited, such that calculation of the Hessian matrix is infeasible.
 Nevertheless, multiple methods exist for finding \sap{1}s and can, generally, be divided into two distinct categories.
 \ben{sap-method-catergories}
 \item General methods which can locate a nearby \sap{1}, requiring only a point with a non-zero gradient as input.
 \item More specific methods that require two minima as input to find the MEP and a \sap{1} (\sap{1}s) between them.
 \een
-The latter category is well suited for use within computational chemistry and such methods have been succesfully used therewithin to describe reaction pathsi between two stable structures.\citemiss
-The first category is more useful when there is direction of more interest than others.
+The latter category is well suited for use within computational chemistry and such methods have been successfully used to describe reaction paths between two stable structures.(see for example \citemiss)
+The first category has a more broad use as it is not constrained to find specific \sap{1}s, however, the downside is that there is no guarantee that the found \sap{1} will be of interest.
 
 \expand \tblue{low priority.}
 

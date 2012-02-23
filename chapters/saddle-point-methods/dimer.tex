@@ -4,11 +4,11 @@
 \figmiss{Maybe a Dimer on a PES for clarity. Low priority}
 
 The Dimer algorithm~\cite{dimer-original-1999} is in essence a method for finding the eigenmode corresponding to the lowest eigenvalue of the Hessian, while performing no direct calculations of the second derivatives\cite{hyperdynamics-voter-1997}.
-This information is then used to locate \sap1s.
+This information is then used to locate \sapi{1}s which are defined by a negative eigenvalue in the Hessian and its corresponding eigenmode.
 
-Given only an initial point, $\vR$, on a multidimensional function, $V(\vR)$, the goal is to, iteratively, locate a nearby \sap1, using no direct calculation of the Hessian, i.e. using only the function's values and its gradient, $\nabla V(\vR)$.
+Given only an initial point, $\vR$, on a multidimensional function, $E(\vR)$, the goal is to, iteratively, locate a nearby \sap{1}, using no direct calculation of the Hessian, i.e. using only the function's values and its gradient, $\nabla E(\vR)$.
 Indirect information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (the minimum mode).
-Using the minimum mode, $\uvn$, it is possible to locally transform \sap1s to minima while using conventional techniques to move up-hill and locate the \sap1.
+Using the minimum mode, $\uvn$, it is possible to locally transform \sap{1}s to minima while using conventional techniques to move up-hill and locate the \sap{1}.
 
 The dimer method can be split into three independent phases.
 \ben{dimer-phases}
@@ -20,20 +20,20 @@ Only the first of the phases is unique to the dimer algorithm.
 A setup phase, which typically includes randomly displacing $\vR$~\cite{dimer-sampling-2011} is also required if the search starts from a minimum (or any other stationary point).
 
 \subsubsection{Minimum Mode Estimate}
-Estimating the second derivative of $V$ along a given unit vector, $\uvs$, at point $\vR$ can be done numerically, using finite differences.
+Estimating the second derivative of $E$ along a given unit vector, $\uvs$, at point $\vR$ can be done numerically, using finite differences.
 For the occasion, a pair of points (the dimer), $[\vR_\text{A}, \vR_\text{B}]$, are chosen, close to current point $\vR_0$, such that
 \beq{dimer-separation}
 \vR_\text{A} = \vR_0 + \Dsep \uvs \quad \text{and} \quad \vR_\text{B} = \vR_0  - \Dsep \uvs,
 \eeq
-where $\Dsep$ is a predefined constant to determine the length of the dimer and the separation in the finite difference estimate.
+where $\Dsep$ is a predefined constant to determine the length of the dimer and the separation in the finite difference estimate and as such should be kept as low as possible.
 Using only the function's values, the second derivative (or curvature), $C_\vs$, becomes
 \beq{second-derivative-function}
-C_\vs(\vR_0) \equiv \left.\frac{\partial^2 V}{\partial \uvs^2}\right|_{\vR_0} \approx \frac{V(\vR_\text{A}) + V(\vR_\text{B}) - 2V(\vR_0)}{\Dsep^2},
+C_\vs(\vR_0) \equiv \left.\frac{\partial^2 E}{\partial \uvs^2}\right|_{\vR_0} \approx \frac{E(\vR_\text{A}) + E(\vR_\text{B}) - 2E(\vR_0)}{\Dsep^2},
 \eeq
-where $V_\text{x} \equiv V(\vR_\text{x})$.
-As the gradient points away from each minimum, it is convenient to define a force, $\vF$ that points towards minima instead, for use in the iterative minima search, $\vF_\text{x} \equiv - \nabla V(\vR_\text{x})$, where $x$ represents any subscript of $\vR$.
+where $E_\text{x} \equiv E(\vR_\text{x})$.
+As the gradient points away from each minimum, it is convenient to define a force, $\vF$ that points towards minima instead, for use in the iterative minima search, $\vF_\text{x} \equiv - \nabla E(\vR_\text{x})$, where $x$ represents any subscript of $\vR$.
 Should the gradient be readily available, as it often is, \fref{eq:second-derivative-function} can be rewritten to depend on it instead,
-\beq{second-derviative-gradient}
+\beq{second-derivative-gradient}
 C_\vs(\vR_0) \approx \frac{(\vF_\text{B} - \vF_\text{A}) \cdot \uvs}{\Dsep}.
 \eeq
 Rotating $\uvs$ around $\vR_0$, according to the rotational force (as seen in \fref{fig:dimer-force-overview}),
@@ -42,15 +42,16 @@ Rotating $\uvs$ around $\vR_0$, according to the rotational force (as seen in \f
 \eeq
 until $C_\vs$ is minimized yields an estimate for, both, the lowest eigenvalue, $C_\text{min} = C_\vs$, of the Hessian and its corresponding eigenmode, the minimum mode, $\uvn = \uvs_\text{min}$.
 The rotation happens in a plane spanned by $\uvs$ and $\vF̣^\circlearrowright / \left| \vF^\circlearrowright \right|$
-A number of rotational schemes can be employed, such as a finite difference, conjugate gradient, approximation~\cite{dimer-original-1999} and, as described in~\cite{dimer-heyden-2005}, by expanding the curvature, exactly, as a Fourier series.
-Both of the mentioned schemes require extra calculations to figure out the optimal angle of rotation but the latter is better suited when the accuracy and/or consistency of the force cannot be guaranteed~\cite{dimer-heyden-2005}, e.g. when doing DFT calculations.
+A number of rotational schemes can be employed, such as a finite difference conjugate gradient method~\cite{dimer-original-1999} and, as described in~\cite{dimer-heyden-2005}, by expanding the curvature, exactly, as a Fourier series.
+Both of these schemes require extra calculations to figure out the optimal angle of rotation but the latter is better suited when the accuracy and/or consistency of the force cannot be guaranteed~\cite{dimer-heyden-2005}, e.g. when doing DFT calculations.
 
-Often $\vF_0$ is calculated to get a more accurate translational force, this can be taken advantage of in order to cut down the amount of computations.
+Often $\vF_0$ is calculated to get a more accurate translational force.
+This can be taken advantage of in order to cut down the amount of computations.
 Assuming a quadratic behaviour near the dimer, the gradient at either of the dimer's endpoints can be extrapolated from the other endpoint and the central point~\cite{dimer-olsen-2004},
 \beq{dimer-point-extrapolate}
 \vF_\text{B} = 2\vF_0 - \vF_\text{A},
 \eeq
-with $\vF_\text{B}$ being the extrapolated, virtual, force.
+with $\vF_\text{B}$ being the extrapolated force.
 Since $\vF_0$ is static and does not require additional calculations during the iterative rotation, performing this extrapolation yields significant calculational reductions, up to a factor of half.
 
 Further extrapolations are possible, if multiple rotations are performed (which is often not the case).
@@ -75,7 +76,7 @@ $\Dsep$ is the distance between dimer points (\fref{eq:dimer-separation} and $\u
 \end{figure}
 
 \subsubsection{Gradient Transformation}
-Once a minimum mode estimate is available for the current point, $\vR_0$, it is possible to transform the force so that any \sap1 is appears as a minimum.
+Once a minimum mode estimate is available for the current point, $\vR_0$, it is possible to transform the force so that any \sap{1} appears as a minimum with regards to the force.
 As discussed in \fref{sec:sps}, \sap{1}s are stationary (with zero gradient) and the Hessian has one and only one negative eigenvalue.
 The goal is, thus, to maximize the function's value along the minimum mode while minimizing it along all other eigenmodes.
 This can be achieved, simply, by inverting any force components along the minimum mode,
@@ -92,7 +93,7 @@ This latter transformation simply inverts the force along the minimum mode while
 This along with a fixed, artificially large, step size should yield less iterations spent near minima and more near \sap1s.~\cite{dimer-original-1999}
 
 \subsubsection{Iterative Translation}
-After the force has been transformed such that \sap1s appear as minima --- \sap1s, however, remain unchanged with regards to the function's value --- it is possible to use conventional algorithms for finding minima as long as they support a systematic increase in the function's value.
+After the force has been transformed such that \sap{1}s appear as minima --- \sap1s, however, remain unchanged with regards to the function's value --- it is possible to use conventional algorithms for finding minima as long as they support a systematic increase in the function's value.
 A finitie difference method was suggested in the original implementation~\cite{dimer-original-1999} while more recent papers~\cite{dimer-kastner-2008} have used other methods, such as the L-BFGS algorithm~\cite{lbfgs}.
 
 \subsubsection{Usage in Atomic Simulations}
@@ -112,4 +113,4 @@ Using this table of events within the Kinetic Monte Carlo formalism~\citemiss, i
 
 \subsubsection{Performance}
 Since the Dimer heavily depends on finite difference methods, inaccurate gradients can, thus, render the method useless.
-When used with classical potentials, this is not a problem, but when used with quantum mechanical forces, such as those provided by DFT, care must be taken to converge the electronic structure well.
+When used with classical potentials, this is not a problem, but when used with quantum mechanical forces, such as those provided by DFT, care must be taken to converge the electronic structure well and using a larger than normal $\dsep$\citemiss.

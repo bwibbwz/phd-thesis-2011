@@ -1,8 +1,8 @@
 \section{The Nudged Elastic Band Method}
 \label{sec:neb}
-Finding Steepest Decent Paths (SDPs) on a multidimensional function, $V(\vR)$, from a given point is simple by following the negative gradient (force) with a small step size.
+Finding Steepest Decent Paths (SDPs) on a multidimensional function, $E(\vR)$, from a given point is simple by following the negative gradient (force) with a small step size.
 On the other hand, finding specific SDPs that end at minima is not.
-The Nudged Elastic Band (NEB) algorithm is concerned with aligning a path with certain SDP paths, genreally the MEP (see~\cite{neb-polemic-henkelman1} for an exeption), leading to two minima from a common \sap{1}.
+The Nudged Elastic Band (NEB) algorithm is concerned with aligning a path with certain SDP paths, generally the MEP (see~\cite{neb-polemic-henkelman1} for an exception), leading to two minima from a common \sap{1}.
 
 \begin{figure}[h]
 \begin{center}
@@ -16,18 +16,18 @@ Red and blue areas represent high and low values of the function in question, re
 \end{figure}
 
 \subsubsection{The Force Modification Scheme}
-An initial guess of the path is commonly a, discretisised, linear interpolation bewteen the minima but any guess is suitable as long as the force can be calculated.
-Each of the discretisation points is, traditionally, referred to as an image and is simply a replica of the system in question but with different coordinates from the other images.
-Each image, $i$, feels two separate forces.
-First there is the negative gradient of the function, $\vF_i \equiv -\nabla V(\vR_i)$, but only the component perpendicular to the path is retained,
+An initial guess of the path is commonly a, discretised, linear interpolation between the minima but any guess is suitable as long as the force can be calculated.
+Each of the discrete points is, traditionally, referred to as an image and is simply a replica of the system in question but with different coordinates from the other images.
+Each image, labelled $i$, feels two separate forces.
+First there is the negative gradient of the function, $\vF_i \equiv -\nabla E(\vR_i)$, but only the component perpendicular to the path is retained,
 \beq{neb-real-force}
 \vF_i^\perp = \vF_i - (\vF_i \cdot \uvt_i) \uvt_i,
 \eeq
 where $\uvt$ is the tangent to the path (see below).
 This reduced force is responsible for minimising the path in the perpendicular direction.
-Second, there is a virtual force acting purely along the tangent, which is tasked with equally spacing the images along the path.
-There are multiple ways to implement this force, the original implementation of NEB~\cite{neb-original-1998} modelled a spring between each set of neighboring images with a tunable spring constant, $k$.
-A more recent, and succesful, version of the "spring force", depends on the norms to the neighboring images instead of the full vectors~\cite{neb-tangent-2000},
+Second, there is a virtual force acting purely along the tangent, which takes care of equally spacing the images along the path.
+There are multiple ways to implement this force, the original implementation of NEB~\cite{neb-original-1998} modelled a spring between each set of neighbouring images with a spring constant, $k$, tunable to keep the spring force of a similar size as the gradient.
+A more recent, and successful, version of the "spring force", depends on the norms to the neighbouring images instead of the full vectors~\cite{neb-tangent-2000},
 \beq{neb-spring-force}
 \vF_i^\text{S} = k(\left| \vR_{i+1} - \vR_i \right| - \left| \vR_i - \vR_{i-1}\right|),
 \eeq
@@ -38,7 +38,7 @@ Combining the forces from equations \ref{eq:neb-real-force} and \ref{eq:neb-spri
 \beq{neb-effective-force}
 \vF_i^\text{eff} = \vF_i^\perp + \vF_i^\text{S},
 \eeq
-will iteratively bring the path to a discretisised version of the MEP, with even, or controlled, spacing, as can be seen in \fref{fig:neb-pes-paths}.
+will iteratively bring the path to a discretised version of the MEP, with even, or controlled, spacing, as can be seen in \fref{fig:neb-pes-paths}.
 
 \begin{figure}[h]
 \begin{center}
@@ -63,10 +63,10 @@ Multiple possibilities for its definition are available but one that considers o
 
 Each image, $i$, will, function value wise, fit into one of four cases:
 \ben{neb-tangent-cases}
-\item $V(\vR_{i-1}) < V(\vR_i) < V(\vR_{e+1})$
-\item $V(\vR_{i-1}) > V(\vR_i) > V(\vR_{e+1})$
-\item $V(\vR_{i-1}) > V(\vR_i) < V(\vR_{e+1})$
-\item $V(\vR_{i-1}) < V(\vR_i) > V(\vR_{e+1})$
+\item $E(\vR_{i-1}) < E(\vR_i) < E(\vR_{e+1})$
+\item $E(\vR_{i-1}) > E(\vR_i) > E(\vR_{e+1})$
+\item $E(\vR_{i-1}) > E(\vR_i) < E(\vR_{e+1})$
+\item $E(\vR_{i-1}) < E(\vR_i) > E(\vR_{e+1})$
 \een
 Before discussing each case it is helpful to define vectors to the neighboring images:
 \beq{tangent-plus}
@@ -74,18 +74,18 @@ Before discussing each case it is helpful to define vectors to the neighboring i
 \eeq
 The first two cases yield simple definitions of the tangent,
 \beq{neb-tangent-plus}
-\uvt_i = \frac{\vt_i^+}{\left| \vt_i^+ \right|} \quad \text{if} \quad V(\vR_{i-1}) < V(\vR_i) < V(\vR_{e+1})
+\uvt_i = \frac{\vt_i^+}{\left| \vt_i^+ \right|} \quad \text{if} \quad E(\vR_{i-1}) < E(\vR_i) < E(\vR_{e+1})
 \eeq
 and
 \beq{neb-tangent-minus}
-\uvt_i = \frac{\vt_i^-}{\left| \vt_i^- \right|} \quad \text{if} \quad V(\vR_{i-1}) > V(\vR_i) > V(\vR_{e+1}).
+\uvt_i = \frac{\vt_i^-}{\left| \vt_i^- \right|} \quad \text{if} \quad E(\vR_{i-1}) > E(\vR_i) > E(\vR_{e+1}).
 \eeq
 The other two cases occur when the image is either a local maximum or a local minimum, with regards to its neighboring images.
 In these latter cases a weighted average
---- controlled by the difference in the function's value, $\Delta{}E = \left[ \left| V(\vR_{i+1}) - V(\vR_i) \right|, \left| V(\vR_{i-1}) - V(\vR_i) \right| \right]$ ---
+--- controlled by the difference in the function's value, $\Delta{}E = \left[ \left| E(\vR_{i+1}) - E(\vR_i) \right|, \left| E(\vR_{i-1}) - E(\vR_i) \right| \right]$ ---
 of the neighboring tangents is used, in order to avoid any artifacts due to discontinuity,
 \beq{neb-tangent-minmax}
-\uvt_i = \frac{\vt_i^+ \upsilon_i^\pm + \vt_i^- \upsilon_i^\mp}{\left| \vt_i^+ \upsilon_i^\pm + \vt_i^- \upsilon_i^\mp \right|} \quad \text{if} \quad E(\vR_{i\pm1}) > V(\vR_{i\mp1}),
+\uvt_i = \frac{\vt_i^+ \upsilon_i^\pm + \vt_i^- \upsilon_i^\mp}{\left| \vt_i^+ \upsilon_i^\pm + \vt_i^- \upsilon_i^\mp \right|} \quad \text{if} \quad E(\vR_{i\pm1}) > E(\vR_{i\mp1}),
 \eeq
 where $\upsilon_i^+ = \text{max}(\Delta{}E)$ and $\upsilon_i^- = \text{min}(\Delta{}E)$ are the weights.
 
