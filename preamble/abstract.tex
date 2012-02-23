@@ -13,7 +13,15 @@ For the \ce{Ca(BH4)2}, in addition to the rotational dynamics, longer range diff
 Most likely this was due to \ce{H2}-interstitial defects.
 The rotational dynamics were more prominent in the data and good agreement with the experiments was reached, showing that $C_3$-type rotations activate at lower temperatures than $C_2$-type rotations.
 
-
-
-
-\placeholder
+A method for finding the ridge between first order saddle points on a multidimensional surface was developed.
+For atomic scale systems, such points on the energy surface correspond to atomic rearrangement mechanisms.
+Information about the ridge can be used to test the validity of the harmonic approximation to transition state theory for reaction rates,
+in particular to verify that second order saddle points - maxima along the ridge - are high enough compared to the first order saddle points.
+Furthermore, corrections to the harmonic approximation can be estimated by direct evaluation of the configuration integral along the ridge.
+New minima along the ridge can also be identified during the path optimisation,
+thereby revealing additional transition mechanisms.
+The method is based on modifying the gradient of a set of points along a path connecting the saddle points to iteratively converge to the ridge.
+%The method is based on optimising a string of discretisation points along a path between the saddle points and using an iterative optimisation which requires only the force acting on the atoms.
+At each iteration during the optimisation, the gradient is inverted along an unstable eigenmode perpendicular to the path, effectively mapping the ridge to a minimum energy path.
+The method was applied to Al adatom diffusion on the Al(100) surface to find the ridge between 2-, 3- and 4-atom concerted displacement
+and hop mechanisms for diffusion.
