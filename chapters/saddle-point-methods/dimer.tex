@@ -4,7 +4,7 @@
 \figmiss{Maybe a Dimer on a PES for clarity. Low priority}
 
 The Dimer algorithm~\cite{dimer-original-1999} is in essence a method for finding the eigenmode corresponding to the lowest eigenvalue of the Hessian, while performing no direct calculations of the second derivatives\cite{hyperdynamics-voter-1997}.
-This information is then used to locate \sapi{1}s which are defined by a negative eigenvalue in the Hessian and its corresponding eigenmode.
+This information is then used to locate \sap{1}s which are defined by a negative eigenvalue in the Hessian and its corresponding eigenmode.
 
 Given only an initial point, $\vR$, on a multidimensional function, $E(\vR)$, the goal is to, iteratively, locate a nearby \sap{1}, using no direct calculation of the Hessian, i.e. using only the function's values and its gradient, $\nabla E(\vR)$.
 Indirect information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (the minimum mode).
@@ -113,4 +113,4 @@ Using this table of events within the Kinetic Monte Carlo formalism~\citemiss, i
 
 \subsubsection{Performance}
 Since the Dimer heavily depends on finite difference methods, inaccurate gradients can, thus, render the method useless.
-When used with classical potentials, this is not a problem, but when used with quantum mechanical forces, such as those provided by DFT, care must be taken to converge the electronic structure well and using a larger than normal $\dsep$\citemiss.
+When used with classical potentials, this is not a problem, but when used with quantum mechanical forces, such as those provided by DFT, care must be taken to converge the electronic structure well and using a larger than normal $\Dsep$\citemiss.
