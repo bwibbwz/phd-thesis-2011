@@ -47,6 +47,7 @@
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=up]{caption}
 \usepackage{nameref} % Allows for the calling of names and not just numbers with \ref
 \usepackage[final]{hyperref}
+\usepackage{sidecap}
 
 % --- Fonts ---
 %\usepackage{cmbright} % Displayes vectors in suprscripts wrong
