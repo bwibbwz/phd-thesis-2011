@@ -1,7 +1,26 @@
 \chapter{Summary}
 \label{chap:summary}
 
-The rotational dynamics of two complex borohydrides were investigated in detail with close collaboration to experimental work.
+The rotational dynamics of two metal  borohydrides were investigated in detail with close collaboration to experimental work.
+The results of which complemented the experimental results very well.
+\expand
+
+In order to map ridges of functions\footnote{Steepest descent paths between first and second order saddle points.} a method was developed.
+By transforming convex subspaces into concave subspaces, the dimer algorithm maps first order saddle points to minima and ridges to minimum energy paths\footnote{or path of least resistance.}, with regards to the gradient.
+Using this transformation to iteratively converge a trial path to the ridge is then achieved using the nudged elastic band minimum energy path algorithm.
+
+In the context of theoretical reaction rate chemistry, the ridge method was applied to validate the reaction rates offered by the harmonic approximation to transition state theory.
+Furthermore, 
+
+
+By transforming the gradient of a series of points between first order saddle points, the ridge is mapped to a path of least resistance\footnote{Steepest descent path between first order saddle points and minima. Also referred to as a minimum energy path}.
+The transformation is achieved using the dimer algorithm for finding eigenmode corresponding to the lowest eigenvalue of the Hessian matrix and then inverting any gradient components along it.
+After the mapping is complete a nudged elastic band type algorithm is used to equally distribute the points along a path that is iteratively converged to the ridge.
+
+
+
+
+
 
 \tred{This is all pretty much shit.}
 By combining the dimer algorithm for mapping convex subspaces to concave ones, i.c. first order saddle points to minima and ridges to minimum energy paths, and the nudged elastic band algorithm for finding minimum energy paths, a method for detecting energy ridges (easily applicable to any multidimensional function) was developed.
