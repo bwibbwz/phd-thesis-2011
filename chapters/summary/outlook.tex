@@ -1,21 +1,43 @@
 \section{Outlook}
 \label{sec:summary-outlook}
 
-A detailed outlook as to further development of the ridge detection algorithm was presented in \fref{chap:erm}.
-
-
-Finding further use for the energy ridges will be interesting.
-For example, stitching together a transition state from hyperplanar segents near each image of every ridge (with the minimum modes as normals), where the amount of images could possibly viewed as a variational parameter in lieu of the transition state.
-
-
 \bit
-\item DFT ridges
-\item How ridge calculations interact with different types of saddle points (such as those with $H = \vect{0}$, SPs which are also points of inflection or turning points)
-\item Rigorous performance study.
+%\item DFT ridges
+i%\item How ridge calculations interact with different types of saddle points (such as those with $H = \vect{0}$, SPs which are also points of inflection or turning points)
+%\item Rigorous performance study.
 \item Discover the limit of how low \sap{2} can be with regards to \sap{1}. i.e. confirm the $5\kB T$ stuff.
-\item Use ridges to create full transition states with the dimer as normal to a hyperplanar segment
+%\item Use ridges to create full transition states with the dimer as normal to a hyperplanar segment
 \item Catalytic Selectivity
 \item Extend to Quantum HTST
 \eit
 
-\placeholder
+\paragraph{A More Precise Ridge}
+A detailed outlook as to further development of the ridge detection algorithm was presented in \fref{chap:erm}
+Two efforts to reduce corner cutting on the ridge were discussed.
+First by introducing a dual tangent scheme in order to minimise instabilities and remove the need for a perpendicular spring force component.
+Introducing a second tangent to which the minimum mode would be perpendicular at all times.
+This second tangent would be a more precise representation of the ridge than the previous tangent which is focussed at numerical stability for the MEP detection part of the algorithm.
+The suggested implementation was a central difference one but a more elaborate spline implementation should also be considered.
+The second effort at reducing corner cutting was by iteratively removing the perpendicular component of the spring force.
+It is unclear if this second scheme is needed, should the dual tangent scheme be successful.
+Both of the schemes were tested on simple systems and showed great promise but further testing and development are needed.
+
+\paragraph{Transition State Theory}
+Using the energy ridges to detect non-harmonic transitions is presented in the thesis and a correction factor is even suggested.
+However, a more complete transition state rate built from the energy profile of the ridge directly is a certainly a worthwhile topic.
+Furthermore, stitching together a transition state from hyperplanar segments, at each image, normal to the minimum mode is a natural progression.
+Such a transition state could even be generated in a variational way, where the number of images would serve as the variational parameter in lieu of the transition state itself.
+
+\paragraph{DFT Ridges}
+DFT calculations of ridges were only moderately successful.
+Investigating the reasons for this \expand \tred{(depends on the Perovskites chapter)}
+
+\paragraph{Performance}
+The performance of the ridge method was not investigated in any detail.
+Subsequently, the performance was not optimised.
+Such studies should be performed.
+
+\paragraph{Application}
+Only a single application was studied in detail.
+Further applications could include \expand 
+
