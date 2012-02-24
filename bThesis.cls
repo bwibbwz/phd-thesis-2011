@@ -48,6 +48,7 @@
 \usepackage{nameref} % Allows for the calling of names and not just numbers with \ref
 \usepackage[final]{hyperref}
 \usepackage{sidecap}
+\sidecaptionvpos{figure}{t}
 
 % --- Fonts ---
 %\usepackage{cmbright} % Displayes vectors in suprscripts wrong
