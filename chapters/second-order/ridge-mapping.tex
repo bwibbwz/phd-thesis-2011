@@ -6,10 +6,11 @@ The path should, in particular, lie through any intermediate \sap{2}s so that a 
 The method should, furthermore, lead to the identification of previously unknown \sap{1}(s) on the ridge in between the given end points, should they exist.
 
 \subsubsection{Gradient Modification}
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width = 0.5\linewidth]{erm-forces}
-    \parbox{0.85\linewidth}{
+\begin{SCfigure}[5.0][h]
+%\begin{center}
+\centering
+\includegraphics[width = 0.35\linewidth]{erm-forces}
+%    \parbox{0.85\linewidth}{
 \caption{
 The construction of the effective force, $\vF^\text{eff}$,
 which acts on image $i$ of the path and is used in the iterative optimisation.
@@ -25,9 +26,9 @@ The green arrow shows $\vF_i^\text{S}$ (\fref{eq:full-spring-force}), %the sprin
 The blue arrow shows $\vF_i^\text{eff}$ (\fref{eq:erm-effective-force}).
 }
 \label{fig:erm-forces}
-}
-\end{center}
-\end{figure}
+%}
+%\end{center}
+\end{SCfigure}
 
 
 Similarly to the NEB method~\cite{neb-original-1998} (\fref{sec:neb}), a path of $N$ discrete images, $[\vR_0, \vR_1, \ldots, \vR_N]$, is iteratively aligned with the ridge by modifying the gradient or force, $\vF_i \equiv -\nabla E(\vR_i)$, for each one.
