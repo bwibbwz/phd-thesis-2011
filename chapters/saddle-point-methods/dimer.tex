@@ -1,8 +1,5 @@
 \section{The Dimer Method}
 \label{sec:dimer}
-
-\figmiss{Maybe a Dimer on a PES for clarity. Low priority}
-
 The Dimer algorithm~\cite{dimer-original-1999} is in essence a method for finding the eigenmode corresponding to the lowest eigenvalue of the Hessian, while performing no direct calculations of the second derivatives\cite{hyperdynamics-voter-1997}.
 This information is then used to locate \sap{1}s which are defined by a negative eigenvalue in the Hessian and its corresponding eigenmode.
 
@@ -91,6 +88,22 @@ In order to circumvent this, a different force transformation,
 is often used in these regions.
 This latter transformation simply inverts the force along the minimum mode while ignoring any other components.
 This along with a fixed, artificially large, step size should yield less iterations spent near minima and more near \sap1s.~\cite{dimer-original-1999}
+
+\begin{SCfigure}[5.0][h]
+\centering
+%  \begin{center}
+    \includegraphics[width=0.35\linewidth]{dimer-pes}
+%\parbox{0.85\linewidth}{
+    \caption{The translational scheme of the dimer method.
+$\vR_\text{A}$ and $\vR_\text{B}$ are the positions of the dimer images with the $\vR_0$ as the central image.
+$\uvn$ is the minimum mode (or direction of lowest curvature)
+$\vF_0$ is the gradient force acting on the central image and $\vF_0^\text{t}$ is the transformed, effective force (\fref{eq:dimer-transform}).
+The green circle is the \sap{1} under investigation.
+}
+\label{fig:dimer-pes}
+%}
+%  \end{center}
+\end{SCfigure}
 
 \subsubsection{Iterative Translation}
 After the force has been transformed such that \sap{1}s appear as minima --- \sap1s, however, remain unchanged with regards to the function's value --- it is possible to use conventional algorithms for finding minima as long as they support a systematic increase in the function's value.
