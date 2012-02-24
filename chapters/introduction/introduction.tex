@@ -17,6 +17,7 @@
 %\item The thesis is heavily biased towards chemistry
 %\eit
 
+\section{Stationary Points}
 The border between mathematics, physics and chemistry is often times fuzzy and the methods developed for one, may very well benefit the others.
 This relationship is obvious for mathematical methods that get adopted for physics and chemistry but the reverse is also possible (for example the Davidson method for eigenvalue and eigenvector calculation~\cite{davidson-method-1975}).
 Common to all the aforementioned, and other, fields, is some form of functional analysis where the study of stationary points\footnote{Points where the first derivative is zero.} is generally of great interest.
@@ -30,7 +31,7 @@ Locating extrema using local information, i.e. the gradient, is a well known tec
 Finding other stationary points is less obvious and classifying them depends on the second order derivatives (or even higher in special cases\footnote{e.g. the Monkey Saddle \url{http://mathworld.wolfram.com/MonkeySaddle.html}})
 Finding such points without explicitly evaluating higher order derivatives is an important subject within atomic simulations, since their calculation is is very costly when using non-analytical models to describe the atomic interaction.
 
-\subsection{Atomic Simulations}
+\section{Atomic Simulations}
 The focus of this thesis is the application and improvement of theoretical methods to calculational reaction rate chemistry.
 The underlying methods that allow this are numerous and their discovery span ages in time, from Newton's equations of motion~\cite{newton-latin} up to modern day methods for solving Sch\"odinger's equation~\cite{schrodinger-equation-1926} for quantum systems\cite{hohenberg-kohn-1964, gpaw-review-2010, dacapo-1999}, from the discovery of calculus\citemiss\footnote{see Leibnitz: \url{http://books.google.dk/books?id=UdGBy8iLpocC&pg=PA46&redir_esc=y\#v=onepage&q&f=false}} and vector math~\citemiss to modern methods for solving eigenvalue problems~\cite{eigenvalue-problems-2000}.
 
@@ -38,9 +39,7 @@ Simulations of atomic systems are an integral part of modern atomic scale resear
 Simulations are commonly employed in the analysis of interesting material properties (see for example catalytic properties\citemiss), the screening of candidate materials --- to eliminate the need to synthesize as many unsuccessful materials --- for various processes (see for example hydrogen storage\citemiss) and further collaboration and comparison with experiments (see for example \citemiss).
 
 Reaction chemistry happens on a timescale of microseconds which is, essentially, eternity when seen from the vantage point of the fast moving atomic vibrations, which happen on a timescale of femtoseconds.
-Bridging this gap is an important research subject which remains open, despite noble efforts that have moved the field a long way\cite{tst-eyring-1935, tst-polanyi-1935, tst-wigner-1938, htst-wert-1949, htst-vineyard-1957, tst-1990}~\citemiss.
-
-%Dating back to well before modern large scale computer clusters, synamical studies were even performed using tools no more complicated than balls, sticks, pens and paper~\cite{old-simulations-bernal-1962} ATH: Vegetable Staticks (Stephen Hales, 1727)
+Bridging this gap is an important research subject which remains open, despite noble efforts that have moved the field a long way by introducing statistical methods that are able exploit the timescale difference to treat the events independently of each other.\cite{tst-eyring-1935, tst-polanyi-1935, tst-wigner-1938, htst-wert-1949, htst-vineyard-1957, tst-1990}
 
 \subsubsection{The Significance of Stationary Points in Atomic Simulations}
 The potential energy of atomic systems can be evaluated as a function of the atomic coordinates.~\cite{born-oppenheimer-1927, schrodinger-equation-1926, kohn-1999}
@@ -54,7 +53,7 @@ This latter criteria for the surroundings is often disregarded, especially in sy
 Part of the reason for this is the lack of a simple to use method for mapping the surroundings and neighbouring saddle points.
 In this thesis an effort is made to plug that gap (\fref{chap:erm}).
 
-\subsection{Mobile Energy Solutions}
+\section{Mobile Energy Solutions}
 A highly active field of research where reaction rates are of central importance is the design of novel energy storage materials.
 
 \subsubsection{Fossil Fuels}
@@ -72,24 +71,34 @@ Finding an alternative is one of the most important research subjects of the lat
 Fossil fuels serve both as energy sources and carriers.
 If they are to be replaced alternatives must be found for both.
 Sustainable ways to capture the Sun's energy tend to do so intermittently, e.g. solar panels can not be kept in direct sunlight during the night and at times the weather is still during which, windmills are of little use.
-
+The problem is then to regulate the energy, to store excess when it is produced and to distribute it when none is produced.
+This is where the fossil fuels serve(d) as energy carriers.
 
 \subsubsection{Hydrogen as an Alternative}
 Out of all the elements, hydrogen is the lightest and its chemical bonds hold a remarkable amount of energy.
 This makes it a great candidate for a mobile energy store.
 
-Directly storing hydrogen as a gas requires a very large volume while storing it as a liquid requires cooling and pressurised tanks.
+Directly storing hydrogen as a gas requires a very large volume or high pressure while storing it as a liquid requires cooling and/or pressurised tanks.
 Neither is a very compelling solution for use in, for example, the average car.
-Such solutions have been deployed for buses \expand
+Such solutions have, nevertheless, been deployed in buses \expand
 
 Another way of storing hydrogen is in metal hydrides, where the hydrogen is either trapped in the metal's lattice or chemically bond within the metal.
-These storage solutions tend to have more reasonable volumetric and gravimetric densities \figmiss{energy density} but often require "unnatural" operating conditions for loading/unloading.
+These storage solutions tend to have more reasonable volumetric densities (at a reasonable cost of the gravimetric density) \figmiss{energy density} but often require "unnatural" operating conditions for loading/unloading.
 
 The reasons for the low volumetric capacity of the pure hydrogen solutions is simple, the tank is too big.
 But understanding the underlying reasons for the high stability is an ongoing research topic.
-An essential piece in that puzzle is understanding the kinetics of the material, how the hydrogen moves and how/why the material deforms.
+An essential piece in that puzzle is understanding the kinetics of the material, how the hydrogen moves and how/why/when the material deforms.
 Such knowledge can then be used to create better materials with more appropriate properties.
 
+\subsubsection{Fuel Cells}
+Once hydrogen has been stored and retrieved it is generally used within highly efficient fuel cells to produce electricity without combustion.
+Currently this process depends on rare elements, such as platinum, to catalyse the reaction.
+\expand
+Investigating catalytic activity and designing cheap, efficient, catalysts is highly dependant on information on the kinetics of \expand
+
+\subsubsection{Summary}
+Information about non-extremal stationary points is highly useful in designing and implementing the future.
+Helping to understand the problems of the past and design novel materials for the future.
 
 %\item Why statistical methods
 %\item Why path techniques (introduction to be expanded on in the TST section)
