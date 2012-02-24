@@ -133,8 +133,23 @@ In order to fully understand the root cause of these instabilities, more researc
 In fact, the test cases considered would generally converge to the exact ridge without the use of the perpendicular spring force if started from a path suffering from corner cutting.\footnote{This was not the case for all systems but those with only mild corner cutting would always converge.}
 
 \subsubsection{Non-barrier profiles}
+\begin{SCfigure}[10][htb!]
+\centering
+%\begin{center}
+    \includegraphics[width=0.45\linewidth]{bad-energy-profiles}
+%    \includegraphics{bad-energy-profiles}
+%    \parbox{0.85\linewidth}{
+\caption{A schematic of some of some of the possible initial energy profiles of a ridge calculation.
+A barrier (black, solid), a monotonic decrease (blue, dotted) and an inverted barrier (red, dashed).
+Only the first is possible in NEB calculations.
+}
+\label{fig:bad-energy-profiles}
+%}
+%\end{center}
+\end{SCfigure}
+
 Since the end points of the ridge are not local minima, there is no intrinsic barrier separating them, as is the case for NEB calculations.
-In fact, the initial profile can have any shape, including a monotonic one or even an inverted barrier, if it lies near a local minimum, which is \emph{not} unlikely.
+In fact, the initial profile can have any shape, including a monotonic one or even an inverted barrier, if it lies near a local minimum, which is \emph{not} unlikely, examples of which can be seen in \fref{fig:bad-energy-profiles}.
 This means that the initial environment of the path is drastically different from that of the ridge.
 To help bring the path nearer to the ridge, the full spring force was used.
 Furthermore, the usage of the climbing image becomes questionable as the immobile end images may very well be the highest ones.
