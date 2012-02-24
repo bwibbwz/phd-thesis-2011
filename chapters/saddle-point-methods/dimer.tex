@@ -78,8 +78,9 @@ As discussed in \fref{sec:sps}, \sap{1}s are stationary (with zero gradient) and
 The goal is, thus, to maximize the function's value along the minimum mode while minimizing it along all other eigenmodes.
 This can be achieved, simply, by inverting any force components along the minimum mode,
 \beq{dimer-transform}
-\vF_0^\text{t} = \vF_0 - 2(\vF_0 \cdot \uvn)\uvn.
+\vF_0^\text{t} = \vF_0 - 2(\vF_0 \cdot \uvn)\uvn,
 \eeq
+shown in \fref{fig:dimer-pes}.
 In cases were the dimer aligns itself with a contour of the potential in a convex region (where the Hessian has only positive eigenvalues), it is possible that a lot of time will be spent there.
 In order to circumvent this, a different force transformation,
 \beq{dimer-transform-minima}
@@ -95,7 +96,7 @@ This along with a fixed, artificially large, step size should yield less iterati
     \includegraphics[width=0.35\linewidth]{dimer-pes}
 %\parbox{0.85\linewidth}{
     \caption{The translational scheme of the dimer method.
-$\vR_\text{A}$ and $\vR_\text{B}$ are the positions of the dimer images with the $\vR_0$ as the central image.
+$\vR_\text{A}$ and $\vR_\text{B}$ are the positions of the dimer images with the $\vR_0$ as the central image (\fref{eq:dimer-separation}).
 $\uvn$ is the minimum mode (or direction of lowest curvature)
 $\vF_0$ is the gradient force acting on the central image and $\vF_0^\text{t}$ is the transformed, effective force (\fref{eq:dimer-transform}).
 The green circle is the \sap{1} under investigation.
