@@ -1,43 +1,38 @@
 \chapter{Summary}
 \label{chap:summary}
 
-The rotational dynamics of two metal  borohydrides were investigated in detail with close collaboration to experimental work.
+The rotational dynamics of two metal borohydrides were investigated in detail with close collaboration to experimental work.
 The results of which complemented the experimental results very well.
 \expand
 
 In order to map ridges of functions\footnote{Steepest descent paths between first and second order saddle points.} a method was developed.
-By transforming convex subspaces into concave subspaces, the dimer algorithm maps first order saddle points to minima and ridges to minimum energy paths\footnote{or path of least resistance.}, with regards to the gradient.
-Using this transformation to iteratively converge a trial path to the ridge is then achieved using the nudged elastic band minimum energy path algorithm.
+By transforming convex subspaces into concave subspaces, the dimer algorithm maps first order saddle points to minima and ridges to minimum energy paths\footnote{or path of least resistance.} (MEP), with regards to the gradient.
+Using this transformation to iteratively converge a trial path to the ridge is then achieved using the nudged elastic band (NEB) algorithm for finding minimum energy paths.
+Due to numerical instabilities and artificial method for stabilisation was added to the NEB-type part of the algorithm.
+This stabilisation leads to systematic errors in the final path --- only the path, not the second order saddle point ---
+Effort to leave out or minimise this stabilisation part of the algorithm were discussed along with a discussion on the reduction of the numerical instabilities introduced by an inaccurate ridge$\rightarrow$MEP mapping.
+However, these discussions lacked proper testing due to insufficient time and can, thus, only be considered as an extended and detailed outlooks.
 
 In the context of theoretical reaction rate chemistry, the ridge method was applied to validate the reaction rates offered by the harmonic approximation to transition state theory.
-Furthermore, 
+Furthermore, in cases where the harmonic approximation was found lacking, a rough correction factor was offered by calculating the ratio between configurational integrals of the ridge and the harmonic energy profile.
 
+For the \ce{Al} adatom on the \ce{Al}(100) surface system, the lowest energy mechanism for diffusion were investigated, the hop over a ridge site and the non-intuitive concerted motion of several atoms, 2, 3 and 4.
+Calculation of the ridges between each pair showed that the harmonic approximation held its ground for the lowest energy mechanism, the concerted motion of 2 atoms, and the hop, while it was found to be severely lacking for the more populous concerted motion mechanisms.
+The correction factor for the latter was found to be significant.
+It was also found that the ridge between the 3 and 4 atom concerted saddle points on the one hand and the hop saddle point on the other, are separated by the 2 atom concerted saddle point.
+In this way finding novel mechanisms is possible using the ridge method, similarly to how the NEB method locates novel minima.
 
-By transforming the gradient of a series of points between first order saddle points, the ridge is mapped to a path of least resistance\footnote{Steepest descent path between first order saddle points and minima. Also referred to as a minimum energy path}.
-The transformation is achieved using the dimer algorithm for finding eigenmode corresponding to the lowest eigenvalue of the Hessian matrix and then inverting any gradient components along it.
-After the mapping is complete a nudged elastic band type algorithm is used to equally distribute the points along a path that is iteratively converged to the ridge.
-
-
-
-
-
-
-\tred{This is all pretty much shit.}
-By combining the dimer algorithm for mapping convex subspaces to concave ones, i.c. first order saddle points to minima and ridges to minimum energy paths, and the nudged elastic band algorithm for finding minimum energy paths, a method for detecting energy ridges (easily applicable to any multidimensional function) was developed.
-Using the energy ridges found near the self-diffusional saddle points of an \ce{Al}(100) adatom, improvements to the reaction rate \expand
-
-
-\bit
-\item Mapping ridge paths is achieved using a novel way of combining previously well established \sap{1} algorithms.
-\item \expand
-\item Initial attempts at DFT ridges were promising when the initial guesses were good enough but minima trapping was an unexplained problem
-\eit
-
-\placeholder
+The \ce{Al} system was modelled with the embedded atom method which offers gradients that are clean from numerical noise.
+The Dimer algorithm requires well behaved gradients since it relies heavily on finite difference methods for estimating derivatives.
+In order to test this dependence, DFT calculations\footnote{DFT's gradients depend \expand} on the \ce{SrTiO3} perovskite system with a coupled hydrogen defect were performed.
+\expand
+It was found that the calculations would converge well and quickly if the initial path lay not near a local minima, under which circumstances the path would get trapped near the minimum in question and never reach the ridge.
+This failure was not investigated further due to time constraints.
 
 
 
-
-
+%By transforming the gradient of a series of points between first order saddle points, the ridge is mapped to a path of least resistance\footnote{Steepest descent path between first order saddle points and minima. Also referred to as a minimum energy path}.
+%The transformation is achieved using the dimer algorithm for finding eigenmode corresponding to the lowest eigenvalue of the Hessian matrix and then inverting any gradient components along it.
+%After the mapping is complete a nudged elastic band type algorithm is used to equally distribute the points along a path that is iteratively converged to the ridge.
 
 \input{chapters/summary/outlook}
