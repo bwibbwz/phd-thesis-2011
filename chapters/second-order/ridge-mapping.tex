@@ -12,8 +12,8 @@ The method should, furthermore, lead to the identification of previously unknown
 \includegraphics[width = 0.35\linewidth]{erm-forces}
 %    \parbox{0.85\linewidth}{
 \caption{
-The construction of the effective force, $\vF^\text{eff}$,
-which acts on image $i$ of the path and is used in the iterative optimisation.
+The construction of the effective force, $\vF^\text{eff}_i$,
+which acts on image $i$ (the label, $i$, is excluded from all the force symbols) of the path and is used in the iterative optimisation.
 The solid grey line indicates the ridge,
 the black filled circles represent the current location of three adjacent images,
 the black solid line shows the tangent estimate, $\uvt_i$
@@ -29,7 +29,6 @@ The blue arrow shows $\vF_i^\text{eff}$ (\fref{eq:erm-effective-force}).
 %}
 %\end{center}
 \end{SCfigure}
-
 
 Similarly to the NEB method~\cite{neb-original-1998} (\fref{sec:neb}), a path of $N$ discrete images, $[\vR_0, \vR_1, \ldots, \vR_N]$, is iteratively aligned with the ridge by modifying the gradient or force, $\vF_i \equiv -\nabla E(\vR_i)$, for each one.
 However, unlike the NEB method, further force modifications are needed, in order to let the ridge appear as a MEP.
@@ -47,7 +46,7 @@ The Dimer methodology~\cite{dimer-original-1999, dimer-olsen-2004} (\fref{sec:di
 \beq{transformed-force}
 \vF_i^\text{t} = \vF_i^\perp - 2(\vF_i^\perp \cdot \uvn_i)\uvn_i,
 \eeq
-that will let ridges appear, locally as MEPs.
+that will map convex degrees of freedom to concave ones, effectively making the ridge appear as a MEP with regards to the gradient.
 Since eigenvectors are not necessarily perpendicular to the ridge (as can be seen in figure 1 of paper \ref{pap:second-order}), the path itself must be left out of the Hessian's vector space, thus applying an orthogonality constraint on the minimum mode,
 \beq{orthogonality-constraint}
 \uvt_i \cdot \uvn_i = 0,
@@ -56,7 +55,7 @@ at all times.
 
 Similarly to the NEB method, an artificial force is employed in order to keep the images equally\footnote{or with controlled spacing} distributed along the path.
 For the NEB method this force acts only along the path and is generally referred to as the spring force as it resembles springs connecting the images.
-However in the case of ridge calculations, the full spring force most be used,
+However, in the case of ridge calculations, the full spring force must be used,
 \beq{full-spring-force}
 \vF_i^\text{S} = k \left[ \left( \vR_{i+1} - \vR_i \right) - \left( \vR_i - \vR_{i-1} \right) \right],
 \eeq
@@ -98,7 +97,7 @@ Furthermore, this addition can not be considered optional, as it can technically
 The ridge is the black dashed line.
 The white arrows are the PES force, the grey arrows are the dimer transformed forces and the black arrows are the effective forces.
 The red line is the higher-image tangent and the blue line is the minimum mode estimate.
-The system is a frozen 1 layer \ce{Al}(100) "slab" with a free to move \ce{Al} adatom, modelled with EMT~\cite{emt-1996} and the ridge is taht between two neighbouring hop \sap{1}s.
+The system is a frozen 1 layer \ce{Al}(100) "slab" with a free to move \ce{Al} adatom, modelled with EMT~\cite{emt-1996} and the ridge is that between two neighbouring hop \sap{1}s.
 The PES is created by relaxing the adatom in the direction perpendicular to the frozen layer.
 Shown are the in-plane components of the forces and vectors.
 The out-of-plane components for all are very small.
@@ -116,10 +115,10 @@ The tangent is designed to minimise numerical instabilities in the NEB~\cite{neb
 Using a tangent that depends on both neighbouring images, the path would form kinks under minute perturbations that would not even out with more iterations.
 The orthogonality constraint (\fref{eq:orthogonality-constraint}) enforces an equally wrong minimum mode estimate under perturbations to the path.
 This, in turn, introduces similar instabilities as the kinks, when the ridge$\rightarrow$MEP mapping becomes increasingly inaccurate (\fref{fig:orthogonal-bad}).
-Initial testing showed that this is not a problem where individual degrees of freedom decoupled (non-interacting) but for systems where all degrees of freedom interact (most systems) such instabilities are very problematic and common.
+Initial testing showed that this is not a problem where individual degrees of freedom were decoupled (non-interacting) but for systems where all degrees of freedom interact (most systems) such instabilities are problematic and common.
 
 In paper \ref{pap:second-order}, these instabilities are countered by the inclusion of the perpendicular spring force component which yields the more systematic error of corner cutting (discussed below).
-Further analysis of showed that enforcing the orthogonality constraint (\fref{eq:orthogonality-constraint}) using a tangent estimate that is focused on accuracy, rather than stability, highly reduces the problematic behaviour (\fref{fig:orthogonal-good}).
+Further analysis showed that enforcing the orthogonality constraint (\fref{eq:orthogonality-constraint}) using a tangent estimate that is focused on accuracy, rather than stability, highly reduces the problematic behaviour (\fref{fig:orthogonal-good}).
 The system would then have two tangent definitions co-existing, a numerically stable one for the NEB-type force scheme (\fref{eq:perpendicular-force}) and a more accurate representation of the ridge,
 \beq{central-difference-tangent}
 \uvt_i^\text{ridge} = \frac{\vR_{i+1} - \vR_{i-1}}{\left| \vR_{i+1} - \vR_{i-1} \right|},
@@ -129,7 +128,7 @@ This latter scheme was neither employed in paper \ref{pap:second-order} nor \fre
 Nevertheless, the initial results are promising for the removal/reduction of corner cutting.
 
 \Fref{fig:orthogonal} demonstrates the problem and suggested solution well.
-However, it seems to be system specific and dependant on, at least, the curvature of the contour lines.
+However, the problem seems to be system specific and dependant on, at least, the curvature of the contour lines.
 In order to fully understand the root cause of these instabilities, more research on more test systems is required but using the tangent from \fref{eq:central-difference-tangent} seems to be a vital step.
 In fact, the test cases considered would generally converge to the exact ridge without the use of the perpendicular spring force if started from a path suffering from corner cutting.\footnote{This was not the case for all systems but those with only mild corner cutting would always converge.}
 

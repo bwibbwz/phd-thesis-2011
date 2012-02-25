@@ -2,12 +2,12 @@
 \label{sec:erm-introduction}
 % -----------------------------------------------------------------
 
-A collection of two specific steepest descent paths starting infinitesimally close to a \sap{2} and ending at the neighbouring \sap{1}s can be considered a ridge.
+A collection of two specific steepest descent paths starting infinitesimally close to a \sap{2} and ending at two neighbouring \sap{1}s can be considered a ridge.
 Such a path is non-trivial to find as information about the curvature, the Hessian, is essential but often unavailable in a direct manner.
 
-A given point, $\vR$, is located on a ridge if its gradient is parallel with its tangent and the Hessian matrix for a reduced space where the tangent is excluded has a single negative eigenvalue~\footnote{Higher order "ridges" can be identified if the Hessian has more negative eigenvalues.}.
+A given point, $\vR$, is located on a ridge if the gradient is parallel with its tangent and the Hessian matrix for the vector space perpendicular to the tangent has a single negative eigenvalue~\footnote{Higher order "ridges" can be identified if the Hessian has more negative eigenvalues.}.
 
-A method for iteratively aligning a path with the ridge is presented, building on the well established NEB (\fref{sec:neb}) and Dimer \fref{sec:dimer} methods.
+A method for iteratively aligning a path with the ridge is presented, building on the well established NEB (\fref{sec:neb}) and Dimer (\fref{sec:dimer}) methods.
 This method is then applied to the self diffusion of an adatom on the \ce{Al}(100) surface in \fref{chap:al}.
 
 After converging to the ridge, the validity of the harmonic approximation to transition state theory (HTST) is considered and an improvement to the reaction rate offered.

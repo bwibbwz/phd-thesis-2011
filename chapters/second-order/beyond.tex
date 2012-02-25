@@ -1,6 +1,6 @@
 \section{Energy Ridge Mapping}
 \label{sec:energy-ridge-mapping}
-In the context of atomic simulations, the function in question is often the potential energy as a function of all atomic co-ordinates, or the Potential Energy Surface.
+In the context of atomic simulations, the function in question is often the potential energy as a function of all atomic coordinates, or the potential energy surface.
 
 Information about energy ridges can be useful when considering reaction rates, e.g. for checking the validity of the harmonic approximation to TST (\fref{sec:htst}).
 Furthermore, should HTST not be sufficient it is possible to make adjustments to the rate using information about the ridge.
@@ -14,7 +14,7 @@ First, that the transition state, $\ts$, can be described with a hyperplane in w
 Second, that the energy profile at the $\ts$ and minimum can be approximated with a second degree Taylor expansion.
 These assumptions make the the harmonic approximation faster than full TST by orders of magnitude.
 
-The conditions under which HTST is valid are generally that the energy, $E(\vR)$, at the minimum must be sufficiently lower than at the \sap{1} and that the \sap{1} energy must be sufficiently lower than the energy at any neighbouring \sap{2}s.
+The conditions under which HTST is valid are generally that the energy, $E(\vR)$, at the minimum of the reactants basin must be sufficiently lower than at the \sap{1} and that the \sap{1} energy must be sufficiently lower than the energy at any neighbouring \sap{2}s.
 The literature is unspecific as to what a sufficient difference is but a commonly used value is that $E(\vR_{\sap{1}}) - E(\vR_\text{min.}) > 5\kB T$~\cite{htst-5ev-2005}.
 It is reasonable to assume a similar criterion for $E(\vR_{\sap{2}}) - E(\vR_{\sap{1}})$.
 
@@ -40,7 +40,8 @@ for each investigated degree of freedom.
 
 Since the harmonic integral has a larger range, $[-\infty, \infty]$, than the ridge integral, $[\sap{2}^\text{A}, \sap{2}^\text{B}]$, it is possible for the ratio to become larger than 1.0.
 Such ratios are artefacts and should not be used to increase the reaction rate.
-It is possible to limit the harmonic integral to the same range as the ridge integral\footnote{using the error function.} to avoid this but the tests presented here did not see $ç\Gamma > 1.0$ as a serious problem and thus used the infinite limits.
+It is possible to limit the harmonic integral to the same range as the ridge integral\footnote{using the error function.} to avoid this.
+In the tests presented in \fref{chap:al}, $\Gamma > 1.0$ was not a common nor large problem compared with the factors where $\Gamma < 1.0$ and thus the infinite limits were used.
 
 Choosing the direction of $x$ is non-trivial.
 In the work presented in \fref{chap:al}, it is implicitly chosen when $\alpha$ is prepared by means of a least squares analysis of the 4 lowest energy images of the ridge.
