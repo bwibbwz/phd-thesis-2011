@@ -29,7 +29,7 @@ While the methods discussed in this thesis are developed in this field, applying
 
 Locating extrema using local information, i.e. the gradient, is a well known technique\citemiss, whereas the gradient is simply followed in the appropriate direction (positive for maxima and negative for minima) until it vanishes.\footnote{Global extrema are, conversely, extremely difficult to find using only local information and guaranteeing that a given extremum is a global one is nearly impossible.~\cite{Stillinger1999} See for example \cite{Wang2010, Wales1999, Pickard2011, Oganov2008, Kirkpatrick1983, Johnston2003, Fischer2006} for such efforts.}
 Finding other stationary points is less obvious and classifying them depends on the second order derivatives (or even higher in special cases\footnote{e.g. the Monkey Saddle \url{http://mathworld.wolfram.com/MonkeySaddle.html}})
-Finding such points without explicitly evaluating higher order derivatives is an important subject within atomic simulations, since their calculation is is very costly when using non-analytical models to describe the atomic interaction.
+Finding such points without explicitly evaluating higher order derivatives is an important subject within atomic simulations, since their calculation is very costly when using non-analytical models to describe the atomic interaction.
 
 \section{Atomic Simulations}
 The focus of this thesis is the application and improvement of theoretical methods to calculational reaction rate chemistry.
@@ -51,7 +51,7 @@ The top point is a non-extremal stationary point (i.c. first order saddle point)
 The surroundings of the first order saddle point are considered its immediate environment but care must also be taken that any neighbouring higher order saddle points are sufficiently far away in potential energy and space.
 This latter criteria for the surroundings is often disregarded, especially in systems for which the approximations in question generally perform well.
 Part of the reason for this is the lack of a simple to use method for mapping the surroundings and neighbouring saddle points.
-In this thesis an effort is made to plug that gap (\fref{chap:erm}).
+In this thesis an effort is made to bridge that gap (\fref{chap:erm}).
 
 \section{Mobile Energy Solutions}
 A highly active field of research where reaction rates are of central importance is the design of novel energy storage materials.
@@ -94,7 +94,7 @@ Such knowledge can then be used to create better materials with more appropriate
 Once hydrogen has been stored and retrieved it is generally used within highly efficient fuel cells to produce electricity without combustion.\citemiss
 Currently this process depends on rare and expensive elements, such as platinum, to catalyse the reaction.
 This dependence on low-availability materials can very well become a bottleneck for the implementation of the so-called hydrogen economy.
-Investigating catalytic activity and designing cheap, efficient, catalysts is highly dependant understanding the kinetics and the catalytical pathways involved.
+Investigating catalytic activity and designing cheap, efficient, catalysts is highly dependant on understanding the kinetics and the catalytical pathways involved.
 
 \subsubsection{Summary}
 Information about non-extremal stationary points is highly useful in designing and implementing the future.

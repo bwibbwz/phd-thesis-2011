@@ -15,7 +15,7 @@ The system will mostly spend time near the minimum of the reactants basin (R), t
 \end{figure}
 
 In atomistic simulations there is a often a clear separation of timescales between the most interesting events.
-With local vibration of the atoms being very fast, typically on the order of $10^{14} \unit{Hz}$~\citemiss,
+With local vibration of the atoms being very fast, typically on the order of $10^{14} \unit{Hz}$~\cite{mcquarrie-1983},
 while non-local reordering of atoms, motion between minima on the PES, often considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$ for a system with an energy barrier of $0.5 \unit{eV}$.~\citemiss
 Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^{10}$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
 
@@ -126,7 +126,7 @@ k_\text{TST} \ge k_\text{exact}.
 \item Some efforts have been put into searching for optimal $\ts$s by maximising the free energy of a hyperplane~\cite{ts-opt-2001} but such methods require costly free energy calculations. \tred{Work on this or remove?}
 \eit
 
-Should optimising the $\ts$ be infeasible or insufficient, a different approach can be taken to bring $k_\text{TST}$ closer to the exact rate by estimating the error and correcting for it with a multiplication factor $\kappa_\text{D} \in [0, 1]$,
+Should optimising the $\ts$ be infeasible or insufficient, a different approach can be taken to bring $k_\text{TST}$ closer to the exact rate by estimating the error and correcting for it with a multiplication factor $\kappa_\text{D} \in (0, 1]$,
 \beq{tst-dynamical-corrections}
 k_\text{exact} = \kappa_\text{D} \text{ } k_\text{TST}.
 \eeq
