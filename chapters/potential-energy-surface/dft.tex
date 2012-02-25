@@ -1,13 +1,11 @@
 \section{Quantum Calculations}
 \label{sec:methods-qm}
 
-% Add a footnote about the spin density DFT (see Kieron's stuff for a reference)
-% Also footnote on degeneracy
+% Add a footnote about the spin density DFT (see Kieron's stuff for a reference) and one on degeneracy
 
 With increased computing power and, in particular, advances in parallel algorithms, it is now possible to calculate a range of physical properties for materials at the atomic level without the use of any experimental parameters.
 Such \textit{ab initio} methods are generally attempts at solving or approximating the Schr\"odinger equation (\fref{sec:schrodinger}) for the ground state\footnote{Non ground state calculations are not considered in this thesis.}.
 Multiple strategies exist --- choosing one generally involves considering the trade-off between accuracy and computational effort --- but the main one used in this thesis is the Density Functional Theory, where the many-electron problem is \emph{exactly} divided into multiple one-electron problems.
-%\expand?
 
 \subsection{The Electronic Structure Problem}
 Solving the Schr\"odinger equation (\fref{sec:schrodinger}) is not a menial task, as it is a second order partial derivative equation in multiple dimensions and can only be solved exactly for very small systems.
@@ -77,8 +75,7 @@ can be done iteratively in a variational manner, from an initial guess for the e
 Constructing the effective potential becomes the main problem here, since an exact $v(\vr)$ yields an exact solution to the whole electronic structure problem.
 The external potential, $\widehat{V}_\text{ext}$, from \fref{eq:hamiltonian-external} enters unchanged as it contains only static information.
 Conversely, the electron-electron interaction, $\widehat{U}_\text{ee}$, enters in a changed form.
-In fact, it is introduced as two terms, one for interaction with the electron density as a whole, commonly referred to as the hartree potential ($v_\text{H}(\vr)$) and a second one for many-electron and Pauli-exclusion effects, %self-interaction effects, 
-$v_\text{XC}(\vr)$, the so-called exchange-correlation potential,
+In fact, it is introduced as two terms, one for interaction with the electron density as a whole, commonly referred to as the hartree potential ($v_\text{H}(\vr)$) and a second one for many-electron and Pauli-exclusion effects, $v_\text{XC}(\vr)$, the so-called exchange-correlation potential,
 \beq{effective-potential}
 v(\vr) = V_\text{ext}(\vr) + v_\text{H}(\vr) + v_\text{XC}(\vr).
 \eeq
@@ -115,44 +112,3 @@ A better description of molecules can be attained with the use of the generalise
 In this thesis the GGA functional developed by Perdew and Wang in 1991 is mainly used for DFT generated PESes.~\cite{pw91}
 
 Multiple other exchange-correlation functional types exist, each with different strong suits, some fitted to empirical data\footnote{putting into question their \textit{ab initio} nature.}~\cite{blyp-1993} in order to increase accuracy by sacrificing their physical intuition, while others are hybrids of previous functionals~\cite{xc-review-1999, jacobs-ladder-2001, meta-gga-2003, exact-exchange-1996}, aimed at improving the accuracy at the cost of computational time.
-
-
-%$\epsilon_\text{X}^\text{hom.}$ 
-
-%\tred{I've removed the Implementation (DACAPO) section. Including it and a PAW section would be nice. Also included a list of stuff DFT is good/bad for would make sense. High priority}
-%The approximations used in our work are based on the so-called Generalized Gradient Approach (GGA). The GGA uses the the exchange-correlation energy of a homogeneous electron gas at point $\vect{r}$ like the Local Density Approximation (LDA) \cite{kohn1965} but also uses the gradient of the density to account for inhomogeneity. This, however, is not a good choice by itself so a reduced density gradient, $s(\vect{r})$, is used, as suggested by Langreth and Perdew \cite{langreth1977}. The exchange-correlation functional then becomes
-%\begin{equation}
-%  E_{XC}^{GGA}[\rho] = \int d^3r\, \epsilon_{XC}^{GGA}(\rho(\vect{r}), s(\vect{r}))\rho(\vect{r})
-%\end{equation}
-%with
-%\begin{equation}
-%\label{eq:GGAreducedDensityGradient}
-% s(\vect{r}) = \frac{\left|\nabla \rho(\vect{r})\right|}{2\sqrt[3]{3\pi^2\rho(\vect{r})} \rho(\vect{r})}.
-%\end{equation}
-
-%\subsection{Implementation of DFT}
-%\label{sec:methods-dft-implemetnation}
-%
-%\subsubsection{The Plane Wave Basis Set}
-%In implementing DFT calculations, the Kohn-Sham wavefunctions are expanded in a particular basis set. In our work plane waves are used under periodic boundary conditions in accordance with Bloch's theorem,
-%\begin{equation}
-%\label{eq:blochsTherom}
-% \psi_\vect{k}^{m}(\vect{r}) = \sum_\vect{G}c_{\vect{k} + \vect{G}}^m\, e^{i(\vect{k}+\vect{G})\cdot\vect{r}}
-%\end{equation}
-%where $\vect{G}$ are the reciprocal lattice vectors. %[what are $c_{\vect{k} + \vect{G}}^m$?]. 
-%For an exact solution, an infinite number of plane waves is needed. Fortunately the plane waves at the lower end of the kinetic energy range are the most important, so the number of plane waves can be reduced by defining a cutoff, $G_{cut}$, where the solution becomes good enough:
-%\begin{equation}
-% \left( \frac{\hbar^2}{2m} \right) \left| \vect{k} + \vect{G}_{cut} \right|^2 \le E_\mathrm{cut}.
-%\end{equation}
-%This leads to one of the main advantages of plane waves. By increasing the cutoff the accuracy of the calculation can be systematically increased. 
-%
-%A disadvantage of plane waves is their inefficiency to deal with high curvature regions, such as the atomic core. To overcome this pseudopotentials can be used. In the core, pseudopotentials are an average of the potential due to the core electrons and the nucleus felt by the valence electrons inside a given sphere but outside the sphere the pseudopotential becomes identical to the all-electron potential. The plane-wave cutoff can be lowered even further when using pseudopotentials while generally giving results of good accuracy, especially the so-called ultrasoft pseudopotential with non-local components \cite{vanderbilt1990}.
-%
-%\subsection{Known Problems of DFT}
-%\bit
-%\item Band Gaps in semi conductors
-%\item Dispersion (van Der Waals)
-%\item etc.
-%\eit
-%
-%\placeholder
