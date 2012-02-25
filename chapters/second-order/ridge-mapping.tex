@@ -1,16 +1,13 @@
 \section{Ridge Mapping}
 \label{sec:ridge-mapping}
-
 Given a function, $E$, of multiple variables, $\vR$, its gradient, $\nabla E(\vR)$, and two \sap{1}s, the goal is to identify a path that lies close to the ridge between the \sap{1}s.
 The path should, in particular, lie through any intermediate \sap{2}s so that a comparison of their height with respect to the endpoints can be made.
 The method should, furthermore, lead to the identification of previously unknown \sap{1}(s) on the ridge in between the given end points, should they exist.
 
 \subsubsection{Gradient Modification}
 \begin{SCfigure}[5.0][h]
-%\begin{center}
 \centering
 \includegraphics[width = 0.35\linewidth]{erm-forces}
-%    \parbox{0.85\linewidth}{
 \caption{
 The construction of the effective force, $\vF^\text{eff}_i$,
 which acts on image $i$ (the label, $i$, is excluded from all the force symbols) of the path and is used in the iterative optimisation.
@@ -19,16 +16,13 @@ the black filled circles represent the current location of three adjacent images
 the black solid line shows the tangent estimate, $\uvt_i$
 and the black dashed line shows the minimum mode estimate, $\uvn_i$.
 The orange arrow shows the gradient force, $\vF_i= -\nabla E$.
-The red arrow shows the transformed force, $\vF^t$ (\fref{eq:transformed-force}),
-%obtained by inverting $\vF$ in the direction of the minimum mode, $\epsilon$ (see \eref{eq:minmode-force}).
+The red arrow shows the transformed force, $\vF^t$ (\fref{eq:transformed-force}).
 The purple arrow shows $\vF_i^\perp$, the component of the transformed force that is perpendicular to the tangent.
-The green arrow shows $\vF_i^\text{S}$ (\fref{eq:full-spring-force}), %the spring force given by \eref{eq:full-spring-force}.
+The green arrow shows $\vF_i^\text{S}$ (\fref{eq:full-spring-force}),
 The blue arrow shows $\vF_i^\text{eff}$ (\fref{eq:erm-effective-force}).
 \tred{The scheme here is not performed in the same order as that in the chapter.}
 }
 \label{fig:erm-forces}
-%}
-%\end{center}
 \end{SCfigure}
 
 Similarly to the NEB method~\cite{neb-original-1998} (\fref{sec:neb}), a path of $N$ discrete images, $[\vR_0, \vR_1, \ldots, \vR_N]$, is iteratively aligned with the ridge by modifying the gradient or force, $\vF_i \equiv -\nabla E(\vR_i)$, for each one.
@@ -136,17 +130,12 @@ In fact, the test cases considered would generally converge to the exact ridge w
 \subsubsection{Non-barrier profiles}
 \begin{SCfigure}[10][htb!]
 \centering
-%\begin{center}
     \includegraphics[width=0.45\linewidth]{bad-energy-profiles}
-%    \includegraphics{bad-energy-profiles}
-%    \parbox{0.85\linewidth}{
 \caption{A schematic of some of some of the possible initial energy profiles of a ridge calculation.
 A barrier (black, solid), a monotonic decrease (blue, dotted) and an inverted barrier (red, dashed).
 Only the first is possible in NEB calculations.
 }
 \label{fig:bad-energy-profiles}
-%}
-%\end{center}
 \end{SCfigure}
 
 Since the end points of the ridge are not local minima, there is no intrinsic barrier separating them, as is the case for NEB calculations.
@@ -156,4 +145,3 @@ To help bring the path nearer to the ridge, the full spring force was used.
 Furthermore, the usage of the climbing image becomes questionable as the immobile end images may very well be the highest ones.
 If using the climbing image from the outset is required, non-highest images must be used as the climbing image.
 Images numbered $1$ and $N-1$ are partially restrained by the immobility of the endpoints, thus images even further in must be used, $2$ or $N-2$.
-
