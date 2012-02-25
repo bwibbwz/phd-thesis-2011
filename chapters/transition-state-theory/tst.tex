@@ -1,5 +1,4 @@
 \section{Motivation}
-
 \subsection{The Time-scale Problem}
 \label{sec:tst-timescale-problem}
 
@@ -26,7 +25,6 @@ In the problem lies also the solution, when there is such a clear separation of 
 Essentially dealing with the vibrational areas of the PES (the basins) by averaging over them and seperately locating ares of transitions.
 
 \section{The Basics}
-
 \subsection{Assumptions}
 There are four main assumptions made within TST, which vary in severity.
 \explain{Born-Oppenheimer}
@@ -60,37 +58,11 @@ When dividing the phase space (position and momentum) into two areas, reactants 
 This hypersurface is referred to as the transition state ($\ts$)\footnote{The double dagger, $\ts$, is a conventional symbol for the transition state} and represents a bottleneck region with regards to the free energy, which each reactive trajectory crosses on its way from R to P.
 Commonly, momentum is disregarded in the definition of the phase space, which is then $3N$ dimensional (for a system of $N$ particles), within which the $\ts$ is a $3N-1$ dimensional subspace.
 
-%\subsection{Statistical Methods}
-
-%Take advantage of the time-scale separation ...
-
-%TST aims at overcoming the time-scale problem by way of "averaging" over the fast vibrational motion to present a reaction rate for the rare-events.
-
-%Boltzmann distribution...
-%Maxwell distribution (velocity)...
-
-%\incomplete
-
-%The most important assumption remains, any trajectories that cross the TS do not recross it.
-%This assumtion is also the weakest link \expand
-
 \section{Reaction Rates}
 Considering a canonincal ensemble\footnote{the number of particles and volume is constant and there is a well defined temperature.}, the probability that a system in thermal equilibrium, i.e. described by a Boltzmann distribution, is in a given state $S$ is dependant on its configurational integral~\footnote{The continuous classical analogue to the discrete partition function.},
 \beq{configurational-integral}
 Z_S = \int_S e^{-E(\vR) / \kB T}d\vR
 \eeq
-
-% This figure is probably not needed. Still, keep it here for safety.
-%\begin{figure}[h]
-%\begin{center}
-%\includegraphics[width=0.5\linewidth]{transition-state-theory}
-%    \parbox{0.85\linewidth}{
-%\caption{An overview of the 
-%}
-%\label{fig:transition-state-theory}
-%    }
-%\end{center}
-%\end{figure}
 
 The reaction rate, $k_\text{TST}$, is defined as the probability of being in the $\ts$ subspace of $\text{R}$,
 \beq{ts-probability-partition-simple}
@@ -132,7 +104,6 @@ k_\text{exact} = \kappa_\text{D} \text{ } k_\text{TST}.
 \eeq
 By starting dynamical trajectories from the $\ts$, which must still be reasonably good, and counting the recrossings while tracking which basin the trajectories end in, a ratio between reactive trajectories and non-reactive ones can be calculated~\cite{dynamical-corrections-keck-1962},
 \beq{tst-dynamical-factor}
-%\kappa_\text{D} = \frac{\text{Reactive trajectories}}{\text{Total trajectories}} \quad \text{started from } \vR \in \ts.
 \kappa_\text{D} = \lim_{n \rightarrow \infty} \frac{n_\text{react.}}{n},
 \eeq
 where $n$ is the total amount of trajectories, started from $\vR \in \ts$, and $n_\text{react.}$ is the number of trajectories that end in P.
