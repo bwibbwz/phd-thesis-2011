@@ -1,9 +1,6 @@
 \section{Magnesium Borohydride [$\beta-$\ce{Mg(BH4)2}]}
 \label{sec:borohydrides-magnesium}
-
-%The calculations were carried out using the Atomic Simulation Environment\footnote{\url{https://wiki.fysik.dtu.dk/ase/}}~\cite{ase-2002} and its implementation of the relevant algorithms.
-%The energies and forces were provided by the Dacapo\footnote{\url{https://wiki.fysik.dtu.dk/dacapo}} DFT implementation.~\cite{dacapo-1999}
-The calculations were carried out using the same packages as before (\fref{sec:borohydrides-calcium}), ASE and Dacapo.
+The calculations were carried out using the same packages as before (\fref{sec:borohydrides-calcium}), ASE~\cite{ase-2002} and Dacapo\cite{dacapo-1999}.
 The calculational parameters can be found in DFT calculations section of Paper \ref{pap:magnesium}.
 The calculational supercell was relaxed from the $fddd$ spacegroup ($\#70$)~\cite{mgbh42-structure-fddd}, totalling 176 atoms.
 The structure consists of 5 symmetry inequivalent \ce{BH4} sites which all have similar local structure, being wedged between 2 \ce{Mg} atoms (\fref{fig:mg-local-structure}).
@@ -14,7 +11,7 @@ The symmetry inequivalance stems from the fact that each \ce{BH4} is slightly di
 \begin{center}
     \includegraphics[width=0.5\linewidth]{mg-local-structure}
     \parbox{0.85\linewidth}{
-\caption{%\footnote{Figure 9 from paper \ref{pap:magnesium}.}
+\caption{
 Schematic representation of the environment of each \ce{B} atom, and how the different types of axes relates to it.
 }
 \label{fig:mg-local-structure}
@@ -46,7 +43,8 @@ The difference in relative barrier height decreased with decreasing $L$.\footnot
     \label{fig:h-mg-distances-min}
     }
     \parbox{0.85\linewidth}{
-      \caption{For each PES, the distances between the \ce{H} atoms of the rotating \ce{BH4} unit to the neighbouring \ce{Mg} atoms is plotted.
+      \caption{
+For each PES, the distances between the \ce{H} atoms of the rotating \ce{BH4} unit to the neighbouring \ce{Mg} atoms is plotted.
 Some systematic features can be seen since the data was produced with specific rotations rather than a uniform distribution.
 A clear trend for lower energies with higher distances can be seen.
       }
@@ -63,7 +61,7 @@ Thus MEP calculations, for each symmetry inequivalent \ce{BH4}, were performed w
 
 \begin{figure}[htb]
 \begin{center}
-  \subfigure[The rotational energy barriers for \ce{BH4} in $\beta$-\ce{Mg(BH4)2}][%\footnotemark
+  \subfigure[The rotational energy barriers for \ce{BH4} in $\beta$-\ce{Mg(BH4)2}][
 The energy barriers as a function of $L$, the distance from the \ce{B} to the \ce{Mg}-\ce{Mg} axis.
 The circles are the $C_2$ barriers, while the triangles are the $C_3$ axes.
 A clear linear relationship (the line) can be seen for the $C_2$ axes.
@@ -71,7 +69,7 @@ A clear linear relationship (the line) can be seen for the $C_2$ axes.
     \includegraphics[width=0.45\linewidth]{mg-barriers}
     \label{fig:mg-barriers}
     }
-  \subfigure[Comparison of the experimental and theoretical results][%\footnotemark
+  \subfigure[Comparison of the experimental and theoretical results][
 Comparison of the experimental and theoretical results.
 Arrhenius-type behaviour, where $\Gamma = \Gamma_0 exp(-E_a / \kB T)$ and $\Gamma_0$ is the prefactor.
 The circles, triangles and squares represent the experimental data while the dashed and dash-dotted lines represent the theoretical data for the $C_2^\parallel$ and $C_3$ type rotations, respectively.
@@ -85,8 +83,6 @@ The shaded area represents characteristic times of the range $0.1 - 1.0 \unit{eV
 \label{fig:mg-results}
 \end{center}
 \end{figure}
-%\footnotetext{Figure 17 from paper \ref{pap:magnesium}.}
-%\footnotetext{Figure 11 from paper \ref{pap:magnesium}.}
 
 It is unsurprising to find that there is, in fact, a direct relationship between $L$ and the $C_2^\parallel$ barrier height.
 In fact, the relationship is linear, as can be seen in \fref{fig:mg-barriers}, the barrier increases with increased $L$ which is most likely due more \ce{H}-\ce{Mg} interaction.
@@ -98,4 +94,3 @@ This is, likely, due to the relatively constant $d_{H-Mg}$ for the $C_2^\paralle
 \Fref{fig:mg-experimental-comparison} shows that the theoretical results (HTST reaction rates) form a distribution in which the experimental results fit rather well.
 The $C_3$-type rotations correspond to one the experimentally observed events, while the $C_2$-type rotations correspond to the other two.
 The experimental results indicated that $\mytilde 15\%$ of the hydrogen would move at a lower temperature than the others which is consistent with the lowest theoretical barrier which applied to $12.5\%$ of the hydrogen ($1/8$th as can be seen table 1 of paper \ref{pap:magnesium}).
-
