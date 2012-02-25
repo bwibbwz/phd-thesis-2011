@@ -1,6 +1,5 @@
 \section{Energy Ridges}
 \label{al-energy-ridges}
-
 The energy ridges between all the lowest energy \sap{1}s were calculated.
 Two situations of particular interest arose.
 The first was the discovery of intermediate \sap{1}s, while the second concerned the HTST reaction rate, its accuracy and efforts to improve it.
@@ -14,7 +13,6 @@ The first was the discovery of intermediate \sap{1}s, while the second concerned
 Calculated path at the ridge between the \sap{1}s for a hop and concerted 4-atom displacement.
 The circles show the position of converged images (coloured circles for \sap{1}s and \sap{2}s, but grey for the rest). 
 These \sap{1}s turned out not to be adjacent on a ridge and the path optimisation reveals an intermediate \sap{1}, the one for the concerted 2-atom displacement.
-%This illustrates how a ridge calculation could reveal new and possibly unknown transition mechanisms.
 The full path is not able to accurately locate the intermediate \sap{1} and the lower energy \sap{2} due to finite resolution in the discretisation and corner-cutting (grey circles)
 The exact configuration of the \sap{1} can be found using a \sap{1} finding algorithm starting with the approximation obtained from the optimised path.
 Then, a calculation of a shorter path (red line), between the \sap{1}s of the 2-atom and 4-atom displacements, locates the intermediate \sap{2} accurately (cyan circle)
@@ -43,7 +41,7 @@ These latter paths are displayed as red curves in \fref{fig:discovery}
 \includegraphics[width = 1.0\linewidth]{low-barriers}
     \parbox{0.85\linewidth}{
 \caption{
-The energy ridge going through \sap{1}s of 2-atom, 3-atom, 4-atom and, then the same, 2-atom concerted displacement.% for an Al adatom on a Al(100) surface.
+The energy ridge going through \sap{1}s of 2-atom, 3-atom, 4-atom and, then the same, 2-atom concerted displacement.
 The circles represent the position of images in the optimised paths, the \sap{1}s and the \sap{2}s being coloured differently but the rest coloured grey.
 The green curves represent harmonic approximations to the energy surface at each \sap{1}.
 The insets show an overlay of three configurations, two adjacent \sap{1}s and the intermediate \sap{2}.
@@ -55,24 +53,15 @@ The atom colours correspond to the coloured spheres of the energy ridge.
 \end{figure}
 
 \begin{SCfigure}[5.0][h]
-%\begin{center}
 \centering
 \includegraphics[width = 0.45\linewidth]{integral-ratios}
-%    \parbox{0.85\linewidth}{
 \caption{
 The harmonic correction ratio, $\Gamma$, defined in \fref{eq:htst-correction-factor},
 between the configuration integrals of the potential energy ridge shown in \fref{fig:low-barriers} and the corresponding harmonic approximations.
 The lines represent the ratio for individual processes: concerted 2 atom (blue, dotted), 3 atom (green, dashed), 4 atom (red, dash-dotted) and the combined ratio for all the processes combined (black, solid).
-%The black, solid, line is the ratio for the full integral, including all three concerted displacement processes.
-%The blue, dotted, line is the ratio when only considering the 2-atom concerted displacement.
-%The green, dashed, line is the ratio when only considering the 3-atom concerted displacement.
-%The red, dash-dotted, line is the ratio when only considering the 4-atom concerted displacement.
 For the individual processes, the end points of the ridge integral are the adjacent \sap{2}s, while the full integral is done for the whole ridge.
-%While the harmonic approximation gives a good approximation for the total configuration integral over the whole temperature range shown, because it is dominated by the 2-atom displacement, the estimate for each of the 3-atom and 4-atom displacements is poor unless the temperature is very low.
 }
 \label{fig:integral-ratios}
-%}
-%\end{center}
 \end{SCfigure}
 
 The ridges between the, similar, concerted motion \sap{1}s are shown in \fref{fig:low-barriers}.
@@ -85,9 +74,3 @@ Figure 6 in paper \ref{pap:second-order} makes an effort to put into context the
 Not only finding all the \sap{1}s leading out of a given basin but also finding all neighbouring \sap{2}s and ridges for each one would be folly due to the sheer amount of possible \sap{}s.
 Furthermore, as stated when introducing the correction factor (\fref{eq:htst-correction-factor}), $\Gamma$ is not a rigorous correction factor and should not be used as such.
 However, using the ridge to calculate a more precise reaction rate, outside the HTST framework, seems appropriate and will make an interesting subject for future research.
-
-%\subsubsection{Performance}
-%Theoretically, ridge calculations should scale like the NEB effort times the Dimer effort, i.c. 3 times the NEB effort.
-%However, directly comparing the determination of MEPs to the determination of ridges is unfair.
-%Nevertheless, 
-
