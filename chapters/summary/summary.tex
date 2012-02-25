@@ -1,10 +1,19 @@
 \chapter{Summary}
 \label{chap:summary}
 
+\subsubsection{Metal Borohydrides}
 The rotational dynamics of two metal borohydrides were investigated in detail with close collaboration to experimental work.
 The results of which complemented the experimental results very well.
-\expand
 
+For $\beta$-\ce{Mg(BH4)2} only rotational events were detected, with roughly $15\%$ of the \ce{BH4} groups activating very low energy ($E_b = 0.03\unit{eV}$) $C_2$-type rotations before the rest activates their $C_2$-type rotations ($E_b = 0.05 - 0.10 \unit{eV}$).
+This two-fold activation of the $C_2$-type rotations was found to be dependant on the distance between \ce{B} and its \ce{Mg}-\ce{Mg} axis.
+The $C_3$-type rotations were considerably higher in energy ($E_b = 0.13 - 0.30 \unit{eV}$) and did not show the same dependance as the $C_2$-type rotations.
+
+For $\beta$-\ce{Ca(BH4)2}, not only rotational events were detected but also longer range diffusion of hydrogen.
+The rotational events have activation energies of $0.09 \unit{eV}$ and $0.15\unit{eV}$ for the $C_3$- and $C_2$-type rotations, respectively.
+As for the long range diffusion, many processes were considered but the only one with any significant similarities to the, very scarce, experimental data was that of a \ce{H2}-interstitial.
+
+\subsubsection{Ridge Detection}
 In order to map ridges of functions\footnote{Steepest descent paths between first and second order saddle points.} a method was developed.
 By transforming convex subspaces into concave subspaces, the dimer algorithm maps first order saddle points to minima and ridges to minimum energy paths\footnote{or path of least resistance.} (MEP), with regards to the gradient.
 Using this transformation to iteratively converge a trial path to the ridge is then achieved using the nudged elastic band (NEB) algorithm for finding minimum energy paths.
@@ -28,11 +37,5 @@ In order to test this dependence, DFT calculations\footnote{DFT's gradients depe
 \expand
 It was found that the calculations would converge well and quickly if the initial path lay not near a local minima, under which circumstances the path would get trapped near the minimum in question and never reach the ridge.
 This failure was not investigated further due to time constraints.
-
-
-
-%By transforming the gradient of a series of points between first order saddle points, the ridge is mapped to a path of least resistance\footnote{Steepest descent path between first order saddle points and minima. Also referred to as a minimum energy path}.
-%The transformation is achieved using the dimer algorithm for finding eigenmode corresponding to the lowest eigenvalue of the Hessian matrix and then inverting any gradient components along it.
-%After the mapping is complete a nudged elastic band type algorithm is used to equally distribute the points along a path that is iteratively converged to the ridge.
 
 \input{chapters/summary/outlook}
