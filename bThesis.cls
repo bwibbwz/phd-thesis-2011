@@ -95,12 +95,12 @@
 %\usepackage[notcite, notref]{showkeys} % Keep track of the labels
 \newcommand{\tred}[1]{\textcolor{red}{#1}}
 \newcommand{\tblue}[1]{\textcolor{blue}{#1}}
-\newcommand{\incomplete}{\tred{INCOMPLETE}}
+%\newcommand{\incomplete}{\tred{INCOMPLETE}}
 \newcommand{\placeholder}{\tred{PLACEHOLDER}}
-\newcommand{\missing}{\tred{MISSING}}
+%\newcommand{\missing}{\tred{MISSING}}
 \newcommand{\figmiss}[1]{\textcolor{red}{MISSING FIGURE: #1}}
 \newcommand{\citemiss}{\textcolor{red}{[MISSING]}}
-\newcommand{\pending}{\textcolor{blue}{[NAME PENDING]}}
+%\newcommand{\pending}{\textcolor{blue}{[NAME PENDING]}}
 \newcommand{\expand}{\textcolor{red}{EXPAND}}
 
 % --- Shortcuts for environments
