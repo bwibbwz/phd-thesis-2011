@@ -52,7 +52,7 @@ with $\vF_\text{B}$ being the extrapolated force.
 Since $\vF_0$ is static and does not require additional calculations during the iterative rotation, performing this extrapolation yields significant calculational reductions, up to a factor of half.
 
 Further extrapolations are possible, if multiple rotations are performed (which is often not the case).
-Between rotational iterations, it is possible to use the previous calculations of an end point to extrapolate the rotated values for the next iteration.\cite{dimer-kastner-2008}
+Between rotational iterations, it is possible to use the previous calculations of an end point to extrapolate the rotated values for the next iteration.~\cite{dimer-kastner-2008}
 These, however, yield much less reductions than the extrapolation in \fref{eq:dimer-point-extrapolate}.
 
 \begin{figure}[h]
@@ -98,7 +98,7 @@ $\vR_\text{A}$ and $\vR_\text{B}$ are the positions of the dimer images with the
 $\uvn$ is the minimum mode (or direction of lowest curvature)
 $\vF_0$ is the gradient force acting on the central image and $\vF_0^\text{t}$ is the transformed, effective force (\fref{eq:dimer-transform}).
 The green circle is the \sap{1} under investigation.
-(This figure is adapted from Figure 4 in \cite{dimer-original-1999})
+(This figure is adapted from Figure 4 in~\cite{dimer-original-1999})
 }
 \label{fig:dimer-pes}
 \end{SCfigure}
@@ -117,7 +117,7 @@ Multiple scenarios can be envisioned where the Dimer method brightly shines, two
 In such a situation the Dimer will quickly, and at low computational cost, find the \sap{1} exactly.
 ~\cite{dneb-2004}
 \item As discussed in \fref{sec:tst-timescale-problem}, performing long time-scale dynamics is difficult.
-The dimer can be used to map all relevant \sap{1}s leading out of a basin\footnote{It is, of course, nearly impossible to find \emph{all} \sap{1}s associated with a basin and even more difficult to know when they have all been found and ref. \cite{dimer-sampling-2011} discusses efforts to that end.}, then using HTST (\fref{sec:htst}) to find the reaction rates for each \sap{1}, it is possible to construct a probability table of possible events.
+The dimer can be used to map all relevant \sap{1}s leading out of a basin\footnote{It is, of course, nearly impossible to find \emph{all} \sap{1}s associated with a basin and even more difficult to know when they have all been found and ref.~\cite{dimer-sampling-2011} discusses efforts to that end.}, then using HTST (\fref{sec:htst}) to find the reaction rates for each \sap{1}, it is possible to construct a probability table of possible events.
 Using this table of events within the Kinetic Monte Carlo formalism~\cite{kmc-1966}, it is possible to traverse the PES in an accelerated manner.
 ~\cite{akmc-2001}
 \een
