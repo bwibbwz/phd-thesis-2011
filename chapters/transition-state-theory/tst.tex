@@ -1,3 +1,7 @@
+\section{Introduction}
+\expand
+\tred{Jam in a bunch of citations.}
+
 \section{Motivation}
 \subsection{The Time-scale Problem}
 \label{sec:tst-timescale-problem}
@@ -15,10 +19,10 @@ The system will mostly spend time near the minimum of the reactants basin (R), t
 
 In atomistic simulations there is a often a clear separation of timescales between the most interesting events.
 With local vibration of the atoms being very fast, typically on the order of $10^{14} \unit{Hz}$~\cite{mcquarrie-1983},
-while non-local reordering of atoms, motion between minima on the PES, often considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$ for a system with an energy barrier of $0.5 \unit{eV}$.~\citemiss
+while non-local reordering of atoms, motion between minima on the PES, often considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$ for a system with a "typical" energy barrier of $0.5 \unit{eV}$.
 Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^{10}$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
 
-Even though performing dynamics long enough to accurately describe both types of events, is technically possible~\citemiss, e.g. by minimising vibrations to allow for longer timesteps~\cite{shake-1977, rattle-1983} or modifying the PES~\cite{hyperdynamics-voter-1997}, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
+Even though performing dynamics long enough to somewhat describe both types of events, is technically possible, e.g. by minimising vibrations to allow for longer timesteps~\cite{shake-1977, rattle-1983} or modifying the PES~\cite{hyperdynamics-voter-1997}, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
 This is true, in particular, for calculations that rely on costly, but accurate, quantum calculations and/or large systems.
 
 In the problem lies also the solution, when there is such a clear separation of time-scales, it is possible to treat the problem with statistical methods.
@@ -32,7 +36,7 @@ The Hamiltonian of the system can be separated, resulting in a single PES for th
 \explain{Classical Dynamics}
 No tunnelling or other quantum effects --- apart from those offered by the calculational method of the PES --- are taken into account in the vanilla TST.
 The motion of the system is governed by classical dynamics.
-Quantum effects are included in extensions to TST (see for example \cite{qtst-hj-1997, qtst-hj-1998, qtst-hj-2009}~\citemiss) but this is not relevant to the work presented in this thesis and will not be discussed further.
+Quantum effects are included in extensions to TST (see for example \cite{qtst-hj-1997, qtst-hj-1998, qtst-hj-2009}) but this is not relevant to the work presented in this thesis and will not be discussed further.
 \explain{Thermal Equilibrium}
 The system will spend considerable time in each basin of the PES, long enough such that a Boltzmann distribution for system can be employed.
 For systems with large energy barriers in comparison with the thermal energy~\footnote{A rule of thumb is that $E_\text{b} > 5\kB T$~\cite{htst-5ev-2005}}, this assumption holds well but for smaller barriers or high temperatures it breaks down as thermal equilibrium becomes difficult to achieve and the separation of timescales is lost
@@ -84,6 +88,8 @@ The rate then becomes
 \beq{tst-rate-full}
 k_\text{TST} = \sqrt{\frac{kT}{2\pi m}} \frac{Z_\ts}{Z_\text{R}}.
 \eeq
+
+
 
 \subsection{Optimisation of the Rate}
 Choosing a good $\ts$ is essential for the accuracy of TST.
