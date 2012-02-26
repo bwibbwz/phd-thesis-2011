@@ -9,14 +9,25 @@ However, since there are other forces at work, perpendicular to the path, $\vF^\
 \beq{corner-cutting-equilibrium}
 \vF^{\text{S}\perp} = -\vF^\text{t},
 \eeq
-producing a systematic error which is commonly referred to as corner cutting.
+producing a systematic error which is commonly referred to as corner cutting as seen in \fref{fig:corner-cutting}.
 Since the goal of the whole method is to fulfil \fref{eq:ridge-force}, such an equilibrium can be unsatisfactory.
 
 This problem existed in the infancy of NEB calculations but was made a thing of the past with more numerically suitable tangent and spring force definitions.~\cite{neb-tangent-2000}
 These changes are not directly applicable to ridge calculations due to intrinsic stability issues which are dampened by the perpendicular component of the spring force.
 However, once the path is sufficiently well behaving and near the ridge, minimising the corner cutting could be done.
 
-\figmiss{Graphic representation of corner cutting. Medium priority.}
+\begin{SCfigure}[5.0][h]
+\centering
+\includegraphics[width = 0.5\linewidth]{corner-cutting}
+\caption{
+An example of corner cutting.
+The yellow path is the initial linear interpolation on which the spring forces are zero (since it is the shortest possible path) and the green path is the converged MEP without any perpendicular spring force components.
+The red path has converged to an equilibrium between the perpendicular components of the spring force (black arrows) and PES force (white arrows).
+The red arrows are the full PES force.
+High potential areas are red and low potential areas are blue.
+}
+\label{fig:corner-cutting}
+\end{SCfigure}
 
 \subsection{Minimise corner cutting}
 \textit{After publishing paper \ref{pap:second-order} some effort went into finding the exact ridge instead of paths that suffer from corner cutting.
