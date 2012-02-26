@@ -46,7 +46,7 @@
 %\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=up]{caption}
 \usepackage{nameref} % Allows for the calling of names and not just numbers with \ref
-\usepackage[final]{hyperref}
+\usepackage[draft]{hyperref}
 \usepackage{sidecap}
 \sidecaptionvpos{figure}{t}
 
