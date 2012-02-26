@@ -27,7 +27,7 @@ Furthermore, the lack of a global analytical function makes it impossible to sim
 This is, generally, the case in atomistic simulations, which is the main subject of this thesis.
 While the methods discussed in this thesis are developed in this field, applying them to purely mathematical problems and within other fields is merely a question of interest and implementation, thus they are presented as general as possible in order to appeal to wider audiences.
 
-Locating extrema using local information, i.e. the gradient, is a well known technique\citemiss, whereas the gradient is simply followed in the appropriate direction (positive for maxima and negative for minima) until it vanishes.\footnote{Global extrema are, conversely, extremely difficult to find using only local information and guaranteeing that a given extremum is a global one is nearly impossible.~\cite{Stillinger1999} See for example \cite{Wang2010, Wales1999, Pickard2011, Oganov2008, Kirkpatrick1983, Johnston2003, Fischer2006} for such efforts.}
+Locating extrema using local information, i.e. the gradient, is a well known technique~\cite{cg-original-1952}, whereas the gradient is simply followed in the appropriate direction (positive for maxima and negative for minima) until it vanishes.\footnote{Global extrema are, conversely, extremely difficult to find using only local information and guaranteeing that a given extremum is a global one is nearly impossible.~\cite{Stillinger1999} See for example \cite{Wang2010, Wales1999, Pickard2011, Oganov2008, Kirkpatrick1983, Johnston2003, Fischer2006} for such efforts.}
 Finding other stationary points is less obvious and classifying them depends on the second order derivatives (or even higher in special cases\footnote{e.g. the Monkey Saddle \url{http://mathworld.wolfram.com/MonkeySaddle.html}})
 Finding such points without explicitly evaluating higher order derivatives is an important subject within atomic simulations, since their calculation is very costly when using non-analytical models to describe the atomic interaction.
 
@@ -60,10 +60,10 @@ A highly active field of research where reaction rates are of central importance
 Ancient lifeforms, chemically packed with the Sun's energy and compressed over millions of years by the weight of the Earth's crust, have served mankind cheap and readily available energy for millennia as fossil fuels.~\cite{early-oil-use}
 When only considered as an energy carrier, fossil fuels are superb.
 So superb, in fact, that any current alternative mobile storage medium is neither competitive with regards to energy density nor price. \figmiss{price}
-This is, of course, not the whole story as the production of fossil fuels has been expected to reach its peak for some time.~\citemiss
+This is, of course, not the whole story as the production of fossil fuels has been expected to reach its peak for some time.~\cite{peak-oil-1956}
 Once this peak has been reached, the increasing demand of the ever expanding population, would quickly overwhelm the production capabilities and, more importantly, the Earth's reserves.
 Fossil fuels will not be an option.
-Furthermore, the ongoing climate change is an unacceptable side product of burning carbon rich fossils.~\citemiss
+Furthermore, the ongoing climate change is an unacceptable side product of burning carbon rich fossils.~\cite{climate-change-2007}
 
 Finding an alternative is one of the most important research subjects of the late 20th and early 21st centuries.
 
