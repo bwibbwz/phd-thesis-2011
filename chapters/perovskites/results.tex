@@ -25,10 +25,24 @@ Further investigation of these might prove interesting but a larger calculationa
 \subsection{DFT Ridge Calculations}
 The same parameters were used for the dimer part of the ridge calculations as were used for the dimer searches above.
 
-In an attempt to get meaningful results from ridge calcu
+Due to time constraints only a few ridge calculations could be attempted and no comprehensive study was possible.
+\expand
+
+The general results can be split into three categories.
+\bit
+\item Successful ridge calculations, converged from a linear interpolation to a ridge in under 300 iterations.
+\item Calculations where a soft eigenmode was followed resulting in a non-converging calculation where the lattice would distort heavily.
+\item Unsuccessful calculations where the path would spent most of its time as an inverted barrier near the minimum energy path.
+\eit
 
 
-%In an effort to test the ridge calculations on DFT systems, the di-proton interstitial defect in \ce{SrTiO3} perovskites~\citemiss was briefly looked at.
+Approximately half of the started calculations reached a ridge under 500 iterations, while the rest struggled.
+Those calculations that did not reach the ridge, generally lay near the minimum energy path and were not able to rise out of the basin.
+The eigenvalue estimate would remain negative for most of the images.
+
+One calculation latched onto a soft eigenmode where the whole lattice would move.
+This is always a danger when using the dimer to find a minimum mode.
+\tred{This is particularly dangerous if the CI is used on an image with a bad estimate. There is no check for such a thing.}
 
 Picking the most relevant \sap{1}s as endpoints a few ridge calculations were attempted.
 Well behaved cases converged quickly but some would get trapped near minima and spend hundreds of iterations there until the calculations were aborted.
