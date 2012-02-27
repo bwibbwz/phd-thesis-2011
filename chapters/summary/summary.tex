@@ -32,10 +32,11 @@ It was also found that the ridge between the 3 and 4 atom concerted saddle point
 In this way finding novel mechanisms is possible using the ridge method, similarly to how the NEB method locates novel minima.
 
 The \ce{Al} system was modelled with the embedded atom method which offers gradients that are clean from numerical noise.
-The Dimer algorithm requires well behaved gradients since it relies heavily on finite difference methods for estimating derivatives.
+The dimer algorithm requires well behaved gradients since it relies heavily on finite difference methods for estimating derivatives.
 In order to test this dependence, DFT calculations on the \ce{SrTiO3} perovskite system with a coupled hydrogen defect were performed.
-\expand \tred{(depends on the Perovskites chapter)}
-It was found that the calculations would converge well and quickly if the initial path lay not near a local minimum, under which circumstances the path would get trapped near the minimum in question and never reach the ridge.
-This failure was not investigated further due to time constraints.
+Due to time constrictions, only a handful of ridge calculations were attempted.
+Half of which were successful and found 2 low lying \sap{2}s near processes where a hydrogen defect atom would jump between neighbouring oxygen atoms.
+The other half of the ridge calculations were unsuccessful and the path would lie near MEPs instead of ridges.
+This behaviour is unexplained and requires further research.
 
 \input{chapters/summary/outlook}
