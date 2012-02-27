@@ -1,5 +1,11 @@
-\section{Results}
+\section{Results and Discussion}
 \label{sec:perovskites-results}
+
+\subsection{Calculational Parameters}
+The GPAW\footnote{\url{https://wiki.fysik.dtu.dk/gpaw/}}~\cite{gpaw-review-2010} DFT implementation was used with the same parameters as used in~\cite{double-defect-2011}.
+Except that a tighter convergence criteria ($10^{-6} \unit{eV}$) for the electronic structure was used in order to reduce numerical noise.
+The calculational supercell consisted of 2x2x2 formula units of \ce{SrTiO3} with a lattice constant of $3.931\unit{\mAA}$.
+
 \subsection{Confirming Previous Results}
 The results of \cite{double-defect-2011} showed that the hydrogen atoms would move in individual steps while staying close to each other.
 Two such mechanisms were discussed and both consisted of multiple iterations of two types of events.
@@ -70,9 +76,9 @@ From an informal visual inspection of the successful ridge calculations, the ini
 However, it was not possible to make the opposite claim for the failed calculations.
 
 \subsubsection{Basin Trapped Paths}
-Many of the calculations resulted in paths that lay near the MEP and minimum.
 Those calculations that did not reach the ridge, generally lay near the minimum energy path and were not able to rise out of the basin.
 The eigenvalue estimate would remain negative for most of the images.
+
 It is unlikely that this minima-trapping behaviour is an artefact of the method itself as such things did not happen in the previous test cases.
 
 \subsubsection{Soft Eigenmodes}
@@ -81,13 +87,17 @@ However, this was not a significant problem in the previous tests.
 In this particular case, the climbing image had been turned on very early in order to avoid the basin trapping problem.
 After the climbing image is turned with a soft eigenmode, the calculation is unlikely to yield an interesting result.
 This problem raises questions about the initial eigenmodes.
-If a random initial eigenmode is used (as was the case in this calculation), is it likely that neighbouring eigenmodes will not be similar (i.e. find the same ridge).
+If a random initial eigenmode is used (as was the case in this calculation), is it likely that neighbouring eigenmodes will not be similar (i.e. find?the same ridge)?
 It is of course possible to initialise the eigenmodes in a linear fashion, using the unstable modes of the end points or implement some constraint to avoid neighbouring eigenmodes from from being dissimilar.
 In any case, this warrants further consideration.
 
 \subsection{Summary}
 Out of 7 ridge calculations, only 3 were successful, while 1 followed a soft eigenmode and 3 were trapped in basins.
+So it is obvious that further testing on DFT systems is required.
+Nevertheless, the interesting results remain.
+Warning flags must be raised when considering the harmonicity of the jump-type transitions.
 
-
-
+A significant eggbox effect~\citemiss was seen when relaxing the structures.
+Furthermore, a rather large gridspacing ($0.2 \unit{\mAA}$ was used.
+However, since the dimer calculations performed well, there is not sufficient reason to blame these flaws for the failed calculations.
 
