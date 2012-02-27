@@ -4,7 +4,7 @@
 For a real function $f$ of $n$ variables, $\vect{x} = (x_1, x_2, \ldots, x_n)$,
 there exists an $n\times n$ matrix, $H$, which contains all the second partial derivatives, if they exist,
 \beq{hessian-matrix}
-H =
+\text{H} =
 \begin{bmatrix}
 \vspace{0.5em} % To create a bit of space AFTER the first line.
 \frac{\partial^2f}{\partial x_1^2} &
@@ -26,7 +26,7 @@ H =
 \end{bmatrix}.
 \eeq
 The second derivative of a function represents, in particular, information about its local curvature, or how rapidly the first derivative changes.
-Classification of stationary points (and implicitly critical points) relies on the eigenvalues of $H$, $\lambda_i$,
+Classification of stationary points (and implicitly critical points) relies on the eigenvalues of $i\text{H}$, $\lambda_i$,
 \bit
 \item Minimum if all $\lambda_i > 0$
 \item Maximum if all $\lambda_i < 0$
@@ -34,7 +34,7 @@ Classification of stationary points (and implicitly critical points) relies on t
 \item Otherwise higher order derivatives are needed for classification
 \eit
 
-$H$ is named after the German mathematician Ludwig Otto Hesse and is commonly referred to as the Hessian matrix, or Hessian for short.~\cite{hessian}
+$\text{H}$ is named after the German mathematician Ludwig Otto Hesse and is commonly referred to as the Hessian matrix, or Hessian for short.~\cite{hessian}
 
 In the context of atomic simulations, $n$ is generally 3 times the number of atoms in the system, as each one has 3 independent degrees of freedom and the function in question is often the potential energy of the system.
 In most modern software packages both the potential energy and force are readily available while the second derivatives are, generally, not available without explicit and, often, costly calculations.

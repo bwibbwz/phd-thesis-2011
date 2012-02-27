@@ -15,15 +15,16 @@ The Born-Oppenheimer approximation (\fref{sec:born-oppenheimer}) allows the sepa
 Thus, the positions of the nuclei, $\vR_I$, only enter the calculations as parameters.
 A full quantum treatment will not be discussed here as the goal is to build a PES.
 
-A non-relativistic system of $N_e$ electrons (and $N_n$ nuclei) is described by the time independent Schr\"odinger equation~\cite{schrodinger-equation-1926}
-\beq{schrodinger-basic-again}
- \widehat{H}\Psi = E\Psi,
-\eeq
-where $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots ,\vr_{N_e})$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the Hamiltonian,
+A non-relativistic system of $N_e$ electrons (and $N_n$ nuclei) is described by the time independent Schr\"odinger equation~\cite{schrodinger-equation-1926},
+%\beq{schrodinger-basic-again}
+% \widehat{H}\Psi = E\Psi,
+%\eeq
+%where $\Psi \equiv \Psi(\vr_1, \vr_2, \ldots ,\vr_{N_e})$ is the wave function, depending on the spatial coordinates, $\vr_i$, of each electron, $E$ is the electronic energy of the system and $\widehat{H}$ is the Hamiltonian,
+whose Hamiltonian (\fref{eq:hamiltonian}) is 
 \beq{hamiltonian-full}
 \widehat{H} = -\frac{1}{2} \sum_i^{N_e} \nabla^2_i + \sum_i^{N_e} \sum_{j>i}^{N_e} \frac{1}{\left| \vr_i - \vr_j \right|} + \sum_i^{N_e} \sum_I^{N_n} \frac{1}{\left| \vr_i - \vR_I \right|} + \widehat{V}_\text{env},
 \eeq
-which consists of 4 terms.
+which consists of 4 terms when written out in full.
 First there is the kinetic energy of the electrons, $\widehat{T}_\text{e} = -2^{-1}\sum_i^{N_e}\nabla_i^2$,
 then the electron-electron interaction, $\widehat{U}_\text{ee} = \sum_i^{N_e}\sum_{j>i}^{N_e}(\left| \vr_i - \vr_j \right|)^{-1}$,
 followed by the electron-nuclei interaction, $\sum_i^{N_e}\sum_I^{N_n}(\left| \vr_i - \vR_I \right|)^{-1}$,
@@ -112,3 +113,6 @@ A better description of molecules can be attained with the use of the generalise
 In this thesis the GGA functional developed by Perdew and Wang in 1991 is mainly used for DFT generated PESes.~\cite{pw91}
 
 Multiple other exchange-correlation functional types exist, each with different strong suits, some fitted to empirical data\footnote{putting into question their \textit{ab initio} nature.}~\cite{blyp-1993} in order to increase accuracy by sacrificing their physical intuition, while others are hybrids of previous functionals~\cite{xc-review-1999, jacobs-ladder-2001, meta-gga-2003, exact-exchange-1996}, aimed at improving the accuracy at the cost of computational time.
+
+
+\tred{(Tejs: Very short on GGA; should be expanded and you should write that the main focus here is not on the DFT part. PW91 is not the "industry standard" any longer... Nothing about the implementation ASE, GPAW; k-points, etc. is found in the papers. )}

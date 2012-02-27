@@ -24,7 +24,7 @@ Common to all the aforementioned, and other, fields, is some form of functional 
 For systems of limited dimensionality, finding stationary points is no more complex than solving a root problem for the function's derivative.
 However, once systems grow beyond a few dimensions, solving the root problem becomes infeasible.
 Furthermore, the lack of a global analytical function makes it impossible to simply solve for the roots.
-This is, generally, the case in atomistic simulations, which is the main subject of this thesis.
+This is, generally, the case in simulations on the atomic scale, which is the main subject of this thesis.
 While the methods discussed here are developed in that field, applying them to purely mathematical problems and within other fields is merely a question of interest and implementation, thus they are presented as general as possible in order to appeal to a wider audience.
 
 Locating extrema using local information, i.e. the gradient, is a well known technique~\cite{cg-original-1952}, whereas the gradient is simply followed in the appropriate direction (positive for maxima and negative for minima) until it vanishes.\footnote{Global extrema are, conversely, extremely difficult to find using only local information and guaranteeing that a given extremum is a global one is nearly impossible.~\cite{Stillinger1999} See~\cite{Wang2010, Wales1999, Pickard2011, Oganov2008, Kirkpatrick1983, Johnston2003, Fischer2006} for such efforts.}
@@ -38,7 +38,7 @@ The underlying methods that allow this are numerous and their discovery span age
 Simulations of atomic systems are an integral part of modern atomic scale research, whether it be to investigate specific electronic structure properties (e.g.~\cite{electronic-study}), performing atomic dynamics (e.g.~\cite{dynamics-review-2002}), investigating macroscopic properties (e.g.~\cite{macroscopic}) or simply finding stable structures (e.g.~\cite{summer-school-paper-2009}).
 Simulations are commonly employed in the analysis of interesting material properties (see for example catalytic properties~\cite{catalytic}), the screening of candidate materials --- to eliminate the need to synthesize as many unsuccessful materials --- for various processes (see for example hydrogen storage~\cite{summer-school-paper-2009}) and further collaboration and comparison with experiments (see for example stability research of ammines~\cite{order-disorder-2010}).
 
-Reaction chemistry happens on a timescale of microseconds which is, essentially, eternity when seen from the vantage point of the fast moving atomic vibrations, which happen on a timescale of femtoseconds.
+Reaction chemistry, generally, happens on a timescale of microseconds which is, essentially, eternity when seen from the vantage point of the fast moving atomic vibrations, which happen on a timescale of femtoseconds.
 Bridging this gap is an important research subject which remains open, despite noble efforts (some of which are described in \fref{chap:tst}) that have moved the field a long way by introducing statistical methods that are able exploit the timescale difference to treat the events independently of each other.~\cite{tst-eyring-1935, tst-polanyi-1935, tst-wigner-1938, htst-wert-1949, htst-vineyard-1957, tst-1990}
 
 \subsubsection{The Significance of Stationary Points in Atomic Simulations}
@@ -55,8 +55,8 @@ In this thesis an effort is made to bridge that gap (\fref{chap:erm}).
 
 \section{Mobile Energy Solutions}
 Being able to transport energy in a compact and safe way is a major concern of modern society.
-Offering alternatives to fossil fuels is essential and thus, a highly active field of research is the design of novel energy storage materials.
-Given appropriate energy densities and stability, kinetics are essential.
+Offering alternatives to fossil fuels is essential and thus, a highly active field of research is the design of novel materials for energy conversion, energy storage and catalysis.
+If energy storage is taken as an example, given appropriate energy densities and stability, kinetics are essential.
 Reaction rates are used, either directly or indirectly, to investigate all of these factors, naturally with particular emphasis on kinetics.
 
 \subsubsection{Fossil Fuels}
@@ -86,7 +86,7 @@ Neither is a very compelling solution for use in, for example, the average car.
 Such solutions have, nevertheless, been deployed for example in buses where it is easy to fit huge tanks. %~\citemiss
 
 Another way of storing hydrogen is in metal hydrides, where the hydrogen is either trapped in the metal's lattice or chemically bond within the metal.
-These storage solutions tend to have more reasonable volumetric densities (at a reasonable cost of the gravimetric density) but often require "unnatural" operating conditions for loading/unloading.~\cite{borohydride-stability-2006}
+These storage solutions tend to have more reasonable volumetric densities (at a reasonable cost of the gravimetric density) but often require excessive operating conditions for loading/unloading.~\cite{borohydride-stability-2006}
 
 The reasons for the low volumetric capacity of the pure hydrogen solutions is simple, the tank is too big.
 But understanding the underlying reasons for the high stability is an ongoing research topic.
@@ -94,6 +94,7 @@ An essential piece in that puzzle is understanding the kinetics of the material,
 Such knowledge can then be used to create better materials with more appropriate properties.
 
 \subsubsection{Fuel Cells}
+\tred{(Tejs: Numbers? catalytic selectivity -> making what you want...)}
 Once hydrogen has been stored and retrieved it is generally used within highly efficient fuel cells to produce electricity without combustion. %\citemiss
 Currently this process depends on rare and expensive elements, such as platinum, to catalyse the reaction.
 This dependence on low-availability materials can very well become a bottleneck for the implementation of the so-called hydrogen economy.
