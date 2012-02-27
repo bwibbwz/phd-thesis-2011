@@ -9,7 +9,7 @@
 %\eit
 
 \subsection{Confirming Previous Results}
-The results of \cite{double-defect-2011} showed that the hydrogen atoms would move in individual steps while staying close to each other \tred{(How close?)}.
+The results of \cite{double-defect-2011} showed that the hydrogen atoms would move in individual steps while staying close to each other.
 Two such mechanisms were discussed and both consisted of multiple iterations of two types of events.
 Either the transitioning hydrogen atom would "jump" from one oxygen atom to the next near a titanium atom or it would "rotate" past a strontium atom while remaining near the same oxygen atom.
 Both hydrogen atoms would perform these steps --- often in alternating order --- while remaining in close proximity of each other.
@@ -25,9 +25,7 @@ Further investigation of these might prove interesting but a larger calculationa
 \subsection{DFT Ridge Calculations}
 The same parameters were used for the dimer part of the ridge calculations as were used for the dimer searches above.
 
-Due to time constraints only a few ridge calculations could be attempted and no comprehensive study was possible.
-\expand
-
+A few ridge calculations were started with some of the \sap{1}s found above as endpoints.
 The general results can be split into three categories.
 \bit
 \item Successful ridge calculations, converged from a linear interpolation to a ridge in under 300 iterations.
@@ -35,9 +33,39 @@ The general results can be split into three categories.
 \item Unsuccessful calculations where the path would spent most of its time as an inverted barrier near the minimum energy path.
 \eit
 
-2) This is can be the case when the CI is turned on too early (e.g. from the beginning) as th
+The most interesting of the successful ridge calculations was one where the environment of a jump-type \sap{1}s consisted of a rather flat energy profile with lattice motion before a sharp rise to reach a $0.08\unit{eV}$ \sap{2} on its way to a rotation-type \sap{1} for the other hydrogen atom.
+Both the flat energy profile and the low \sap{2} are clear warning signs, that the HTST rate could be improved.
+\begin{figure}[htb]
+\begin{center}
+  \subfigure[]{
+    \includegraphics[width=0.45\linewidth]{semi-combined}
+    \label{fig:semi-combined}
+    }
+  \subfigure[]{
+    \includegraphics[width=0.45\linewidth]{semi-ridge}
+    \label{fig:semi-ridge}
+    }
+    \parbox{0.85\linewidth}{
+      \caption{ BLA
+      }
+      \label{fig:semi-results}
+    }
+\end{center}
+\end{figure}
 
-Approximately half of the started calculations reached a ridge under 500 iterations, while the rest struggled.
+
+Latching on to a soft eigenmode is a concern that is always possible with dimer-type algorithms.
+However, this was not a significant problem in previous tests.
+In this particular case, the climbing image had been turned on very early in order to avoid the basin trapping problem.
+After the climbing image is turned with a soft eigenmode, the calculation is unlikely to yield an interesting result.
+This problem raises questions about the lack of similarities for neighbouring eigenmodes.
+If a random initial eigenmode is used (as was the case in this calculation), is it likely that \expand
+This was not a problem for the test systems
+
+Many of the calculations resulted in paths that lay near the MEP and minimum.
+
+
+%Approximately half of the started calculations reached a ridge under 500 iterations, while the rest struggled.
 Those calculations that did not reach the ridge, generally lay near the minimum energy path and were not able to rise out of the basin.
 The eigenvalue estimate would remain negative for most of the images.
 
