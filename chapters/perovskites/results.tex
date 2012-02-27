@@ -25,6 +25,7 @@ The general results can be split into three categories.
 \item Calculations where a soft eigenmode was followed resulting in a non-converging calculation where the lattice would distort heavily.
 \eit
 
+\subsubsection{Successful DFT Ridge Calculations}
 \begin{figure}[h]
 \begin{center}
   \subfigure[The configuration of the A-jump \sap{1}. One titanium atom is semi-transparent to allow viewing of hydrogen B]{
@@ -45,12 +46,36 @@ The hydrogen atoms are white, the titanium atoms are grey, the strontium atoms a
 \end{figure}
 The most interesting of the successful ridge calculations was one where the ridge near a jump-type \sap{1}s (\fref{fig:semi-combined}) consisted of a rather flat energy profile (\fref{fig:semi-ridge}) with lattice rearrangement before a sharp rise to reach a $0.08\unit{eV}$ \sap{2} on its way to a rotation-type \sap{1} for the other hydrogen atom.
 Both the flat energy profile and the low \sap{2} are clear warning signs, that the HTST rate could be improved.
+\begin{figure}[h]
+\begin{center}
+  \subfigure[The configuration of the A-jump/B-rotate \sap{2}. One strontium atom removed and one oxygen atom is semi-transparent to allow viewing of hydrogen B]{
+    \includegraphics[width=0.45\linewidth]{jump-combined}
+    \label{fig:jump-combined}
+    }
+  \subfigure[Energy profile of the ridge]{
+    \includegraphics[width=0.45\linewidth]{jump-ridge}
+    \label{fig:jump-ridge}
+    }
+    \parbox{0.85\linewidth}{
+      \caption{A successful DFT ridge calculation between a jump \sap{1} for hydrogen atom A and rotation of hydrogen atom B.
+The hydrogen atoms are white, the titanium atoms are grey, the strontium atoms are green and the oxygen atoms are red.
+      }
+      \label{fig:jump-results}
+    }
+\end{center}
+\end{figure}
+A second successful calculation of the ridge near a different jump-type \sap{1} revealed one other low energy \sap{2} of $0.08\unit{eV}$.
 
+From an informal visual inspection of the successful ridge calculations, the initial paths never lay close to a minimum.
+However, it was not possible to make the opposite claim for the failed calculations.
+
+\subsubsection{Basin Trapped Paths}
 Many of the calculations resulted in paths that lay near the MEP and minimum.
 Those calculations that did not reach the ridge, generally lay near the minimum energy path and were not able to rise out of the basin.
 The eigenvalue estimate would remain negative for most of the images.
 It is unlikely that this minima-trapping behaviour is an artefact of the method itself as such things did not happen in the previous test cases.
 
+\subsubsection{Soft Eigenmodes}
 Latching on to a soft eigenmode is a concern that is always possible with dimer-type algorithms.
 However, this was not a significant problem in the previous tests.
 In this particular case, the climbing image had been turned on very early in order to avoid the basin trapping problem.
