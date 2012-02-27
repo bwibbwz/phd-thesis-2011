@@ -25,9 +25,9 @@ For systems of limited dimensionality, finding stationary points is no more comp
 However, once systems grow beyond a few dimensions, solving the root problem becomes infeasible.
 Furthermore, the lack of a global analytical function makes it impossible to simply solve for the roots.
 This is, generally, the case in atomistic simulations, which is the main subject of this thesis.
-While the methods discussed in this thesis are developed in this field, applying them to purely mathematical problems and within other fields is merely a question of interest and implementation, thus they are presented as general as possible in order to appeal to wider audiences.
+While the methods discussed here are developed in that field, applying them to purely mathematical problems and within other fields is merely a question of interest and implementation, thus they are presented as general as possible in order to appeal to a wider audience.
 
-Locating extrema using local information, i.e. the gradient, is a well known technique~\cite{cg-original-1952}, whereas the gradient is simply followed in the appropriate direction (positive for maxima and negative for minima) until it vanishes.\footnote{Global extrema are, conversely, extremely difficult to find using only local information and guaranteeing that a given extremum is a global one is nearly impossible.~\cite{Stillinger1999} See for example~\cite{Wang2010, Wales1999, Pickard2011, Oganov2008, Kirkpatrick1983, Johnston2003, Fischer2006} for such efforts.}
+Locating extrema using local information, i.e. the gradient, is a well known technique~\cite{cg-original-1952}, whereas the gradient is simply followed in the appropriate direction (positive for maxima and negative for minima) until it vanishes.\footnote{Global extrema are, conversely, extremely difficult to find using only local information and guaranteeing that a given extremum is a global one is nearly impossible.~\cite{Stillinger1999} See~\cite{Wang2010, Wales1999, Pickard2011, Oganov2008, Kirkpatrick1983, Johnston2003, Fischer2006} for such efforts.}
 Finding other stationary points is less obvious and classifying them depends on the second order derivatives (or even higher in special cases\footnote{e.g. the Monkey Saddle \url{http://mathworld.wolfram.com/MonkeySaddle.html}})
 Finding such points without explicitly evaluating higher order derivatives is an important subject within atomic simulations, since their calculation is very costly when using non-analytical models to describe the atomic interaction.
 
@@ -54,7 +54,10 @@ Part of the reason for this is the lack of a simple to use method for mapping th
 In this thesis an effort is made to bridge that gap (\fref{chap:erm}).
 
 \section{Mobile Energy Solutions}
-A highly active field of research where reaction rates are of central importance is the design of novel energy storage materials.
+Being able to transport energy in a compact and safe way is a major concern of modern society.
+Offering alternatives to fossil fuels is essential and thus, a highly active field of research is the design of novel energy storage materials.
+Given appropriate energy densities and stability, kinetics are essential.
+Reaction rates are used, either directly or indirectly, to investigate all of these factors, naturally with particular emphasis on kinetics.
 
 \subsubsection{Fossil Fuels}
 Ancient lifeforms, chemically packed with the Sun's energy and compressed over millions of years by the weight of the Earth's crust, have served mankind cheap and readily available energy for millennia as fossil fuels.~\cite{early-oil-use}
@@ -76,7 +79,7 @@ This is where the fossil fuels serve(d) as energy carriers.
 
 \subsubsection{Hydrogen as an Alternative}
 Out of all the elements, hydrogen is the lightest and its chemical bonds hold a remarkable amount of energy.
-This makes it a great candidate for a mobile energy store.
+Its abundance in on Earth and its non-harmful by-products (water and oxygen), make it a great candidate for a mobile energy store.
 
 Directly storing hydrogen as a gas requires a very large volume or high pressure while storing it as a liquid requires cooling and/or pressurised tanks.
 Neither is a very compelling solution for use in, for example, the average car.
@@ -96,8 +99,11 @@ Currently this process depends on rare and expensive elements, such as platinum,
 This dependence on low-availability materials can very well become a bottleneck for the implementation of the so-called hydrogen economy.
 Investigating catalytic activity and designing cheap, efficient, catalysts is highly dependant on understanding the kinetics and the catalytical pathways involved.
 
-\subsubsection{Summary}
-Information about non-extremal stationary points is highly useful in designing and implementing the future.
+\section{Summary}
+Most of the challenges the hydrogen economy faces are limited by kinetics in some way or other.
+Catalysis and storage currently being the most important ones.
+
+Near saddle points is encoded information about kinetics which is highly useful in designing and implementing the future.
 Helping to understand the problems of the past and designing novel materials for the future.
 
 %\item Why statistical methods
