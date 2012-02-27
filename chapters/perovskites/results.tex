@@ -2,22 +2,33 @@
 \label{sec:perovskites-results}
 
 \bit
-\item Stabilisation confirmed via dimer calculations
+%\item Stabilisation confirmed via dimer calculations
 \item Ridge calculations performed and their results are ...
 \item Ridge calculations performance on a production DFT system
 \item Hard to say if medium range stabilisation takes place (outlook: do similiar calculations using larger cells)
 \eit
 
+\subsection{Confirming Previous Results}
+The results of \cite{double-defect-2011} showed that the hydrogen atoms would move in individual steps while staying close to each other \tred{(How close?)}.
+Two such mechanisms were discussed and both consisted of multiple iterations of two types of events.
+Either the transitioning hydrogen atom would "jump" from one oxygen atom to the next near a titanium atom or it would "rotate" past a strontium atom while remaining near the same oxygen atom.
+Both hydrogen atoms would perform these steps --- often in alternating order --- while remaining in close proximity of each other.
+
+Dimer \sap{1} searches were conducted, starting from the various minima suggested in \cite{double-defect-2011}.
+Essentially, confirming the previous results, the low energy \sap{1}s were all events of the types described above.
+Only a handful of truly concerted events, where both hydrogen atoms would transition simultaneously, were detected but they were all higher in energy.
+
+Some \sap{1}s were found at a slightly longer range, e.g. where the hydrogen atoms would be separated by a strontium atom.
+In the calculational cell used this is effectively half of its length, bringing into question any discussion on the energies as periodic effects could both over- and underestimate the stabilisation by the neighbouring hydrogen atom.
+Further investigation of these might prove interesting but a larger calculational cell is required.
+
+\subsection{DFT Ridge Calculations}
+The same parameters were used for the dimer part of the ridge calculations as were used for the dimer searches above.
+
+In an attempt to get meaningful results from ridge calcu
 
 
-
-
-
-The results of Nicolai were somewhat confirmed by performing Dimer calculations which showed that the transitions of interest (low energy barriers) were, in fact, mostly those where the \ce{H} atoms would stick close to each other.
-However, medium range \ce{H}-\ce{H} interaction was impossible to get reliable results for due to the size of the calculational cell, but numerous such processes were found.
-
-\section{DFT Ridge Calculations}
-In an effort to test the ridge calculations on DFT systems, the di-proton interstitial defect in \ce{SrTiO3} perovskites~\citemiss was briefly looked at.
+%In an effort to test the ridge calculations on DFT systems, the di-proton interstitial defect in \ce{SrTiO3} perovskites~\citemiss was briefly looked at.
 
 Picking the most relevant \sap{1}s as endpoints a few ridge calculations were attempted.
 Well behaved cases converged quickly but some would get trapped near minima and spend hundreds of iterations there until the calculations were aborted.
