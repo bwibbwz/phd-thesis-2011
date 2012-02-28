@@ -115,5 +115,19 @@ E_\text{XC}^\text{GGA}[\rho(\vr)] = \int \epsilon_\text{XC}^\text{hom.}[\rho(\vr
 
 Multiple other exchange-correlation functional types exist, each with different strong suits, some fitted to empirical data\footnote{putting into question their \textit{ab initio} nature.}~\cite{blyp-1993} in order to increase accuracy by sacrificing their physical intuition, while others are hybrids of previous functionals~\cite{xc-review-1999, jacobs-ladder-2001, meta-gga-2003, exact-exchange-1996}, aimed at improving the accuracy at the cost of computational time.
 
-In this thesis the GGA functional developed by Perdew and Wang in 1991 is mainly used for DFT generated PESes.~\cite{pw91}
-However, since the main focus of this thesis is not aimed at the specifics of DFT, its specific implementations will not be discussed further and the reader is referred to the specific papers with regards to which implementation was employed and what parameters used.
+\subsubsection{Implementation}
+The Kohn-Sham equations must be solved numerically.
+Multiple schemes and packages exist for solving this task.
+The ones used in this thesis are Dacapo\footnote{\url{https://wiki.fysik.dtu.dk/dacapo/dacapo}}~\cite{dacapo-1999} and GPAW~\cite{gpaw-2010}.
+
+\paragraph{Dacapo}
+expands the wave functions in plane-waves and uses pseudopotentials~\cite{vanderbilt-1990} to represent areas near the ionic cores.
+
+\gpaw{GPAW}
+is based on the projector augmented wave (PAW)~\citemiss methodology.
+Being expanded on real space grids, better parallelisation can be achieved at the cost of less consistent energies and forces, due to the so-called eggbox effect.
+
+In this thesis the GGA functional developed by Perdew and Wang in 1991 is used for DFT generated PESes in \fref{chap:borohydrides}.~\cite{pw91}
+And in \fref{chap:perovskites}, the typical RPBE~\cite{dacapo-1999} GGA functional was used.
+More advanced functionals may exist but here the application to DFT was meant to be as general as possible in order to properly test the methods being developed.
+As for other parameters, refer to the specific sections and papers.
