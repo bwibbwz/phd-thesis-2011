@@ -30,6 +30,8 @@
 %\usepackage{footmisc}    % Footnote refernce
 \usepackage[scriptsize, loose]{subfigure}
 \usepackage[T1]{fontenc} % Render \dh{} for icelandic
+\usepackage[utf8]{inputenc}
+%\usepackage[danish,english]{babel}
 \usepackage{bm}          % Vectors
 %\usepackage{amssymb}
 %\usepackage{epstopdf}
