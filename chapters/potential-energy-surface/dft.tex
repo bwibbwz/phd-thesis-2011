@@ -108,11 +108,12 @@ The exchange part is known exactly,
 The correlation part, however, is not known but has been tabulated using accurate Quantum Monte-Carlo simulations.~\cite{correlation-1980}
 The LDA favors systems with slowly changing densities, such as solid systems, and has been successfully used in one form or another for a long time.
 Molecules are, however, not described as well by LDA and binding energies tend to be overestimated.~\cite{lda-gga-bond-energies-1991, lda-gga-bond-energies-1992}
-A better description of molecules can be attained with the use of the generalised gradient approximation (GGA)~\cite{gga-original-1986, gga-1996}, which is similar to LDA but the gradient of the electron density is also taken into account.
-
-In this thesis the GGA functional developed by Perdew and Wang in 1991 is mainly used for DFT generated PESes.~\cite{pw91}
+A better description of molecules can be attained with the use of the generalised gradient approximation (GGA)~\cite{gga-original-1986, gga-1996}, which is similar to LDA but the gradient of the electron density is also taken into account,
+\beq{xc-gga}
+E_\text{XC}^\text{GGA}[\rho(\vr)] = \int \epsilon_\text{XC}^\text{hom.}[\rho(\vr), \left|\nabla \rho(\vr)\right|]\rho(\vr)d^3\vr
+\eeq
 
 Multiple other exchange-correlation functional types exist, each with different strong suits, some fitted to empirical data\footnote{putting into question their \textit{ab initio} nature.}~\cite{blyp-1993} in order to increase accuracy by sacrificing their physical intuition, while others are hybrids of previous functionals~\cite{xc-review-1999, jacobs-ladder-2001, meta-gga-2003, exact-exchange-1996}, aimed at improving the accuracy at the cost of computational time.
 
-
-\tred{(Tejs: Very short on GGA; should be expanded and you should write that the main focus here is not on the DFT part. PW91 is not the "industry standard" any longer... Nothing about the implementation ASE, GPAW; k-points, etc. is found in the papers. )}
+In this thesis the GGA functional developed by Perdew and Wang in 1991 is mainly used for DFT generated PESes.~\cite{pw91}
+However, since the main focus of this thesis is not aimed at the specifics of DFT, its specific implementations will not be discussed further and the reader is referred to the specific papers with regards to which implementation was employed and what parameters used.
