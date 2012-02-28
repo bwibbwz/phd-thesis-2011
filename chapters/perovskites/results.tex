@@ -8,12 +8,12 @@ The calculational supercell consisted of 2x2x2 formula units of \ce{SrTiO3} with
 
 \subsubsection{Dimer Parameters}
 The separation of the dimer images was set at $\Dsep = 0.001\unit{\mAA}$ and only one rotation per iteration was allowed, none if the rotational force was below $0.1\unit{eV/\mAA}$.
-When determining the initial eigenmode and displacement away from minima, the defect hydrogen atoms were displaced using a Gaussian distribution with a standard deviation of $0.01 \unit{\mAA}$.
+When determining the initial minimum modes and displacement away from minima, the defect hydrogen atoms were displaced using a Gaussian distribution with a standard deviation of $0.01 \unit{\mAA}$ in each direction.
 
-\subsection{Confirming Previous Results \tred{Better title?}}
+\subsection{Searching for Diffusional Mechanisms}
 The results of \cite{double-defect-2011} showed that the hydrogen atoms would move in individual steps while staying close to each other.
 Two such mechanisms were discussed and both consisted of multiple iterations of two types of events.
-Either the transitioning hydrogen atom would "jump" from one oxygen atom to the next near a titanium atom or it would "rotate" past a strontium atom while remaining near the same oxygen atom.
+Either the transitioning hydrogen atom would "jump" from one oxygen atom to the next near a titanium atom (as seen for atom A in \fref{fig:jump-combined}) or it would "rotate" past a strontium atom while remaining near the same oxygen atom (as seen for atom B in \fref{fig:jump-combined}).
 Both hydrogen atoms would perform these steps --- often in alternating order --- while remaining in close proximity of each other, to diffuse through the system.
 
 Dimer \sap{1} searches were conducted, starting from the various minima suggested in \cite{double-defect-2011}.
@@ -76,6 +76,7 @@ The hydrogen atoms are white, the titanium atoms are grey, the strontium atoms a
 The most interesting of the successful ridge calculations was one where the ridge near a jump-type \sap{1}s (\fref{fig:semi-combined}) consisted of a rather flat energy profile (\fref{fig:semi-ridge}) with lattice rearrangement before a sharp rise to reach a $0.08\unit{eV}$ \sap{2} on its way to a rotation-type \sap{1} for the other hydrogen atom.
 Both the flat energy profile and the low \sap{2} are clear warning signs, that the HTST rate could be improved.
 A second successful calculation of the ridge near a different jump-type \sap{1} revealed one other low energy \sap{2} of $0.08\unit{eV}$. (\fref{fig:jump-results})
+\tred{(TEJS: What do I conclude?)}
 
 From an informal visual inspection of the successful ridge calculations, the initial paths never lay close to a minimum.
 However, it was not possible to make the opposite claim for the failed calculations.
@@ -85,6 +86,12 @@ Those calculations that did not reach the ridge, generally lay near the minimum 
 The eigenvalue estimate would remain negative for most of the images.
 
 It is unlikely that this minima-trapping behaviour is an artefact of the method itself as such things did not happen in the previous test cases.
+More, likely is that the DFT parameters must be further considered.
+A significant eggbox effect~\cite{gpaw-2005} was seen when relaxing the structures.
+Even though the dimer searches were not affected in an obvious manner, this could affect the ridge calcualtions, due to the correlated nature of the images.
+%It is not unthinkable that this results in an artificial ridge which may be found.
+Furthermore, a rather large gridspacing ($0.2 \unit{\mAA}$ was used, further reducing the accuracy of the forces.
+Nevertheless, neither of these can be identified as the cause of the failed calculations without further research.
 
 \subsubsection{Soft Minimum modes}
 Latching on to a soft minimum mode is a concern that is always possible with dimer-type algorithms.
@@ -105,8 +112,3 @@ Despite the failed calculations, there were successful ones which converged to t
 Further testing is, of course, needed to fully understand the flawed calculations.
 Nevertheless, the interesting results remain.
 Warning flags must be raised when considering the harmonicity of the jump-type transitions.
-
-A significant eggbox effect~\cite{gpaw-2005} was seen when relaxing the structures.
-Even though the dimer searches were not affected in an obvious manner, this could affect the ridge calcualtions, due to the correlated nature of the images.
-Furthermore, a rather large gridspacing ($0.2 \unit{\mAA}$ was used.
-Nevertheless, neither of these can be identified as the cause of the failed calculations without further research.
