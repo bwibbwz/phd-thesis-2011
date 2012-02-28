@@ -71,8 +71,12 @@ As with the NEB method a Dimer-type solution is possible --- similar to equation
 \eeq
 where $i_\text{max}$ refers to the image with the highest functional value.
 
-Unlike the NEB, the computational effort involved in introducing the climbing image is not easily measured due to the systematic errors introduced by the full spring force\footnote{NEB calculations and NEB-CI calculations converge to the same path with different image placements, while ridge calculations suffering from corner cutting near the \sap{2} and those who do not, converge to different paths.} but there is no reason to suspect increased effort by applying \fref{eq:erm-ci}.
+The introduction of the climbing image ensures convergence to the highest \sap{2} along the ridge, analogous to the convergence to the \sap{1} in an NEB calculation.
+However, in the ridge calculation it additionally reduces the corner cutting of the path in the neighbourhood of the \sap{2}.
+The added computational effort involved with the climbing image calculation is, therefore, not easy to measure in the case of the ridge calculation since it affects the extent to which the path converges to the ridge.
 Furthermore, this addition can not be considered optional, as it can technically for NEB, since it serves as an indirect stabilisation tool at the top of the path, where the environment is concave in 2 dimensions rather than 1 as is the case with a MEP.
+
+%Unlike the NEB, the computational effort involved in introducing the climbing image is not easily measured due to the systematic errors introduced by the full spring force\footnote{NEB calculations and NEB-CI calculations converge to the same path with different image placements, while ridge calculations suffering from corner cutting near the \sap{2} and those who do not, converge to different paths.} but there is no reason to suspect increased effort by applying \fref{eq:erm-ci}.
 
 \subsection{Numerical Instabilities}
 
