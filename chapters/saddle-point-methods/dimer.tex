@@ -1,11 +1,11 @@
 \section{The Dimer Method}
 \label{sec:dimer}
-The Dimer algorithm~\cite{dimer-original-1999} is in essence a method for finding the eigenmode corresponding to the lowest eigenvalue of the Hessian, while performing no direct calculations of the second derivatives\cite{hyperdynamics-voter-1997}.
+The Dimer algorithm~\cite{dimer-original-1999} is in essence a method for finding the eigenmode corresponding to the lowest eigenvalue of the Hessian, while performing no direct calculations of the second derivatives~\cite{hyperdynamics-voter-1997}.
 This information is then used to locate \sap{1}s which are defined by a negative eigenvalue in the Hessian and its corresponding eigenmode.
 
 Given only an initial point, $\vR$, on a multidimensional function, $E(\vR)$, the goal is to, iteratively, locate a nearby \sap{1}, using no direct calculation of the Hessian, i.e. using only the function's values and its gradient, $\nabla E(\vR)$.
 Indirect information about the Hessian is, however, used in the form of an estimate of the eigenmode corresponding to its lowest eigenvalue (the minimum mode).
-Using the minimum mode, $\uvn$, it is possible to locally transform \sap{1}s to minima while using conventional techniques to move up-hill and locate the \sap{1}.
+By using the minimum mode, $\uvn$, it is possible to locally transform \sap{1}s to minima while using conventional techniques to move up-hill and locate the \sap{1}.
 
 The dimer method can be split into three independent phases.
 \ben{dimer-phases}
@@ -114,12 +114,10 @@ Multiple scenarios can be envisioned where the Dimer method brightly shines, two
 
 \ben{dimer-usage}
 \item Consider a method that is not able to fully converge to a \sap{1}, such as the Double Nudged Elastic Band, which yields a configuration close to the \sap{1} and a reasonably good estimate of the minimum mode.
-In such a situation the Dimer will quickly, and at low computational cost, find the \sap{1} exactly.
-~\cite{dneb-2004}
+In such a situation the Dimer will quickly, and at low computational cost, find the \sap{1} exactly.~\cite{dneb-2004}
 \item As discussed in \fref{sec:tst-timescale-problem}, performing long time-scale dynamics is difficult.
 The dimer can be used to map all relevant \sap{1}s leading out of a basin\footnote{It is, of course, nearly impossible to find \emph{all} \sap{1}s associated with a basin and even more difficult to know when they have all been found and ref.~\cite{dimer-sampling-2011} discusses efforts to that end.}, then using HTST (\fref{sec:htst}) to find the reaction rates for each \sap{1}, it is possible to construct a probability table of possible events.
-Using this table of events within the Kinetic Monte Carlo formalism~\cite{kmc-1966}, it is possible to traverse the PES in an accelerated manner.
-~\cite{akmc-2001}
+Using this table of events within the Kinetic Monte Carlo formalism~\cite{kmc-1966}, it is possible to traverse the PES in an accelerated manner.~\cite{akmc-2001}
 \een
 
 \subsubsection{Performance}
