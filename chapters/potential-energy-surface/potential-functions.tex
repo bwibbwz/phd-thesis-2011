@@ -4,11 +4,10 @@ For very large systems or when timing is a factor, it is possible to employ clas
 Such potential functions are tailor made for a given bond and generally give poor physical insight when used on a different system.
 
 Most common are pair-potentials\footnote{Many-body potentials are also possible (see for example~\cite{stillinger-weber-potential})}, where each atom in the system feels an interaction with every other atom up to a cut-off radius, and this interaction can be tuned by empirical parameters.
-Such potentials are very helpful during the development of methods and two such were extensively used for testing the novel method presented in \fref{chap:erm} and paper \ref{pap:second-order}.~\cite{eam-1983, eam-1986, emt-1987, emt-1996}
+Such potentials are very helpful during the development of methods and two such, EMT~\cite{emt-1987} and EAM~\cite{eam-1983} were extensively used for testing the novel method presented in \fref{chap:erm} and paper \ref{pap:second-order}.
 Furthermore, if tuning the parameters of the potential well enough is possible, the potential can be used to perform calculations that are infeasible for quantum methods, such as long term molecular dynamics of large systems (see for example ~\cite{long-term-emt-2009}).
 
 \subsubsection{Embedded Atom Model}
-\tred{(Tejs: Here, the EAM implementation has been chosen, due to the amount of data available on Al. Other implementations like EMT, Finnis-Sinclaire...)}\tblue{(I already talk about Al later in the section...)}
 The Embedded Atom Model (EAM)~\cite{eam-1983} operates under the principle that an atom's energy is a functional of the system's electron density.
 Its basic formula for the energy of atom $i$ is
 \beq{eam}
@@ -19,6 +18,6 @@ where $\phi_{\alpha\beta}$ is a short-range pairwise-potential function, $\rho_\
 EAM has been parametrised very well, e.g. for \ce{Al} surfaces using DFT data~\cite{eam-1986} and used successfully in studies of the self-diffusional mechanisms on the \ce{Al}(100) surface~\cite{dimer-original-1999}
 
 Extensive use was made of potential functions in this thesis.
-Simple and quick test cases served to produce PESes that could be visualised in two dimensions, while still retaining the properties of truly multidimensional systems in \fref{chap:erm}.
-While more extensive tests were carried out in \fref{chap:al} on systems that are known to be described well with analytical PESes.
+Simple and quick test cases using EMT~\cite{emt-1996} --- which operates under similar approximations as EAM --- served to produce PESes that could be visualised in two dimensions, while still retaining the properties of truly multidimensional systems in \fref{chap:erm}.
+While more extensive tests were carried out in \fref{chap:al} on systems that are known to be described well with analytical PESes, i.c. EAM.
 
