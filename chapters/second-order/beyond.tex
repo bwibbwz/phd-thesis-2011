@@ -9,9 +9,9 @@ This move beyond harmonicity is discussed below in \fref{sec:beyond-harmonicity}
 \subsection{Beyond Harmonicity}
 \label{sec:beyond-harmonicity}
 The reaction rate offered by the, commonly used, harmonic approximation to transition state theory (\fref{sec:htst}), HTST, assumes two things.
-First, that the transition state, $\ts$, can be described with a hyperplane in which the relevant \sap{1} lies and whose normal is the negatively eigenvalued eigenvector at the \sap{1}.
+First, that the transition state, $\ts$, can be described with a hyperplane in which the relevant \sap{1} lies and whose normal is the eigenvector corresponding to the negative eigenvalue of the Hessian at the \sap{1}.
 Second, that the energy profile at the $\ts$ and minimum can be approximated with a second degree Taylor expansion.
-These assumptions make the the harmonic approximation faster than full TST by orders of magnitude.
+These assumptions make the harmonic approximation faster than full TST by orders of magnitude.
 
 The conditions under which HTST is valid are generally that the energy, $E(\vR)$, at the minimum of the reactants basin must be sufficiently lower than at the \sap{1} and that the \sap{1} energy must be sufficiently lower than the energy at any neighbouring \sap{2}s.
 The literature is unspecific as to what a sufficient difference is but a commonly used value is that $E(\vR_{\sap{1}}) - E(\vR_\text{min.}) > 5\kB T$~\cite{htst-5ev-2005}.
@@ -20,7 +20,7 @@ It is reasonable to assume a similar criterion for $E(\vR_{\sap{2}}) - E(\vR_{\s
 Ridge calculations can be used to check if this criterion is fulfilled but further, they can be used to improve the reaction rate.
 By comparing the configurational integral of the harmonic energy profile for a given degree of freedom, 
 \beq{harmonic-configurational-integral}
-Z_\ts^\text{harm.} = \int_{-\infty}^\infty e^{\alpha x^2/ \kB T}dx,
+Z_\ts^\text{harm.} = \int_{-\infty}^\infty e^{-\alpha x^2/ \kB T}dx,
 \eeq
 to that of the ridge,
 \beq{ridge-configurational-integral}
@@ -39,7 +39,7 @@ for each investigated degree of freedom.
 
 Since the harmonic integral has a larger range, $[-\infty, \infty]$, than the ridge integral, $[\sap{2}^\text{A}, \sap{2}^\text{B}]$, it is possible for the ratio to become larger than 1.0.
 Such ratios are artefacts and should not be used to increase the reaction rate.
-It is possible to limit the harmonic integral to the same range as the ridge integral\footnote{using the error function.} to avoid this.
+It is possible to limit the harmonic integral to the same range as the ridge integral, using the error function, to avoid this.
 In the tests presented in \fref{chap:al}, $\Gamma > 1.0$ was not a common nor large problem compared with the factors where $\Gamma < 1.0$ and thus the infinite limits were used.
 
 Choosing the direction of $x$ is non-trivial.

@@ -51,9 +51,10 @@ to iteratively bring the effective perpendicular component, $\vF_i^{\text{S, eff
 
 Multiple schemes for reducing $\xi_i$ can be envisioned.
 One, that initial testing showed to be successful, is reducing $\xi_i$ each time corner cutting is detected and then continuing the iterative convergence until either corner cutting is detected again or the path is fully converged to the ridge.
-By how muchi $\xi_i$ is reduced each time, could either be a fixed ratio or, preferably, dependant on the amount of corner cutting.\footnote{Only the fixed ratio scheme was tested.}
-In order for the path to converge evenly, $\xi_i$ must be constricted to be within a certain range of $\xi_{i-1}$ and $\xi_{i+1}$.
-Using a scheme such as this, the corner cutting was significantly reduced in the test systems\footnote{Both custom potentials and the Al self diffusion (\fref{chap:al}) systems were tested but not extensively.} it was applied to.
+By how much $\xi_i$ is reduced each time, could either be a fixed ratio or, preferably, dependant on the amount of corner cutting.\footnote{Only the fixed ratio scheme was tested.}
+In order for the path to converge evenly, $\xi_i$ must be restricted to be of a similar magnitude as $\xi_{i-1}$ and $\xi_{i+1}$.
+Using a scheme such as this, the corner cutting was significantly reduced in the test systems %\footnote{Both custom potentials and the Al self diffusion (\fref{chap:al}) systems were tested but not extensively.}
+it was applied to.
 
-It warrants repeating that the ridge method, as presented originally in paper \ref{pap:second-order}, is able to find the \sap{2} exactly without problem but if the ridge is curved, corner cutting will take place.
+It warrants repeating that the ridge method, as presented originally in paper \ref{pap:second-order}, is able to find the \sap{2} exactly without problem but if the ridge is curved, corner cutting will take place, except near the \sap{2}.
 While the removal of corner cutting would present a truer picture of the ridge, the method as it stood is still of good use.

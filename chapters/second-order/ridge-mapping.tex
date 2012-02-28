@@ -26,7 +26,7 @@ Due to the limited dimensionality of the figure, $\vF_i^\perp$ and $\vF_i^\text{
 \end{SCfigure}
 
 Similarly to the NEB method~\cite{neb-original-1998} (\fref{sec:neb}), a path of $N$ discrete images, $[\vR_0, \vR_1, \ldots, \vR_N]$, is iteratively aligned with the ridge by modifying the gradient or force, $\vF_i \equiv -\nabla E(\vR_i)$, for each one.
-However, unlike the NEB method, further force modifications are needed, in order to let the ridge appear as a MEP.
+However, unlike the NEB method, further force modifications are needed, in order to converge to a ridge rather than a MEP.
 
 The path is at each image defined by its tangent, $\uvt_i$, and in order for the path to be at a SDP (such as the ridge), any force components perpendicular to it,
 \beq{perpendicular-force}
@@ -41,7 +41,7 @@ The Dimer methodology~\cite{dimer-original-1999, dimer-olsen-2004} (\fref{sec:di
 \beq{transformed-force}
 \vF_i^\text{t} = \vF_i^\perp - 2(\vF_i^\perp \cdot \uvn_i)\uvn_i,
 \eeq
-that will map convex degrees of freedom to concave ones, effectively making the ridge appear as a MEP with regards to the gradient.
+that will map concave degrees of freedom to convex ones, effectively making the ridge appear as a MEP with regards to the gradient.
 Since eigenvectors are not necessarily perpendicular to the ridge (as can be seen in figure 1 of paper \ref{pap:second-order}), the path itself must be left out of the Hessian's vector space, thus applying an orthogonality constraint on the minimum mode,
 \beq{orthogonality-constraint}
 \uvt_i \cdot \uvn_i = 0,
@@ -49,43 +49,43 @@ Since eigenvectors are not necessarily perpendicular to the ridge (as can be see
 at all times.
 
 Similarly to the NEB method, an artificial force is employed in order to keep the images equally\footnote{or with controlled spacing} distributed along the path.
-For the NEB method this force acts only along the path and is generally referred to as the spring force as it resembles springs connecting the images.
-However, in the case of ridge calculations, the full spring force must be used,
+For the NEB method this force acts only along the path and is generally referred to as the spring force as it resembles springs connecting the images,
+%However, in the case of ridge calculations, the full spring force must be used,
 \beq{full-spring-force}
 \vF_i^\text{S} = k \left[ \left( \vR_{i+1} - \vR_i \right) - \left( \vR_i - \vR_{i-1} \right) \right],
 \eeq
 where $k$ is the spring constant, which controls the stiffness of the springs.
-Retention of the full spring force is necessary due to numerical instabilities which proved to be more prominent in ridge calculations than MEP calculations (see below).
+In the NEB, only the component along the path must be included, however, for ridge calculations retention of the full spring force is necessary due to numerical instabilities which proved to be more prominent in ridge calculations than MEP calculations (see below).
 
 Combining the above forces, $\vF_i^\text{t}$ and $\vF_i^\text{S}$, into an effective force (as shown in \fref{fig:erm-forces}),
 \beq{erm-effective-force}
 \vF_i^\text{eff} = \vF_i^\text{t} + \vF_i^\text{S},
 \eeq
-will allow the path iteratively converge close to the ridge.
+will allow the path to converge close to the ridge.
 
 \subsubsection{Exact Convergence to the \sap{2}}
 Beyond the problems already discussed regarding converging exactly to the \sap{1} in NEB calculations, systematic errors due to the retention of the full spring force makes it unlikely that using only \fref{eq:erm-effective-force} will yield an image at the exact \sap{2}.
 As with the NEB method a Dimer-type solution is possible --- similar to equations \ref{eq:dimer-transform} and \ref{eq:neb-ci-transform} --- where the highest value image is decoupled from the springs, forming the so-called climbing image, and force components along the \emph{two} lowest eigenvalued eigenmodes, as defined by the minimum mode and the tangent,
 \beq{erm-ci}
-\vF_{i_\text{max.}}^\text{eff.} = \vF_{i_\text{max.}} - 2(\vF_{i_\text{max.}} \cdot \uvt_{i_\text{max.}})\uvt_{i_\text{max.}} - 2(\vF_{i_\text{max.}} \cdot \uvn_{i_\text{max.}})\uvn_{i_\text{max}},
+\vF_{i_\text{max}}^\text{eff} = \vF_{i_\text{max}} - 2(\vF_{i_\text{max}} \cdot \uvt_{i_\text{max}})\uvt_{i_\text{max}} - 2(\vF_{i_\text{max}} \cdot \uvn_{i_\text{max}})\uvn_{i_\text{max}},
 \eeq
-where $i_\text{max.}$ refers to the image with the highest functional value.
+where $i_\text{max}$ refers to the image with the highest functional value.
 
-Unlike the NEB, the computational effort involved is not easily measured due to the systematic errors introduced by the full spring force but there is no reason to suspect increased effort by applying \fref{eq:erm-ci}.
-Furthermore, this addition can not be considered optional, as it can technically for NEB, since it serves as an indirect stabilisation tool at the top of the path, where the environment is concave\footnote{Curves downwards} in 2 dimensions rather than 1 as is the case with a MEP.
+Unlike the NEB, the computational effort involved in introducing the climbing image is not easily measured due to the systematic errors introduced by the full spring force\footnote{NEB calculations and NEB-CI calculations converge to the same path with different image placements, while ridge calculations suffering from corner cutting near the \sap{2} and those who do not, converge to different paths.} but there is no reason to suspect increased effort by applying \fref{eq:erm-ci}.
+Furthermore, this addition can not be considered optional, as it can technically for NEB, since it serves as an indirect stabilisation tool at the top of the path, where the environment is concave in 2 dimensions rather than 1 as is the case with a MEP.
 
 \subsection{Numerical Instabilities}
 
 \subsubsection{The Orthogonality Constraint}
 \begin{figure}[htb!]
 \begin{center}
-  \subfigure[The minimum mode is kept orthogonal to a central difference tangent.]{
-    \includegraphics[width=0.45\linewidth]{orthogonal-good}
-    \label{fig:orthogonal-good}
-    }
-  \subfigure[The minimum mode is kept orthogonal to the higher-image tangent.]{
+  \subfigure[The higher-image tangent is used for the orthogonality constraint of the minimum mode.]{
     \includegraphics[width=0.45\linewidth]{orthogonal-bad}
     \label{fig:orthogonal-bad}
+    }
+  \subfigure[A central difference tangent is used for the orthogonality constraint of the minimum mode.]{
+    \includegraphics[width=0.45\linewidth]{orthogonal-good}
+    \label{fig:orthogonal-good}
     }
     \parbox{0.85\linewidth}{
 \caption{
@@ -108,30 +108,31 @@ This is not a problem hindering convergence, directly, since the Dimer generally
 More serious, seems to be the interaction between the minimum mode and the tangent, as enforced by \fref{eq:orthogonality-constraint}.
 The tangent is designed to minimise numerical instabilities in the NEB~\cite{neb-tangent-2000} but not to offer a particularly good estimate of the path's tangent at any given time, however, once converged, it offers a reasonably good estimate\footnote{A better estimate of the steepest descent path in question (the minimum energy path) would be a tangent pointing downwards rather than upwards.} and in the limit of infinite amount of images, an exact tangent.
 Using a tangent that depends on both neighbouring images, the path would form kinks under minute perturbations that would not even out with more iterations.
-The orthogonality constraint (\fref{eq:orthogonality-constraint}) enforces an equally wrong minimum mode estimate under perturbations to the path.
-This, in turn, introduces similar instabilities as the kinks, when the ridge$\rightarrow$MEP mapping becomes increasingly inaccurate (\fref{fig:orthogonal-bad}).
-Initial testing showed that this is not a problem where individual degrees of freedom were decoupled (non-interacting) but for systems where all degrees of freedom interact (most systems) such instabilities are problematic and common.
+The orthogonality constraint (\fref{eq:orthogonality-constraint}) propagates a similar error in the minimum mode estimate under perturbations to the path.
+This, in turn, introduces similar instabilities as the kinks, when the ridge$\rightarrow$MEP mapping becomes inaccurate (\fref{fig:orthogonal-bad}).
+Preliminary testing showed that this is not a problem where individual degrees of freedom were decoupled (non-interacting) but for systems where all degrees of freedom interact (most systems) such instabilities are problematic and common.
 
-In paper \ref{pap:second-order}, these instabilities are countered by the inclusion of the perpendicular spring force component which yields the more systematic error of corner cutting (discussed below).
-Further analysis showed that enforcing the orthogonality constraint (\fref{eq:orthogonality-constraint}) using a tangent estimate that is focused on accuracy, rather than stability, highly reduces the problematic behaviour (\fref{fig:orthogonal-good}).
+In paper \ref{pap:second-order}, these instabilities are reduced by the inclusion of the perpendicular spring force component which yields the more systematic error of corner cutting (discussed below).
+Further analysis showed that enforcing the orthogonality constraint (\fref{eq:orthogonality-constraint}) using a tangent estimate that is focused on accuracy, rather than stability, reduces the problematic behaviour (\fref{fig:orthogonal-good}).
 The system would then have two tangent definitions co-existing, a numerically stable one for the NEB-type force scheme (\fref{eq:perpendicular-force}) and a more accurate representation of the ridge,
 \beq{central-difference-tangent}
 \uvt_i^\text{ridge} = \frac{\vR_{i+1} - \vR_{i-1}}{\left| \vR_{i+1} - \vR_{i-1} \right|},
 \eeq
-for the space reduction of the Hessian (\fref{eq:orthogonality-constraint}).
+for the projection of the Hessian (\fref{eq:orthogonality-constraint}).
 This latter scheme was neither employed in paper \ref{pap:second-order} nor \fref{chap:al} and has not been tested fully.
 Nevertheless, the initial results are promising for the removal/reduction of corner cutting.
 
-\Fref{fig:orthogonal} demonstrates the problem and suggested solution well.
+\Fref{fig:orthogonal} demonstrates the problem and suggested solution.
 However, the problem seems to be system specific and dependant on, at least, the curvature of the contour lines.
 In order to fully understand the root cause of these instabilities, more research on more test systems is required but using the tangent from \fref{eq:central-difference-tangent} seems to be a vital step.
-In fact, the test cases considered would generally converge to the exact ridge without the use of the perpendicular spring force if started from a path suffering from corner cutting.\footnote{This was not the case for all systems but those with only mild corner cutting would always converge.}
+In fact, the test cases considered would generally converge to the exact ridge without the use of the perpendicular spring force if started from a path that had been converged with the full spring force.
+This was not the case for all systems test but those with only mild corner cutting would all converge.
 
 \subsubsection{Non-barrier profiles}
 \begin{SCfigure}[10][htb!]
 \centering
     \includegraphics[width=0.45\linewidth]{bad-energy-profiles}
-\caption{A schematic of some of some of the possible initial energy profiles of a ridge calculation.
+\caption{A schematic of some of the possible initial energy profiles of a ridge calculation.
 A barrier (black, solid), a monotonic decrease (blue, dotted) and an inverted barrier (red, dashed).
 Only the first is possible in NEB calculations.
 }
