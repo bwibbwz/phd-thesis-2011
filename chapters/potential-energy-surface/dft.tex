@@ -4,14 +4,15 @@
 % Add a footnote about the spin density DFT (see Kieron's stuff for a reference) and one on degeneracy
 
 With increased computing power and, in particular, advances in parallel algorithms, it is now possible to calculate a range of physical properties for materials at the atomic level without the use of any experimental parameters.
-Such \textit{ab initio} methods are generally attempts at solving or approximating the Schr\"odinger equation (\fref{sec:schrodinger}) for the ground state\footnote{Non ground state calculations are not considered in this thesis.}.
-Multiple strategies exist --- choosing one generally involves considering the trade-off between accuracy and computational effort --- but the main one used in this thesis is the Density Functional Theory, where the many-electron problem is \emph{exactly} divided into multiple one-electron problems.
+Such \textit{ab initio} methods are generally attempts at solving or approximating the Schr\"odinger equation (\fref{sec:schrodinger}) for the ground state\footnote{Non-ground state calculations are not considered in this thesis.}.
+Multiple strategies exist and choosing one generally involves considering the trade-off between accuracy and computational effort.
+The one used in this thesis is the Density Functional Theory, where the many-electron problem is \emph{exactly} divided into multiple one-electron problems.
 
 \subsection{The Electronic Structure Problem}
-Solving the Schr\"odinger equation (\fref{sec:schrodinger}) is not a menial task, as it is a second order partial derivative equation in multiple dimensions and can only be solved exactly for very small systems.
-Due to the high dimensionality of the wavefunction, simply storing it for a medium-to-large system is physically impossible.\footnote{Consider a system of only $16$ electrons (e.g. an oxygen molecule), sampled on a grid of $10$ points in each direction. Since each electron has 3 degrees of freedom the number of gridpoints will be $10^{16\times3} = 10^{48}$. Compared with the estimated amount of atoms in/on the Earth, $\mytilde10^{50}$, the amount of gridpoints is impossible to store, even for a modest system. This problem is commonly referred to as the exponential wall~\cite{kohn-1999}}
+Solving the Schr\"odinger equation (\fref{sec:schrodinger}) is not a menial task, as it is a second order partial derivative equation in multiple dimensions that can only be solved exactly for very small systems.
+Due to the high dimensionality of the wavefunction, simply storing it for a medium-to-large system is physically impossible.\footnote{Consider a system of only $16$ electrons (e.g. an oxygen molecule), sampled on a grid of $10$ points in each direction. Since each electron has 3 degrees of freedom the number of gridpoints will be $10^{16\times3} = 10^{48}$. Compared with the estimated amount of atoms in/on the Earth, $\mytilde10^{50}$, the amount of gridpoints is impossible to store, even for a modest system. This problem is commonly referred to as the exponential wall~\cite{kohn-1999}.}
 
-The Born-Oppenheimer approximation (\fref{sec:born-oppenheimer}) allows the separation of the Hamiltonian to an electronic part and a nuclear part.
+The Born-Oppenheimer approximation (\fref{sec:born-oppenheimer}) allows for the separation of the Hamiltonian to an electronic part and a nuclear part.
 Thus, the positions of the nuclei, $\vR_I$, only enter the calculations as parameters.
 A full quantum treatment will not be discussed here as the goal is to build a PES.
 
@@ -24,7 +25,7 @@ whose Hamiltonian (\fref{eq:hamiltonian}) is
 \beq{hamiltonian-full}
 \widehat{H} = -\frac{1}{2} \sum_i^{N_e} \nabla^2_i + \sum_i^{N_e} \sum_{j>i}^{N_e} \frac{1}{\left| \vr_i - \vr_j \right|} + \sum_i^{N_e} \sum_I^{N_n} \frac{1}{\left| \vr_i - \vR_I \right|} + \widehat{V}_\text{env},
 \eeq
-which consists of 4 terms when written out in full.
+which consists of four terms when written out in full.
 First there is the kinetic energy of the electrons, $\widehat{T}_\text{e} = -2^{-1}\sum_i^{N_e}\nabla_i^2$,
 then the electron-electron interaction, $\widehat{U}_\text{ee} = \sum_i^{N_e}\sum_{j>i}^{N_e}(\left| \vr_i - \vr_j \right|)^{-1}$,
 followed by the electron-nuclei interaction, $\sum_i^{N_e}\sum_I^{N_n}(\left| \vr_i - \vR_I \right|)^{-1}$,
