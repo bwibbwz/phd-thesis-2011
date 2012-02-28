@@ -39,7 +39,7 @@ Then in tune with the equilibrium presented in \fref{eq:corner-cutting-equilibri
 
 Using the dual tangent scheme, presented above, it is possible to significantly reduce the numerical instabilities of the ridge calculation.
 In some test cases even allowing for the complete exclusion of the perpendicular spring force after turning on the climbing image.
-However, should this not be possible, a multiplication factor, $\xi_i \in [0, 1]$, for the perpendicular spring force,
+However, should this not be possible, a multiplication factor, $\xi_i \in [0, 1)$, for the perpendicular spring force,
 \beq{spring-force-perpendicular}
 \vF_i^{\text{S}\perp} = \vF_i^\text{S} - (\vF_i^\text{S} \cdot \uvt_i)\uvt_i,
 \eeq

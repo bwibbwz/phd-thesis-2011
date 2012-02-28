@@ -109,7 +109,7 @@ The out-of-plane components for all are very small.
 Simply using the Dimer, or any other non-exact, estimate of the minimum mode introduces instabilities in the forces, as the ridge$\rightarrow$MEP mapping can get inaccurate.
 This is not a problem hindering convergence, directly, since the Dimer generally has ample time to converge to the nearly exact minimum mode during the iterative convergence.
 
-More serious, seems to be the interaction between the minimum mode and the tangent, as enforced by \fref{eq:orthogonality-constraint}.
+More serious seems to be the interaction between the minimum mode and the tangent, as enforced by \fref{eq:orthogonality-constraint}.
 The tangent is designed to minimise numerical instabilities in the NEB~\cite{neb-tangent-2000} but not to offer a particularly good estimate of the path's tangent at any given time, however, once converged, it offers a reasonably good estimate\footnote{A better estimate of the steepest descent path in question (the minimum energy path) would be a tangent pointing downwards rather than upwards.} and in the limit of infinite amount of images, an exact tangent.
 Using a tangent that depends on both neighbouring images, the path would form kinks under minute perturbations that would not even out with more iterations.
 The orthogonality constraint (\fref{eq:orthogonality-constraint}) propagates a similar error in the minimum mode estimate under perturbations to the path.
