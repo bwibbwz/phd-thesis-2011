@@ -19,6 +19,7 @@ Both hydrogen atoms would perform these steps --- often in alternating order ---
 Dimer \sap{1} searches were conducted, starting from the various minima suggested in \cite{double-defect-2011}.
 Essentially, confirming the previous results, the low energy \sap{1}s were all events of the types described above.
 Only a handful of truly concerted events, where both hydrogen atoms would transition simultaneously, were detected but they were all higher in energy.
+%A few low energy \sap{1}s were found for slight lattice rearrangement
 
 Some \sap{1}s were found at a slightly longer range, e.g. where the hydrogen atoms would be separated by a strontium atom.
 In the calculational cell used this is effectively half of its length, bringing into question any discussion on the energies as periodic effects could both over- and underestimate the stabilisation by the neighbouring hydrogen atom.
@@ -85,21 +86,21 @@ The eigenvalue estimate would remain negative for most of the images.
 
 It is unlikely that this minima-trapping behaviour is an artefact of the method itself as such things did not happen in the previous test cases.
 
-\subsubsection{Soft Eigenmodes}
-Latching on to a soft eigenmode is a concern that is always possible with dimer-type algorithms.
+\subsubsection{Soft Minimum modes}
+Latching on to a soft minimum mode is a concern that is always possible with dimer-type algorithms.
 However, this was not a significant problem in the previous tests.
 In this particular case, the climbing image had been turned on very early in order to avoid the basin trapping problem.
-After the climbing image is turned with a soft eigenmode, the calculation is unlikely to yield an interesting result.
-This problem raises questions about the initial eigenmodes.
-If a random initial eigenmode is used (as was the case in this calculation), is it likely that neighbouring eigenmodes will not be similar (i.e. find?the same ridge)?
-It is of course possible to initialise the eigenmodes in a linear fashion, using the unstable modes of the end points or implement some constraint to avoid neighbouring eigenmodes from from being dissimilar.
+After the climbing image is turned on with a soft minimum mode, the calculation is unlikely to yield an interesting result.
+This problem raises questions about the initial minimum modes.
+If a random initial minimum mode is used (as was the case in this calculation), is it likely that neighbouring minimum modes will not be similar (i.e. find?the same ridge)?
+It is of course possible to initialise the minimum modes in a linear fashion, using the unstable modes of the end points or implement some constraint to avoid neighbouring minimum modes from from being dissimilar.
 In any case, this warrants further consideration.
 
 \subsection{Summary}
 Neither the dimer searches nor the ridge calculations found interesting pathways beyond those suggested by~\cite{double-defect-2011} and thus it can be concluded that their picture of the diffusion is accurate.
 A coupled defect has slightly higher mobility than an isolated one.
 
-Out of 7 ridge calculations, only 3 were successful, while 1 followed a soft eigenmode and 3 were trapped in basins.
+Out of 7 ridge calculations, only 3 were successful, while 1 followed a soft minimum mode and 3 were trapped in basins.
 Despite the failed calculations, there were successful ones which converged to the ridge and the \sap{2}s of a highly complex DFT system.
 Further testing is, of course, needed to fully understand the flawed calculations.
 Nevertheless, the interesting results remain.
