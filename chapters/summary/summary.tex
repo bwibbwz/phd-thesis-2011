@@ -15,28 +15,28 @@ As for the long range diffusion, many processes were considered but the only one
 
 \subsubsection{Ridge Mapping}
 In order to map ridges of functions\footnote{Steepest descent paths between first and second order saddle points.} a method was developed.
-By transforming convex subspaces into concave subspaces, the dimer algorithm maps first order saddle points to minima and ridges to minimum energy paths\footnote{or path of least resistance.} (MEP), with regards to the gradient.
+By transforming concave regions into convex ones, the dimer algorithm maps first order saddle points to minima and ridges to minimum energy paths\footnote{or path of least resistance.} (MEP), with regards to the gradient.
 Using this transformation to iteratively converge a trial path to the ridge is then achieved using the nudged elastic band (NEB) algorithm for finding minimum energy paths.
 Due to numerical instabilities, an artificial method for stabilisation was added to the NEB-type part of the algorithm.
-This stabilisation leads to systematic errors in the final path --- only the path, not the second order saddle point ---
+This stabilisation leads to deviations in the final path --- only the path, not the second order saddle point ---
 Effort to leave out or minimise this stabilisation part of the algorithm were discussed along with a discussion on the reduction of the numerical instabilities introduced by an inaccurate ridge$\rightarrow$MEP mapping.
 However, these discussions lacked proper testing due to insufficient time and can, thus, only be considered as an extended and detailed outlooks.
 
 In the context of theoretical reaction rate chemistry, the ridge method was applied to validate the reaction rates offered by the harmonic approximation to transition state theory.
 Furthermore, in cases where the harmonic approximation was found lacking, a rough correction factor was offered by calculating the ratio between configurational integrals of the ridge and the harmonic energy profile.
 
-For the \ce{Al} adatom on the \ce{Al}(100) surface system, the lowest energy mechanism for diffusion were investigated, the hop over a ridge site and the non-intuitive concerted motion of several atoms, 2, 3 and 4.
+For the \ce{Al} adatom on the \ce{Al}(100) surface system, the lowest energy mechanisms for diffusion were investigated, the hop over a bridge site and the non-intuitive concerted motion of several atoms, 2, 3 and 4.
 Calculation of the ridges between each pair showed that the harmonic approximation held its ground for the lowest energy mechanism, the concerted motion of 2 atoms, and the hop, while it was found to be severely lacking for the more populous concerted motion mechanisms.
 The correction factor for the latter was found to be significant.
 It was also found that the ridge between the 3 and 4 atom concerted saddle points on the one hand and the hop saddle point on the other, are separated by the 2 atom concerted saddle point.
-In this way finding novel mechanisms is possible using the ridge method, similarly to how the NEB method locates novel minima.
+In this way finding novel mechanisms is possible using the ridge method, similarly to how the NEB method locates new minima.
 
 The \ce{Al} system was modelled with the embedded atom method which offers gradients that are clean from numerical noise.
 The dimer algorithm requires well behaved gradients since it relies heavily on finite difference methods for estimating derivatives.
 In order to test this dependence, DFT calculations on the \ce{SrTiO3} perovskite system with a coupled hydrogen defect were performed.
-Due to time constrictions, only a handful of ridge calculations were attempted.
+Due to time restrictions, only a handful of ridge calculations were attempted.
 Half of which were successful and found 2 low lying \sap{2}s near processes where a hydrogen defect atom would jump between neighbouring oxygen atoms.
-The other half of the ridge calculations were unsuccessful and the path would lie near MEPs instead of ridges.
+The other half of the ridge calculations were unsuccessful and the path ended up lying near MEPs instead of ridges.
 This behaviour is unexplained and requires further research.
 However, there is no reason to suspect the method itself as the culprit as these flaws were not present in the other test systems.
 

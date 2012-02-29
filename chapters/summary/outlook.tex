@@ -14,19 +14,19 @@
 \paragraph{A More Precise Ridge}
 A detailed outlook as to further development of the ridge mapping algorithm was presented in \fref{chap:erm}.
 Two efforts to reduce corner cutting on the ridge were discussed.
-First by introducing a dual tangent scheme in order to minimise instabilities and remove the need for a perpendicular spring force component.
-Using a second tangent to which the minimum mode would be perpendicular at all times.
-This second tangent would be a more precise representation of the ridge than the previous tangent which is focussed at numerical stability for the MEP part of the algorithm.
+First by implementing a dual tangent scheme in order to minimise instabilities and remove the need for a perpendicular spring force component.
+A second tangent estimate is introduced, to which the minimum mode would be perpendicular at all times.
+This second tangent would be a more precise representation of the ridge than the previous tangent which is chosen for numerical stability of the MEP part of the algorithm.
 The suggested implementation was a central difference one but a more elaborate spline implementation should also be considered.
-The second effort at reducing corner cutting was by iteratively removing the perpendicular component of the spring force.
+The second attempt to reduce corner cutting was by iteratively removing the perpendicular component of the spring force.
 It is unclear if this second scheme is needed, should the dual tangent scheme be successful.
 Both of the schemes were tested on simple systems and showed great promise but further testing and development are needed.
 
 \paragraph{Transition State Theory}
-Using the energy ridges to detect non-harmonic transitions is presented in the thesis and a correction factor is even suggested.
+Using the energy ridges to detect anharmonicity is presented in the thesis and a correction factor is even suggested.
 However, a more complete transition state rate built from the energy profile of the ridge directly is a certainly a worthwhile topic.
 Furthermore, stitching together a transition state from hyperplanar segments, at each image, normal to the minimum mode is a natural progression.
-Such a transition state could even be generated in a variational way, where the number of images would serve as the variational parameter in lieu of the transition state itself.
+Such a transition state could even be generated in a variational way, where the number of images would serve as the variational parameter.
 
 \paragraph{DFT Ridges}
 DFT calculations of ridges were only moderately successful.
