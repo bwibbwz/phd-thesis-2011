@@ -85,11 +85,11 @@ Those calculations that did not reach the ridge, generally lay near the minimum 
 The eigenvalue estimate would remain negative for most of the images.
 
 It is unlikely that this minima-trapping behaviour is an artefact of the method itself as such things did not happen in the previous test cases.
-More, likely is that the DFT parameters must be further considered.
+More likely is that the DFT parameters must be further considered.
 A significant eggbox effect~\cite{gpaw-2005} was seen when relaxing the structures.
 Even though the dimer searches were not affected in an obvious manner, this could affect the ridge calcualtions, due to the correlated nature of the images.
 %It is not unthinkable that this results in an artificial ridge which may be found.
-Furthermore, a rather large gridspacing ($0.2 \unit{\mAA}$ was used, further reducing the accuracy of the forces.
+Furthermore, a rather large gridspacing, $0.2 \unit{\mAA}$, was used, further reducing the accuracy of the forces.
 Nevertheless, neither of these can be identified as the cause of the failed calculations without further research.
 
 \subsubsection{Soft Minimum modes}
@@ -98,7 +98,7 @@ However, this was not a significant problem in the previous tests.
 In this particular case, the climbing image had been turned on very early in order to avoid the basin trapping problem.
 After the climbing image is turned on with a soft minimum mode, the calculation is unlikely to yield an interesting result.
 This problem raises questions about the initial minimum modes.
-If a random initial minimum mode is used (as was the case in this calculation), is it likely that neighbouring minimum modes will not be similar (i.e. not find the same ridge).
+If a random initial minimum mode is used (as was the case in this calculation), it is likely that neighbouring minimum modes will not be similar (i.e. not find the same ridge).
 It is of course possible to initialise the minimum modes in a linear fashion, using the unstable modes of the end points or implement some constraint to avoid neighbouring minimum modes from from being dissimilar.
 In any case, this warrants further consideration.
 
