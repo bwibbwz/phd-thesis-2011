@@ -3,11 +3,7 @@
 \ProvidesClass{bThesis}
 
 % --- Define the baseclass ---
-%\def\baseclass{report}
-%\def\baseclass{scrreprt}
-%\def\baseclass{scrbook}
 \def\baseclass{book}
-%\def\baseclass{memoir}
 
 % --- Pass the normal options to the baseclass ---
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{\baseclass}}
@@ -23,29 +19,12 @@
 \usepackage{graphicx}
 \usepackage{upgreek}      % Sane greek letter vectors. NB: This is a hack! (Might be a different font)
 \usepackage[plain]{fancyref} % Support for \fref, context aware reference macro.
-%\usepackage{vmargin}     % Margins
-%\usepackage{setspace}    % Linespacing
-%\usepackage{caption}     % Control the captions
-%\usepackage{wrapfig}     % Figures that allow text to wrap around
-%\usepackage{footmisc}    % Footnote refernce
 \usepackage[scriptsize, loose]{subfigure}
 \usepackage[T1]{fontenc} % Render \dh{} for icelandic
 \usepackage[utf8]{inputenc}
-%\usepackage[danish,english]{babel}
 \usepackage{bm}          % Vectors
-%\usepackage{amssymb}
-%\usepackage{epstopdf}
-%\usepackage{epsfig}
-%\usepackage{psfrag}
-%\usepackage{booktabs}
-%\usepackage{rotating}
-%\usepackage{listings}
-%\usepackage{scrpage2}
-%\usepackage{lstpatch}
-%\usepackage[nolists]{endfloat} % Put the figures at the end (and possibly list of figures = LTP)
 \usepackage[version=3]{mhchem} % Chemistry formulas
 \usepackage[final]{pdfpages} % Used for including the papers
-%\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=up]{caption}
 \usepackage{nameref} % Allows for the calling of names and not just numbers with \ref
 \usepackage[final]{hyperref}
@@ -56,7 +35,6 @@
 %\usepackage{cmbright} % Displayes vectors in suprscripts wrong
 
 % --- New command definitions ---
-%\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}                        % Bold vectors
 \newcommand{\vect}[1]{{\ensuremath{\mathrm{\mathbf{\bm{#1}}}}}}        % Bold vectors. HACK: Extra {} to fix issues with sub/superscript vectors. BUG: Greek stuff is in italics without the upgreek package.
 \newcommand{\HRule}{\rule{15cm}{0.5mm}}                                % Horizontal line
 \newcommand{\mAA}{\mathring{\mathrm{A}}}                               % AAngstrom
@@ -123,16 +101,16 @@
 %%%\addtolength{\parskip}{\baselineskip}
 %%%\setlength{\parindent}{0pt}
 %\pagestyle{myheadings}
-\setlength{\paperwidth}{176mm}  %b5
-\setlength{\paperheight}{250mm} %b5
-\setlength{\textheight}{185mm} % 540pt = 7.5inch = 190.5mm
-\setlength{\topmargin}{-5.4mm}
-\setlength{\headheight}{8mm}
-\setlength{\headsep}{7mm}
-\setlength{\footskip}{10.0mm}
-\setlength{\textwidth}{121.36mm}  % 129.36 mm  % width and margins must add to 176 mm:
-\setlength{\oddsidemargin}{1.24mm} % 1 inch + 1.24 mm = 26.64 mm inside
-\setlength{\evensidemargin}{-5.4mm} % 1 inch - 5.4 mm = 20 mm outside
+%\setlength{\paperwidth}{176mm}  %b5
+%\setlength{\paperheight}{250mm} %b5
+%\setlength{\textheight}{185mm} % 540pt = 7.5inch = 190.5mm
+%\setlength{\topmargin}{-5.4mm}
+%\setlength{\headheight}{8mm}
+%\setlength{\headsep}{7mm}
+%\setlength{\footskip}{10.0mm}
+%\setlength{\textwidth}{121.36mm}  % 129.36 mm  % width and margins must add to 176 mm:
+%\setlength{\oddsidemargin}{1.24mm} % 1 inch + 1.24 mm = 26.64 mm inside
+%\setlength{\evensidemargin}{-5.4mm} % 1 inch - 5.4 mm = 20 mm outside
 
 %\pagestyle{fancyplain}
 %\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
@@ -152,22 +130,10 @@
 %%              {   0mm}  % head sep     (0.25in)
 %%              {   9pt}  % foot height  (9pt)
 %%              {0.25in}  % foot sep  (0.3in)
-%%\usepackage{times}      % Set the font to Times
-%%\usepackage{caption}
-%\captionsetup[figure]{width=0.9\linewidth} % Use if you use wrapfig
-%%\captionsetup{width=0.9\linewidth}
-%\captionsetup{labelfont=bf}
-%\captionsetup{font=footnotesize}
-%%\usepackage{setspace}
-%\onehalfspacing
-%\setlength{\parindent}{0pt}
-%\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
-%\setstretch{1.3}
+
 % Bibliography style
 \usepackage[numbers,sort&compress]{natbib}
 \bibliographystyle{achemso}
-%\bibliographystyle{unsrt}
-%\bibliographystyle{plainnat}
 
 % PDF meta info
 \hypersetup{pdftitle={Identifying Reaction Pathways and their Environments: Methods and Applications},
@@ -179,24 +145,3 @@
 %              breaklinks,
 %              bookmarksopen,
 %              bookmarksnumbered}
-
-% --- Create enviroments ---
-% eqnref, for reprinting earlier equations. (thanks to Craig Powell, http://www.phy.umist.ac.uk/~craig/index.html)
-%\newsavebox{\eqnumref}
-%\newdimen\mathindent
-%\AtEndOfClass{\mathindent\leftmargini}
-%\newenvironment{eqnref}[1]{%
-%  \sbox{\eqnumref}{\hbox{[\ref{#1}}]}
-%  \@beginparpenalty\predisplaypenalty
-%  \@endparpenalty\postdisplaypenalty
-%  \trivlist \item[]\leavevmode
-%    \hb@xt@\linewidth\bgroup \hfil$\m@th% $
-%      \displaystyle\hskip\mathindent
-%}{%
-%    $\hfil % $
-%    \displaywidth\linewidth\usebox{\eqnumref}
-%    \egroup
-%  \endtrivlist
-%}
-
-% --- Test stuff ---
