@@ -97,7 +97,6 @@
 \newcommand{\explain}[1]{\paragraph{#1}\hangindent=1em\hangafter=0}
 
 % --- Define the general look ---
-%\usepackage{fancyhdr}
 %%%\addtolength{\parskip}{\baselineskip}
 %%%\setlength{\parindent}{0pt}
 %\pagestyle{myheadings}
@@ -112,14 +111,7 @@
 \setlength{\oddsidemargin}{1.24mm} % 1 inch + 1.24 mm = 26.64 mm inside
 \setlength{\evensidemargin}{-5.4mm} % 1 inch - 5.4 mm = 20 mm outside
 
-%\pagestyle{fancyplain}
-%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-%\lhead[\fancyplain{}{\sffamily\bfseries\thepage}]%
-%      {\fancyplain{}{\sffamily\bfseries\rightmark}}
-%\rhead[\fancyplain{}{\sffamily\bfseries\leftmark}]%
-%      {\fancyplain{}{\sffamily\bfseries\thepage}}
-%\cfoot{}
+\usepackage{fancyhdr}
 
 %%\usepackage{vmargin}
 %%\setmarginsrb {  40mm}  % left margin   (1.5in)
