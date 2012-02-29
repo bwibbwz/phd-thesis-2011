@@ -119,9 +119,10 @@
 \newcommand{\explain}[1]{\paragraph{#1}\hangindent=1em\hangafter=0}
 
 % --- Define the general look ---
+\usepackage{fancyhdr}
 %%\addtolength{\parskip}{\baselineskip}
 %%\setlength{\parindent}{0pt}
-%%\pagestyle{myheadings}
+\pagestyle{fancyplain}
 \setlength{\paperwidth}{176mm}  %b5
 \setlength{\paperheight}{250mm} %b5
 \setlength{\textheight}{185mm} % 540pt = 7.5inch = 190.5mm
