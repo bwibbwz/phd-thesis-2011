@@ -137,3 +137,39 @@
 %              breaklinks,
 %              bookmarksopen,
 %              bookmarksnumbered}
+
+% Nice chapter headlines 'n' stuff
+\renewcommand{\chaptername}{C h a p t e r }
+\renewcommand{\appendixname}{A p p e n d i x }
+%
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+   \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \large\scshape \@chapapp \space\space \Huge\upshape\thechapter
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \flushleft\parbox{\textwidth}{\raggedleft \sffamily\Huge\bfseries  #1}
+     \par\nobreak
+     \vskip 15pt
+     \hrule height 0.4pt
+    \vskip 80\p@
+  }}
+%
+\def\@makeschapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+     \sffamily\huge\bfseries  #1
+     \par\nobreak
+     \vskip 15pt
+     \hrule height 0.4pt
+    \vskip 80\p@
+  }}
+
+
+
