@@ -122,16 +122,16 @@
 %%\addtolength{\parskip}{\baselineskip}
 %%\setlength{\parindent}{0pt}
 %%\pagestyle{myheadings}
-%\setlength{\paperwidth}{176mm}  %b5
-%\setlength{\paperheight}{250mm} %b5
-%\setlength{\textheight}{185mm} % 540pt = 7.5inch = 190.5mm
-%\setlength{\topmargin}{-5.4mm}
-%\setlength{\headheight}{8mm}
-%\setlength{\headsep}{7mm}
-%\setlength{\footskip}{10.0mm}
-%\setlength{\textwidth}{121.36mm}  % 129.36 mm  % width and margins must add to 176 mm:
-%\setlength{\oddsidemargin}{1.24mm} % 1 inch + 1.24 mm = 26.64 mm inside
-%\setlength{\evensidemargin}{-5.4mm} % 1 inch - 5.4 mm = 20 mm outside
+\setlength{\paperwidth}{176mm}  %b5
+\setlength{\paperheight}{250mm} %b5
+\setlength{\textheight}{185mm} % 540pt = 7.5inch = 190.5mm
+\setlength{\topmargin}{-5.4mm}
+\setlength{\headheight}{8mm}
+\setlength{\headsep}{7mm}
+\setlength{\footskip}{10.0mm}
+\setlength{\textwidth}{121.36mm}  % 129.36 mm  % width and margins must add to 176 mm:
+\setlength{\oddsidemargin}{1.24mm} % 1 inch + 1.24 mm = 26.64 mm inside
+\setlength{\evensidemargin}{-5.4mm} % 1 inch - 5.4 mm = 20 mm outside
 
 %%\usepackage{vmargin}
 %%\setmarginsrb {  40mm}  % left margin   (1.5in)
@@ -154,11 +154,21 @@
 %\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 %\setstretch{1.3}
 % Bibliography style
-%\bibliographystyle{unsrt}
 \usepackage[numbers,sort&compress]{natbib}
 \bibliographystyle{achemso}
-
+%\bibliographystyle{unsrt}
 %\bibliographystyle{plainnat}
+
+% PDF meta info
+\hypersetup{pdftitle={Identifying Reaction Pathways and their Environments: Methods and Applications},
+            pdfauthor={J\'on Bergmann Maronsson}}%,
+%              pdfsubject={\thesisdef},
+%              pdfkeywords={\thesiskeywords},
+%              colorlinks,
+%              linkcolor=blue,
+%              breaklinks,
+%              bookmarksopen,
+%              bookmarksnumbered}
 
 % --- Create enviroments ---
 % eqnref, for reprinting earlier equations. (thanks to Craig Powell, http://www.phy.umist.ac.uk/~craig/index.html)
