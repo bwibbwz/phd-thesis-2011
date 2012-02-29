@@ -155,7 +155,7 @@
 %\setstretch{1.3}
 % Bibliography style
 %\bibliographystyle{unsrt}
-\usepackage[numbers]{natbib}
+\usepackage[numbers,sort&compress]{natbib}
 \bibliographystyle{achemso}
 
 %\bibliographystyle{plainnat}
