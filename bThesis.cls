@@ -5,8 +5,8 @@
 % --- Define the baseclass ---
 %\def\baseclass{report}
 %\def\baseclass{scrreprt}
-\def\baseclass{scrbook}
-%\def\baseclass{book}
+%\def\baseclass{scrbook}
+\def\baseclass{book}
 %\def\baseclass{memoir}
 
 % --- Pass the normal options to the baseclass ---
@@ -154,9 +154,10 @@
 %\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 %\setstretch{1.3}
 % Bibliography style
-\bibliographystyle{unsrt}
+%\bibliographystyle{unsrt}
+\usepackage[numbers]{natbib}
+\bibliographystyle{achemso}
 
-%\usepackage[numbers]{natbib}
 %\bibliographystyle{plainnat}
 
 % --- Create enviroments ---
