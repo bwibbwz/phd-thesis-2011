@@ -119,29 +119,29 @@
 \newcommand{\explain}[1]{\paragraph{#1}\hangindent=1em\hangafter=0}
 
 % --- Define the general look ---
-\usepackage{fancyhdr}
+%\usepackage{fancyhdr}
 %%\addtolength{\parskip}{\baselineskip}
 %%\setlength{\parindent}{0pt}
-\pagestyle{myheadings}
-\setlength{\paperwidth}{176mm}  %b5
-\setlength{\paperheight}{250mm} %b5
-\setlength{\textheight}{185mm} % 540pt = 7.5inch = 190.5mm
-\setlength{\topmargin}{-5.4mm}
-\setlength{\headheight}{8mm}
-\setlength{\headsep}{7mm}
-\setlength{\footskip}{10.0mm}
-\setlength{\textwidth}{121.36mm}  % 129.36 mm  % width and margins must add to 176 mm:
-\setlength{\oddsidemargin}{1.24mm} % 1 inch + 1.24 mm = 26.64 mm inside
-\setlength{\evensidemargin}{-5.4mm} % 1 inch - 5.4 mm = 20 mm outside
+%\pagestyle{myheadings}
+%\setlength{\paperwidth}{176mm}  %b5
+%\setlength{\paperheight}{250mm} %b5
+%\setlength{\textheight}{185mm} % 540pt = 7.5inch = 190.5mm
+%\setlength{\topmargin}{-5.4mm}
+%\setlength{\headheight}{8mm}
+%\setlength{\headsep}{7mm}
+%\setlength{\footskip}{10.0mm}
+%\setlength{\textwidth}{121.36mm}  % 129.36 mm  % width and margins must add to 176 mm:
+%\setlength{\oddsidemargin}{1.24mm} % 1 inch + 1.24 mm = 26.64 mm inside
+%\setlength{\evensidemargin}{-5.4mm} % 1 inch - 5.4 mm = 20 mm outside
 
-\pagestyle{fancyplain}
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-\lhead[\fancyplain{}{\sffamily\bfseries\thepage}]%
-      {\fancyplain{}{\sffamily\bfseries\rightmark}}
-\rhead[\fancyplain{}{\sffamily\bfseries\leftmark}]%
-      {\fancyplain{}{\sffamily\bfseries\thepage}}
-\cfoot{}
+%\pagestyle{fancyplain}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\lhead[\fancyplain{}{\sffamily\bfseries\thepage}]%
+%      {\fancyplain{}{\sffamily\bfseries\rightmark}}
+%\rhead[\fancyplain{}{\sffamily\bfseries\leftmark}]%
+%      {\fancyplain{}{\sffamily\bfseries\thepage}}
+%\cfoot{}
 
 %%\usepackage{vmargin}
 %%\setmarginsrb {  40mm}  % left margin   (1.5in)
