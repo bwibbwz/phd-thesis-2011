@@ -139,8 +139,8 @@
 %              bookmarksnumbered}
 
 % Nice chapter headlines 'n' stuff
-\renewcommand{\chaptername}{C h a p t e r }
-\renewcommand{\appendixname}{A p p e n d i x }
+%\renewcommand{\chaptername}{C h a p t e r }
+%\renewcommand{\appendixname}{A p p e n d i x }
 %
 \def\@makechapterhead#1{%
   \vspace*{50\p@}%
