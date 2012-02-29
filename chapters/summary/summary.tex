@@ -19,8 +19,8 @@ By transforming concave regions into convex ones, the dimer algorithm maps first
 Using this transformation to iteratively converge a trial path to the ridge is then achieved using the nudged elastic band (NEB) algorithm for finding minimum energy paths.
 Due to numerical instabilities, an artificial method for stabilisation was added to the NEB-type part of the algorithm.
 This stabilisation leads to deviations in the final path --- only the path, not the second order saddle point ---
-Effort to leave out or minimise this stabilisation part of the algorithm were discussed along with a discussion on the reduction of the numerical instabilities introduced by an inaccurate ridge$\rightarrow$MEP mapping.
-However, these discussions lacked proper testing due to insufficient time and can, thus, only be considered as an extended and detailed outlooks.
+Efforts to leave out or minimise this stabilisation part of the algorithm were discussed along with a discussion on the reduction of the numerical instabilities introduced by an inaccurate ridge$\rightarrow$MEP mapping.
+However, these discussions lacked proper testing due to insufficient time and can, thus, only be considered as an extended and detailed outlook.
 
 In the context of theoretical reaction rate chemistry, the ridge method was applied to validate the reaction rates offered by the harmonic approximation to transition state theory.
 Furthermore, in cases where the harmonic approximation was found lacking, a rough correction factor was offered by calculating the ratio between configurational integrals of the ridge and the harmonic energy profile.
