@@ -157,7 +157,7 @@
      \par\nobreak
      \vskip 15pt
      \hrule height 0.4pt
-    \vskip 80\p@
+    \vskip 10\p@
   }}
 %
 \def\@makeschapterhead#1{%
