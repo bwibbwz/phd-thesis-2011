@@ -32,7 +32,7 @@ A more recent, and successful, version of the "spring force", depends on the nor
 \vF_i^\text{S} = k(\left| \vR_{i+1} - \vR_i \right| - \left| \vR_i - \vR_{i-1}\right|),
 \eeq
 where $k$, is still present as a stiffness parameter.
-By varying the stiffness parameter for each image, it is possible to increase the density of images in interesting areas, such as near the \sap{1}.~\cite{neb-ci-2000}
+By varying the stiffness parameter for each image, it is possible to increase the density of images in interesting areas, such as near the \sap{1}~\cite{neb-ci-2000}.
 
 Combining the forces from equations \ref{eq:neb-real-force} and \ref{eq:neb-spring-force} into an effective force, as seen in \fref{fig:neb-force-overview},
 \beq{neb-effective-force}
@@ -59,7 +59,7 @@ The tangent, $\uvt$, is the unit vector pointing towards the neighboring, higher
 
 \subsubsection{Tangent}
 Since the path must be discretisised, the tangent can not be trivially defined.
-Multiple possibilities for its definition are available but one that considers only the displacement to the neighboring, higher function value, image has been succesful in minimising kinks in the paths.~\cite{neb-tangent-2000}
+Multiple possibilities for its definition are available but one that considers only the displacement to the neighboring, higher function value, image has been successful in minimising kinks in the paths~\cite{neb-tangent-2000}.
 
 Each image, $i$, will, function value wise, fit into one of four cases:
 \ben{neb-tangent-cases}
@@ -99,7 +99,7 @@ By decoupling the top function value image from the spring force, it becomes ind
 \beq{neb-ci-transform}
 \vF_{i_\text{max}}^\text{eff} = \vF_{i_\text{max}} - (\vF_{i_\text{max}} \cdot \uvt_{i_\text{max}})\uvt_{i_\text{max}},
 \eeq
-where $i_\text{max}$ refers to the image with the highest function value.~\cite{neb-ci-2000}
+where $i_\text{max}$ refers to the image with the highest function value~\cite{neb-ci-2000}.
 
 \subsubsection{Usage in Atomic Simulations}
 The NEB method was developed within the context of atomic simulations, where the function in question is the PES and the variables the spatial degrees of freedom of each atom in the system.
