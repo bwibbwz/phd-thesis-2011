@@ -28,7 +28,7 @@ This is, generally, the case in simulations on the atomic scale, which is the ma
 While the methods discussed here are developed in that field, applying them to purely mathematical problems and within other fields is merely a question of interest and implementation, thus they are presented as general as possible in order to appeal to a wider audience.
 
 Locating extrema using local information, i.e. the gradient, is a well known technique~\cite{cg-original-1952}, whereas the gradient is simply followed in the appropriate direction (positive for maxima and negative for minima) until it vanishes.\footnote{Global extrema are, conversely, extremely difficult to find using only local information and guaranteeing that a given extremum is a global one is nearly impossible.~\cite{Stillinger1999} See~\cite{Wang2010, Wales1999, Pickard2011, Oganov2008, Kirkpatrick1983, Johnston2003, Fischer2006} for such efforts.}
-Finding other stationary points is less obvious and classifying them depends on the second order derivatives (or even higher in special cases\footnote{e.g. the Monkey Saddle \url{http://mathworld.wolfram.com/MonkeySaddle.html}})
+Finding other stationary points is less obvious and classifying them depends on the second order derivatives (or even higher in special cases\footnote{For example the Monkey Saddle \url{http://mathworld.wolfram.com/MonkeySaddle.html}})
 Finding such points without explicitly evaluating higher order derivatives is an important subject within atomic simulations, since their calculation is very costly when using non-analytical models to describe the atomic interaction.
 
 \section{Atomic Simulations}
@@ -94,8 +94,7 @@ An essential piece in that puzzle is understanding the kinetics of the material,
 Such knowledge can then be used to create better materials with more appropriate properties.
 
 \subsubsection{Fuel Cells}
-\tred{(Tejs: Numbers? catalytic selectivity -> making what you want...)}
-Once hydrogen has been stored and retrieved it is generally used within highly efficient fuel cells to produce electricity without combustion. %\citemiss
+Once hydrogen has been stored and retrieved it is generally used in fuel cells to produce electricity without combustion. %\citemiss
 Currently this process depends on rare and expensive elements, such as platinum, to catalyse the reaction.
 This dependence on low-availability materials can very well become a bottleneck for the implementation of the so-called hydrogen economy.
 Investigating catalytic activity and designing cheap, efficient, catalysts is highly dependant on understanding the kinetics and the catalytical pathways involved.

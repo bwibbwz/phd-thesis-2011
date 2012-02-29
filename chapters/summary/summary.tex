@@ -15,7 +15,7 @@ As for the long range diffusion, many processes were considered but the only one
 
 \subsubsection{Ridge Mapping}
 In order to map ridges of functions\footnote{Steepest descent paths between first and second order saddle points.} a method was developed.
-By transforming concave regions into convex ones, the dimer algorithm maps first order saddle points to minima and ridges to minimum energy paths\footnote{or path of least resistance.} (MEP), with regards to the gradient.
+By transforming concave regions into convex ones, the dimer algorithm maps first order saddle points to minima and ridges to minimum energy paths\footnote{Or path of least resistance.} (MEP), with regards to the gradient.
 Using this transformation to iteratively converge a trial path to the ridge is then achieved using the nudged elastic band (NEB) algorithm for finding minimum energy paths.
 Due to numerical instabilities, an artificial method for stabilisation was added to the NEB-type part of the algorithm.
 This stabilisation leads to deviations in the final path --- only the path, not the second order saddle point ---

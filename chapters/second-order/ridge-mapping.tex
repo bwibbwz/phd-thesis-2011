@@ -36,7 +36,7 @@ must be zero,
 \beq{ridge-force}
 \vF^\perp_\text{ridge} = \vect{0}.
 \eeq
-Furthermore, one negative eigenvalue of the Hessian, perpendicular to the path, must be guaranteed.\footnote{If finding higher order ridges is desired, more negative eigenvalues must be guaranteed.}
+Furthermore, one negative eigenvalue of the Hessian, perpendicular to the path, must be guaranteed. %\footnote{If finding higher order ridges is desired, more negative eigenvalues must be guaranteed.}
 The Dimer methodology~\cite{dimer-original-1999, dimer-olsen-2004} (\fref{sec:dimer}) for finding the lowest eigenvalue and the corresponding eigenvector (minimum mode) of the Hessian, $\uvn_i$, can produce a transformed force,
 \beq{transformed-force}
 \vF_i^\text{t} = \vF_i^\perp - 2(\vF_i^\perp \cdot \uvn_i)\uvn_i,
@@ -48,7 +48,7 @@ Since eigenvectors are not necessarily perpendicular to the ridge (as can be see
 \eeq
 at all times.
 
-Similarly to the NEB method, an artificial force is employed in order to keep the images equally\footnote{or with controlled spacing} distributed along the path.
+Similarly to the NEB method, an artificial force is employed in order to keep the images equally\footnote{Or with controlled spacing} distributed along the path.
 For the NEB method this force acts only along the path and is generally referred to as the spring force as it resembles springs connecting the images,
 %However, in the case of ridge calculations, the full spring force must be used,
 \beq{full-spring-force}
