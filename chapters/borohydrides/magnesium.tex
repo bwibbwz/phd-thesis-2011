@@ -1,10 +1,10 @@
 \section{Magnesium Borohydride [$\beta-$\ce{Mg(BH4)2}]}
 \label{sec:borohydrides-magnesium}
 The calculations were carried out using the same packages as before (\fref{sec:borohydrides-calcium}), ASE~\cite{ase-2002} and Dacapo~\cite{dacapo-1999}.
-The calculational parameters can be found in DFT calculations section of Paper \ref{pap:magnesium}.
+The calculational parameters can be found in the DFT calculations section of Paper \ref{pap:magnesium}.
 The calculational supercell was relaxed from the $fddd$ spacegroup ($\#70$)~\cite{mgbh42-structure-fddd}, totalling 176 atoms.
 The structure consists of 5 symmetry inequivalent \ce{BH4} sites which all have similar local structure, being wedged between 2 \ce{Mg} atoms (\fref{fig:mg-local-structure}).
-The symmetry inequivalance stems from the fact that each \ce{BH4} is slightly displaced from the \ce{Mg}-\ce{Mg} axis, that distance, $L$, from the \ce{B} to the axis, influences the barriers.
+The symmetry inequivalance stems from the fact that each \ce{BH4} is slightly displaced from the \ce{Mg}-\ce{Mg} axis, the distance from the \ce{B} to the axis, $L$, influences the barriers.
 
 \begin{figure}[htb]
 \begin{minipage}{1.0\textwidth}
@@ -12,7 +12,7 @@ The symmetry inequivalance stems from the fact that each \ce{BH4} is slightly di
     \includegraphics[width=0.5\linewidth]{mg-local-structure}
     \parbox{0.85\linewidth}{
 \caption{
-Schematic representation of the environment of each \ce{B} atom, and how the different types of axes relates to it.
+Schematic representation of the environment of each \ce{B} atom, and how the different types of axes relate to it.
 }
 \label{fig:mg-local-structure}
 }
@@ -21,14 +21,14 @@ Schematic representation of the environment of each \ce{B} atom, and how the dif
 \end{figure}
 
 The experiments could not discern data for individual inequivalent sites but only averages for a given type of process.
-Three distinct (average) processes were seen, all of which were for rotational diffusion.
+Three distinct (average) processes were seen, all of which correspond to rotational diffusion.
 Thus, the work exclusively revolved around understanding which rotations corresponded with the experiments.
 
-For each inequivalent site a number of rigid rotation PESes were constructed\footnote{Examples of which can be seen in figures 13 and 14 of paper \ref{pap:magnesium}} in order to get an overview of the interesting events and to limit computations spent on the costly MEP calculations, in a similar fashion as in \fref{sec:borohydrides-calcium}.
+For each inequivalent site a number of rigid rotation PESes were constructed\footnote{Examples of which can be seen in figures 13 and 14 of paper \ref{pap:magnesium}.} in order to get an overview of the interesting events and to limit computations spent on the costly MEP calculations, in a similar fashion as in \fref{sec:borohydrides-calcium}.
 Due to symmetry not all the axes needed to be considered.
 
-The general result from the PESes was that rotations that maximise the \ce{H}-\ce{Mg} distance, $d_{H-Mg}$, showed the lowest energies (\fref{fig:h-mg-distances}).
-In this respect, two distinct types of $C_2$ axes were seen, those parallel to the \ce{Mg}-\ce{Mg} axis, $C_2^\parallel$, which maximised $d_{H-Mg}$ and those perpendicular to it, $C_2^\perp$, where $d_{H-Mg}$ was generally lower and showed higher barriers.
+The general result from the PESes was that rotations that maximise the \ce{H}-\ce{Mg} distance, $d_{H-Mg}$, had the lowest energies (\fref{fig:h-mg-distances}).
+In this respect, two distinct types of $C_2$ axes were seen, those parallel to the \ce{Mg}-\ce{Mg} axis, $C_2^\parallel$, which maximised $d_{H-Mg}$ and those perpendicular to it, $C_2^\perp$, where $d_{H-Mg}$ was generally lower and had higher barriers (\fref{fig:mg-local-structure}).
 MEP calculations for $C_2^\perp$ found a combination of other axes yielded the same permutation but at a much lower energy cost.
 The difference in relative barrier height decreased with decreasing $L$.\footnote{The relative difference would be non-existent for $L=0$ (and $L=\infty$) but none of the \ce{BH4} fulfil that criterion.}
 
@@ -44,7 +44,7 @@ The difference in relative barrier height decreased with decreasing $L$.\footnot
     }
     \parbox{0.85\linewidth}{
       \caption{
-For each PES, the distances between the \ce{H} atoms of the rotating \ce{BH4} unit to the neighbouring \ce{Mg} atoms is plotted.
+For each PES, the distances between the \ce{H} atoms of the rotating \ce{BH4} unit to the neighbouring \ce{Mg} atoms are plotted.
 Some systematic features can be seen since the data was produced with specific rotations rather than a uniform distribution.
 A clear trend for lower energies with higher distances can be seen.
       }
@@ -64,7 +64,7 @@ Thus MEP calculations, for each symmetry inequivalent \ce{BH4}, were performed w
   \subfigure[The rotational energy barriers for \ce{BH4} in $\beta$-\ce{Mg(BH4)2}][
 The energy barriers as a function of $L$, the distance from the \ce{B} to the \ce{Mg}-\ce{Mg} axis.
 The circles are the $C_2$ barriers, while the triangles are the $C_3$ axes.
-A clear linear relationship (the line) can be seen for the $C_2$ axes.
+A clear linear relationship can be seen for the $C_2$ axes.
 ]{
     \includegraphics[width=0.45\linewidth]{mg-barriers}
     \label{fig:mg-barriers}
@@ -78,19 +78,19 @@ The shaded area represents characteristic times of the range $0.1 - 1.0 \unit{eV
     \includegraphics[width=0.45\linewidth]{mg-experimental-comparison}
     \label{fig:mg-experimental-comparison}
     }
-\caption{The main results for $\beta$-\ce{Mg(BH4)2} 
+\caption{The main results for $\beta$-\ce{Mg(BH4)2}.
 }
 \label{fig:mg-results}
 \end{center}
 \end{figure}
 
-It is unsurprising to find that there is, in fact, a direct relationship between $L$ and the $C_2^\parallel$ barrier height.
-In fact, the relationship is linear, as can be seen in \fref{fig:mg-barriers}, the barrier increases with increased $L$ which is most likely due more \ce{H}-\ce{Mg} interaction.
+It is unsurprising to find that there is a direct relationship between $L$ and the $C_2^\parallel$ barrier height.
+In fact the relationship is linear, as can be seen in \fref{fig:mg-barriers} the barrier increases with increased $L$ which is most likely due to more \ce{H}-\ce{Mg} interaction.
 Some of the $C_2$-type rotations showed a very shallow intermediate minimum ($\mytilde 4\times10^{-3} \unit{eV}$), associated with a slight stabilisation as $L$ decreased during the rotation.
 
-On the other hand, no such direct relationship could be found for the $C_3$ axes, which were all found to be considerably higher in energy than the $C_2^\parallel$ axes.
+Conversely, no such direct relationship can be seen for the $C_3$ axes, which were all found to be considerably higher in energy than the $C_2^\parallel$ axes.
 This is likely due to the relatively constant $d_{H-Mg}$ for the $C_2^\parallel$ rotation, while during the $C_3$ rotations $d_{H-Mg}$ varies more and is, generally, lower, resulting in higher potential energy (\fref{fig:h-mg-distances}).
 
 \Fref{fig:mg-experimental-comparison} shows that the theoretical results (HTST reaction rates) form a distribution in which the experimental results fit rather well.
-The $C_3$-type rotations correspond to one the experimentally observed events, while the $C_2$-type rotations correspond to the other two.
+The $C_3$-type rotations correspond to one of the experimentally observed events, while the $C_2$-type rotations correspond to the other two.
 The experimental results indicated that $\mytilde 15\%$ of the hydrogen would move at a lower temperature than the others which is consistent with the lowest theoretical barrier which applied to $12.5\%$ of the hydrogen ($1/8$th as can be seen table 1 of paper \ref{pap:magnesium}).
