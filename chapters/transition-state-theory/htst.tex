@@ -22,12 +22,12 @@ Exploiting this, the $\ts$ can be chosen as a hyperplane in which the \sap{1} re
 This greatly simplifies the definition of the $\ts$.
 Furthermore, in order to simplify the calculation of the partition functions, the PES near both $\ts$, $E_\ts$, and R, $E_\text{R}$, are represented by second degree Taylor expansions,
 \beq{htst-taylor-expansion-min}
-E_\text{R}(\vect{q}_\text{R}) \approx E(\vR_\text{min.}) + \frac{1}{2} \sum_i^{3N} k_{\text{R},i} q_{\text{R},i}^2,
+E_\text{R}(\vect{q}_\text{R}) \approx E(\vR_\text{min}) + \frac{1}{2} \sum_i^{3N} k_{\text{R},i} q_{\text{R},i}^2,
 \eeq
 \beq{htst-taylor-expansion-sp}
 E_\ts(\vect{q}_\ts) \approx E(\vR_\text{\sap{1}}) + \frac{1}{2} \sum_i^{3N-1} k_{\ts,i} q_{\ts,i}^2,
 \eeq
-where $\vect{q}_{[\ts, \text{R}]}$ are the eigenvectors of the Hessian, $q_{[\ts, \text{R}],i}$ is the displacement along eigenvector $i$, $k_{[\ts, \text{R}],i}$ are the corresponding Taylor coefficients, all for the $\ts$ and R respectively, and $E(\vR_{[\sap{1}, \text{min.}]})$ are the energies at the \sap{1} and the minimum of the R basin, respectively.
+where $\vect{q}_{[\ts, \text{R}]}$ are the eigenvectors of the Hessian, $q_{[\ts, \text{R}],i}$ is the displacement along eigenvector $i$, $k_{[\ts, \text{R}],i}$ are the corresponding Taylor coefficients, all for the $\ts$ and R respectively, and $E(\vR_{[\sap{1}, \text{min}]})$ are the energies at the \sap{1} and the minimum of the R basin, respectively.
 Since the central points of the expansions are stationary, the first derivatives vanish from the expression, leaving only constants along with the second order terms.
 
 Due to the format of the energy approximations, the configurational integrals become trivial Gaussian integrals,
@@ -36,12 +36,12 @@ Due to the format of the energy approximations, the configurational integrals be
 \eeq
 The reaction rate then reduces to
 \beq{htst-reaction-rate-raw}
-k_\text{HTST} = \sqrt{\frac{\kB T}{2 \pi \mu}}\frac{e^{-E(\vR_{\sap{1}})/\kB T}\prod_i^{3N-1}\sqrt{\frac{2 \pi \kB T}{k_{\ts, i}}}}{e^{-E(\vR_\text{min.})/\kB T}\prod_i^{3N}\sqrt{\frac{2 \pi \kB T}{k_{\text{min.}, i}}}}.
+k_\text{HTST} = \sqrt{\frac{\kB T}{2 \pi \mu}}\frac{e^{-E(\vR_{\sap{1}})/\kB T}\prod_i^{3N-1}\sqrt{\frac{2 \pi \kB T}{k_{\ts, i}}}}{e^{-E(\vR_\text{min})/\kB T}\prod_i^{3N}\sqrt{\frac{2 \pi \kB T}{k_{\text{min}, i}}}}.
 \eeq
 Most of the $\kB T$ and $2\pi$ parameters cancel each other, leaving only one set by means of the different dimensionality of $\ts$ and R.
 Rearrangement of \fref{eq:htst-reaction-rate-raw}, along with the multiplication of $\mu^{3N}$ on both sides of the fraction, yields,
 \beq{htst-reaction-rate-cleaned}
-k_\text{HTST} = (2\pi)^{-1} \frac{\prod_i^{3N} \sqrt{\frac{k_{\text{min.},i}}{\mu}}}{\prod_i^{3N-1} \sqrt{\frac{k_{\ts,i}}{\mu}}}
+k_\text{HTST} = (2\pi)^{-1} \frac{\prod_i^{3N} \sqrt{\frac{k_{\text{min},i}}{\mu}}}{\prod_i^{3N-1} \sqrt{\frac{k_{\ts,i}}{\mu}}}
 e^{-(E(\vR_{\sap{1}}) - E(\vR_\text{min})) /\kB T}.
 \eeq
 Now it is possible to insert the respective vibrational frequencies,
@@ -50,7 +50,7 @@ Now it is possible to insert the respective vibrational frequencies,
 \eeq
 into \fref{eq:htst-reaction-rate-cleaned},
 \beq{htst-reaction-rate}
-k_\text{HTST} = \frac{\prod_i^{3N}\nu_{\text{min.},i}}{\prod_i^{3N-1}\nu_{\ts,i}}
+k_\text{HTST} = \frac{\prod_i^{3N}\nu_{\text{min},i}}{\prod_i^{3N-1}\nu_{\ts,i}}
 e^{-(E(\vR_{\sap{1}}) - E(\vR_\text{min})) /\kB T},
 \eeq
 for a rate that depends only on the vibrational frequencies and energies at the \sap{1} and minimum as well as the temperature.
