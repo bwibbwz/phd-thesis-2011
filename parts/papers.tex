@@ -3,6 +3,17 @@
 \label{part:papers}
 
 \appendix
+
+\pagestyle{fancyplain}
+%\pagestyle{fancyplain}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\lhead[\fancyplain{}{\sffamily\bfseries\thepage}]%
+      {\fancyplain{}{\sffamily\bfseries}}
+\rhead[\fancyplain{}{\sffamily\bfseries}]%
+      {\fancyplain{}{\sffamily\bfseries\thepage}}
+\cfoot{}
+
 % Hack the "Chapter" names
 %\newcommand{\appchapter}[1]{\let\oldthechapter\thechapter
 %  \renewcommand{\thechapter}{Paper \oldthechapter}
@@ -11,14 +22,24 @@
 %\appchapter{Hydrogen Rotational and Translational Diffusion in Calcium Borohydride from Quasielastic Neutron Scattering and DFT Calculations}
 %\label{pap:calcium}
 %\includepdf[pages=1, addtotoc={1,chapter,0,Hydrogen Rotational and Translational Diffusion in Calcium Borohydride from Quasielastic Neutron Scattering and DFT Calculations,pap:calcium}]{papers/calcium.pdf}
-\includepdf[pages=-, openright, addtotoc={1,chapter,0,Hydrogen Rotational and Translational Diffusion in Calcium Borohydride from Quasielastic Neutron Scattering and DFT Calculations,pap:calcium}]{papers/calcium.pdf}
+\includepdf[pages=-, addtotoc={1,chapter,0,Hydrogen Rotational and Translational Diffusion in Calcium Borohydride from Quasielastic Neutron Scattering and DFT Calculations,pap:calcium}]{papers/calcium.pdf}
 
 %\appchapter{Hindered Rotational Energy Barriers of \ce{BH4-} Tetrahedra in $\beta$-\ce{Mg(BH4)2} from Quasielastic Neutron Scattering and DFT Calculations}
 %\label{pap:magnesium}
 %\includepdf[pages=1, addtotoc={1,chapter,0,Hindered Rotational Energy Barriers of \ce{BH4-} Tetrahedra in $\beta$-\ce{Mg(BH4)2} from Quasielastic Neutron Scattering and DFT Calculations,pap:magnesium}]{papers/magnesium.pdf}
-\includepdf[pages=-, openright, addtotoc={1,chapter,0,Hindered Rotational Energy Barriers of \ce{BH4-} Tetrahedra in $\beta$-\ce{Mg(BH4)2} from Quasielastic Neutron Scattering and DFT Calculations,pap:magnesium}]{papers/magnesium.pdf}
+
+\newpage
+%\thispagestyle{empty}
+\mbox{}
+\newpage
+\includepdf[pages=-, addtotoc={1,chapter,0,Hindered Rotational Energy Barriers of \ce{BH4-} Tetrahedra in $\beta$-\ce{Mg(BH4)2} from Quasielastic Neutron Scattering and DFT Calculations,pap:magnesium}]{papers/magnesium.pdf}
+
+\newpage
+%\thispagestyle{empty}
+\mbox{}
+\newpage
 
 %\appchapter{A method for finding the ridge between saddle points applied to rare event rate estimates}
 %\label{pap:second-order}
 %\includepdf[pages=1, addtotoc={1,chapter,0,A method for finding the ridge between saddle points applied to rare event rate estimates,pap:second-order}]{papers/second-order.pdf}
-\includepdf[pages=-, openright, addtotoc={1,chapter,0,A method for finding the ridge between saddle points applied to rare event rate estimates,pap:second-order}]{papers/second-order.pdf}
+\includepdf[pages=-, addtotoc={1,chapter,0,A method for finding the ridge between saddle points applied to rare event rate estimates,pap:second-order}]{papers/second-order.pdf}
