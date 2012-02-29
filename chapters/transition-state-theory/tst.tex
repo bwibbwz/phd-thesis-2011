@@ -26,7 +26,7 @@ With local vibration of the atoms being very fast, typically on the order of $10
 while non-local reordering of atoms, motion between minima on the PES, often considered as rare-events, typically occur on the order of $10^3 \unit{Hz}$ for a system with a "typical" energy barrier of $0.5 \unit{eV}$.
 Depending on the temperature of the system, a tremendous amount of calculations (on the order of $10^{10}$) would have to be performed to have a reasonable probability of seeing each rare-event while also fully modelling the details of the atomic vibrations.
 
-Even though performing dynamics long enough to describe both types of events, is technically possible, e.g. by minimising vibrations to allow for longer timesteps~\cite{shake-1977, rattle-1983} or modifying the PES~\cite{hyperdynamics-voter-1997}, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for molecular dynamics.
+Even though performing dynamics long enough to describe both types of events, is technically possible, e.g. by minimising vibrations to allow for longer timesteps~\cite{shake-1977, rattle-1983} or modifying the PES~\cite{hyperdynamics-voter-1997}, the key to long-timescale dynamics still lies outside the reach of such methods as they spend most of their time performing dynamics that are not of particular interest for transitions between states.
 This is true, in particular, for calculations that rely on costly, but accurate, quantum calculations and/or large systems.
 
 In the problem lies also the solution, when there is such a clear separation of time-scales, it is possible to treat the problem with statistical methods.
@@ -38,11 +38,11 @@ There are four main assumptions made within TST, which vary in severity.
 \explain{Born-Oppenheimer}
 The Hamiltonian of the system can be separated, resulting in a single PES for the trajectories.
 \explain{Classical Dynamics}
-No tunnelling or other quantum effects --- apart from those offered by the calculational method of the PES --- are taken into account in the vanilla TST.
+No tunnelling or other quantum effects --- apart from those offered by the calculational method of the PES --- are taken into account in the original formulation of TST.
 The motion of the system is governed by classical dynamics.
 Quantum effects are included in extensions to TST (see for example~\cite{qtst-hj-1997, qtst-hj-1998, qtst-hj-2009}) but this is not relevant to the work presented in this thesis and will not be discussed further.
 \explain{Thermal Equilibrium}
-The system will spend considerable time in each basin of the PES, long enough such that a Boltzmann distribution for system can be employed.
+The system will spend considerable time in each basin of the PES, long enough for a Boltzmann distribution for system can be employed.
 For systems with large energy barriers in comparison with the thermal energy~\footnote{A rule of thumb is that $E_\text{b} > 5\kB T$~\cite{htst-5ev-2005}}, this assumption holds well but for smaller barriers or high temperatures it breaks down as thermal equilibrium becomes difficult to achieve and the separation of timescales is lost
 \explain{No Re-Crossings}
 Once the system has left a basin, it does not return for a significant amount of time (long enough to thermalise in the new basin).
@@ -68,16 +68,16 @@ This hypersurface is referred to as the transition state ($\ts$)\footnote{The do
 Commonly, momentum is disregarded in the definition of the phase space, which is then $3N$ dimensional (for a system of $N$ particles), within which the $\ts$ is a $3N-1$ dimensional subspace.
 
 \section{Reaction Rates}
-Considering a canonincal ensemble\footnote{the number of particles and volume is constant and there is a well defined temperature.}, the probability that a system in thermal equilibrium, i.e. described by a Boltzmann distribution, is in a given state $S$ is dependant on its configurational integral~\footnote{The continuous classical analogue to the discrete partition function.},
+Considering a canonical ensemble\footnote{The number of particles and volume is constant and there is a well defined temperature.}, the probability that a system in thermal equilibrium, i.e. described by a Boltzmann distribution, is in a given state $S$ is dependant on its configurational integral~\footnote{The continuous classical analogue to the discrete partition function.},
 \beq{configurational-integral}
 Z_S = \int_S e^{-E(\vR) / \kB T}d\vR
 \eeq
 
-The reaction rate, $k_\text{TST}$, is defined as the probability of being in the $\ts$ subspace of $\text{R}$,
+For a hyperplanar, $\ts$, the reaction rate, $k_\text{TST}$, is defined as the probability of being in the $\ts$ subspace of $\text{R}$,
 \beq{ts-probability-partition-simple}
 P_\ts = \frac{Z_\ts}{Z_\text{R}},
 \eeq
-thermally averaged over R, with velocity away from R, %\citemiss
+thermally averaged over R, with velocity away from R,
 \beq{tst-rate-initial}
 k_\text{TST} = \frac{1}{2}|\vect{v}_\perp| P_\ts,
 \eeq
@@ -88,7 +88,7 @@ The velocity at each point $\vR$ can be taken from a Maxwell distribution,
 \beq{tst-maxwell-velocity}
 \langle |\vect{v}| \rangle = \sqrt{\frac{2kT}{\pi \mu}},
 \eeq
-where $\mu$ is the effective mass of the transitioning system.
+where $\mu$ is the effective mass of the transition.
 The rate then becomes
 \beq{tst-rate-full}
 k_\text{TST} = \sqrt{\frac{kT}{2\pi m}} \frac{Z_\ts}{Z_\text{R}}.
