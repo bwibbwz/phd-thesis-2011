@@ -70,18 +70,18 @@
 \newcommand{\Dsep}{\Delta_\text{D}}
 
 % --- New commands, macros and external packages for development purposes ---
-\usepackage{verbatim} % Comment environment.
-\usepackage{color} % To color indocument comments.
+%\usepackage{verbatim} % Comment environment.
+%\usepackage{color} % To color indocument comments.
 %\usepackage[notcite, notref]{showkeys} % Keep track of the labels
-\newcommand{\tred}[1]{\textcolor{red}{#1}}
-\newcommand{\tblue}[1]{\textcolor{blue}{#1}}
+%\newcommand{\tred}[1]{\textcolor{red}{#1}}
+%\newcommand{\tblue}[1]{\textcolor{blue}{#1}}
 %\newcommand{\incomplete}{\tred{INCOMPLETE}}
-\newcommand{\placeholder}{\tred{PLACEHOLDER}}
+%\newcommand{\placeholder}{\tred{PLACEHOLDER}}
 %\newcommand{\missing}{\tred{MISSING}}
-\newcommand{\figmiss}[1]{\textcolor{red}{MISSING FIGURE: #1}}
-\newcommand{\citemiss}{\textcolor{red}{[MISSING]}}
+%\newcommand{\figmiss}[1]{\textcolor{red}{MISSING FIGURE: #1}}
+%\newcommand{\citemiss}{\textcolor{red}{[MISSING]}}
 %\newcommand{\pending}{\textcolor{blue}{[NAME PENDING]}}
-\newcommand{\expand}{\textcolor{red}{EXPAND}}
+%\newcommand{\expand}{\textcolor{red}{EXPAND}}
 
 % --- Shortcuts for environments
 \newcommand{\bit}{\begin{itemize}}
