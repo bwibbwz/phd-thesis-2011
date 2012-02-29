@@ -2,6 +2,8 @@
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \ProvidesClass{bThesis}
 
+\def\thesisversion{print}
+
 % --- Define the baseclass ---
 \def\baseclass{book}
 
