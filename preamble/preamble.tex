@@ -33,6 +33,14 @@
 
 % Reset the page count for the main content
 \newpage
-\pagestyle{plain}
+\pagestyle{fancyplain}
+%\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\lhead[\fancyplain{}{\sffamily\bfseries\thepage}]%
+      {\fancyplain{}{\sffamily\bfseries\rightmark}}
+\rhead[\fancyplain{}{\sffamily\bfseries\leftmark}]%
+      {\fancyplain{}{\sffamily\bfseries\thepage}}
+\cfoot{}
 \pagenumbering{arabic}
 \setcounter{page}{1}
