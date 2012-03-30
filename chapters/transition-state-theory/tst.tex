@@ -30,7 +30,7 @@ Even though performing dynamics long enough to describe both types of events, is
 This is true, in particular, for calculations that rely on costly, but accurate, quantum calculations and/or large systems.
 
 In the problem lies also the solution, when there is such a clear separation of time-scales, it is possible to treat the problem with statistical methods.
-Essentially dealing with the vibrational areas of the PES (the basins) by averaging over them and seperately locating ares of transitions.
+Essentially dealing with the vibrational areas of the PES (the basins) by averaging over them and seperately locating areas of transitions.
 
 \section{The Basics}
 \subsection{Assumptions}
@@ -43,7 +43,7 @@ The motion of the system is governed by classical dynamics.
 Quantum effects are included in extensions to TST (see for example~\cite{qtst-hj-1997, qtst-hj-1998, qtst-hj-2009}) but this is not relevant to the work presented in this thesis and will not be discussed further.
 \explain{Thermal Equilibrium}
 The system will spend considerable time in each basin of the PES, long enough for a Boltzmann distribution for system can be employed.
-For systems with large energy barriers in comparison with the thermal energy~\footnote{A rule of thumb is that $E_\text{b} > 5\kB T$~\cite{htst-5ev-2005}}, this assumption holds well but for smaller barriers or high temperatures it breaks down as thermal equilibrium becomes difficult to achieve and the separation of timescales is lost
+For systems with large energy barriers in comparison with the thermal energy~\footnote{A rule of thumb is that $E_\text{b} > 5\kB T$~\cite{htst-5ev-2005}}, this assumption holds well but for smaller barriers or high temperatures it breaks down as thermal equilibrium becomes difficult to achieve and the separation of timescales is lost.
 \explain{No Re-Crossings}
 Once the system has left a basin, it does not return for a significant amount of time (long enough to thermalise in the new basin).
 This assumption is the most serious and efforts to minimise its effects are discussed below.
@@ -55,7 +55,7 @@ This assumption is the most serious and efforts to minimise its effects are disc
 \includegraphics[width=0.5\linewidth]{transition-state}
     \parbox{0.85\linewidth}{
 \caption{The transition state, $\ts$.
-Representing a bottlenck region through wich all reactive trajectories (going from reactants, R, to products, P) must go.
+Representing a bottleneck region through which all reactive trajectories (going from reactants, R, to products, P) must go.
 The grey circle is a \sap{1}.
 }
 \label{fig:transition-state}
@@ -91,7 +91,7 @@ The velocity at each point $\vR$ can be taken from a Maxwell distribution,
 where $\mu$ is the effective mass of the transition.
 The rate then becomes
 \beq{tst-rate-full}
-k_\text{TST} = \sqrt{\frac{kT}{2\pi m}} \frac{Z_\ts}{Z_\text{R}}.
+k_\text{TST} = \sqrt{\frac{kT}{2\pi \mu}} \frac{Z_\ts}{Z_\text{R}}.
 \eeq
 
 \subsection{Optimisation of the Rate}
