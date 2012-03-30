@@ -54,8 +54,7 @@ This assumption is the most serious and efforts to minimise its effects are disc
 \begin{center}
 \includegraphics[width=0.5\linewidth]{transition-state}
     \parbox{0.85\linewidth}{
-\caption{The transition state, $\ts$.
-Representing a bottleneck region through which all reactive trajectories (going from reactants, R, to products, P) must go.
+\caption{A schematic PES, showing the transition state, $\ts$, representing a bottleneck region through which all reactive trajectories (going from reactants, R, to products, P) must go.
 The grey circle is a \sap{1}.
 }
 \label{fig:transition-state}
@@ -88,7 +87,7 @@ The velocity at each point $\vR$ can be taken from a Maxwell distribution,
 \beq{tst-maxwell-velocity}
 \langle |\vect{v}| \rangle = \sqrt{\frac{2kT}{\pi \mu}},
 \eeq
-where $\mu$ is the effective mass of the transition.
+where $\mu$ is the effective mass of the transition, a linear combination of the atom messes involved.
 The rate then becomes
 \beq{tst-rate-full}
 k_\text{TST} = \sqrt{\frac{kT}{2\pi \mu}} \frac{Z_\ts}{Z_\text{R}}.
@@ -109,10 +108,10 @@ Should optimising the $\ts$ be infeasible or insufficient, a different approach 
 \beq{tst-dynamical-corrections}
 k_\text{exact} = \kappa_\text{D} \text{ } k_\text{TST}.
 \eeq
-By starting dynamical trajectories from the $\ts$, which must still be reasonably good, and counting the recrossings while tracking which basin the trajectories end in, a ratio between reactive trajectories and non-reactive ones can be calculated~\cite{dynamical-corrections-keck-1962},
+By starting dynamical trajectories from the $\ts$, which must still be reasonably good, and counting the recrossings while tracking which basin the trajectories end in and comparing with their initial velocity direction, a ratio between correctly reactive trajectories (ending in the same basin as their initial velocity indicated) and non-reactive ones (ending in the same basin as they originated from) can be calculated~\cite{dynamical-corrections-keck-1962},
 \beq{tst-dynamical-factor}
 \kappa_\text{D} = \lim_{n \rightarrow \infty} \frac{n_\text{react.}}{n},
 \eeq
-where $n$ is the total amount of trajectories, started from $\vR \in \ts$, and $n_\text{react.}$ is the number of trajectories that end in P.
+where $n$ is the total amount of trajectories, started from $\vR \in \ts$, and $n_\text{react.}$ is the number of trajectories that either start with a velocity towards P and end in P or start with a velocity towards R and end in R.
 More recent schemes (see for example~\cite{vtst-2005, dynamical-corrections-chandler-1977, dynamical-corrections-bennett-1977}) work in the same spirit, albeit slightly more rigorous.
 The scheme presented in \fref{eq:tst-dynamical-factor}, nevertheless, captures the essence of dynamical corrections.
